@@ -3,6 +3,7 @@ from datetime import datetime
 import arcpy, os, math, sys
 import pytz
 import urllib
+import StringIO
 
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ElementTree, Element, SubElement
