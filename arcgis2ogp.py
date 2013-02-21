@@ -23,14 +23,15 @@ class Logger(object):
 """
 Set workspace (where datasets to be processed are located) below
 """
-arcpy.env.workspace = "D:\\kdyke\\metadata\\datafinder\\"
+arcpy.env.workspace = "D:\\Workspace\\ogp_metadata\\"
 #arcpy.env.workspace = "D:\\kdyke\\metadata\\test\\"
 ws = arcpy.env.workspace
 
 """
 Set output location for OGP metadata and log file, then instantiate Logger
 """
-OUTPUT_LOCATION = u'D:\\temp\\'
+OUTPUT_LOCATION = u"D:\\Workspace\\ogp_metadata\\output"
+
 d=datetime.today()
 LOG_NAME = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
 sys.stdout = Logger()
@@ -84,8 +85,8 @@ def dataTypeParseFGDC(root):
         elif (root.findtext("*//direct").lower() == "g-polygon" or root.findtext("*//direct").lower() == "polygon" or root.findtext("*//direct").lower() == "chain"):
             return "Polygon"
     except AttributeError as e:
-        print "Can't determine data type, setting to Undefined for now"
-        return "Undefined"
+        print "Can't determine data type, setting to UNKNOWN for now"
+        return "UKNOWN"
 
 def dataTypeParseMGMG(root):
 
