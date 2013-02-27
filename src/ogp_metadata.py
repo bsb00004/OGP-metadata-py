@@ -1,23 +1,17 @@
 from time import clock
 from datetime import datetime
-import arcpy, os, math, sys
+import os, math, sys
 import pytz
 import urllib
-
+import StringIO
+import glob
+import json
+from logger import Logger
+from keyword_parse import keywordParse
+from datatype_parse import *
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ElementTree, Element, SubElement
 
-"""
-create simple logger class to output results both to text file and display
-"""
-class Logger(object):
-    def __init__(self):
-        self.terminal = sys.stdout
-        self.log = open(OUTPUT_LOCATION+LOG_NAME, "a")
-
-    def write(self, message):
-        self.terminal.write(message)
-        self.log.write(message)  
 
 """
 Set workspace (where datasets to be processed are located) below
@@ -63,61 +57,6 @@ Set UTC timezone for ContentDate field
 """
 utc = pytz.utc
 
-
-def keywordParse(FGDCtree,KW_TYPE):
-    try:
-        kw = list(FGDCtree.iter(KW_TYPE))
-        kw_text = []
-        for keyword in kw:
-            kw_text.append(keyword.text + ", ")
-        keywords = ''
-        return keywords.join(kw_text).rstrip(", ")
-    except AttributeError as e:
-        print "can't find keywords. Setting to UNKNOWN for now"
-        return "UNKNOWN"
-    
-def dataTypeParseFGDC(root):
-    try:
-        if root.findtext("*//geoform").lower() == "scanned paper map":
-            return "Paper Map"
-        elif root.findtext("*//direct").lower() == "raster":
-            return "Raster"
-        elif (root.findtext("*//direct").lower() == "g-polygon" or root.findtext("*//direct").lower() == "polygon" or root.findtext("*//direct").lower() == "chain"):
-            return "Polygon"
-    except AttributeError as e:
-        print "Can't determine data type, setting to Undefined for now"
-        return "Undefined"
-
-def dataTypeParseMGMG(root):
-
-    # There does not seem to be a separate listing for paper maps in the MN
-    # standards. Instead the detailed abstract seems to have replaced original
-    # form type fields...
-
-    try:
-        if root.findtext("*//direct").lower() == "raster":
-            return "Raster"
-        elif root.findtext("*//direct").lower() =="vector":       
-            if "area" in root.findtext("*//mgmg3obj").lower() or "polygon" in root.findtext("*//mgmg3obj").lower() or "region" in root.findtext("*//mgmg3obj").lower() or "TIN" in root.findtext("*//mgmg3obj").lower():
-                return "Polygon"
-            elif "line" in root.findtext("*//mgmg3obj").lower() or "network" in root.findtext("*//mgmg3obj").lower() or "route-section" in root.findtext("*//mgmg3obj").lower():
-                return "Line"
-            elif "node" in root.findtext("*//mgmg3obj").lower() or "point" in root.findtext("*//mgmg3obj").lower():
-                return "Point"
-            
-    except AttributeError as e:
-        print "Can't determine data type, setting to Undefined for now"
-        return "Undefined"
-
-def formatChoice():
-    prompt = raw_input('Enter 1 for FGDC, 2 for MGMG: ')
-    if prompt == '1':
-        FGDC()
-    elif prompt == '2':
-        MGMG()
-    else:
-        print 'Invalid selection. Please try again\n'
-        formatChoice()
 
 #########################
 ##ArcGIS to FGDC to OGP##
