@@ -76,7 +76,6 @@ def MGMG(workspace):
 
 
         #name equals FGDC title field
-        #NAME = root.find("idinfo/citation/citeinfo/title").text
         try:
             NAME = root.findtext("idinfo/citation/citeinfo/title")
         except AttributeError as e:
@@ -91,11 +90,12 @@ def MGMG(workspace):
         try:
             ACCESS = root.find("idinfo/accconst").text
         except AttributeError as e:
-            print "Access field doesn't exist! Setting to UNKNOWN for now"        
+            print "Access Constraints field doesn't exist! Setting to UNKNOWN for now"        
             ACCESS = "UNKNOWN"
 
         AVAILABILITY = "Online"
-
+        
+        #set Display Name equal to Name
         LAYERDISPLAYNAME = NAME
         LAYERDISPLAYNAMESORT = NAME
         try:
@@ -134,14 +134,17 @@ def MGMG(workspace):
         except AttributeError as e:
             print "extent information not found!"
         
-        #SRSPROJECTIONCODE=
+        
         try:
             if root.find("idinfo/timeperd/timeinfo/sngdate/caldate") is not None:
                 dateText = root.find("idinfo/timeperd/timeinfo/sngdate/caldate").text
                 if len(dateText) == 4:
-                    CONTENTDATE = dateText
+                    #if the length is 4, we'll assume it's referring to the year.
+                    year = int(dateText)
+                    #we'll take January 1st as the fill in month/day for ISO format
+                    date = datetime(year, 1,1)
+                    CONTENTDATE = date.isoformat() + "Z"
                 elif len(dateText) == 8:
-                    #print dateText
                     year = int(dateText[0:4])
                     month = int(dateText[4:6])
                     day = int(dateText[6:])
