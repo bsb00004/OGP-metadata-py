@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE metadata SYSTEM "http://www.fgdc.gov/metadata/fgdc-std-001-1998.dtd"[]>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>U.S. Fish and Wildlife Service</origin>
+        <pubdate>201209</pubdate>
+        <title>National Wetlands Inventory - Wetlands Project Metadata</title>
+        <geoform>vector digital data</geoform>
+        <serinfo></serinfo>
+        <pubinfo>
+          <pubplace>Washington, D.C.</pubplace>
+          <publish>U.S. Fish and Wildlife Service, Branch of Habitat Assessment</publish>
+        </pubinfo>
+        <onlink>http://www.fws.gov/wetlands/</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This data set represents the extent, status, and location of National Wetland Inventory wetland mapping projects.  Each project polygon contains information on the type and date of imagery used to map the wetlands and a link to a document about specific mapping techniques and habitat information for that project. </abstract>
+      <purpose>The present goal of the Service is to provide the citizens of the United States and its Trust Territories with current geospatially referenced information on the status and extent of wetland mapping.</purpose>
+      <supplinf>This dataset was created to be used as auxillary information to the National Wetlands Inventory - Wetlands polygon dataset.   
+
+Although this Federal Geographic Data Committee-compliant metadata file is intended to document the data set in nonproprietary form, as well as in Arc/INFO format, this metadata file may include some Arc/INFO-specific terminology.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>1977</begdate>
+          <enddate>September 2012</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>Publication Date</current>
+    </timeperd>
+    <status>
+      <progress>Ongoing</progress>
+      <update>In Continuous Increments</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>144.599995</westbc>
+        <eastbc>-64.549579</eastbc>
+        <northbc>71.99633</northbc>
+        <southbc>13.166674</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Categories</themekt>
+        <themekey>environment</themekey>
+        <themekey>inlandWaters</themekey>
+        <themekey>geoscientificInformation</themekey>
+        <themekey>oceans</themekey>
+      </theme>
+      <theme>
+        <themekt>None.</themekt>
+        <themekey>Wetlands</themekey>
+        <themekey>Deepwater habitats</themekey>
+        <themekey>Hydrography</themekey>
+        <themekey>Surface water</themekey>
+        <themekey>Swamps</themekey>
+        <themekey>Marshes</themekey>
+        <themekey>Bogs</themekey>
+        <themekey>Fens</themekey>
+      </theme>
+      <place>
+        <placekey>United States</placekey>
+        <placekey>Maine</placekey>
+        <placekey>Vermont</placekey>
+        <placekey>New Hampshire</placekey>
+        <placekey>Connecticut</placekey>
+        <placekey>Massachusetts</placekey>
+        <placekey>Delaware</placekey>
+        <placekey>Rhode Island</placekey>
+        <placekey>New York</placekey>
+        <placekey>New Jersey</placekey>
+        <placekey>Pennsylvania</placekey>
+        <placekey>West Virginia</placekey>
+        <placekey>District of Columbia</placekey>
+        <placekey>Virginia</placekey>
+        <placekey>Maryland</placekey>
+        <placekey>Ohio</placekey>
+        <placekey>Indiana</placekey>
+        <placekey>Michigan</placekey>
+        <placekey>Illinois</placekey>
+        <placekey>Wisconsin</placekey>
+        <placekey>Iowa</placekey>
+        <placekey>Missouri</placekey>
+        <placekey>Minnesota</placekey>
+        <placekey>Kansas</placekey>
+        <placekey>Nebraska</placekey>
+        <placekey>South Dakota</placekey>
+        <placekey>North Dakota</placekey>
+        <placekey>Montana</placekey>
+        <placekey>Colorado</placekey>
+        <placekey>Utah</placekey>
+        <placekey>Wyoming</placekey>
+        <placekey>Texas</placekey>
+        <placekey>Oklahoma</placekey>
+        <placekey>New Mexico</placekey>
+        <placekey>Arizona</placekey>
+        <placekey>Nevada</placekey>
+        <placekey>California</placekey>
+        <placekey>Oregon</placekey>
+        <placekey>Washington</placekey>
+        <placekey>Idaho</placekey>
+        <placekey>North Carolina</placekey>
+        <placekey>South Carolina</placekey>
+        <placekey>Georgia</placekey>
+        <placekey>Alabama</placekey>
+        <placekey>Florida</placekey>
+        <placekey>Mississippi</placekey>
+        <placekey>Louisiana</placekey>
+        <placekey>Arkansas</placekey>
+        <placekey>Kentucky</placekey>
+        <placekey>Tennessee</placekey>
+        <placekey>Alaska</placekey>
+        <placekey>Hawaii</placekey>
+        <placekey>Puerto Rico</placekey>
+        <placekey>Virgin Islands</placekey>
+        <placekey>Guam</placekey>
+        <placekey>Saipan</placekey>
+      </place>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>None. Acknowledgement of the U.S. Fish and Wildlife Service and (or) the National Wetlands Inventory would be appreciated in products derived from these data</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Fish and Wildlife Service</cntorg>
+        </cntorgp>
+        <cntpos>National Standards and Support Team</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>505 Science Drive</address>
+          <city>Madison</city>
+          <state>WI</state>
+          <postal>53711</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>608-238-9333</cntvoice>
+        <cntfax>608-238-9334</cntfax>
+        <cntemail>wetlands_team@fws.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <browse>
+      <browsed>Topical overlay showing the extent, status and location of current NWI wetland mapping.</browsed>
+    </browse>
+    <native>Microsoft Windows 2000 Version 5.2 (Build 3790) Service Pack 2; ESRI ArcCatalog 10.1 build 4400</native>
+    <crossref>
+      <citeinfo>
+        <origin>U.S. Fish and Wildlife Serivce, National Wetlands Inventory</origin>
+        <pubdate>Various</pubdate>
+        <edition>Version 1.0</edition>
+        <pubinfo>
+          <pubplace>Washington, D.C.  USA</pubplace>
+          <publish>U.S. Fish and Wildlife Service</publish>
+        </pubinfo>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>The source data was checked using standard review procedures. Attributes were checked by using visual inspection as well as field domains.  Quality of the attribute information varies with age and mapping protocols used when individual maps were prepared</attraccr>
+      <qattracc>
+        <attraccv>All polygons are attributed.</attraccv>
+      </qattracc>
+    </attracc>
+    <logic>Polygon and chain-node topology are present.</logic>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Fish and Wildlife Service</origin>
+            <pubdate>1977 to present</pubdate>
+            <serinfo>
+              <sername>National Wetlands Inventory Maps</sername>
+            </serinfo>
+            <pubinfo>
+              <pubplace>Washington, D.C.</pubplace>
+              <publish>U.S. Fish and Wildlife Service</publish>
+            </pubinfo>
+          </citeinfo>
+        </srccite>
+        <srcscale>1:24,000 and 1:25,000</srcscale>
+        <typesrc>Digital file and hard copy paper</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1977</begdate>
+              <enddate>present</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>Various dates</srccurr>
+        </srctime>
+        <srccontr>Spatial information</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>The file was converted to NAD83 in geographic coordinates, and saved in geodatabase format.</procdesc>
+        <procdate>200401</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Vector</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>G-polygon</sdtstype>
+        <ptvctcnt>47127</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <planar>
+        <mapproj>
+          <mapprojn>Mercator_Auxiliary_Sphere</mapprojn>
+          <albers>
+            <stdparll>0.000000</stdparll>
+            <latprjo>0.000000</latprjo>
+            <feast>0.000000</feast>
+            <fnorth>0.000000</fnorth>
+          </albers>
+        </mapproj>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.000156</absres>
+            <ordres>0.000156</ordres>
+          </coordrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>GCS_WGS_1984</horizdn>
+        <ellips>WGS_1984</ellips>
+        <semiaxis>6378137.000000</semiaxis>
+        <denflat>298.257222</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altres>0.000100</altres>
+        <altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>
+Wetland_Project_Metadata</enttypl>
+        <enttypd>Reference:  Cowardin et al. 1979</enttypd>
+        <enttypds>U.S. Fish and Wildlife Service</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>OBJECTID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Polygon</edomv>
+            <edomvd>2-dimensional element.</edomvd>
+            <edomvds>ESRI GIS software</edomvds>
+          </edom>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>PROJECT_NAME</attrlabl>
+        <attrdef>Name of the wetland mapping project</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>SUPPMAPINFO</attrlabl>
+        <attrdef>Hyperlink URL to the Supplemental Map Information document related to this project area</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>STATUS</attrlabl>
+        <attrdef>Current status of the project</attrdef>
+        <attrdomv>
+          <edom>
+            <edomv>Completed</edomv>
+            <edomvd>The project is completed and on the Wetlands Mapper for public viewing</edomvd>
+          </edom>
+          <edom>
+            <edomv>No_Data</edomv>
+            <edomvd>This project/area represents an area where no wetlands mapping has been conducted</edomvd>
+          </edom>
+          <edom>
+            <edomv>Non-Digital</edomv>
+            <edomvd>Represents a project/area where mapping onto traditional hardcopy media has been conducted. No digital data exists for this area.</edomvd>
+          </edom>
+          <edom>
+            <edomv>Scan</edomv>
+            <edomvd>This represents a project/area where a traditional hardcopy map has been scanned and may be displayed on the Wetlands Mapper.</edomvd>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Current</edomv>
+            <edomvd>This project/area contains the metadata for the data currently in the MGD</edomvd>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>IMAGE_YR</attrlabl>
+        <attrdef>Year of the most recent imagery used for wetland delineation</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>IMAGE_DATE</attrlabl>
+        <attrdef>Month and year of all imagery used for wetland delineation</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>DATA_SOURCE</attrlabl>
+        <attrdef>Source of the data (what orgainization created the wetlands data)</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>COMMENTS</attrlabl>
+        <attrdef>Specific comments to be shared with the public</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>EMULSION</attrlabl>
+        <attrdef>Emulsion type of the imagery used in delineation</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>IMAGE_SCALE</attrlabl>
+        <attrdef>The best image scale used for wetland delineation represented by RF scale value or a generalization of ground resolution, 0 = unknown, 1 = &lt; or equal to 1 meter but greater than 0, 2 = &lt; or equal to 2 meters but greater than 1 meter, 3 = &lt; or equal to 3 meters but greater than 2 meters.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>SHAPE</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ALL_SCALES</attrlabl>
+        <attrdef>All the image scales or resolutions of the imagery used for delineating the wetlands</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>IMAGE_TYPE</attrlabl>
+        <attrdef>The best imagery emulsion type from all the types used to delineate the wetlands for a given project area. The order of hierarchy from best to worst is CIR for Color Infrared, TC for Natural or True color, BW for Black and White, and Unknown</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>FGDC_METADATA</attrlabl>
+        <attrdef>Link to FGDC metadata for the Wetlands dataset.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>SOURCE_TYPE</attrlabl>
+        <attrdef>Identifies the source of data used for creation of the wetland polygon data.</attrdef>
+        <attrdomv>
+          <edom>
+            <edomv>CIR</edomv>
+            <edomvd>Color Infrared imagery</edomvd>
+          </edom>
+          <edom>
+            <edomv>TC</edomv>
+            <edomvd>Truc Color imagery</edomvd>
+          </edom>
+          <edom>
+            <edomv>BW</edomv>
+            <edomvd>Black and White imagery</edomvd>
+          </edom>
+          <edom>
+            <edomv>Scalable</edomv>
+            <edomvd>Data created from various sources see the Supplemental Map Information document for specifics.</edomvd>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>GLOBALID</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>SHAPE_Length</attrlabl>
+        <attrdef>Length of feature in internal units.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Positive real numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SHAPE_Area</attrlabl>
+        <attrdef>Area of feature in internal units squared.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Positive real numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Fish and Wildlife Service</cntorg>
+        </cntorgp>
+        <cntpos>National Standards and Support Team</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>505 Science Drive</address>
+          <city>Madison</city>
+          <state>WI</state>
+          <postal>53711</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>608-238-9333</cntvoice>
+        <cntfax>608-238-9334</cntfax>
+        <cntemail>wetlands_team@fws.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>Downloadable Data</resdesc>
+    <distliab>Although these data have been processed successfully on a computer system at the U.S. Fish and Wildlife Service, no warranty expressed or implied is made by the U.S. Fish and Wildlife Service regarding the utility of the data on any other system, nor shall the act of distribution constitute any such warranty. No responsibility is assumed by the U.S. Fish and Wildlife Service in the use of these data.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Shapefile or ESRI File Geodatabase</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>http://www.fws.gov/wetlands/Data/Data-Download.html</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>There is no charge for the online option.  Requests for large amounts of data are handled on a cost reimbursable basis.</fees>
+      <ordering>http://www.fws.gov/wetlands/Data/DataDownload.html</ordering>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>April 1, 2012</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Fish and Wildlife Service</cntorg>
+        </cntorgp>
+        <cntpos>National Standards and Support Team</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>505 Science Drive</address>
+          <city>Madison</city>
+          <state>WI</state>
+          <postal>53711</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>608-238-9333</cntvoice>
+        <cntfax>608-238-9334</cntfax>
+        <cntemail>wetlands_team@fws.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <mettc>local time</mettc>
+    <metsi>
+      <metscs>None</metscs>
+      <metsc>Unclassified</metsc>
+      <metshd>None</metshd>
+    </metsi>
+    <metextns>
+      <onlink>http://www.fws.gov/wetlands/Data/metadata.html</onlink>
+    </metextns>
+    <metextns>
+      <onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+      <metprof>ESRI Metadata Profile</metprof>
+    </metextns>
+  </metainfo>
+</metadata>

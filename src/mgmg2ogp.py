@@ -8,7 +8,7 @@ import glob
 import json
 from logger import Logger
 from keyword_parse import keywordParse
-from datatype_parse import *
+from datatype_parse import dataTypeParseMGMG
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ElementTree, Element, SubElement
 
@@ -19,9 +19,9 @@ def MGMG(workspace):
     """
     ws = workspace
 
-    """
-    Set output location for OGP metadata and log file, then instantiate Logger
-    """
+    
+    #Set output location for OGP metadata and log file, then instantiate Logger
+    
     OUTPUT_LOCATION = ws+"output\\"
 
     d=datetime.today()
@@ -39,24 +39,23 @@ def MGMG(workspace):
               'MinY', 'MinX', 'MaxX', 'ContentDate','Location']
 
 
-    """
-    Set UTC timezone for ContentDate field
-    """
+    
+    #Set UTC timezone for ContentDate field
+    
     utc = pytz.utc
 
-    """
-    List of layers and their respective URLs from Datafinder.org
-    """
-    df_lyrs_file = open(r'D:\Workspace\ogp_metadata\scripts_etc\datafinder_layers.json','r')
+    
+    #List of layers and their respective URLs from Datafinder.org
+    
+    df_lyrs_file = open("G:\\Documents\\GitHub\\OGP-metadata-py\\tests\\datafinder_layers.json",'r')
     df_lyrs = json.loads(df_lyrs_file.read())
 
 
-    """
-    start the clock! obviously not at all necessary 
-    """
+   
+    #start the clock! obviously not at all necessary 
+   
     start = clock()
-    download_ctr=0
-    ags_ctr=0
+
     for i in files:
         download_ags = 0
         print 'full file path is ', i
@@ -66,22 +65,30 @@ def MGMG(workspace):
         #layerID equals filename sans extension 
         LAYERID = i[i.rfind('\\')+1:i.rfind(".")]
         print 'layerid is ', LAYERID
-             
+        
+        try:
+            if df_lyrs.has_key(LAYERID):
+                NAME = unicode(df_lyrs[LAYERID]["name"])
+            else:
+                NAME = LAYERID
+        except AttributeError as e:
+            print "Name field doesn't exist! Setting to UNKNOWN for now"
+            NAME = "UNKNOWN"
+        
+        try:
+            if df_lyrs.has_key(LAYERID):
+                WORKSPACENAME = unicode(df_lyrs[LAYERID]["WorkspaceName"])
+        except AttributeError as e:
+            print 'Workspace name error: ',e
+            
         DATATYPE = dataTypeParseMGMG(root)
         DATATYPESORT = DATATYPE
 
         #create string representation of MGMG md to be appended at end of OGP md
-        FGDC_TEXT = ET.tostring(root)
+        MGMG_TEXT = ET.tostring(root)
 
 
 
-        #name equals FGDC title field
-        try:
-            NAME = root.findtext("idinfo/citation/citeinfo/title")
-        except AttributeError as e:
-            print "Name field doesn't exist! Setting to UNKNOWN for now"
-            NAME = "UNKNOWN"
-            
         COLLECTIONID = "initial collection"
         
         INSTITUTION = "University of Minnesota"
@@ -95,9 +102,18 @@ def MGMG(workspace):
 
         AVAILABILITY = "Online"
         
-        #set Display Name equal to Name
-        LAYERDISPLAYNAME = NAME
-        LAYERDISPLAYNAMESORT = NAME
+        #set Display Name equal to title element
+        
+        try:
+            LAYERDISPLAYNAME = root.findtext("idinfo/citation/citeinfo/title")
+ 
+        except AttributeError:
+            print 'No Title element found...'
+            LAYERDISPLAYNAME = "UNKNOWN"
+        
+        LAYERDISPLAYNAMESORT = LAYERDISPLAYNAME
+                #name equals FGDC title field
+
         try:
             PUBLISHER = root.findtext("idinfo/citation/citeinfo/pubinfo/publish")
         except AttributeError as e:
@@ -116,7 +132,7 @@ def MGMG(workspace):
             
         #Combine multiple Keyword elements into a string rep
 
-        THEMEKEYWORDS= keywordParse(FGDCtree,"themekey")
+        THEMEKEYWORDS = keywordParse(FGDCtree,"themekey")
         PLACEKEYWORDS = keywordParse(FGDCtree,"placekey")
         
         try:
@@ -188,28 +204,34 @@ def MGMG(workspace):
     ##        LOCATION = '{"ArcGIS93Rest" : "' + REST_URL + '", "tilecache" : "None", "download" : "' + DOWNLOAD_URL + '", "wfs" : "None"}'
         try:
             if df_lyrs.has_key(LAYERID):
-                SERVICE_URL = df_lyrs[LAYERID]
+                ARCGISREST = df_lyrs[LAYERID]["ArcGISRest"]
                 print 'Found',LAYERID,' so removing it from df_lyrs'
-                df_lyrs.pop(LAYERID)
-                ags_ctr += 1
-                download_ags += 1
+                df_lyrs.pop(LAYERID)              
+                SERVERTYPE = df_lyrs[LAYERID]["ServerType"]
+                if root.find("idinfo/citation/citeinfo/onlink") is not None:
+                    DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
+                    LOCATION = json.dumps({
+                        'ArcGIS93Rest': ARCGISREST,
+                        'download' : DOWNLOAD_URL,
+                        'ServerType': SERVERTYPE
+                        })
+                else:
+                    LOCATION = json.dumps({
+                        'ArcGIS93Rest': ARCGISREST,
+                        'ServerType': SERVERTYPE
+                        })
             else:
-                pass
-                SERVICE_URL = 'UNKNOWN'
-            if root.find("idinfo/citation/citeinfo/onlink") is not None:
-                DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
-                download_ctr +=1
-            else:
-                pass
-                DOWNLOAD_URL = 'UNKNOWN'
-            LOCATION = json.dumps({'ArcGIS93Rest': SERVICE_URL, 'download' : DOWNLOAD_URL})
-            print LOCATION
-        except:
-            print 'LOCATION error'
+                if root.find("idinfo/citation/citeinfo/onlink") is not None:
+                    DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
+                    LOCATION = json.dumps({
+                        'download' : DOWNLOAD_URL
+                        })
+        except AttributeError as e:
+            print 'LOCATION error: ', e
           
-        """
-        Put it all together to make the OGP metadata xml file
-        """
+        
+        #Put it all together to make the OGP metadata xml file
+        
         OGPtree = ElementTree()
         OGProot = Element("add",allowDups="false")
         doc = SubElement(OGProot,"doc")
@@ -220,8 +242,8 @@ def MGMG(workspace):
                 fieldEle.text = locals()[field.upper()]
         except KeyError as e:
             print "Nonexistant key: ", field 
-        fgdc_text=SubElement(doc,"field",name="FgdcText")
-        fgdc_text.text = '<?xml version="1.0"?>'+FGDC_TEXT
+        mgmg_text=SubElement(doc,"field",name="MgmgText")
+        mgmg_text.text = '<?xml version="1.0"?>'+MGMG_TEXT
         
         if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
             existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
@@ -231,12 +253,8 @@ def MGMG(workspace):
             else:
                 pass
         else:
-            print download_ags
-            if download_ags ==1:
-                OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
-                print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
-            else:
-                pass
+            OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
+            print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
 
 
         print "Next!\n"

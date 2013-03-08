@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE metadata SYSTEM "http://www.fgdc.gov/metadata/fgdc-std-001-1998.dtd"[]>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <pubdate>April 1, 2012</pubdate>
+        <title>National Wetlands Inventory - Wetland Areas of Interest</title>
+        <geoform>vector digital data</geoform>
+        <onlink>http://www.fws.gov/wetlands/Data/Mapper.html</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This layer highlights selected wetlands located throughout the United States that exhibit unique or important ecological characteristics.  It includes Wetlands of International Importance (Ramsar sites) as well as selected State natural areas, National Parks and National Wildlife Refuges. Each site marks the general location of the wetland area and includes a link to additional information about that particular wetland.</abstract>
+      <supplinf>Additional sites and information are added periodically.  This dataset is not intended to be inclusive or exclusive nor is it considered an exhaustive search of unique or important wetland sites.</supplinf>
+    </descript>
+    <status>
+      <progress>In work</progress>
+      <update>Irregular</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>144.599995</westbc>
+        <eastbc>-64.549579</eastbc>
+        <northbc>71.99633</northbc>
+        <southbc>13.166674</southbc>
+      </bounding>
+    </spdom>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Fish and Wildlife Service</cntorg>
+        </cntorgp>
+        <cntpos>National Standards and Support Team</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>505 Science Drive</address>
+          <city>Madison</city>
+          <state>WI</state>
+          <postal>53711</postal>
+          <country>U.S.A.</country>
+        </cntaddr>
+        <cntvoice>608-238-9333</cntvoice>
+        <cntfax>608-238-9334</cntfax>
+        <cntemail>wetlands_team@fws.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <native>Microsoft Windows 2000 Version 5.2 (Build 3790) Service Pack 2; ESRI ArcCatalog 10.1 build 4400 service pack 5</native>
+  </idinfo>
+  <dataqual>
+    <lineage></lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Point</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>Entity point</sdtstype>
+        <ptvctcnt>62</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <planar>
+        <mapproj>
+          <mapprojn>Mercator_Auxiliary_Sphere</mapprojn>
+          <albers>
+            <stdparll>0.000000</stdparll>
+            <latprjo>0.000000</latprjo>
+            <feast>0.000000</feast>
+            <fnorth>0.000000</fnorth>
+          </albers>
+        </mapproj>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.000156</absres>
+            <ordres>0.000156</ordres>
+          </coordrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>GCS_WGS_1984</horizdn>
+        <ellips>WGS_1984</ellips>
+        <semiaxis>6378137.000000</semiaxis>
+        <denflat>298.257222</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altres>1.000000</altres>
+        <altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>
+CONUS_Public_Pts_of_Interest</enttypl>
+      </enttyp>
+      <attr>
+        <attrlabl>OBJECTID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>NAME</attrlabl>
+        <attrdef>Name of unique or important wetland site.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>OWNER</attrlabl>
+        <attrdef>Owner of unique or important wetland site.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>HYPERLINK</attrlabl>
+        <attrdef>Link to website about unique or important wetland site.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>COUNTY</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>STATE</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>TYPE</attrlabl>
+        <attrdef>General owership type of the unique or important wetland site.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>STATE_ACTION_PLAN</attrlabl>
+        <attrdef>Link to state wildlife action plan webpage.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>WATER_SUMMARY_REPORT</attrlabl>
+        <attrdef>Link to state water summary report document.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>DNR_CONTACT</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>FWS_CONTACT</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>SHAPE</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>HYPERLINK_2</attrlabl>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <resdesc>Not intended for distribution.</resdesc>
+  </distinfo>
+  <metainfo>
+    <metd>April 1, 2012</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Fish and Wildlife Service</cntorg>
+        </cntorgp>
+        <cntpos>National Standards and Support Team</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>505 Science Drive</address>
+          <city>Madison</city>
+          <state>WI</state>
+          <postal>53711</postal>
+        </cntaddr>
+        <cntvoice>608-238-9333</cntvoice>
+        <cntfax>608-238-9334</cntfax>
+        <cntemail>wetlands_team@fws.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <mettc>local time</mettc>
+    <metextns>
+      <onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+      <metprof>ESRI Metadata Profile</metprof>
+    </metextns>
+  </metainfo>
+</metadata>

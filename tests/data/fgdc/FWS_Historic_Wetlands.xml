@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>U.S. Fish and Wildlife Service</origin>
+        <pubdate>April 1, 2012</pubdate>
+        <title>National Wetlands Inventory - Historic Wetlands</title>
+        <geoform>vector digital data</geoform>
+        <serinfo>
+          <sername>Classification of Historic Wetland Habitats of the United States.  U.S. Department of the Interior, Fish and Wildlife Service, Washington, DC.  FWS/OBS-79/31.</sername>
+        </serinfo>
+        <pubinfo>
+          <pubplace>Washington, D.C.</pubplace>
+          <publish>U.S. Fish and Wildlife Service, Division of Habitat and Resouce Conservation</publish>
+        </pubinfo>
+        <onlink>http://www.fws.gov/wetlands/Data/Historic-Wetlands-Product-Summary.html</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This data set represents the extent, approximate location and type of historic wetland habitats in the conterminous United States. The U.S. Fish and Wildlife Service (Service) is the principal Federal agency that provides information to the public on the extent and status of the Nation's wetlands and provides stewardship for the wetlands data that comprise the Wetlands Layer of the National Spatial Data Infrastructure. In the formulation of this data layer, historic wetlands are defined as areas where there is evidence that a wetland once existed.  This evidence can be from historical map information inventories of past wetland extent or other information collected that relate directly to data on wetland filling, drainage or other modifications.  Historic wetlands have been identified using several different techniques depending on the availability and type of information used to locate these areas and user needs.  For example, historical maps often provide information about past wetland extent or location and can be useful tools to identify historic wetlands. Historic wetlands have been identified as polygonal data.  No linear features have been included.  Historic wetland polygons are not classified as wetlands and have no wetland labels or attribution.  Since these features no longer exist, boundary delineations are considered approximations based on topography, previously mapped information or indications of historic water levels.</abstract>
+      <purpose>The present goal of the Service is to provide the citizens of the United States and its Trust Territories with current geospatially referenced information on the status, extent, characteristics and functions of wetlands, riparian, deepwater, historic and related aquatic habitats in priority areas to promote the understanding and conservation of these resources.</purpose>
+      <supplinf>The historic wetland maps were produced as topical overlays using U.S. Geological Survey topographic maps as the base.  The data are intended for use in publications, at a scale of 1:24,000 or smaller. Due to the scale, the primary intended use is for regional and watershed data display and analysis, rather than specific project data analysis.  The map products were neither designed or intended to represent legal or regulatory products.
+            
+Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government.
+        
+Although this Federal Geographic Data Committee-compliant metadata file is intended to document the data set in nonproprietary form, as well as in Arc/INFO format, this metadata file may include some Arc/INFO-specific terminology.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>1952</begdate>
+          <enddate>2005</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Ongoing</progress>
+      <update>In Continuous Increments</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>144.599995</westbc>
+        <eastbc>-64.549579</eastbc>
+        <northbc>71.99633</northbc>
+        <southbc>13.166674</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Categories</themekt>
+        <themekey>environment</themekey>
+        <themekey>inlandWaters</themekey>
+        <themekey>geoscientificInformation</themekey>
+      </theme>
+      <theme>
+        <themekey>Historic Wetlands</themekey>
+      </theme>
+      <place>
+        <placekey>United States</placekey>
+        <placekey>Maine</placekey>
+        <placekey>Vermont</placekey>
+        <placekey>New Hampshire</placekey>
+        <placekey>Connecticut</placekey>
+        <placekey>Massachusetts</placekey>
+        <placekey>Delaware</placekey>
+        <placekey>Rhode Island</placekey>
+        <placekey>New York</placekey>
+        <placekey>New Jersey</placekey>
+        <placekey>Pennsylvania</placekey>
+        <placekey>West Virginia</placekey>
+        <placekey>District of Columbia</placekey>
+        <placekey>Virginia</placekey>
+        <placekey>Maryland</placekey>
+        <placekey>Ohio</placekey>
+        <placekey>Indiana</placekey>
+        <placekey>Michigan</placekey>
+        <placekey>Illinois</placekey>
+        <placekey>Wisconsin</placekey>
+        <placekey>Iowa</placekey>
+        <placekey>Missouri</placekey>
+        <placekey>Minnesota</placekey>
+        <placekey>Kansas</placekey>
+        <placekey>Nebraska</placekey>
+        <placekey>South Dakota</placekey>
+        <placekey>North Dakota</placekey>
+        <placekey>Montana</placekey>
+        <placekey>Colorado</placekey>
+        <placekey>Utah</placekey>
+        <placekey>Wyoming</placekey>
+        <placekey>Texas</placekey>
+        <placekey>Oklahoma</placekey>
+        <placekey>New Mexico</placekey>
+        <placekey>Arizona</placekey>
+        <placekey>Nevada</placekey>
+        <placekey>California</placekey>
+        <placekey>Oregon</placekey>
+        <placekey>Washington</placekey>
+        <placekey>Idaho</placekey>
+        <placekey>North Carolina</placekey>
+        <placekey>South Carolina</placekey>
+        <placekey>Georgia</placekey>
+        <placekey>Alabama</placekey>
+        <placekey>Florida</placekey>
+        <placekey>Mississippi</placekey>
+        <placekey>Louisiana</placekey>
+        <placekey>Arkansas</placekey>
+        <placekey>Kentucky</placekey>
+        <placekey>Tennessee</placekey>
+      </place>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>None. Acknowledgement of the U.S. Fish and Wildlife Service and (or) the National Wetlands Inventory would be appreciated in products derived from these data</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Fish and Wildlife Service</cntorg>
+        </cntorgp>
+        <cntpos>National Standards and Support Team</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>505 Science Drive</address>
+          <city>Madison</city>
+          <state>WI</state>
+          <postal>53711</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>608-238-9333</cntvoice>
+        <cntfax>608-238-9334</cntfax>
+        <cntemail>wetlands_team@fws.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <browse>
+      <browsed>Topical overlay showing the extent and type of historic wetlands.</browsed>
+    </browse>
+    <native>Microsoft Windows 2000 Version 5.2 (Build 3790) Service Pack 2; ESRI ArcCatalog 10.1 Build 4400</native>
+    <crossref>
+      <citeinfo>
+        <origin>U.S. Fish and Wildlife Serivce, National Wetlands Inventory</origin>
+        <pubdate>Various</pubdate>
+        <title>Historic Wetland Habitats of the Conterminous United States</title>
+        <edition>Version 1.0</edition>
+        <pubinfo>
+          <pubplace>Washington, D.C.  USA</pubplace>
+          <publish>U.S. Fish and Wildlife Service</publish>
+        </pubinfo>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>The source data was checked using standard review procedures. 
+	  </attraccr>
+      <qattracc>
+        <attraccv></attraccv>
+      </qattracc>
+    </attracc>
+    <logic></logic>
+    <complete>This data set represents the extent of historic wetland habitats that can be determined with the use of remotely sensed data and within the timeframe for which the maps were produced. The accuracy of image interpretation depends on the quality of the imagery, the experience of the image analysts, the amount and quality of the collateral data, and the amount of ground truth verification work conducted.  
+      
+      
+   </complete>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>U.S. Fish and Wildlife Service</origin>
+            <pubdate>1952 to 2005</pubdate>
+            <title>Historic Wetland Habitats of the Conterminous United States</title>
+            <serinfo>
+              <sername>National Wetlands Inventory Historic Wetland Maps</sername>
+            </serinfo>
+            <pubinfo>
+              <pubplace>Washington, D.C.</pubplace>
+              <publish>U.S. Fish and Wildlife Service</publish>
+            </pubinfo>
+          </citeinfo>
+        </srccite>
+        <srcscale>1:24,000 and 1:25,000</srcscale>
+        <typesrc>Digital file and hard copy paper</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1952</begdate>
+              <enddate>2005</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>ground condition</srccurr>
+        </srctime>
+        <srccontr>Spatial information</srccontr>
+      </srcinfo>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Vector</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>G-polygon</sdtstype>
+        <ptvctcnt>15448614</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <planar>
+        <mapproj>
+          <mapprojn>Mercator_Auxiliary_Sphere</mapprojn>
+        </mapproj>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>0.000156</absres>
+            <ordres>0.000156</ordres>
+          </coordrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>GCS_WGS_1984</horizdn>
+        <ellips>WGS_1984</ellips>
+        <semiaxis>6378137.000000</semiaxis>
+        <denflat>298.257222</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altres>1.000000</altres>
+        <altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>CONUS_historic_wet_poly</enttypl>
+        <enttypd></enttypd>
+        <enttypds>U.S. Fish and Wildlife Service</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>OBJECTID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Polygon</edomv>
+            <edomvd>2-dimensional element.</edomvd>
+            <edomvds>ESRI GIS software</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ATTRIBUTE</attrlabl>
+        <attrdef>Historic</attrdef>
+        <attrdefs>Presence of a historic wetland was identified by use of various ancillary datasets.  No attempt was made to determine what type of wetland.</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>SHAPE</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>WETLAND_TYPE</attrlabl>
+        <attrdef>General description of the wetland classification.</attrdef>
+      </attr>
+      <attr>
+        <attrlabl>ACRES</attrlabl>
+        <attrdef>Area of the polygon in acres.</attrdef>
+        <attrdefs>Calculated in an Albers Equal Area projection using ESRI's geometry calculator.</attrdefs>
+      </attr>
+      <attr>
+        <attrlabl>GLOBALID</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>SHAPE_Length</attrlabl>
+        <attrdef>Length of feature in internal units.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Positive real numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SHAPE_Area</attrlabl>
+        <attrdef>Area of feature in internal units squared.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Positive real numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Fish and Wildlife Service</cntorg>
+        </cntorgp>
+        <cntpos>National Standards and Support Team</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>505 Science Drive</address>
+          <city>Madison</city>
+          <state>WI</state>
+          <postal>53711</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>608-268-9333</cntvoice>
+        <cntfax>608-238-9334</cntfax>
+        <cntemail>wetlands_team@fws.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>Downloadable Data</resdesc>
+    <distliab>Although these data have been processed successfully on a computer system at the U.S. Fish and Wildlife Service, no warranty expressed or implied is made by the U.S. Fish and Wildlife Service regarding the utility of the data on any other system, nor shall the act of distribution constitute any such warranty. No responsibility is assumed by the U.S. Fish and Wildlife Service in the use of these data.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Shapefile or File Geodatabase</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>http://www.fws.gov/wetlands/data/DataDownload.html</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+          <offoptn>
+            <offmedia>CD-ROM or DVD</offmedia>
+          </offoptn>
+        </digtopt>
+      </digform>
+      <fees>There is no charge for the online option.  Requests for large amounts of data are handled on a cost reimbursable basis.</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>October, 2012</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Fish and Wildlife Service</cntorg>
+          <cntper>Wetlands Database Administrator</cntper>
+        </cntorgp>
+        <cntpos>National Standards and Support Team</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical address</addrtype>
+          <address>505 Science Drive</address>
+          <city>Madison</city>
+          <state>WI</state>
+          <postal>53711</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>608-238-9333</cntvoice>
+        <cntfax>608-238-9334</cntfax>
+        <cntemail>wetlands_team@fws.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <mettc>local time</mettc>
+    <metsi>
+      <metscs>None</metscs>
+      <metsc>Unclassified</metsc>
+      <metshd>None</metshd>
+    </metsi>
+    <metextns>
+      <onlink>http://www.fws.gov/wetlands/Data/metadata.html</onlink>
+    </metextns>
+    <metextns>
+      <onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+      <metprof>ESRI Metadata Profile</metprof>
+    </metextns>
+  </metainfo>
+</metadata>
