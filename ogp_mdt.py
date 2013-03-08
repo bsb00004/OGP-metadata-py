@@ -8,13 +8,13 @@ args = parser.parse_args()
 ws = args.workspace
 md = args.metadata_type
 
-if md == "MGMG":
+if md.lower() == "mgmg":
     if ws[-1] == '\\':
         mgmg2ogp.MGMG(ws)   
     else:
         mgmg2ogp.MGMG(ws+'\\')
 
-if md == "FGDC":
+if md.lower() == "fgdc":
     if ws[-1] == '\\':
         fgdc2ogp.FGDC(ws)   
     else:
