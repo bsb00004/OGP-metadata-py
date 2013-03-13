@@ -9,8 +9,15 @@ import json
 from logger import Logger
 from keyword_parse import keywordParse
 from datatype_parse import dataTypeParseMGMG
-import xml.etree.ElementTree as ET
-from xml.etree.ElementTree import ElementTree, Element, SubElement
+try:
+    from lxml import etree as et
+except ImportError:
+    try:
+        print "Python lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported"
+        from xml.etree import ElementTree as et
+    except ImportError:
+        print "No xml lib found. Please install lxml lib to continue"
+
 
     
 def MGMG(workspace):
@@ -59,7 +66,7 @@ def MGMG(workspace):
     for i in files:
         download_ags = 0
         print 'full file path is ', i
-        FGDCtree=ElementTree()
+        FGDCtree= et.ElementTree()
         root = FGDCtree.parse(i)
 
         #layerID equals filename sans extension 
@@ -85,7 +92,7 @@ def MGMG(workspace):
         DATATYPESORT = DATATYPE
 
         #create string representation of MGMG md to be appended at end of OGP md
-        MGMG_TEXT = ET.tostring(root)
+        MGMG_TEXT = et.tostring(root)
 
 
 
@@ -94,11 +101,13 @@ def MGMG(workspace):
         INSTITUTION = "University of Minnesota"
         INSTITUTIONSORT = "University of Minnesota"
         
-        try:
-            ACCESS = root.find("idinfo/accconst").text
-        except AttributeError as e:
-            print "Access Constraints field doesn't exist! Setting to UNKNOWN for now"        
-            ACCESS = "UNKNOWN"
+        #to avoid authentication complications, for now we'll just set access field to public
+        ACCESS= "public"
+#        try:
+#            ACCESS = root.find("idinfo/accconst").text
+#        except AttributeError as e:
+#            print "Access Constraints field doesn't exist! Setting to UNKNOWN for now"        
+#            ACCESS = "UNKNOWN"
 
         AVAILABILITY = "Online"
         
@@ -204,20 +213,20 @@ def MGMG(workspace):
     ##        LOCATION = '{"ArcGIS93Rest" : "' + REST_URL + '", "tilecache" : "None", "download" : "' + DOWNLOAD_URL + '", "wfs" : "None"}'
         try:
             if df_lyrs.has_key(LAYERID):
-                ARCGISREST = df_lyrs[LAYERID]["ArcGISRest"]
-                print 'Found',LAYERID,' so removing it from df_lyrs'
-                df_lyrs.pop(LAYERID)              
+                ARCGISREST = df_lyrs[LAYERID]["ArcGISRest"]             
                 SERVERTYPE = df_lyrs[LAYERID]["ServerType"]
+                print 'Found',LAYERID,' so removing it from df_lyrs'
+                df_lyrs.pop(LAYERID) 
                 if root.find("idinfo/citation/citeinfo/onlink") is not None:
                     DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
                     LOCATION = json.dumps({
-                        'ArcGIS93Rest': ARCGISREST,
+                        'ArcGISRest': ARCGISREST,
                         'download' : DOWNLOAD_URL,
                         'ServerType': SERVERTYPE
                         })
                 else:
                     LOCATION = json.dumps({
-                        'ArcGIS93Rest': ARCGISREST,
+                        'ArcGISRest': ARCGISREST,
                         'ServerType': SERVERTYPE
                         })
             else:
@@ -232,30 +241,46 @@ def MGMG(workspace):
         
         #Put it all together to make the OGP metadata xml file
         
-        OGPtree = ElementTree()
-        OGProot = Element("add",allowDups="false")
-        doc = SubElement(OGProot,"doc")
+        OGPtree = et.ElementTree()
+        OGProot = et.Element("add",allowDups="false")
+        doc = et.SubElement(OGProot,"doc")
         OGPtree._setroot(OGProot)
         try:
             for field in fields:
-                fieldEle = SubElement(doc,"field",name=field)
+                fieldEle = et.SubElement(doc,"field",name=field)
                 fieldEle.text = locals()[field.upper()]
         except KeyError as e:
             print "Nonexistant key: ", field 
-        mgmg_text=SubElement(doc,"field",name="MgmgText")
+        mgmg_text = et.SubElement(doc,"field",name="MgmgText")
         mgmg_text.text = '<?xml version="1.0"?>'+MGMG_TEXT
-        
-        if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
-            existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
-            if existsPrompt == 'Y':
-                OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
-                print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
-            else:
-                pass
-        else:
-            OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
-            print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
 
+        #check to see which etree module was used. If lxml was used
+        #then we can pretty print the results. Otherwise we need to
+        #remove the pretty print kwarg
+        if et.__name__[0] == "l":     
+            if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
+                existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                if existsPrompt == 'Y':
+                    OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                    print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                else:
+                    pass
+            else:
+                OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                
+                print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+        else:
+            if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
+                existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                if existsPrompt == 'Y':
+                    OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
+                    print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                else:
+                    pass
+            else:
+                OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
+                
+                print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
 
         print "Next!\n"
 
