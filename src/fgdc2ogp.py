@@ -8,13 +8,15 @@ import glob
 import json
 from logger import Logger
 from keyword_parse import keywordParse
-from datatype_parse import *
-import xml.etree.ElementTree as ET
-from xml.etree.ElementTree import ElementTree, Element, SubElement
-
-#########################
-##ArcGIS to FGDC to OGP##
-#########################
+from datatype_parse import dataTypeParseFGDC
+try:
+    from lxml import etree as et
+except ImportError:
+    try:
+        print "Python lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported"
+        from xml.etree import ElementTree as et
+    except ImportError:
+        print "No xml lib found. Please install lxml lib to continue"
 
 def FGDC(workspace): 
     """
@@ -26,14 +28,16 @@ def FGDC(workspace):
     """
     Set output location for OGP metadata and log file, then instantiate Logger
     """
-    if os.path.exists(ws+"\\output\\"):
-        OUTPUT_LOCATION = ws+"\\output\\"
+    if os.path.exists(ws+"output\\"):
+        OUTPUT_LOCATION = ws+"output\\"
     else:
-        os.mkdir(ws+"\\output\\")
-        OUTPUT_LOCATION = ws+"\\output\\"
+        os.mkdir(ws+"output\\")
+        OUTPUT_LOCATION = ws+"output\\"
     print 'output location: ',OUTPUT_LOCATION
+    
     d=datetime.today()
     LOG_NAME = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
+    
     sys.stdout = Logger(OUTPUT_LOCATION,LOG_NAME)
 
     files = glob.glob(ws+'*[!aux].xml')
@@ -48,33 +52,32 @@ def FGDC(workspace):
           'LayerDisplayNameSort', 'Publisher', 'PublisherSort', 'Originator',
           'OriginatorSort', 'ThemeKeywords', 'PlaceKeywords', 'Abstract', 'MaxY',
           'MinY', 'MinX', 'MaxX', 'ContentDate']
-
-    """
-    Set UTC timezone for ContentDate field
-    """
+  
+    #Set UTC timezone for ContentDate field
+ 
     utc = pytz.utc
 
+
+
+
+    #start the clock! obviously not at all necessary 
+      
+    start = clock()
+
     for i in files:
-        """
-        start the clock! obviously not at all necessary 
-        """
-        start = clock()
-        
-        FGDCtree=ElementTree()
+        FGDCtree = et.ElementTree()
         root = FGDCtree.parse(i)
              
         DATATYPE = dataTypeParseFGDC(root)
         DATATYPESORT = DATATYPE
 
         #create string representation of FGDC md to be appended at end of OGP md
-        FGDC_TEXT = ET.tostring(root)
+        FGDC_TEXT = et.tostring(root)
 
         #layerID equals filename sans extension 
         LAYERID = i[i.rfind('\\')+1:i.rfind(".")]
         print 'layerid is ', LAYERID
         
-        #name equals FGDC title field
-        #NAME = root.find("idinfo/citation/citeinfo/title").text
         try:
             NAME = root.findtext("idinfo/citation/citeinfo/title")
         except AttributeError as e:
@@ -86,16 +89,26 @@ def FGDC(workspace):
         INSTITUTION = "University of Minnesota"
         INSTITUTIONSORT = "University of Minnesota"
         
-        try:
-            ACCESS = root.find("idinfo/accconst").text
-        except AttributeError as e:
-            print "Access field doesn't exist! Setting to UNKNOWN for now"        
-            ACCESS = "UNKNOWN"
-
+        #to avoid authentication complications, for now we'll just set access field to public
+        ACCESS= "public"
+        #try:
+        #    ACCESS = root.find("idinfo/accconst").text
+        #except AttributeError as e:
+        #    print "Access Constraints field doesn't exist! Setting to UNKNOWN for now"        
+        #    ACCESS = "UNKNOWN"
         AVAILABILITY = "Online"
 
-        LAYERDISPLAYNAME = NAME
-        LAYERDISPLAYNAMESORT = NAME
+        #set Display Name equal to title element   
+        try:
+            LAYERDISPLAYNAME = root.findtext("idinfo/citation/citeinfo/title")
+ 
+        except AttributeError:
+            print 'No Title element found...'
+            LAYERDISPLAYNAME = "UNKNOWN"
+        
+        LAYERDISPLAYNAMESORT = LAYERDISPLAYNAME
+        
+                
         try:
             #PUBLISHER = root.find("idinfo/citation/citeinfo/pubinfo/publish").text
             PUBLISHER = root.findtext("idinfo/citation/citeinfo/pubinfo/publish")
@@ -204,17 +217,17 @@ def FGDC(workspace):
         """
         Put it all together to make the OGP metadata xml file
         """
-        OGPtree = ElementTree()
-        OGProot = Element("add",allowDups="false")
-        doc = SubElement(OGProot,"doc")
+        OGPtree = et.ElementTree()
+        OGProot = et.Element("add",allowDups="false")
+        doc = et.SubElement(OGProot,"doc")
         OGPtree._setroot(OGProot)
         try:
             for field in fields:
-                fieldEle = SubElement(doc,"field",name=field)
+                fieldEle = et.SubElement(doc,"field",name=field)
                 fieldEle.text = locals()[field.upper()]
         except KeyError as e:
             print "Nonexistant key: ", field 
-        fgdc_text=SubElement(doc,"field",name="FgdcText")
+        fgdc_text = et.SubElement(doc,"field",name="FgdcText")
         fgdc_text.text = '<?xml version="1.0"?>'+FGDC_TEXT
         
         if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):

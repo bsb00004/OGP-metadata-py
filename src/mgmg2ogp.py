@@ -29,7 +29,12 @@ def MGMG(workspace):
     
     #Set output location for OGP metadata and log file, then instantiate Logger
     
-    OUTPUT_LOCATION = ws+"output\\"
+    if os.path.exists(ws+"output\\"):
+        OUTPUT_LOCATION = ws+"output\\"
+    else:
+        os.mkdir(ws+"output\\")
+        OUTPUT_LOCATION = ws+"output\\"
+    print 'output location: ',OUTPUT_LOCATION
 
     d=datetime.today()
     LOG_NAME = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
@@ -43,18 +48,15 @@ def MGMG(workspace):
               'Access', 'DataType', 'DataTypeSort', 'Availability', 'LayerDisplayName',
               'LayerDisplayNameSort', 'Publisher', 'PublisherSort', 'Originator',
               'OriginatorSort', 'ThemeKeywords', 'PlaceKeywords', 'Abstract', 'MaxY',
-              'MinY', 'MinX', 'MaxX', 'ContentDate','Location']
-
-
+              'MinY', 'MinX', 'MaxX', 'ContentDate','Location','WorkspaceName']
     
     #Set UTC timezone for ContentDate field
     
     utc = pytz.utc
-
     
     #List of layers and their respective URLs from Datafinder.org
     
-    df_lyrs_file = open("G:\\Documents\\GitHub\\OGP-metadata-py\\tests\\datafinder_layers.json",'r')
+    df_lyrs_file = open("G:\\GoogleDrive\\Google Drive\\GitHub\\OGP-metadata-py\\tests\\datafinder_layers.json",'r')
     df_lyrs = json.loads(df_lyrs_file.read())
 
 
@@ -64,7 +66,6 @@ def MGMG(workspace):
     start = clock()
 
     for i in files:
-        download_ags = 0
         print 'full file path is ', i
         FGDCtree= et.ElementTree()
         root = FGDCtree.parse(i)
@@ -102,7 +103,7 @@ def MGMG(workspace):
         INSTITUTIONSORT = "University of Minnesota"
         
         #to avoid authentication complications, for now we'll just set access field to public
-        ACCESS= "public"
+        ACCESS= "Public"
 #        try:
 #            ACCESS = root.find("idinfo/accconst").text
 #        except AttributeError as e:
@@ -111,8 +112,7 @@ def MGMG(workspace):
 
         AVAILABILITY = "Online"
         
-        #set Display Name equal to title element
-        
+        #set Display Name equal to title element    
         try:
             LAYERDISPLAYNAME = root.findtext("idinfo/citation/citeinfo/title")
  
@@ -121,8 +121,7 @@ def MGMG(workspace):
             LAYERDISPLAYNAME = "UNKNOWN"
         
         LAYERDISPLAYNAMESORT = LAYERDISPLAYNAME
-                #name equals FGDC title field
-
+               
         try:
             PUBLISHER = root.findtext("idinfo/citation/citeinfo/pubinfo/publish")
         except AttributeError as e:
@@ -251,7 +250,11 @@ def MGMG(workspace):
                 fieldEle.text = locals()[field.upper()]
         except KeyError as e:
             print "Nonexistant key: ", field 
-        mgmg_text = et.SubElement(doc,"field",name="MgmgText")
+        
+        #TODO eventually change OGP code base to recognize MgmgText as a
+        #field and parse the metadata accordingly    
+        #mgmg_text = et.SubElement(doc,"field",name="MgmgText")
+        mgmg_text = et.SubElement(doc,"field",name="FgdcText")
         mgmg_text.text = '<?xml version="1.0"?>'+MGMG_TEXT
 
         #check to see which etree module was used. If lxml was used
