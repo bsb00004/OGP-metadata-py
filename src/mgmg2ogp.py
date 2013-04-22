@@ -6,6 +6,7 @@ import urllib
 import StringIO
 import glob
 import json
+import random
 from logger import Logger
 from keyword_parse import keywordParse
 from datatype_parse import dataTypeParseMGMG
@@ -20,21 +21,29 @@ except ImportError:
 
 
     
-def MGMG(workspace):
+def MGMG(workspace,error_tolerance):
     """
     Set workspace (where datasets to be processed are located) below
     """
     ws = workspace
-
+    max_errors = error_tolerance
+    
     
     #Set output location for OGP metadata and log file, then instantiate Logger
-    
-    if os.path.exists(ws+"output\\"):
-        OUTPUT_LOCATION = ws+"output\\"
+    output_random = random.randint(0,100000000)
+    if os.path.exists(ws+"output" + str(output_random) + "\\"):
+        OUTPUT_LOCATION = ws+"output" + str(output_random) + "\\"
     else:
-        os.mkdir(ws+"output\\")
-        OUTPUT_LOCATION = ws+"output\\"
-    print 'output location: ',OUTPUT_LOCATION
+        os.mkdir(ws+"output" + str(output_random) + "\\")
+        OUTPUT_LOCATION =ws+"output" + str(output_random) + "\\"
+
+    if os.path.exists(ws+"error"+ str(output_random) + "\\"):
+        ERROR_LOCATION = ws+"error"+ str(output_random) + "\\"
+    else:
+        os.mkdir(ws+"error"+ str(output_random) + "\\")
+        ERROR_LOCATION = ws+"error"+ str(output_random) + "\\"
+    print 'output location: ', OUTPUT_LOCATION
+    print 'error location: ', ERROR_LOCATION
 
     d=datetime.today()
     LOG_NAME = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
@@ -67,12 +76,13 @@ def MGMG(workspace):
 
     for i in files:
         print 'full file path is ', i
+        error_counter = 0
         FGDCtree= et.ElementTree()
         root = FGDCtree.parse(i)
 
         #layerID equals filename sans extension 
         LAYERID = i[i.rfind('\\')+1:i.rfind(".")]
-        print 'layerid is ', LAYERID
+        #print 'layerid is ', LAYERID
         
         try:
             if df_lyrs.has_key(LAYERID):
@@ -82,14 +92,17 @@ def MGMG(workspace):
         except AttributeError as e:
             print "Name field doesn't exist! Setting to UNKNOWN for now"
             NAME = "UNKNOWN"
+            error_counter += 1
         
         try:
             if df_lyrs.has_key(LAYERID):
                 WORKSPACENAME = unicode(df_lyrs[LAYERID]["WorkspaceName"])
         except AttributeError as e:
             print 'Workspace name error: ',e
-            
+            error_counter += 1
         DATATYPE = dataTypeParseMGMG(root)
+        if DATATYPE == "Undefined":
+            error_counter += 1
         DATATYPESORT = DATATYPE
 
         #create string representation of MGMG md to be appended at end of OGP md
@@ -119,6 +132,7 @@ def MGMG(workspace):
         except AttributeError:
             print 'No Title element found...'
             LAYERDISPLAYNAME = "UNKNOWN"
+            error_counter += 1
         
         LAYERDISPLAYNAMESORT = LAYERDISPLAYNAME
                
@@ -127,6 +141,7 @@ def MGMG(workspace):
         except AttributeError as e:
             print "Publisher field doesn't exist! Setting to UNKNOWN for now"
             PUBLISHER = "UNKNOWN"
+            error_counter += 1
         finally:
             PUBLISHERSORT = PUBLISHER
         
@@ -135,6 +150,7 @@ def MGMG(workspace):
         except AttributeError as e:
             print "Originator field doesn't exist! Setting to UNKNOWN for now"
             ORIGINATOR = "UNKNOWN"
+            error_counter += 1
         finally:
             ORIGINATORSORT = ORIGINATOR
             
@@ -150,13 +166,55 @@ def MGMG(workspace):
             ABSTRACT = "UNKNOWN"
         
         try:
-            MINX=root.find("idinfo/spdom/bounding/westbc").text
-            MINY=root.find("idinfo/spdom/bounding/southbc").text
-            MAXX=root.find("idinfo/spdom/bounding/eastbc").text
-            MAXY=root.find("idinfo/spdom/bounding/northbc").text
-
+            MINX = root.find("idinfo/spdom/bounding/westbc").text
+            try:
+                MINXf = float(MINX)
+            except (TypeError, ValueError):
+                print 'Invalid West Bounding Coordinate of:',MINX
+                error_counter += 1
+            
         except AttributeError as e:
-            print "extent information not found!"
+            print "West Bounding Coordinate not found!"
+            error_counter += 1
+            
+        try:
+            MINY = root.find("idinfo/spdom/bounding/southbc").text
+            try:
+                MINYf = float(MINY)
+            except (TypeError, ValueError):
+                print 'Invalid South Bounding Coordinate of:',MINY
+                error_counter += 1
+        except AttributeError as e:
+            print "South Bounding Coordinate not found!"
+            error_counter += 1
+            
+        try:
+            MAXX = root.find("idinfo/spdom/bounding/eastbc").text
+            try:
+                MAXXf = float(MAXX)
+            except (TypeError, ValueError):
+                print 'Invalid East Bounding Coordinate of:',MAXX
+                error_counter += 1
+        except AttributeError as e:
+            print "East Bounding Coordinate not found!"
+            error_counter += 1
+            
+        try:
+            MAXY = root.find("idinfo/spdom/bounding/northbc").text
+            try:
+                MAXYf = float(MAXY)
+            except (TypeError, ValueError):
+                print 'Invalid North Bounding Coordinate of:',MAXY
+                error_counter += 1
+        except AttributeError as e:
+            print "North Bounding Coordinate not found!"
+            error_counter += 1
+           
+                
+
+
+        
+
         
         
         try:
@@ -178,10 +236,12 @@ def MGMG(workspace):
         except AttributeError as e:
             print "No content date found! setting to UNKNOWN for now"
             CONTENTDATE = "UNKNOWN"
+            error_counter += 1
 
         except TypeError as e:
             print "|-|-|-| No content date found! setting to UNKNOWN for now"
             CONTENTDATE = "UNKNOWN"
+            error_counter += 1
             
         # location is too specific at the moment
         
@@ -214,7 +274,7 @@ def MGMG(workspace):
             if df_lyrs.has_key(LAYERID):
                 ARCGISREST = df_lyrs[LAYERID]["ArcGISRest"]             
                 SERVERTYPE = df_lyrs[LAYERID]["ServerType"]
-                print 'Found',LAYERID,' so removing it from df_lyrs'
+                #print 'Found',LAYERID,' so removing it from df_lyrs'
                 df_lyrs.pop(LAYERID) 
                 if root.find("idinfo/citation/citeinfo/onlink") is not None:
                     DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
@@ -236,7 +296,8 @@ def MGMG(workspace):
                         })
         except AttributeError as e:
             print 'LOCATION error: ', e
-          
+            error_counter += 1
+        print 'number of errors: ', error_counter  
         
         #Put it all together to make the OGP metadata xml file
         
@@ -249,7 +310,8 @@ def MGMG(workspace):
                 fieldEle = et.SubElement(doc,"field",name=field)
                 fieldEle.text = locals()[field.upper()]
         except KeyError as e:
-            print "Nonexistant key: ", field 
+            print "Nonexistant key: ", field
+            error_counter += 1
         
         #TODO eventually change OGP code base to recognize MgmgText as a
         #field and parse the metadata accordingly    
@@ -260,32 +322,59 @@ def MGMG(workspace):
         #check to see which etree module was used. If lxml was used
         #then we can pretty print the results. Otherwise we need to
         #remove the pretty print kwarg
-        if et.__name__[0] == "l":     
-            if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
-                existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
-                if existsPrompt == 'Y':
+        if et.__name__[0] == "l":
+            if error_counter <= max_errors:
+                if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
+                    existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                    if existsPrompt == 'Y':
+                        OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                        print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                    else:
+                        pass
+                else:
                     OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                    
                     print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
-                else:
-                    pass
             else:
-                OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
-                
-                print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                print 'File exceeded error tolerance of ', max_errors,', so into the error folder it goes'
+                if os.path.exists(ERROR_LOCATION + LAYERID + "_OGP.xml"):
+                    existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                    if existsPrompt == 'Y':
+                        OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                        print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
+                    else:
+                        pass
+                else:
+                    OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                    
+                    print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
         else:
-            if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
-                existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
-                if existsPrompt == 'Y':
-                    OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
-                    print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+            if error_counter <= max_errors:
+                if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
+                    existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                    if existsPrompt == 'Y':
+                        OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
+                        print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                    else:
+                        pass
                 else:
-                    pass
+                    OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")     
+                    print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
             else:
-                OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
-                
-                print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                print 'File exceeded error tolerance of ', max_errors,', so into the error folder it goes'
+                if os.path.exists(ERROR_LOCATION + LAYERID + "_OGP.xml"):
+                    existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                    if existsPrompt == 'Y':
+                        OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml")
+                        print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
+                    else:
+                        pass
+                else:
+                    OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml")
+                    
+                    print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
 
-        print "Next!\n"
+        print "\n"
 
     end = clock()
 
