@@ -12,9 +12,9 @@ def dataTypeParseFGDC(root):
                 return "Raster"
             elif (root.findtext("*//direct").lower() == "g-polygon" or root.findtext("*//direct").lower() == "polygon" or root.findtext("*//direct").lower() == "chain"):
                 return "Polygon"
-        elif root.find("*//sdtstype") is not None and root.find("*//sdtstype").lower() == "composite"
+        elif root.find("*//sdtstype") is not None and root.find("*//sdtstype").lower() == "composite":
             return "Point"
-        elif root.find("*//sdtstype") is not None and root.find("*//sdtstype").lower() == "string"
+        elif root.find("*//sdtstype") is not None and root.find("*//sdtstype").lower() == "string":
             return "Line"
         
     except AttributeError as e:

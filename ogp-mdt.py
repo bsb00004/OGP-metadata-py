@@ -19,14 +19,14 @@ if os.path.exists(ws) == False:
 elif os.path.exists(ws) == True:
     if md.lower() == "mgmg":
         if ws[-1] == '\\':
-            mgmg2ogp.MGMG(ws,et)   
+            mgmg2ogp.MGMG(ws, et)   
         else:
-            mgmg2ogp.MGMG(ws+'\\',et)
+            mgmg2ogp.MGMG(ws+'\\', et)
     
     elif md.lower() == "fgdc":
         if ws[-1] == '\\':
-            fgdc2ogp.FGDC(ws)   
+            fgdc2ogp.FGDC(ws, et)   
         else:
-            fgdc2ogp.FGDC(ws+'\\')
+            fgdc2ogp.FGDC(ws+'\\', et)
     else:
         print "Unsupported metadata type entered. Currently supported values are FGDC or MGMG"

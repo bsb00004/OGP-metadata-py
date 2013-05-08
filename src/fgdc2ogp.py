@@ -18,13 +18,14 @@ except ImportError:
     except ImportError:
         print "No xml lib found. Please install lxml lib to continue"
 
-def FGDC(workspace): 
+def FGDC(workspace, error_tolerance): 
     """
     Set workspace (where datasets to be processed are located) below
     """
     ws = workspace
 
-
+    max_errors = error_tolerance
+    
     """
     Set output location for OGP metadata and log file, then instantiate Logger
     """
@@ -65,6 +66,7 @@ def FGDC(workspace):
     start = clock()
 
     for i in files:
+        error_counter = 0
         FGDCtree = et.ElementTree()
         root = FGDCtree.parse(i)
              
@@ -177,6 +179,7 @@ def FGDC(workspace):
             print "|-|-|-| No content date found! setting to UNKNOWN for now"
             CONTENTDATE = "UNKNOWN"
 
+        print CONTENTDATE
 
         """
         LOCATION
@@ -217,6 +220,7 @@ def FGDC(workspace):
         """
         Put it all together to make the OGP metadata xml file
         """
+        
         OGPtree = et.ElementTree()
         OGProot = et.Element("add",allowDups="false")
         doc = et.SubElement(OGProot,"doc")
@@ -226,23 +230,70 @@ def FGDC(workspace):
                 fieldEle = et.SubElement(doc,"field",name=field)
                 fieldEle.text = locals()[field.upper()]
         except KeyError as e:
-            print "Nonexistant key: ", field 
+            print "Nonexistant key: ", field
+            error_counter += 1
+        
+
         fgdc_text = et.SubElement(doc,"field",name="FgdcText")
         fgdc_text.text = '<?xml version="1.0"?>'+FGDC_TEXT
-        
-        if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
-            existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
-            if existsPrompt == 'Y':
-                OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
-                print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+
+        #check to see which etree module was used. If lxml was used
+        #then we can pretty print the results. Otherwise we need to
+        #remove the pretty print kwarg
+        if et.__name__[0] == "l":
+            if error_counter <= max_errors:
+                if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
+                    existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                    if existsPrompt == 'Y':
+                        OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                        print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                    else:
+                        pass
+                else:
+                    OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                    
+                    print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
             else:
-                pass
+                print 'File exceeded error tolerance of ', max_errors,', so into the error folder it goes'
+                if os.path.exists(ERROR_LOCATION + LAYERID + "_OGP.xml"):
+                    existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                    if existsPrompt == 'Y':
+                        OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                        print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
+                    else:
+                        pass
+                else:
+                    OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                    
+                    print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
         else:
-            OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
-            print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+            if error_counter <= max_errors:
+                if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
+                    existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                    if existsPrompt == 'Y':
+                        OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
+                        print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                    else:
+                        pass
+                else:
+                    OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")     
+                    print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+            else:
+                print 'File exceeded error tolerance of ', max_errors,', so into the error folder it goes'
+                if os.path.exists(ERROR_LOCATION + LAYERID + "_OGP.xml"):
+                    existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
+                    if existsPrompt == 'Y':
+                        OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml")
+                        print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
+                    else:
+                        pass
+                else:
+                    OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml")
+                    
+                    print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
 
-        print "Next!\n"
-
+        print "\n"
+        
     end = clock()
     if (end-start) > 60:
         mins = str(math.ceil((end - start) / 60))
