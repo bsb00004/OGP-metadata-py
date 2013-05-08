@@ -152,7 +152,20 @@ def FGDC(workspace, error_tolerance):
             if root.find("idinfo/timeperd/timeinfo/sngdate/caldate") is not None:
                 dateText = root.find("idinfo/timeperd/timeinfo/sngdate/caldate").text
                 if len(dateText) == 4:
-                    CONTENTDATE = dateText
+                    #if it's just 4 digits, lets assume it's the year and convert it to integer
+                    year = int(dateText)
+
+                    #set month to January
+                    month = 1
+
+                    #set day to the 1st
+                    day = 1
+
+                    #put em all together
+                    date = datetime(year,month,day)
+
+                    #now format it ISO style
+                    CONTENTDATE = date.isoformat() + "Z"
                 elif len(dateText) == 8:
                     #print dateText
                     year = int(dateText[0:4])
@@ -163,7 +176,20 @@ def FGDC(workspace, error_tolerance):
             elif root.find("idinfo/timeperd/timeinfo/rngdates/begdate") is not None:
                 dateText = root.find("idinfo/timeperd/timeinfo/rngdates/begdate").text
                 if len(dateText) == 4:
-                    CONTENTDATE = dateText
+                    #if it's just 4 digits, lets assume it's the year
+                    year = dateText
+
+                    #set month to January
+                    month = 1
+
+                    #set day to the 1st
+                    day = 1
+
+                    #put em all together
+                    date = datetime(year,month,day)
+
+                    #now format it ISO style
+                    CONTENTDATE = date.isoformat() + "Z"
                 elif len(dateText) == 8:
                     #print dateText
                     year = int(dateText[0:4])
