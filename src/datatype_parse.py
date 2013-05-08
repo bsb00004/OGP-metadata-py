@@ -4,15 +4,22 @@ Helper functions for parsing data type
     
 def dataTypeParseFGDC(root):
     try:
-        if root.findtext("*//geoform").lower() == "scanned paper map":
-            return "Paper Map"
-        elif root.findtext("*//direct").lower() == "raster":
-            return "Raster"
-        elif (root.findtext("*//direct").lower() == "g-polygon" or root.findtext("*//direct").lower() == "polygon" or root.findtext("*//direct").lower() == "chain"):
-            return "Polygon"
+        if root.findtext("*//geoform") is not None:
+            if root.findtext("*//geoform").lower() == "scanned paper map":
+                return "Paper Map"
+        elif root.findtext("*//direct") is not None: 
+            if root.findtext("*//direct").lower() == "raster":
+                return "Raster"
+            elif (root.findtext("*//direct").lower() == "g-polygon" or root.findtext("*//direct").lower() == "polygon" or root.findtext("*//direct").lower() == "chain"):
+                return "Polygon"
+        elif root.find("*//sdtstype") is not None and root.find("*//sdtstype").lower() == "composite"
+            return "Point"
+        elif root.find("*//sdtstype") is not None and root.find("*//sdtstype").lower() == "string"
+            return "Line"
+        
     except AttributeError as e:
-        print "Can't determine data type, setting to UNKNOWN for now"
-        return "UKNOWN"
+        print "Can't determine data type, setting to Undefined for now"
+        return "Undefined"
 
 def dataTypeParseMGMG(root):
 
