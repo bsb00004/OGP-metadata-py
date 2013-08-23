@@ -11,7 +11,7 @@ ws = args.workspace
 md = args.metadata_type
 et = args.et
 if et == None:
-    et = 5
+    et = 5000
     
 
 if os.path.exists(ws) == False:
