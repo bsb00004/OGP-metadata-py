@@ -6,7 +6,7 @@ Usable at the command line
 <b>ogp-mdt.py [workspace] [metadata_standard] {--et}</b>
 
 <b>workspace</b> - The filesystem location of the data to be converted (currently assumes a completely flat organization of the data)  
-<b>metadata_standard</b> - Either FGDC or MGMG (ARCGIS option to be added soon)  
+<b>metadata_standard</b> - Either FGDC or MGMG (ARCGIS option in the works)  
 <b><i>--et</i></b> - OPTIONAL - Error tolerance. Default value of 5000 (!), where 0 means any omitted or invalid OGP field will result in the file being relegated to the error folder and 10 means up to ten problem fields are tolerated (not a great idea, but depending on the state of your data, could be necessary, hence the default of 5000!). 
 
 
