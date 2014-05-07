@@ -31,17 +31,19 @@ def MGMG(workspace,error_tolerance):
     
     #Set output location for OGP metadata and log file, then instantiate Logger
     output_random = random.randint(0,100000000)
-    if os.path.exists(ws+"output" + str(output_random) + "\\"):
-        OUTPUT_LOCATION = ws+"output" + str(output_random) + "\\"
-    else:
-        os.mkdir(ws+"output" + str(output_random) + "\\")
-        OUTPUT_LOCATION =ws+"output" + str(output_random) + "\\"
+    output_path = os.path.join(ws,"output" + str(output_random))
+    error_path = os.path.join(ws,"error" + str(output_random))
 
-    if os.path.exists(ws+"error"+ str(output_random) + "\\"):
-        ERROR_LOCATION = ws+"error"+ str(output_random) + "\\"
-    else:
-        os.mkdir(ws+"error"+ str(output_random) + "\\")
-        ERROR_LOCATION = ws+"error"+ str(output_random) + "\\"
+    if not os.path.exists(output_path):
+        os.mkdir(output_path)
+
+    OUTPUT_LOCATION = output_path
+
+    if not os.path.exists(error_path):
+        os.mkdir(error_path)
+    
+    ERROR_LOCATION = error_path 
+
     print 'output location: ', OUTPUT_LOCATION
     print 'error location: ', ERROR_LOCATION
 
@@ -65,14 +67,15 @@ def MGMG(workspace,error_tolerance):
     
     #List of layers and their respective URLs from Datafinder.org
     
-    df_lyrs_file = open("G:\\GoogleDrive\\Google Drive\\GitHub\\OGP-metadata-py\\tests\\datafinder_layers.json",'r')
-    df_lyrs = json.loads(df_lyrs_file.read())
-
+    #df_lyrs_file = open("G:\\GoogleDrive\\Google Drive\\GitHub\\OGP-metadata-py\\tests\\datafinder_layers.json",'r')
+    #df_lyrs = json.loads(df_lyrs_file.read())
+    df_lyrs = {}
 
    
-    #start the clock! obviously not at all necessary 
-   
+    #start the clock! 
     start = clock()
+
+    print ('files: ', files)
 
     for i in files:
         print 'full file path is ', i
@@ -80,8 +83,11 @@ def MGMG(workspace,error_tolerance):
         FGDCtree= et.ElementTree()
         root = FGDCtree.parse(i)
 
-        #layerID equals filename sans extension 
-        LAYERID = i[i.rfind('\\')+1:i.rfind(".")]
+        #layerID equals filename sans extension
+        file_name = os.path.basename(i)
+        file_name = file_name[0:file_name.rfind('.')]
+        LAYERID = file_name
+ 
         #print 'layerid is ', LAYERID
         
         try:
@@ -100,6 +106,7 @@ def MGMG(workspace,error_tolerance):
         except AttributeError as e:
             print 'Workspace name error: ',e
             error_counter += 1
+
         DATATYPE = dataTypeParseMGMG(root)
         if DATATYPE == "Undefined":
             error_counter += 1
@@ -107,8 +114,6 @@ def MGMG(workspace,error_tolerance):
 
         #create string representation of MGMG md to be appended at end of OGP md
         MGMG_TEXT = et.tostring(root)
-
-
 
         COLLECTIONID = "initial collection"
         
@@ -324,55 +329,54 @@ def MGMG(workspace,error_tolerance):
         #remove the pretty print kwarg
         if et.__name__[0] == "l":
             if error_counter <= max_errors:
-                if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
+                if os.path.exists(os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml")):
                     existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
                     if existsPrompt == 'Y':
-                        OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
-                        print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                        OGPtree.write(os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml"),pretty_print=True)
+                        print "Output file: " + os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml")
                     else:
                         pass
                 else:
-                    OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
-                    
-                    print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                    OGPtree.write(os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml"),pretty_print=True)
+                    print "Output file: " + os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml")
             else:
                 print 'File exceeded error tolerance of ', max_errors,', so into the error folder it goes'
-                if os.path.exists(ERROR_LOCATION + LAYERID + "_OGP.xml"):
+                if os.path.exists(os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml")):
                     existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
                     if existsPrompt == 'Y':
-                        OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
-                        print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
+                        OGPtree.write(os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml"),pretty_print=True)
+                        print "Output file: " + os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml")
                     else:
                         pass
                 else:
-                    OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml",pretty_print=True)
+                    OGPtree.write(os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml"),pretty_print=True)
                     
-                    print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
+                    print "Output file: " + os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml")
         else:
             if error_counter <= max_errors:
-                if os.path.exists(OUTPUT_LOCATION + LAYERID + "_OGP.xml"):
+                if os.path.exists(os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml")):
                     existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
                     if existsPrompt == 'Y':
-                        OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")
-                        print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                        OGPtree.write(os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml"))
+                        print "Output file: " + os.path.join(OUTPUT_LOCATION , LAYERID + "_OGP.xml")
                     else:
                         pass
                 else:
-                    OGPtree.write(OUTPUT_LOCATION + LAYERID + "_OGP.xml")     
-                    print "Output file: " + OUTPUT_LOCATION + LAYERID + "_OGP.xml"
+                    OGPtree.write(os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml"))
+                    print "Output file: " + os.path.join(OUTPUT_LOCATION, LAYERID + "_OGP.xml")
             else:
                 print 'File exceeded error tolerance of ', max_errors,', so into the error folder it goes'
-                if os.path.exists(ERROR_LOCATION + LAYERID + "_OGP.xml"):
+                if os.path.exists(os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml")):
                     existsPrompt =raw_input('OGP metadata already exists! Overwrite? (Y/N): ')
                     if existsPrompt == 'Y':
-                        OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml")
-                        print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
+                        OGPtree.write(os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml"))
+                        print "Output file: " + os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml")
                     else:
                         pass
                 else:
-                    OGPtree.write(ERROR_LOCATION + LAYERID + "_OGP.xml")
+                    OGPtree.write(os.path.join(ERROR_LOCATION,LAYERID + "_OGP.xml"))
                     
-                    print "Output file: " + ERROR_LOCATION + LAYERID + "_OGP.xml"
+                    print "Output file: " + os.path.join(ERROR_LOCATION, LAYERID + "_OGP.xml")
 
         print "\n"
 
