@@ -52,8 +52,8 @@ def MGMG(workspace,error_tolerance):
 
     sys.stdout = Logger(OUTPUT_LOCATION,LOG_NAME)
 
-
-    files = glob.glob(ws+'*[!aux].xml')
+    print ws
+    files = glob.glob(os.path.join(ws,'*[!aux].xml'))
 
     fields = ['LayerId', 'Name', 'CollectionId', 'Institution', 'InstitutionSort',
               'Access', 'DataType', 'DataTypeSort', 'Availability', 'LayerDisplayName',
