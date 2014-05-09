@@ -1,7 +1,7 @@
 <h1>OGP-metadata-py</h1>
 A simple Python (2.6+) script for creating OpenGeoPortal ingestible metadata from data with existing FGDC metadata, Minnesota Geospatial Metadata Guidelines (MGMG). or ArcGIS's proprietary metadata format
 
-<h2>Usage</h2>
+<h3>Usage</h3>
 <b>ogp-mdt.py [workspace] [metadata_standard] {--et}</b>
 
 <b>workspace</b> - The filesystem location of the data to be converted (currently assumes a completely flat organization of the data)  
