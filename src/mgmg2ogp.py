@@ -47,14 +47,12 @@ def MGMG(workspace,output_path,error_tolerance):
     ERROR_LOCATION = error_path 
 
     print 'output location: ', OUTPUT_LOCATION
-    print 'error location: ', ERROR_LOCATION
 
     d=datetime.today()
     LOG_NAME = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
 
     sys.stdout = Logger(OUTPUT_LOCATION,LOG_NAME)
 
-    print ws
     files = glob.glob(os.path.join(ws,'*[!aux].xml'))
 
     fields = ['LayerId', 'Name', 'CollectionId', 'Institution', 'InstitutionSort',
@@ -76,8 +74,6 @@ def MGMG(workspace,output_path,error_tolerance):
    
     #start the clock! 
     start = clock()
-
-    print ('files: ', files)
 
     for i in files:
         print 'full file path is ', i
