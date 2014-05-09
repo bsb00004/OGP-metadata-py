@@ -21,7 +21,7 @@ except ImportError:
 
 
     
-def MGMG(workspace,error_tolerance):
+def MGMG(workspace,output_path,error_tolerance):
     """
     Set workspace (where datasets to be processed are located) below
     """
@@ -31,8 +31,10 @@ def MGMG(workspace,error_tolerance):
     
     #Set output location for OGP metadata and log file, then instantiate Logger
     output_random = random.randint(0,100000000)
-    output_path = os.path.join(ws,"output" + str(output_random))
-    error_path = os.path.join(ws,"error" + str(output_random))
+    output_path = output_path
+    #output_path = os.path.join(output_path,"output" + str(output_random))
+    error_path = output_path
+    #error_path = os.path.join(ws,"error" + str(output_random))
 
     if not os.path.exists(output_path):
         os.mkdir(output_path)
