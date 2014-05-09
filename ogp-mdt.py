@@ -15,9 +15,6 @@ def main():
 
     if not os.path.isabs(ws):
         ws = os.path.abspath(os.path.relpath(ws,os.getcwd()))
-        print "Relative Path: ", ws
-    else:
-        print "Absolute Path: ", ws
 
     md = args.metadata_type
     et = args.et
