@@ -1,0 +1,413 @@
+<add allowDups="false"><doc><field name="LayerId">Census2000DemProfile3EconomicMNCT</field><field name="Name">Census2000DemProfile3EconomicMNCT</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType" /><field name="DataTypeSort" /><field name="Availability">Online</field><field name="LayerDisplayName">Profile of Selected Economic Characteristics for MN Cities and Townships: 2000</field><field name="LayerDisplayNameSort">Profile of Selected Economic Characteristics for MN Cities and Townships: 2000</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">Metropolitan Council and the U.S. Census Bureau</field><field name="OriginatorSort">Metropolitan Council and the U.S. Census Bureau</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">Summary File 3 Data Profile 3 (SF3 Table DP-3) for cities and townships in Minnesota is a subset of the profile of selected economic characteristics for 2000 prepared by the U. S. Census Bureau.
+
+This table includes:  Employment Status, Commuting to Work, Occupation, Industry, Class of Worker, Income in 1999, Median earnings, Number Below Poverty Level, Poverty Status in 1999, For Whom Poverty Status is Determined
+
+US Census 2000 Demographic Profiles: 100-percent and Sample Data 
+
+A profile includes four tables that provide various demographic, social, economic, and housing characteristics for the United States, states, counties, minor civil divisions in selected states, places, metropolitan areas, American Indian and Alaska Native areas, Hawaiian home lands and congressional districts (106th Congress). It includes 100-percent and sample data from Census 2000. 
+
+The Demographic Profile consists of four tables (DP-1 thru DP-4). For Census 2000 data, the DP-1 table is available as part of the Summary File 1 (SF 1) dataset, and the other three tables are available as part of the Summary File 3 (SF 3) dataset.
+
+This is a MetroGIS Regionally Endorsed dataset.  (See http://www.metrogis.org/data/about/index.shtml#whatis for more information.)
+</field><field name="MaxY" /><field name="MinY" /><field name="MinX" /><field name="MaxX" /><field name="ContentDate">2000-01-01T00:00:00Z</field><field name="Location">{"download": "ftp://gisftp.metc.state.mn.us/Census2000DemProfile3EconomicMNCT.zip"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;
+	&lt;idinfo&gt;
+		&lt;citation&gt;
+			&lt;citeinfo&gt;
+				&lt;origin&gt;Metropolitan Council and the U.S. Census Bureau&lt;/origin&gt;
+				&lt;pubdate&gt;Unpublished material&lt;/pubdate&gt;
+				&lt;title&gt;Profile of Selected Economic Characteristics for MN Cities and Townships: 2000&lt;/title&gt;
+				&lt;mgmg1cid&gt;N/A&lt;/mgmg1cid&gt;
+				&lt;pubinfo&gt;
+					&lt;publish&gt;Metropolitan Council&lt;/publish&gt;
+				&lt;/pubinfo&gt;
+				&lt;onlink&gt;ftp://gisftp.metc.state.mn.us/Census2000DemProfile3EconomicMNCT.zip&lt;/onlink&gt;
+			&lt;/citeinfo&gt;
+		&lt;/citation&gt;
+		&lt;descript&gt;
+			&lt;abstract&gt;Summary File 3 Data Profile 3 (SF3 Table DP-3) for cities and townships in Minnesota is a subset of the profile of selected economic characteristics for 2000 prepared by the U. S. Census Bureau.
+
+This table includes:  Employment Status, Commuting to Work, Occupation, Industry, Class of Worker, Income in 1999, Median earnings, Number Below Poverty Level, Poverty Status in 1999, For Whom Poverty Status is Determined
+
+US Census 2000 Demographic Profiles: 100-percent and Sample Data 
+
+A profile includes four tables that provide various demographic, social, economic, and housing characteristics for the United States, states, counties, minor civil divisions in selected states, places, metropolitan areas, American Indian and Alaska Native areas, Hawaiian home lands and congressional districts (106th Congress). It includes 100-percent and sample data from Census 2000. 
+
+The Demographic Profile consists of four tables (DP-1 thru DP-4). For Census 2000 data, the DP-1 table is available as part of the Summary File 1 (SF 1) dataset, and the other three tables are available as part of the Summary File 3 (SF 3) dataset.
+
+This is a MetroGIS Regionally Endorsed dataset.  (See http://www.metrogis.org/data/about/index.shtml#whatis for more information.)
+&lt;/abstract&gt;
+			&lt;purpose&gt;This table can be joined to the Cities and Townships spatial dataset using the CTU_CODE field (5 digit FIPS Place code).  This will allow users to create maps and conduct spatial analyses with the data in this table.&lt;/purpose&gt;
+			&lt;supplinf /&gt;
+		&lt;/descript&gt;
+		&lt;timeperd&gt;
+			&lt;timeinfo&gt;
+				&lt;sngdate&gt;
+					&lt;caldate&gt;2000&lt;/caldate&gt;
+				&lt;/sngdate&gt;
+			&lt;/timeinfo&gt;
+			&lt;current&gt;2000 U.S. Census&lt;/current&gt;
+		&lt;/timeperd&gt;
+		&lt;status&gt;
+			&lt;progress&gt;Complete&lt;/progress&gt;
+			&lt;update&gt;As needed&lt;/update&gt;
+		&lt;/status&gt;
+		&lt;spdom&gt;
+			&lt;bounding&gt;
+				&lt;westbc /&gt;
+				&lt;eastbc /&gt;
+				&lt;northbc /&gt;
+				&lt;southbc /&gt;
+			&lt;/bounding&gt;
+		&lt;/spdom&gt;
+		&lt;keywords&gt;
+			&lt;theme&gt;
+				&lt;themekt&gt;None&lt;/themekt&gt;
+				&lt;themekey&gt;demographics, society, Census, Demographic Profile&lt;/themekey&gt;
+			&lt;/theme&gt;
+			&lt;place&gt;
+				&lt;placekey&gt;Minnesota, Twin Cities&lt;/placekey&gt;
+			&lt;/place&gt;
+		&lt;/keywords&gt;
+		&lt;accconst&gt;None&lt;/accconst&gt;
+		&lt;useconst&gt;None&lt;/useconst&gt;
+		&lt;ptcontac&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Tanya Mayer&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Coordinator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1604&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;tanya.mayer@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/ptcontac&gt;
+		&lt;browse&gt;
+			&lt;browsen&gt;http://www.datafinder.org/metadata/SORRY_NO_SAMPLE_GRAPHIC_YET.htm&lt;/browsen&gt;
+			&lt;browsed&gt;No browse graphic is available.&lt;/browsed&gt;
+		&lt;/browse&gt;
+		&lt;native&gt;dBASE IV (DBF 4)&lt;/native&gt;
+		&lt;crossref&gt;
+			&lt;citeinfo&gt;
+				&lt;title&gt;City and Township Boundaries 2000, Twin Cities Metropolitan Area&lt;/title&gt;
+			&lt;/citeinfo&gt;
+		&lt;/crossref&gt;
+	&lt;/idinfo&gt;
+	&lt;dataqual&gt;
+		&lt;attracc&gt;
+			&lt;attraccr&gt;Please see the technical documentation from the Census 2000 Demographic Profiles web site:
+
+http://www.census.gov/Press-Release/www/2002/demoprofiles.html&lt;/attraccr&gt;
+		&lt;/attracc&gt;
+		&lt;logic /&gt;
+		&lt;complete&gt;Entire state of MN is covered.&lt;/complete&gt;
+		&lt;posacc&gt;
+			&lt;horizpa&gt;
+				&lt;horizpar /&gt;
+			&lt;/horizpa&gt;
+			&lt;vertacc&gt;
+				&lt;vertaccr /&gt;
+			&lt;/vertacc&gt;
+		&lt;/posacc&gt;
+		&lt;lineage&gt;
+			&lt;srcinfo&gt;
+				&lt;srcscale /&gt;
+			&lt;/srcinfo&gt;
+			&lt;procstep&gt;
+				&lt;procdesc /&gt;
+			&lt;/procstep&gt;
+			&lt;procstep&gt;&lt;procdesc /&gt;&lt;srcused Sync="TRUE"&gt;L:\Metadata\Layers\demog_profile_3_economic_mnct&lt;/srcused&gt;&lt;date Sync="TRUE"&gt;20030219&lt;/date&gt;&lt;time Sync="TRUE"&gt;14185900&lt;/time&gt;&lt;/procstep&gt;&lt;procstep&gt;&lt;procdesc Sync="TRUE"&gt;Dataset copied.&lt;/procdesc&gt;&lt;srcused Sync="TRUE"&gt;J:\gu_tanya\projects\census\data_2000\municipal_data\demog_profile_3_economic_mnct&lt;/srcused&gt;&lt;date Sync="TRUE"&gt;20030224&lt;/date&gt;&lt;time Sync="TRUE"&gt;11005000&lt;/time&gt;&lt;/procstep&gt;&lt;/lineage&gt;
+	&lt;/dataqual&gt;
+	&lt;spdoinfo&gt;
+		&lt;indspref&gt;CTU_CODE:  5 digit FIPS Place code for cities and townships.&lt;/indspref&gt;
+		&lt;direct /&gt;
+		&lt;mgmg3obj /&gt;
+		&lt;mgmg3til&gt;One file for entire state of MN&lt;/mgmg3til&gt;
+	&lt;/spdoinfo&gt;
+	&lt;spref&gt;
+		&lt;horizsys&gt;
+			&lt;geograph&gt;
+				&lt;latres /&gt;
+				&lt;longres /&gt;
+			&lt;/geograph&gt;
+			&lt;planar&gt;
+				&lt;mapproj&gt;
+					&lt;mapprojn /&gt;
+					&lt;mgmg4par /&gt;
+					&lt;otherprj /&gt;
+				&lt;/mapproj&gt;
+				&lt;gridsys&gt;
+					&lt;gridsysn /&gt;
+					&lt;utm&gt;
+						&lt;utmzone /&gt;
+					&lt;/utm&gt;
+					&lt;spcs&gt;
+						&lt;spcszone /&gt;
+					&lt;/spcs&gt;
+					&lt;mgmg4coz /&gt;
+					&lt;mgmg4adj /&gt;
+				&lt;/gridsys&gt;
+				&lt;planci&gt;
+					&lt;coordrep&gt;
+						&lt;absres /&gt;
+						&lt;ordres /&gt;
+					&lt;/coordrep&gt;
+					&lt;distbrep&gt;
+						&lt;distres /&gt;
+					&lt;/distbrep&gt;
+					&lt;plandu /&gt;
+				&lt;/planci&gt;
+			&lt;/planar&gt;
+			&lt;geodetic&gt;
+				&lt;horizdn /&gt;
+				&lt;ellips /&gt;
+			&lt;/geodetic&gt;
+		&lt;/horizsys&gt;
+		&lt;vertdef&gt;
+			&lt;altsys&gt;
+				&lt;altdatum /&gt;
+				&lt;altunits /&gt;
+			&lt;/altsys&gt;
+			&lt;depthsys&gt;
+				&lt;depthdn /&gt;
+				&lt;depthdu /&gt;
+			&lt;/depthsys&gt;
+		&lt;/vertdef&gt;
+	&lt;/spref&gt;
+	&lt;eainfo&gt;
+		&lt;overview&gt;
+			&lt;eaover&gt;CTU_CODE   5 digit FIPS 'Place' code, Census Bureau standard code and
+           proposed state standard ID code for cities, townships and
+           unorganized territories
+POP16      Population 16 years and over DP3001   EMPLOYMENT STATUS
+LAB        In labor force               DP3002	
+LABCIV     Civilian labor force         DP3003	
+LABCIVEMP  Employed                     DP3004	
+LABCIVUN   Unemployed                   DP3005	
+UNEMPPCT   Percent of civilian labor    DP3006
+           force (1 expressed decimal)		
+LABARMED   Armed Forces                 DP3007	
+LABNO      Not in labor force           DP3008	
+POPFEM16   Females 16 years and over    DP3009	
+FEMLAB     In labor force               DP3010	
+FEMLABCIV  Civilian labor force         DP3011	
+FEMLCEMP   Employed                     DP3012	
+LFKID_6    Own children under 6 years   DP3013	
+LFALLPAR   All parents in family in     DP3014
+           labor force	
+WORK16     Workers 16 years and over    DP3015   COMMUTING TO WORK
+COMDRAL    Car, truck, or van-drove alone DP3016	
+COMDRCP    Car, truck, or van-carpooled DP3017	
+COMPUB     Public transportation        DP3018
+           (including taxicab)	
+COMWALK    Walked                       DP3019	
+COMOTHER   Other means                  DP3020	
+WORKHOME   Worked at home               DP3021	
+TRAVTIME   Mean travel time to work     DP3022
+           (minutes)[1 expressed decimal]	
+LABCIVEMP  Employed civilian population DP3023
+           16 years and over	
+OCCMGT     Management, professional,    DP3024   OCCUPATION
+           and related occupations 
+OCCSRV     Service occupations          DP3025	
+OCCSALE    Sales and office occupations DP3026	
+OCCFARM    Farming, fishing, and        DP3027
+           forestry occupations	
+OCCCONST   Construction, extraction,    DP3028
+           and maintenance occupations	
+OCCPROD    Production, transportation,  DP3029
+           and material moving occupations		
+INDAG      Agriculture, forestry,       DP3030   INDUSTRY
+           fishing and hunting, and mining 
+INDCONST   Construction                 DP3031	
+INDMFG     Manufacturing                DP3032	
+INDWH      Wholesale trade              DP3033	
+INDRET     Retail trade                 DP3034	
+INDTRANSP  Transportation and           DP3035
+           warehousing, and utilities	
+INDINFO    Information                  DP3036	
+INDFIRE    Finance, insurance, real     DP3037
+           estate, and rental and leasing	
+INDPROF    Professional, scientific,    DP3038
+           management, administrative,  
+           and waste management services		
+INDEDUC    Educational, health and      DP3039
+           social services	
+INDARTS    Arts, entertainment,         DP3040
+           recreation, accommodation 
+           and food services		
+INDOTHER   Other services               DP3041
+           (except public administration)		
+INDPUBLIC  Public administration        DP3042	
+WORKPVT    Private wage and salary      DP3043   CLASS OF WORKER
+           workers 
+WORKGOVT   Government workers           DP3044	
+WORKSELF   Self-employed workers in own DP3045
+           not incorporated business	
+WORKNOPAY  Unpaid family workers        DP3046	
+HSHLDS     Households                   DP3047   INCOME IN 1999
+IHLT10K    Less than $10,000            DP3048	
+IH10_14    $10,000 to $14,999           DP3049 
+IH15_24    $15,000 to $24,999           DP3050 
+IH25_34    $25,000 to $34,999           DP3051 
+IH35_49    $35,000 to $49,999           DP3052 
+IH50_74    $50,000 to $74,999           DP3053 
+IH75_99    $75,000 to $99,999           DP3054 
+IH100_149  $100,000 to $149,999         DP3055 
+IH150_199  $150,000 to $199,999         DP3056 
+IH200      $200,000 or more             DP3057 
+IHMED      Median household income      DP3058
+           (dollars)	
+HSEARN     With earnings                DP3059	
+HSEARNING  Mean earnings (dollars)      DP3060	
+HSSS       With Social Security income  DP3061	
+INCSS      Mean Social Security income  DP3062
+           (dollars)	
+HSSUP      With Supplemental Security   DP3063
+           Income	
+INCSUP     Mean Supplemental Security   DP3064
+           Income (dollars)	
+HSPUBA     With public assistance income DP3065	
+INCPUBA    Mean public assistance income DP3066
+           (dollars)	
+HSRET      With retirement income       DP3067	
+INCRET     Mean retirement income       DP3068
+           (dollars)	
+FAMS       Families                     DP3069	
+IFLT10K    Less than $10,000            DP3070	
+IF10_14    $10,000 to $14,999           DP3071 
+IF15_24    $15,000 to $24,999           DP3072 
+IF25_34    $25,000 to $34,999           DP3073 
+IF35_49    $35,000 to $49,999           DP3074 
+IF50_74    $50,000 to $74,999           DP3075 
+IF75_99    $75,000 to $99,999           DP3076 
+IF100_149  $100,000 to $149,999         DP3077 
+IF150_199  $150,000 to $199,999         DP3078 
+IF200      $200,000 or more             DP3079 
+IFMED      Median family income         DP3080
+           (dollars)	
+PCI        Per capita income            DP3081
+           (dollars)	
+EARNMALE   Male full-time,              DP3082   Median earnings 
+           year-round workers                    (dollars):
+EARNFEM    Female full-time,            DP3083
+           year-round workers	
+POVFAMS    Families                     DP3084   NUMBER BELOW 
+                                                 POVERTY LEVEL
+POVFKD_17  With related children        DP3085   POVERTY STATUS IN 
+           under 18 years                        1999
+POVFKD_4   With related children        DP3086
+           under 5 years	
+POVFEMNH   Families with female         DP3087
+           householder, no husband present	
+POVFNH_17  With related children        DP3088
+           under 18 years	
+POVFNH_4   With related children        DP3089
+           under 5 years	
+POVINDS    Individuals                  DP3090	
+POVIND18   18 years and over            DP3091	
+POVIND65   65 years and over            DP3092	
+POVIK_17   Related children             DP3093
+           under 18 years	
+POVIK5_17  Related children             DP3094
+           5 to 17 years	
+POVIK15    Unrelated individuals        DP3095
+           15 years and over	
+PDVFAMS    Families                     DP3096	
+PDVFKD_17  With related children        DP3097   FOR WHOM POVERTY STATUS
+           under 18 years                        IS DETERMINED
+PDVFKD_4   With related children        DP3098
+           under 5 years	
+PDVFEMNH   Families with female         DP3099
+           householder, no husband present	
+PDVFNH_17  With related children        DP3100
+           under 18 years	
+PDVFNH_4   With related children        DP3101
+           under 5 years	
+PDVINDS    Individuals                  DP3102	
+PDVIND18   18 years and over            DP3103	
+PDVIND65   65 years and over            DP3104	
+PDVIK_17   Related children             DP3105
+           under 18 years	
+PDVIK5_17  Related children             DP3106
+           5 to 17 years	
+PDVIK15    Unrelated individuals        DP3107
+           15 years and over&lt;/eaover&gt;
+			&lt;eadetcit&gt;U.S. Census Bureau, Census 2000  Table DP-3. Profile of Selected Economic Characteristics: 2000
+
+http://www.census.gov/prod/cen2000/doc/ProfileTD.pdf&lt;/eadetcit&gt;
+		&lt;/overview&gt;
+	&lt;/eainfo&gt;
+	&lt;distinfo&gt;
+		&lt;distrib&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Mark Kotz&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Database Administrator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1644&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;mark.kotz@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/distrib&gt;
+		&lt;resdesc&gt;Census2000DemProfile3EconomicMNCT&lt;/resdesc&gt;
+		&lt;distliab&gt;NOTICE:  The Geographic Information System (GIS) Data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE GIS DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The GIS Data were developed by the Metropolitan Council for its own internal business purposes.  The Metropolitan Council does not represent or warrant that the GIS Data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the GIS Data or your reliance on the GIS Data.  You should consult the data documentation for this particular GIS Data to determine the limitations of the GIS Data and the precision with which the GIS Data may depict distance, direction, location, or other geographic features.  If you transmit or provide the GIS Data (or any portion of it) to another user, it is recommended that the GIS Data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;
+		&lt;stdorder&gt;
+			&lt;digform&gt;
+				&lt;digtinfo&gt;
+					&lt;formname&gt;dBASE IV&lt;/formname&gt;
+					&lt;formvern&gt;DBF 4&lt;/formvern&gt;
+					&lt;transize&gt;0.5 MB for zip file.&lt;/transize&gt;
+				&lt;/digtinfo&gt;
+			&lt;/digform&gt;
+			&lt;ordering&gt;This dataset is distributed on the internet by clicking below after 'Online Linkage'.  Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- dBase file
+- metadata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.
+ &lt;/ordering&gt;
+		&lt;/stdorder&gt;
+	&lt;/distinfo&gt;
+	&lt;metainfo&gt;
+		&lt;metd&gt;20030224&lt;/metd&gt;
+		&lt;metc&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Tanya Mayer&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Coordinator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1604&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;tanya.mayer@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/metc&gt;
+		&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;
+		&lt;metstdv&gt;1.2&lt;/metstdv&gt;
+		&lt;metextns&gt;
+			&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;
+		&lt;/metextns&gt;
+	&lt;/metainfo&gt;
+	&lt;Esri&gt;&lt;ModDate&gt;20110729&lt;/ModDate&gt;&lt;ModTime&gt;13260400&lt;/ModTime&gt;&lt;CreaDate&gt;20030224&lt;/CreaDate&gt;&lt;CreaTime&gt;11005000&lt;/CreaTime&gt;&lt;SyncOnce&gt;TRUE&lt;/SyncOnce&gt;&lt;MetaID&gt;{2A9A9507-4819-11D7-B06E-0002A51B7211}&lt;/MetaID&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20110729&lt;/mdDateSt&gt;&lt;distInfo&gt;&lt;distributor&gt;&lt;distorTran&gt;&lt;onLineSrc&gt;&lt;linkage Sync="TRUE"&gt;file://\\metc-gisserv.metc.state.mn.us\gu\gu_tanya\projects\census\data_2000\municipal_data\Data_for_library\demog_profile_3_economic_mnct&lt;/linkage&gt;&lt;protocol Sync="TRUE"&gt;Local Area Network&lt;/protocol&gt;&lt;/onLineSrc&gt;&lt;/distorTran&gt;&lt;/distributor&gt;&lt;/distInfo&gt;&lt;/metadata&gt;</field></doc></add>

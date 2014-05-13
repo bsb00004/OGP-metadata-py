@@ -1,0 +1,406 @@
+<add allowDups="false"><doc><field name="LayerId">Census2000Tiger</field><field name="Name">Census2000Tiger</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Polygon</field><field name="DataTypeSort">Polygon</field><field name="Availability">Online</field><field name="LayerDisplayName">Census 2000 Geography - Blocks, Block Groups, Tracts, TAZs, Counties, County Subdivisions and Water</field><field name="LayerDisplayNameSort">Census 2000 Geography - Blocks, Block Groups, Tracts, TAZs, Counties, County Subdivisions and Water</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">U.S. Census Bureau and the Metropolitan Council</field><field name="OriginatorSort">U.S. Census Bureau and the Metropolitan Council</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">This 'Redistricting' version of the census data is the first release of the data.
+
+This 2000 census redistricting geography database of the 7 county metropolitan area and the additional 12 collar county area was developed from the U.S.  Census Bureau's Redistricting Census 2000 TIGER/Line files.
+
+The Metropolitan Council downloaded this data from the Census Bureau's FTP site, imported it into ArcInfo coverage format, added a few items to the coverage, then created block, block group, tract, county subdivision (city), county, taz and water coverages and shape files from the original data.</field><field name="MaxY">45.736</field><field name="MinY">44.183</field><field name="MinX">-94.664</field><field name="MaxX">-92.117</field><field name="ContentDate">2000-01-01T00:00:00Z</field><field name="Location">{"download": "ftp://gisftp.metc.state.mn.us/Census2000Tiger.zip"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;
+	&lt;idinfo&gt;
+		&lt;citation&gt;
+			&lt;citeinfo&gt;
+				&lt;origin&gt;U.S. Census Bureau and the Metropolitan Council&lt;/origin&gt;
+				&lt;pubdate&gt;20010207&lt;/pubdate&gt;
+				&lt;title&gt;Census 2000 Geography - Blocks, Block Groups, Tracts, TAZs, Counties, County Subdivisions and Water&lt;/title&gt;
+				&lt;mgmg1cid&gt;N/A&lt;/mgmg1cid&gt;
+				&lt;pubinfo&gt;
+					&lt;publish&gt;Metropolitan Council&lt;/publish&gt;
+				&lt;/pubinfo&gt;
+				&lt;onlink&gt;ftp://gisftp.metc.state.mn.us/Census2000Tiger.zip&lt;/onlink&gt;
+			&lt;/citeinfo&gt;
+		&lt;/citation&gt;
+		&lt;descript&gt;
+			&lt;abstract&gt;This 'Redistricting' version of the census data is the first release of the data.
+
+This 2000 census redistricting geography database of the 7 county metropolitan area and the additional 12 collar county area was developed from the U.S.  Census Bureau's Redistricting Census 2000 TIGER/Line files.
+
+The Metropolitan Council downloaded this data from the Census Bureau's FTP site, imported it into ArcInfo coverage format, added a few items to the coverage, then created block, block group, tract, county subdivision (city), county, taz and water coverages and shape files from the original data.&lt;/abstract&gt;
+			&lt;purpose&gt;For mapping and analysis of data from the U. S. Census Bureau.&lt;/purpose&gt;
+			&lt;supplinf&gt;Seven County Twin Cities Metropolitan Area and it's 12 collar counties.&lt;/supplinf&gt;
+		&lt;/descript&gt;
+		&lt;timeperd&gt;
+			&lt;timeinfo&gt;
+				&lt;sngdate&gt;
+					&lt;caldate&gt;2000&lt;/caldate&gt;
+				&lt;/sngdate&gt;
+			&lt;/timeinfo&gt;
+			&lt;current&gt;2000&lt;/current&gt;
+		&lt;/timeperd&gt;
+		&lt;status&gt;
+			&lt;progress&gt;Complete&lt;/progress&gt;
+			&lt;update&gt;None planned&lt;/update&gt;
+		&lt;/status&gt;
+		&lt;spdom&gt;
+			&lt;bounding&gt;
+				&lt;westbc&gt;-94.664&lt;/westbc&gt;
+				&lt;eastbc&gt;-92.117&lt;/eastbc&gt;
+				&lt;northbc&gt;45.736&lt;/northbc&gt;
+				&lt;southbc&gt;44.183&lt;/southbc&gt;
+			&lt;/bounding&gt;
+		&lt;/spdom&gt;
+		&lt;keywords&gt;
+			&lt;theme&gt;
+				&lt;themekt /&gt;
+				&lt;themekey&gt;census, demographics, census boundaries, 2000 census, blocks, block boundaries, census blocks, census block groups, census tracts, counties, county subdivisions, FIPS Place, MCDs, TAZs, water&lt;/themekey&gt;
+			&lt;/theme&gt;
+			&lt;place&gt;
+				&lt;placekey&gt;Twin Cities, Anoka County, Carver County, Dakota County, Hennepin County, Ramsey County, Scott County, Washington County, Chisago County, Isanti County, Sherburne County, Wright County, McLeod County, Sibley County, Le Sueur County, Rice County, Goodhue County, Pierce County, St. Croix County, Polk County&lt;/placekey&gt;
+			&lt;/place&gt;
+		&lt;/keywords&gt;
+		&lt;accconst&gt;None&lt;/accconst&gt;
+		&lt;useconst&gt;None&lt;/useconst&gt;
+		&lt;ptcontac&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Tanya Mayer&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Coordinator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1604&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;tanya.mayer@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/ptcontac&gt;
+		&lt;browse&gt;
+			&lt;browsen&gt;http://www.datafinder.org/metadata/bg/Census2000Tiger.jpg&lt;/browsen&gt;
+			&lt;browsed&gt;Sample map showing the Census2000Tiger dataset.&lt;/browsed&gt;
+		&lt;/browse&gt;
+		&lt;native&gt;TIGER; ArcInfo 8.x&lt;/native&gt;
+		&lt;crossref&gt;
+			&lt;citeinfo&gt;
+				&lt;title&gt;Census 2000 Redistricting (PL-94-171) Summary File Data (A Subset of Population Data)&lt;/title&gt;
+			&lt;/citeinfo&gt;
+		&lt;/crossref&gt;
+	&lt;/idinfo&gt;
+	&lt;dataqual&gt;
+		&lt;attracc&gt;
+			&lt;attraccr&gt;Unknown&lt;/attraccr&gt;
+		&lt;/attracc&gt;
+		&lt;logic&gt;Each county polygon file is topologically 'clean'.&lt;/logic&gt;
+		&lt;complete&gt;All counties are included.&lt;/complete&gt;
+		&lt;posacc&gt;
+			&lt;horizpa&gt;
+				&lt;horizpar&gt;Presumed to meet source material standards: for 1:100,000-scale mapping, National Map Accuracy Standards state a horizontal positional accuracy of not less than +/- 167 feet for 90% of points tested.&lt;/horizpar&gt;
+			&lt;/horizpa&gt;
+			&lt;vertacc&gt;
+				&lt;vertaccr&gt;Not applicable&lt;/vertaccr&gt;
+			&lt;/vertacc&gt;
+		&lt;/posacc&gt;
+		&lt;lineage&gt;
+			&lt;srcinfo&gt;
+				&lt;srcscale&gt;100000&lt;/srcscale&gt;
+			&lt;/srcinfo&gt;
+			&lt;procstep&gt;
+				&lt;procdesc&gt;Data originated at the U.S. Bureau of the Census, as 2000 Census Redistricting TIGER/Line files (02/07/2001).
+
+www.census.gov
+clicked on TIGER
+clicked on Redistricting Census TIGER/Line    (www.census.gov/geo/www/tiger/rd_2ktiger/tgr2kweb.htl) 
+ clicked on Minnesota
+ or Wisconsin
+
+3/27/01 Saved each of the 19 county WinZipped TIGER data files to disk
+
+FIPS CODES
+1. 027003 Anoka
+2. 027019 Carver
+3. 027037 Dakota
+4. 027053 Hennepin
+5. 027123 Ramsey
+6. 027139 Scott
+7. 027163 Washington
+8. 027025 Chisago
+9. 027059 Isanti
+10. 027141 Sherburne
+11. 027171 Wright
+12. 027085 McLeod
+13. 027143 Sibley
+14. 027079 LeSueur
+15. 027131 Rice
+16. 027049 Goodhue
+17. 055093 Pierce
+18. 055109 St. Croix
+19. 055095 Polk
+
+Extracted each zipped file to individual county directories, for example, to  .../.../census/tiger00/anok
+
+Renamed all the Tgr27019.rt1 (etc.) files with lowercase letters (to tgr27019.rt1), 17 files per county in Windows explorer (required for Unix ArcInfo 8.1 to recognize TIGER files).
+
+UNIX
+Workstation ArcInfo 8.1
+(Create ArcInfo workspace in each county directory)
+Arc: cw .
+Arc: TIGERTOOL
+Usage: TIGERTOOL &amp;lt;tiger_prefix&amp;gt; &amp;lt;cover_prefix&amp;gt; (Join) (UTM  STATE &amp;lt;zone number&amp;gt;) (1995  1996  1997  1998  1999  2000) (RESTART)
+
+Via AML...
+Arc: tigertool tiger/%tgrprefix% %county% join utm 15 2000
+Added items to the TIGER base coverage
+dissovled 7 coverages from the base coverage: Block, Block Group, Tract, Cousub, County, TAZ, and Water.
+
+Added and standardized items, then, for each layer, map joined all 7 counties and the remaining 12 counties.
+
+Created shape files from these 14 coverages.&lt;/procdesc&gt;
+			&lt;/procstep&gt;
+		&lt;/lineage&gt;
+	&lt;/dataqual&gt;
+	&lt;spdoinfo&gt;
+		&lt;indspref&gt;2000 Census Block, Block Group or Tract&lt;/indspref&gt;
+		&lt;direct&gt;Vector&lt;/direct&gt;
+		&lt;mgmg3obj&gt;arcs, nodes, polygons, label points&lt;/mgmg3obj&gt;
+		&lt;mgmg3til&gt;For each themes, one layer for entire seven county region and another layer for the 12 collar counties of the 7-county region.&lt;/mgmg3til&gt;
+	&lt;/spdoinfo&gt;
+	&lt;spref&gt;
+		&lt;horizsys&gt;
+			&lt;geograph&gt;
+				&lt;latres /&gt;
+				&lt;longres /&gt;
+				&lt;geogunit /&gt;&lt;/geograph&gt;
+			&lt;planar&gt;
+				&lt;mapproj&gt;
+					&lt;mapprojn /&gt;
+					&lt;mgmg4par /&gt;
+					&lt;otherprj /&gt;
+				&lt;/mapproj&gt;
+				&lt;gridsys&gt;
+					&lt;gridsysn&gt;UTM&lt;/gridsysn&gt;
+					&lt;utm&gt;
+						&lt;utmzone&gt;15&lt;/utmzone&gt;
+					&lt;/utm&gt;
+					&lt;spcs&gt;
+						&lt;spcszone /&gt;
+					&lt;/spcs&gt;
+					&lt;mgmg4coz /&gt;
+					&lt;mgmg4adj /&gt;
+				&lt;/gridsys&gt;
+				&lt;planci&gt;
+					&lt;coordrep&gt;
+						&lt;absres /&gt;
+						&lt;ordres /&gt;
+					&lt;/coordrep&gt;
+					&lt;distbrep&gt;
+						&lt;distres&gt;2.54&lt;/distres&gt;
+					&lt;/distbrep&gt;
+					&lt;plandu&gt;Meters&lt;/plandu&gt;
+				&lt;/planci&gt;
+			&lt;/planar&gt;
+			&lt;geodetic&gt;
+				&lt;horizdn&gt;NAD83&lt;/horizdn&gt;
+				&lt;ellips&gt;GRS80&lt;/ellips&gt;
+			&lt;/geodetic&gt;
+		&lt;/horizsys&gt;
+		&lt;vertdef&gt;
+			&lt;altsys&gt;
+				&lt;altdatum /&gt;
+				&lt;altunits /&gt;
+			&lt;/altsys&gt;
+			&lt;depthsys&gt;
+				&lt;depthdn /&gt;
+				&lt;depthdu /&gt;
+			&lt;/depthsys&gt;
+		&lt;/vertdef&gt;
+	&lt;/spref&gt;
+	&lt;eainfo&gt;
+		&lt;overview&gt;
+			&lt;eaover&gt;STATE:      2 digit FIPS and state standard state code; e.g. 27, 55
+
+CO:         3 digit FIPS and state standard county code; e.g. 163, 003
+
+BLK00:      15 digit Census Block code (includes STATE &amp;amp; COUNTY FIPS codes)
+
+TRACT:      6 digit Census Tract number
+
+BLOCK:      4 character Census Block number
+
+BLOCKGROUP: 7 digit Census Block Group number (Tract + 1st number of the block 
+            code)
+
+WATER:      1 digit water code (1 = water)
+
+COUSUB:     5 digit FIPS Place code for the county subdivision (city, township 
+            or unorganized territory)
+
+MCD:        Identical to COUSUB
+
+
+COMCD:      Concatenation of CO and MCD.
+ 
+ 
+Information below is for ArcInfo coverage format only:
+ 
+DATAFILE NAME: BLOCK_2000.PAT
+   10 ITEMS: STARTING IN POSITION    1
+  COL  ITEM NAME         WDTH OPUT TYP N.DEC  ALTERNATE NAME
+    1  AREA                8   18  F    5
+    9  PERIMETER           8   18  F    5
+   17  BLOCK_2000#         4    5  B    -
+   21  BLOCK_2000-ID       4    5  B    -
+   25  STATE               2    2  I    -
+   27  CO                  3    3  C    -
+   30  BLK00              15   15  C    -
+   45  TRACT               6    6  I    -
+   51  BLOCK               4    4  C    -
+   55  BLOCKGROUP          7    7  I    -
+ 
+DATAFILE NAME: BLKGRP_2000.PAT
+    9 ITEMS: STARTING IN POSITION    1
+  COL  ITEM NAME         WDTH OPUT TYP N.DEC  ALTERNATE NAME
+    1  AREA                8   18  F    5
+    9  PERIMETER           8   18  F    5
+   17  BLKGRP_2000#        4    5  B    -
+   21  BLKGRP_2000-ID      4    5  B    -
+   25  STATE               2    2  I    -
+   27  CO                  3    3  C    -
+   30  BG00               12   12  I    -
+   42  TRACT               6    6  I    -
+   48  BLOCKGROUP          7    7  I    -
+ 
+DATAFILE NAME: TRACT_2000.PAT
+    8 ITEMS: STARTING IN POSITION    1
+  COL  ITEM NAME         WDTH OPUT TYP N.DEC  ALTERNATE NAME
+    1  AREA                8   18  F    5
+    9  PERIMETER           8   18  F    5
+   17  TRACT_2000#         4    5  B    -
+   21  TRACT_2000-ID       4    5  B    -
+   25  STATE               2    2  I    -
+   27  CO                 3    3  C    -
+   30  TRACT00            11   11  I    -
+   41  TRACT               6    6  I    -
+ 
+DATAFILE NAME: CTY_2000.PAT
+    6 ITEMS: STARTING IN POSITION    1
+  COL  ITEM NAME         WDTH OPUT TYP N.DEC  ALTERNATE NAME
+    1  AREA                8   18  F    5
+    9  PERIMETER           8   18  F    5
+   17  CTY_2000#           4    5  B    -
+   21  CTY_2000-ID         4    5  B    -
+   25  STATE               2    2  I    -
+   27  CO                  3    3  I    -
+ 
+DATAFILE NAME: COUSUB_2000.PAT 
+    7 ITEMS: STARTING IN POSITION    1
+  COL  ITEM NAME         WDTH OPUT TYP N.DEC  ALTERNATE NAME
+    1  AREA                8   18  F    5
+    9  PERIMETER           8   18  F    5
+   17  MCD_2000#           4    5  B    -
+   21  MCD_2000-ID         4    5  B    -
+   25  STATE               2    2  I    -
+   27  CO                  3    3  C    -
+   30  COUSUB              5    5  C    -
+   35  MCD                 5    5  C    -
+   40  COMCD               8    8  C    -
+ 
+DATAFILE NAME: TAZ_2000.PAT 
+    7 ITEMS: STARTING IN POSITION    1
+  COL  ITEM NAME         WDTH OPUT TYP N.DEC  ALTERNATE NAME
+    1  AREA                8   18  F    5
+    9  PERIMETER           8   18  F    5
+   17  TAZ_2000#           4    5  B    -
+   21  TAZ_2000-ID         4    5  B    -
+   25  STATE               2    2  I    -
+   27  CO                  3    3  C    -
+   30  TAZ                 6    6  C    -
+ 
+DATAFILE NAME: WATER_2000.PAT
+    5 ITEMS: STARTING IN POSITION    1
+  COL  ITEM NAME         WDTH OPUT TYP N.DEC  ALTERNATE NAME
+    1  AREA                8   18  F    5
+    9  PERIMETER           8   18  F    5
+   17  WATER_2000#         4    5  B    -
+   21  WATER_2000-ID       4    5  B    -
+   25  WATER               1    1  I    -&lt;/eaover&gt;
+			&lt;eadetcit&gt;Redistricting Census 2000 TIGER/Line Files
+
+http://www.census.gov/geo/www/tiger/
+
+Redistricting Census 2000 TIGER/Line Technical Documentation and Metadata&lt;/eadetcit&gt;
+		&lt;/overview&gt;
+	&lt;/eainfo&gt;
+	&lt;distinfo&gt;
+		&lt;distrib&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Tanya Mayer&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Coordinator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1604&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;tanya.mayer@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/distrib&gt;
+		&lt;resdesc&gt;Census2000Tiger&lt;/resdesc&gt;
+		&lt;distliab&gt;NOTICE: The Geographic Information System (GIS) Data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13). THE GIS DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE. The GIS Data were developed by the Metropolitan Council for its own internal business purposes. The Metropolitan Council does not represent or warrant that the GIS Data or the data documentation are error-free, complete, current, or accurate. You are responsible for any consequences resulting from your use of the GIS Data or your reliance on the GIS Data. You should consult the data documentation for this particular GIS Data to determine the limitations of the GIS Data and the precision with which the GIS Data may depict distance, direction, location, or other geographic features. If you transmit or provide the GIS Data (or any portion of it) to another user, it is recommended that the GIS Data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;
+		&lt;stdorder&gt;
+			&lt;digform&gt;
+				&lt;digtinfo&gt;
+					&lt;formname&gt;ArcView Shape File&lt;/formname&gt;
+					&lt;formvern&gt;3x&lt;/formvern&gt;
+					&lt;transize&gt;For ZIP files, sizes are 12 MB for 7-county metro and 10 MB for the 12 collar counties.&lt;/transize&gt;
+				&lt;/digtinfo&gt;
+			&lt;/digform&gt;
+			&lt;ordering&gt;This dataset is distributed on the internet.  
+
+By clicking below after 'Online Linkage' you will be able to download the 7-county metro shape files.
+
+To download the shape files for the collar counties, click on this link:  ftp://gisftp.metc.state.mn.us/Census2000TigerCollar.zip
+
+Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- ArcView shape files
+- metadata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.
+
+ 
+Additionally, this dataset is available for direct use via one or more map services.  More information about what a web mapping service is can be found at http://www.datafinder.org/services/.  The specific map service and layer name for this dataset can be found by clicking the blue or green boxes under the map service column of the DataFinder Catalog at http://www.datafinder.org/catalog/ .&lt;/ordering&gt;
+		&lt;/stdorder&gt;
+	&lt;/distinfo&gt;
+	&lt;metainfo&gt;
+		&lt;metd&gt;20010705&lt;/metd&gt;
+		&lt;metc&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Tanya Mayer&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Coordinator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1604&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;tanya.mayer@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/metc&gt;
+		&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;
+		&lt;metstdv&gt;1.2&lt;/metstdv&gt;
+		&lt;metextns&gt;
+			&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;
+		&lt;/metextns&gt;
+	&lt;/metainfo&gt;
+	&lt;Esri&gt;&lt;ModDate&gt;20110729&lt;/ModDate&gt;&lt;ModTime&gt;13305300&lt;/ModTime&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20110729&lt;/mdDateSt&gt;&lt;/metadata&gt;</field></doc></add>

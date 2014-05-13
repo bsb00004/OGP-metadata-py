@@ -1,0 +1,165 @@
+<add allowDups="false"><doc><field name="LayerId">NonresidentialConstruction</field><field name="Name">NonresidentialConstruction</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Undefined</field><field name="DataTypeSort">Undefined</field><field name="Availability">Online</field><field name="LayerDisplayName">Commercial, Industrial, and Public and Institutional Construction, Twin Cities Metropolitan Area</field><field name="LayerDisplayNameSort">Commercial, Industrial, and Public and Institutional Construction, Twin Cities Metropolitan Area</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">Metropolitan Council</field><field name="OriginatorSort">Metropolitan Council</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">This dataset consists of summary data for commercial, industrial, and public and institutional projects, based on building permits issued during each calendar year by cities and townships within the Region.  Data is collected via an annual survey of building officials, in conjunction with collection of data on residential building permits.</field><field name="MaxY">45.415</field><field name="MinY">44.471</field><field name="MinX">-94.012</field><field name="MaxX">-92.732</field><field name="ContentDate">2012-12-31T00:00:00Z</field><field name="Location">{"download": "http://stats.metc.state.mn.us/data_download/DD_Years.aspx?datasource=bpnr&amp;comms='R11000'&amp;years=ALL&amp;level=COCTU"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;&lt;idinfo&gt;&lt;citation&gt;&lt;citeinfo&gt;&lt;title&gt;Commercial, Industrial, and Public and Institutional Construction, Twin Cities Metropolitan Area&lt;/title&gt;&lt;origin&gt;Metropolitan Council&lt;/origin&gt;&lt;pubinfo&gt;&lt;publish&gt;Metropolitan Council&lt;/publish&gt;&lt;/pubinfo&gt;&lt;pubdate&gt;Periodically revised&lt;/pubdate&gt;&lt;onlink&gt;http://stats.metc.state.mn.us/data_download/DD_Years.aspx?datasource=bpnr&amp;amp;comms='R11000'&amp;amp;years=ALL&amp;amp;level=COCTU&lt;/onlink&gt;&lt;/citeinfo&gt;&lt;/citation&gt;&lt;descript&gt;&lt;abstract&gt;This dataset consists of summary data for commercial, industrial, and public and institutional projects, based on building permits issued during each calendar year by cities and townships within the Region.  Data is collected via an annual survey of building officials, in conjunction with collection of data on residential building permits.&lt;/abstract&gt;&lt;purpose&gt;This dataset was created to summarize and analyze development trends of commercial, industrial, and public and institutional building in the seven-county Twin Cities Region.&lt;/purpose&gt;&lt;supplinf&gt;Twin Cities 7 County Metropolitan Area.  This includes the counties of Anoka, Carver, Dakota, Hennepin, Ramsey, Scott and Washington in Minnesota.&lt;/supplinf&gt;&lt;/descript&gt;&lt;timeperd&gt;&lt;timeinfo&gt;&lt;sngdate&gt;&lt;caldate&gt;20121231&lt;/caldate&gt;&lt;/sngdate&gt;&lt;/timeinfo&gt;&lt;current&gt;This dataset reflects permit information collected annually from 2003 through 2012.&lt;/current&gt;&lt;/timeperd&gt;&lt;status&gt;&lt;progress&gt;In work&lt;/progress&gt;&lt;update&gt;Annually&lt;/update&gt;&lt;/status&gt;&lt;spdom&gt;&lt;bounding&gt;&lt;westbc&gt;-94.012&lt;/westbc&gt;&lt;eastbc&gt;-92.732&lt;/eastbc&gt;&lt;northbc&gt;45.415&lt;/northbc&gt;&lt;southbc&gt;44.471&lt;/southbc&gt;&lt;/bounding&gt;&lt;/spdom&gt;&lt;keywords&gt;&lt;place&gt;&lt;placekey&gt;Twin Cities, Anoka County, Carver County, Dakota County, Hennepin County, Ramsey County, Scott County, Washington County&lt;/placekey&gt;&lt;/place&gt;&lt;theme&gt;&lt;themekey&gt;commercial, industrial, public, institutional, nonresidential building permits, building permits, permits&lt;/themekey&gt;&lt;themekt&gt;None&lt;/themekt&gt;&lt;/theme&gt;&lt;/keywords&gt;&lt;accconst&gt;None&lt;/accconst&gt;&lt;useconst&gt;None&lt;/useconst&gt;&lt;browse&gt;&lt;browsen&gt;None available&lt;/browsen&gt;&lt;/browse&gt;&lt;crossref&gt;&lt;citeinfo&gt;&lt;title&gt;None&lt;/title&gt;&lt;/citeinfo&gt;&lt;/crossref&gt;&lt;native&gt;Oracle Version 10g, Release 2&lt;/native&gt;&lt;ptcontac&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Baris Gumus-Dawes&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Senior Researcher&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;Minnesota&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-602-1331&lt;/cntvoice&gt;&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;&lt;cntemail&gt;baris.dawes@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/ptcontac&gt;&lt;/idinfo&gt;&lt;dataqual&gt;&lt;attracc&gt;&lt;attraccr&gt;Valid code tests have been conducted. No known attribute errors exist.&lt;/attraccr&gt;&lt;/attracc&gt;&lt;complete&gt;Entire seven county geographic area is covered.&lt;/complete&gt;&lt;lineage&gt;&lt;procstep&gt;&lt;procdesc&gt;The data were obtained through an annual survey sent to communities by the Metropolitan Council in conjunction with collection of residential building permits.  Respondents are asked to provide project information for new buildings and additions to buildings if permit valuation is $100,000 or more.  Data does not include permits for work such as plumbing, mechanical, reroofing, etc. or if the project is for remodeling only (not involving a new structure or adding square footage to an existing structure).  
+
+Data on square footage and value should not be used to attempt to determine value per square foot, as not all projects include data for both variables.
+
+A small number of communities each year may not provide data.  These are typically places with no nonresidential construction occurring.
+
+The data on returned surveys were verified by Metropolitan Council staff through various means including: contact with community staff, community websites, and comparison to data in the Council's Service Availability Charge (SAC) reports where possible.  
+
+For this data, projects are counted at the time local units of government issue building permits. No information on demolitions is included, so the data represent a gross construction volume, but not the net gain in property value or space. With subsequent annual updates, the data should be useful for assessing  longer-range trends.
+
+Multiple building permits may be issued for a given project, separate from the permit for the major structural work, for example, for foundation work, mechanical, electrical, and finishing work. Metropolitan Council has attempted to represent the permit valuation and square footage for all new projects and additions (if over $100,000) and to avoid duplicate reporting of these. However, there may be some inconsistency because of the complexity of some projects and differences among local permit record-keeping systems. Where it was possible to differentiate,  permits that were for remodeling, mechanical, electrical, plumbing, and finishing work only have not been included.
+
+Project 'value' reflects the estimated cost of construction reported on the building permit. Permit values exclude some costs including land and landscaping, and are typically lower than market values of completed properties.
+
+City-to-city comparisons may not be entirely valid if there are differences in survey completeness or methods of permit valuation.
+
+Other construction activity may have occurred on properties of state and federal jurisdictions that are not included in this report. The University of Minnesota, for example, is not covered in Metropolitan Council's survey since it does not have to apply for building permits from local jurisdictions.
+
+Occasionally a project will be put on hold after the building permit has been issued. All permits reported by local officials for this survey are included in our data base and in this report, regardless of status. It would not be feasible to do continuous follow up of all projects through the construction process.
+
+Council Research staff designated each listing as "Commercial," "Industrial," or "Public or Institutional", based on descriptive information provided by survey respondents.  The Public or Institutional category includes government-owned structures and semi-public buildings such as hospitals, schools, churches and community centers, owned or occupied by nonprofit organizations (including religious). All schools were coded as Public or Institutional use, whether ownership is public or private.
+
+The Minneapolis-St. Paul International Airport is not within the boundaries of a minor civil division. The Metropolitan Airports Commission provided data on airport construction.
+
+For complete information for each construction project, and mapping capability, see the MetroGIS website at  http://www.datafinder.org.
+
+Historical data may or may not be available for the following places:
+
+Burns Township (became the city of Nowthen, July 2008)
+Chaska Township (merged with the city of Chaska, January 2005)
+Columbus Township (became the city of Columbus, September 2006)
+Elko (merged with the city of New Market to become Elko New Market, January 2007)
+Forest Lake Township (merged with the city of Forest Lake, March 2000)
+Grant Township (became the city of Grant, January 1997)
+Hassan Township (merged with the city of Rogers, January 1, 2012)
+New Market (merged with the city of Elko to become Elko New Market, January 2007)
+New Scandia Township (became the city of Scandia, January 2007)
+Norwood (merged with the city of Young America to become Norwood Young America, January 1997)
+Oak Grove Township (became the city of Oak Grove, December 1993)
+Young America (merged with the city of Norwood to become Norwood Young America, January 1997)&lt;/procdesc&gt;&lt;/procstep&gt;&lt;/lineage&gt;&lt;/dataqual&gt;&lt;spdoinfo&gt;&lt;mgmg3obj /&gt;&lt;mgmg3til /&gt;&lt;/spdoinfo&gt;&lt;spref&gt;&lt;vertdef&gt;&lt;altsys&gt;&lt;altdatum&gt;Not applicable&lt;/altdatum&gt;&lt;altunits&gt;NA&lt;/altunits&gt;&lt;/altsys&gt;&lt;depthsys&gt;&lt;depthdn&gt;NA&lt;/depthdn&gt;&lt;depthdu&gt;NA&lt;/depthdu&gt;&lt;/depthsys&gt;&lt;/vertdef&gt;&lt;/spref&gt;&lt;eainfo&gt;&lt;overview&gt;&lt;eaover&gt;Attributes for Chart Data (Note:  Not all attributes are present in every chart.  The public and institutional projects totals exclude airport projects. While airport projects create employment, their impact on land use tends to be inconsequential because they are limited to
+fixed airport boundaries. Including airport projects in public and institutional project figures artificially inflates the share of developed areas, which host the region's airports, in the region's public and institutional totals.)
+
+DESCRIPTION:  Designation of project into one of 18 building type categories.
+
+GEOGRAPHY:   Name of the city, township or unorganized territory, e.g. Benton Twp., Blaine.
+
+TOTAL_PERMIT_VALUE:  Permit value of building or ddition.
+
+TOTAL SQUARE FOOTAGE:  Square footage of building or addition.
+
+YEAR:   The year the permit was issued.
+
+
+Attributes for Tabular Data: (Note:  The public and institutional projects totals exclude airport projects. While airport projects create employment, their impact on land use tends to be inconsequential because they are limited to fixed airport boundaries. Including airport projects
+in public and institutional project figures artificially inflates the share of developed areas, which host the region's airports, in the region's public and institutional totals.)
+
+CO_CODE:   3 digit FIPS and state standard county ID code
+                        003 = Anoka County
+                        019 = Carver County
+                        037 = Dakota County
+                        053 = Hennepin County
+                        123 = Ramsey County
+                        139 = Scott County
+                        163 = Washington County            
+
+CTU_CODE:   5 digit FIPS55 'Place' code for CTU.  As of 2006  these codes have been officially retired by the  federal government.  They are replaced by the GNIS codes below. The Census Bureau will continue to
+create FIPS55 Place codes for new cities and townships through the 2010 Census.  After that, no new FIPS55 codes will be created. Note that for townships that wholly incorporate into cities, the same FIPS55 code for
+the former township will usually be used for the new city. Conversely, GNIS creates a new ID for the new city. 
+
+CTU_ID:   The Geographic Names Information System (GNIS) official federal unique identifier for each city, township or unorganized territory. 
+
+COCTU_ID:  11 digit identifier for the combination of county and CTU (concatenation of CO_CODE and CTU_ID_CEN).   This is the official U.S. Census Bureau format. 
+
+CTU_NAME:   Name of the city, township or unorganized territory, e.g. Benton Twp., Blaine.
+
+YEAR:  The year the permit was issued.
+
+NONRES_TYPE_DESC: Designation of project into one of 18 building type categories.
+
+BLDG_NAME:  The name of the building, developer or owner of the building.
+
+BLDG_DESC:  A description of the building's use.
+
+PERMIT_TYPE:  N = New
+                          A = Addition
+
+PERMIT_VALUE:  Permit value of building or addition.
+
+SQF:  Square footage of new building or addition.
+
+ADDRESS_NUMBER_PREFIX:  The portion of the complete address number which precedes the address number itself, e.g. A 19 Calle 117, N6W2 3001 Bluemound Road.
+
+ADDRESS_NUMBER:  The numeric identifier for a land parcel, house, building or other location along a thoroughfare or within a community.
+
+ADDRESS_NUMBER_SEPARATOR:  A symbol or word required as a separator between components of a complex element or class.  The separator is required for address number ranges and for intersection addresses, and it is occasionally needed in constructing complete street numbers, e.g. 61-43 Springfield Boulevard.
+
+ADDRESS_NUMBER_SUFFIX:The non-integer portion of the identifier for the house, building or other feature which follows the address number itself, as defined by the official address authority for the given jurisdiction, e.g. 123 1/2 Main Street, 456 B Wilson Street.
+
+STREET_NAME_PRE_DIRECTIONAL:  A word preceding the street name that indicated the directional taken by the thoroughfare from an arbitrary starting point, or the sector where it is located, e.g. 1234 North Main Street.  Note:  The national standard does not use abbreviations.  Domain, North, South, East, West, Northeast, Southeast, Northwest, Southwest.
+
+STREET_NAME_PRE_MODIFIER:  A word or phrase that precedes all other elements of the street name and modifies it, but is separated from the street name by a street name pre-directional and/or pre-type, e.g. 123 Old North First Street.
+
+STREET_NAME_PRE_TYPE:  The element of the complete street name preceding the street name element that indicates the type of street, e.g. 1500 Highway 52, Avenue at Port Imperial, 901 Boulevard of the Allies.
+
+STREET_NAME:  Official name of a street as assigned by a local governing authority, or an alternate (alias) name that is used and recognized, excluding street types, directionals, and modifiers, e.g. 1234 Central Street Southwest.
+
+STREET_NAME_POST_DIRECTIONAL:  A word following the street name that indicated the directional taken by the thoroughfare from an arbitrary starting point, or the sector where it is located, e.g. 1234 Cherry Street North.  Note:  The national standard does not use abbreviations.  Domain, North, South, East, West, Northeast, Southeast, Northwest, Southwest.
+
+STREET_NAME_POST_MODIFIER:  A word or phrase that  follows all other elements of the street name and modifies, but is separated from the street name by a street name post-directional and/or post-type, e.g. 1230 Central Avenue Extended.
+
+STREET_NAME_POST_TYPE:  The element of the complete street name following the street name element that indicates the type of street, e.g. 1234 Central Street Northwest.
+
+TEMP_ADDRESS:  Combined address attributes.  
+
+ZIP_CODE:  A system of 5-digit codes that identifies the individual Post Office or metropolitan area delivery station associated with an address.
+
+ZIP_PLUS_4:  A 4-digit extension of the 5-digit ZIP code (preceded by a hyphen) that, in conjunction with the Zip code, identifies a specific range of the USPS delivery addresses.
+
+PIN:  Parcel Identification Number.
+----------------------------------------------------------------------------------
+Field types and lengths
+
+For Chart Data (Note:  Not all attributes are present in every chart):
+
+DESCRIPTION                     varchar2  256
+GEOGRAPHY                       varchar2   60
+TOTAL_PERMIT_VALUE              number  
+TOTAL_SQUARE_FOOTAGE            number  
+YEAR                            varchar2    4
+
+For Tabular Data:
+ 
+CO_CODE                         varchar2   20
+CTU_CODE                        varchar2    5
+CTU_ID                          number     20
+COCTU_ID                        varchar2   20
+CTU_NAME                        varchar2   60
+YEAR                            varchar2    4
+NONRES_TYPE_DESC                varchar2  100
+BLDG_NAME                       varchar2  100
+BLDG_DESC                       varchar2  256
+PERMIT_TYPE                     varchar2    1
+PERMIT_VALUE                    number
+SQF                             number
+ADDRESS_NUMBER_PREFIX           varchar2    6
+ADDRESS_NUMBER                  number
+ADDRESS_NUMBER_SEPARATOR        varchar2    1
+ADDRESS_NUMBER_SUFFIX           varchar2    6
+STREET_NAME_PRE_DIRECTIONAL     varchar2    9
+STREET_NAME_PRE-MODIFIER        varchar2   10
+STREET_NAME_PRE_TYPE            varchar2   24
+STREET_NAME                     varchar2   42
+STREET_NAME_POST_DIRECTIONAL    varchar2    9
+STREET_NAME_POST_MODIFIER       varchar2   12
+STREET_NAME_POST_TYPE           varchar2   12
+TEMP_ADDRESS                    varchar2  256
+ZIP_CODE                        varchar2    5
+ZIP_PLUS_4                      varchar2    4
+PIN                             varchar2   20&lt;/eaover&gt;&lt;eadetcit&gt;None&lt;/eadetcit&gt;&lt;/overview&gt;&lt;/eainfo&gt;&lt;distinfo&gt;&lt;resdesc&gt;nonresidential_building_permits&lt;/resdesc&gt;&lt;distliab&gt;NOTICE:  The data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The Metropolitan Council developed some of the data for its own internal business purposes and is redistributing data developed by other data providers (e.g., the U.S. Census Bureau and the Minnesota Department of Employment and Economic Development).  The Metropolitan Council does not represent or warrant that the data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the data or your reliance on the data.  You should consult the data documentation for these particular data to determine the limitations of the data.  If you transmit or provide the data (or any portion of it) to another user, it is recommended that the data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;&lt;stdorder&gt;&lt;digform&gt;&lt;digtinfo&gt;&lt;formname&gt;csv file&lt;/formname&gt;&lt;formvern&gt;NA&lt;/formvern&gt;&lt;transize&gt;Less than 10 MB for zip file&lt;/transize&gt;&lt;/digtinfo&gt;&lt;/digform&gt;&lt;ordering&gt;This entire dataset is available on the internet by clicking below after 'Online Linkage'.  Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- csv file
+- metadata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.
+
+This dataset can also be viewed and downloaded using the Download Tabular Data tool at http://stats.metc.state.mn.us/data_download/DD_start.aspx. The Download tool allows users to choose subsets of the  dataset, such as a city or county.&lt;/ordering&gt;&lt;/stdorder&gt;&lt;distrib&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Baris Gumus-Dawes&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Senior Researcher&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;Minnesota&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-602-1331&lt;/cntvoice&gt;&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;&lt;cntemail&gt;baris.dawes@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/distrib&gt;&lt;/distinfo&gt;&lt;metainfo&gt;&lt;metd&gt;20130802&lt;/metd&gt;&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;&lt;metstdv&gt;1.2&lt;/metstdv&gt;&lt;metextns&gt;&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;&lt;/metextns&gt;&lt;metc&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Deb Conley&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Research Office&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;Minnesota&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-602-1335&lt;/cntvoice&gt;&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;&lt;cntemail&gt;debbie.conley@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/metc&gt;&lt;/metainfo&gt;&lt;Esri&gt;&lt;ModDate&gt;20111208&lt;/ModDate&gt;&lt;ModTime&gt;11000500&lt;/ModTime&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20111208&lt;/mdDateSt&gt;&lt;/metadata&gt;</field></doc></add>

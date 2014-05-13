@@ -1,0 +1,253 @@
+<add allowDups="false"><doc><field name="LayerId">GrowthManagementPolicyAreas1996</field><field name="Name">15</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Polygon</field><field name="DataTypeSort">Polygon</field><field name="Availability">Online</field><field name="LayerDisplayName">Growth Management Policy Areas, 1996</field><field name="LayerDisplayNameSort">Growth Management Policy Areas, 1996</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">Metropolitan Council</field><field name="OriginatorSort">Metropolitan Council</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">The Growth Management Policy Areas (sometimes called the 2040 Growth Strategy) were developed by Metropolitan Council staff and approved by the Council in December of 1996.  The policy areas are the Urban Core, the Urban Area, the Urban Reserve, Rural Growth Centers and Permanent Rural and Agricultural Areas.  Additionally an Illustrative 2020 MUSA is depicted.
+
+NOTES:
+- Data were derived from MUSA, MCD and watershed layers
+- The Illustrative 2020 MUSA category is basically a cartoon.  It was put on the growth management map to convey the idea that there will be an interim 2020 MUSA.  The actual boundaries have yet to be determined and may look VERY different.
+- The lines between the Permanent Rural and Permanent Agricultural areas will also be more precisely determined in the future.</field><field name="MaxY">45.415</field><field name="MinY">44.471</field><field name="MinX">-94.012</field><field name="MaxX">-92.732</field><field name="ContentDate">1996-12-19T00:00:00Z</field><field name="Location">{"download": "ftp://gisftp.metc.state.mn.us/GrowthManagementPolicyAreas1996.zip", "ArcGISRest": "http://gis2.metc.state.mn.us/ArcGIS/rest/services/MetroGIS/Planning_Development/MapServer/export"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;
+	&lt;idinfo&gt;
+		&lt;citation&gt;
+			&lt;citeinfo&gt;
+				&lt;origin&gt;Metropolitan Council&lt;/origin&gt;
+				&lt;pubdate&gt;Unpublished material&lt;/pubdate&gt;
+				&lt;title&gt;Growth Management Policy Areas, 1996&lt;/title&gt;
+				&lt;mgmg1cid&gt;N/A&lt;/mgmg1cid&gt;
+				&lt;pubinfo&gt;
+					&lt;publish&gt;Metropolitan Council&lt;/publish&gt;
+				&lt;/pubinfo&gt;
+				&lt;onlink&gt;ftp://gisftp.metc.state.mn.us/GrowthManagementPolicyAreas1996.zip&lt;/onlink&gt;
+			&lt;/citeinfo&gt;
+		&lt;/citation&gt;
+		&lt;descript&gt;
+			&lt;abstract&gt;The Growth Management Policy Areas (sometimes called the 2040 Growth Strategy) were developed by Metropolitan Council staff and approved by the Council in December of 1996.  The policy areas are the Urban Core, the Urban Area, the Urban Reserve, Rural Growth Centers and Permanent Rural and Agricultural Areas.  Additionally an Illustrative 2020 MUSA is depicted.
+
+NOTES:
+- Data were derived from MUSA, MCD and watershed layers
+- The Illustrative 2020 MUSA category is basically a cartoon.  It was put on the growth management map to convey the idea that there will be an interim 2020 MUSA.  The actual boundaries have yet to be determined and may look VERY different.
+- The lines between the Permanent Rural and Permanent Agricultural areas will also be more precisely determined in the future.&lt;/abstract&gt;
+			&lt;purpose&gt;This dataset was developed as a tool for discussing and evaluating regional growth management policies.&lt;/purpose&gt;
+			&lt;supplinf&gt;Twin Cities 7 County Metropolitan Area.  This includes the counties of Anoka, Carver, Dakota, Hennepin, Ramsey, Scott and Washington in Minnesota.&lt;/supplinf&gt;
+		&lt;/descript&gt;
+		&lt;timeperd&gt;
+			&lt;timeinfo&gt;
+				&lt;sngdate&gt;
+					&lt;caldate&gt;19961219&lt;/caldate&gt;
+				&lt;/sngdate&gt;
+			&lt;/timeinfo&gt;
+			&lt;current&gt;The Growth Managment Policy Areas were approved by the Council on December 19, 1996.&lt;/current&gt;
+		&lt;/timeperd&gt;
+		&lt;status&gt;
+			&lt;progress&gt;Complete&lt;/progress&gt;
+			&lt;update&gt;Irregular&lt;/update&gt;
+		&lt;/status&gt;
+		&lt;spdom&gt;
+			&lt;bounding&gt;
+				&lt;westbc&gt;-94.012&lt;/westbc&gt;
+				&lt;eastbc&gt;-92.732&lt;/eastbc&gt;
+				&lt;northbc&gt;45.415&lt;/northbc&gt;
+				&lt;southbc&gt;44.471&lt;/southbc&gt;
+			&lt;/bounding&gt;
+		&lt;/spdom&gt;
+		&lt;keywords&gt;
+			&lt;theme&gt;
+				&lt;themekt&gt;None&lt;/themekt&gt;
+				&lt;themekey&gt;planning and development, growth management, growth, regional growth strategy, land use&lt;/themekey&gt;
+			&lt;/theme&gt;
+			&lt;place&gt;
+				&lt;placekey&gt;Twin Cities, Anoka County, Carver County, Dakota County, Hennepin County, Ramsey County, Scott County, Washington County&lt;/placekey&gt;
+			&lt;/place&gt;
+		&lt;/keywords&gt;
+		&lt;accconst&gt;None&lt;/accconst&gt;
+		&lt;useconst&gt;None&lt;/useconst&gt;
+		&lt;ptcontac&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Mark Kotz&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Database Administrator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1644&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;mark.kotz@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/ptcontac&gt;
+		&lt;browse&gt;
+			&lt;browsen&gt;http://www.datafinder.org/metadata/bg/GrowthManagementPolicyAreas1996.jpg&lt;/browsen&gt;
+			&lt;browsed&gt;This is an example of a map using the Growth Management Policy Areas layer.  Other layers on the map include county boundaries, city boundaries and roads.  These layers are not included with the GMPA layer.&lt;/browsed&gt;
+		&lt;/browse&gt;
+		&lt;native&gt;ArcInfo version 8x&lt;/native&gt;
+		&lt;crossref&gt;
+			&lt;citeinfo&gt;
+				&lt;title&gt;1990 Generalized Land Use&lt;/title&gt;
+			&lt;/citeinfo&gt;
+		&lt;/crossref&gt;
+	&lt;/idinfo&gt;
+	&lt;dataqual&gt;
+		&lt;attracc&gt;
+			&lt;attraccr&gt;dataset has only 2 attribute, the policy area name and a single digit code for the policy area.  Codes and names have been compared for accuracy.&lt;/attraccr&gt;
+		&lt;/attracc&gt;
+		&lt;logic&gt;The dataset is topologically 'clean'.&lt;/logic&gt;
+		&lt;complete&gt;Entire seven county geographic area is covered.&lt;/complete&gt;
+		&lt;posacc&gt;
+			&lt;horizpa&gt;
+				&lt;horizpar&gt;The positional accuracy of the dataset has not been tested under the National Standards for Spatial Data Accuracy.  The positional accuracy of the dataset is estimated to be + or - 100 meters.  
+
+Note that the ''Illustrative 2020 MUSA'' category is basically a cartoon.  It was put on the growth management map to convey the idea that there will be an interim 2020 MUSA.  The actual boundaries have yet to be determined and may look VERY different.  The positional accuracy of this category is therefore + or - many miles.&lt;/horizpar&gt;
+			&lt;/horizpa&gt;
+			&lt;vertacc&gt;
+				&lt;vertaccr /&gt;
+			&lt;/vertacc&gt;
+		&lt;/posacc&gt;
+		&lt;lineage&gt;
+			&lt;srcinfo&gt;
+				&lt;srcscale /&gt;
+			&lt;/srcinfo&gt;
+			&lt;procstep&gt;
+				&lt;procdesc&gt;Boundary lines for the Growth Management Policy Areas were derived from several souces.
+
+Census tracts were used to define the Urban Core.  The 2000 Metropolitan Urban Service Area (MUSA) layer (as of 1995) was used to define the Urban Area.  Watershed boundaries and municipal boundaries were used to define the remaining policy areas with the exception of the Illustrative 2020 MUSA.  This 'Illustrative' area was heads-up digitized with very crude boundaries.  The actual boundaries have yet to be determined and may look very different.
+
+Also note that some arbitrary lines were used to connect municipal and watershed boundaries in some locations.&lt;/procdesc&gt;
+			&lt;/procstep&gt;
+		&lt;/lineage&gt;
+	&lt;/dataqual&gt;
+	&lt;spdoinfo&gt;
+		&lt;indspref&gt;None&lt;/indspref&gt;
+		&lt;direct&gt;Vector&lt;/direct&gt;
+		&lt;mgmg3obj&gt;arcs, nodes, polygons, label points&lt;/mgmg3obj&gt;
+		&lt;mgmg3til&gt;One layer for entire seven county region.&lt;/mgmg3til&gt;
+	&lt;/spdoinfo&gt;
+	&lt;spref&gt;
+		&lt;horizsys&gt;
+			&lt;geograph&gt;
+				&lt;latres /&gt;
+				&lt;longres /&gt;
+				&lt;geogunit /&gt;&lt;/geograph&gt;
+			&lt;planar&gt;
+				&lt;mapproj&gt;
+					&lt;mapprojn /&gt;
+					&lt;mgmg4par /&gt;
+					&lt;otherprj /&gt;
+				&lt;/mapproj&gt;
+				&lt;gridsys&gt;
+					&lt;gridsysn&gt;UTM&lt;/gridsysn&gt;
+					&lt;utm&gt;
+						&lt;utmzone&gt;15&lt;/utmzone&gt;
+					&lt;/utm&gt;
+					&lt;spcs&gt;
+						&lt;spcszone /&gt;
+					&lt;/spcs&gt;
+					&lt;mgmg4coz /&gt;
+					&lt;mgmg4adj /&gt;
+				&lt;/gridsys&gt;
+				&lt;planci&gt;
+					&lt;coordrep&gt;
+						&lt;absres /&gt;
+						&lt;ordres /&gt;
+					&lt;/coordrep&gt;
+					&lt;distbrep&gt;
+						&lt;distres /&gt;
+					&lt;/distbrep&gt;
+					&lt;plandu&gt;Meters&lt;/plandu&gt;
+				&lt;/planci&gt;
+			&lt;/planar&gt;
+			&lt;geodetic&gt;
+				&lt;horizdn&gt;NAD83&lt;/horizdn&gt;
+				&lt;ellips&gt;GRS80&lt;/ellips&gt;
+			&lt;/geodetic&gt;
+		&lt;/horizsys&gt;
+		&lt;vertdef&gt;
+			&lt;altsys&gt;
+				&lt;altdatum /&gt;
+				&lt;altunits /&gt;
+			&lt;/altsys&gt;
+			&lt;depthsys&gt;
+				&lt;depthdn /&gt;
+				&lt;depthdu /&gt;
+			&lt;/depthsys&gt;
+		&lt;/vertdef&gt;
+	&lt;/spref&gt;
+	&lt;eainfo&gt;
+		&lt;overview&gt;
+			&lt;eaover&gt;POLYGON ATTRIBUTES:
+ 
+GMPACODE: One code for each policy area (1-7)
+
+GMPANAME: Growth Management Policy Area name&lt;/eaover&gt;
+			&lt;eadetcit&gt;None&lt;/eadetcit&gt;
+		&lt;/overview&gt;
+	&lt;/eainfo&gt;
+	&lt;distinfo&gt;
+		&lt;distrib&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Mark Kotz&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Database Administrator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1644&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;mark.kotz@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/distrib&gt;
+		&lt;resdesc&gt;GrowthManagementPolicyAreas1996&lt;/resdesc&gt;
+		&lt;distliab&gt;NOTICE:  The Geographic Information System (GIS) Data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE GIS DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The GIS Data were developed by the Metropolitan Council for its own internal business purposes.  The Metropolitan Council does not represent or warrant that the GIS Data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the GIS Data or your reliance on the GIS Data.  You should consult the data documentation for this particular GIS Data to determine the limitations of the GIS Data and the precision with which the GIS Data may depict distance, direction, location, or other geographic features.  If you transmit or provide the GIS Data (or any portion of it) to another user, it is recommended that the GIS Data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;
+		&lt;stdorder&gt;
+			&lt;digform&gt;
+				&lt;digtinfo&gt;
+					&lt;formname&gt;ArcView shape files&lt;/formname&gt;
+					&lt;formvern&gt;ArcInfo 8x,  ArcView 3x&lt;/formvern&gt;
+					&lt;transize&gt;1.5 meg. for zip file.&lt;/transize&gt;
+				&lt;/digtinfo&gt;
+			&lt;/digform&gt;
+			&lt;ordering&gt;This dataset is distributed on the internet by clicking below after 'Online Linkage'.  Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- ArcView shape files
+- metdata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.
+
+ 
+Additionally, this dataset is available for direct use via one or more map services.  More information about what a web mapping service is can be found at http://www.datafinder.org/services/.  The specific map service and layer name for this dataset can be found by clicking the blue or green boxes under the map service column of the DataFinder Catalog at http://www.datafinder.org/catalog/ .&lt;/ordering&gt;
+		&lt;/stdorder&gt;
+	&lt;/distinfo&gt;
+	&lt;metainfo&gt;
+		&lt;metd&gt;20010523&lt;/metd&gt;
+		&lt;metc&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Mark Kotz&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Database Administrator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1644&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;mark.kotz@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/metc&gt;
+		&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;
+		&lt;metstdv&gt;1.2&lt;/metstdv&gt;
+		&lt;metextns&gt;
+			&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;
+		&lt;/metextns&gt;
+	&lt;/metainfo&gt;
+	&lt;Esri&gt;&lt;ModDate&gt;20060210&lt;/ModDate&gt;&lt;ModTime&gt;13121900&lt;/ModTime&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20060210&lt;/mdDateSt&gt;&lt;/metadata&gt;</field></doc></add>

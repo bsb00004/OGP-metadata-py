@@ -1,0 +1,194 @@
+<add allowDups="false"><doc><field name="LayerId">NCompassEdits</field><field name="Name">NCompassEdits</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType" /><field name="DataTypeSort" /><field name="Availability">Online</field><field name="LayerDisplayName">NCompass Technologies Street Centerline Edits Table</field><field name="LayerDisplayNameSort">NCompass Technologies Street Centerline Edits Table</field><field name="Publisher">NCompass Technologies</field><field name="PublisherSort">NCompass Technologies</field><field name="Originator">NCompass Technologies (formerly The Lawrence Group)</field><field name="OriginatorSort">NCompass Technologies (formerly The Lawrence Group)</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">This dataset is used to track changes between monthly versions of the Street Centerline and Address Range dataset developed by NCompass Technologies for the Twin Cities Metropolitan Area.
+
+The Street Centerline dataset contains a unique identification number for each segment.  As segments are modified, deleted or added, new ID numbers may be created and old IDs may be deleted.  With each monthly update of the Street Centerline dataset, NCompass Technologies provides a copy of the NCompassEdits.dbf dBase table that tracks all such changes made to the dataset from the previous month's version.
+
+Files are named 'NCompassEdits_########'', where ''########'' represents the date in &#8220;yyyymmdd&#8221; format.  Prior to 2012, quarterly updates were named 'NCompassEdits_###'', where ''###'' represents the version number.  The table below lists the version number with the corresponding date.
+
+14.8 = 12/06/2011
+14.7 = 09/08/2011
+14.6 = 06/07/2011
+14.5 = 03/10/2011
+14.4 = 12/08/2010
+14.3 = 09/07/2010
+14.2 = 06/08/2010
+14.1 = 03/08/2010
+13.4 = 12/04/2009
+13.3 = 09/09/2009
+13.2 = 06/09/2009
+13.1 = 03/06/2009
+12.4 = 12/01/2008
+12.3 = 09/01/2008
+12.2 = 06/01/2008
+12.1 = 03/01/2008
+11.4 = 12/01/2007
+11.3 = 09/01/2007
+11.2 = 06/01/2007
+11.1 = 03/01/2007
+10.4 = 12/01/2006
+10.3 = 09/01/2006
+10.2 = 06/01/2006
+10.1 = 03/01/2006
+09.4 = 12/01/2005
+09.3 = 09/01/2005
+09.2 = 06/01/2005
+09.1 = 03/01/2005
+08.4 = 12/01/2004
+08.3 = 09/01/2004
+08.2 = 06/01/2004
+08.1 = 03/01/2004
+07.4 = 12/01/2003
+07.3 = 09/01/2003
+07.2 = 06/02/2003
+07.1 = 03/01/2003
+06.4 = 12/02/2002
+06.3 = 09/01/2002
+06.2 = 06/01/2002
+06.1 = 03/01/2002
+05.4 = 12/01/2001
+05.3 = 09/01/2001
+05.2 = 06/01/2001
+05.1 = 03/01/2001
+04.4 = 12/01/2000
+04.3 = 09/01/2000
+04.2 = 05/31/2000
+04.1 = 03/01/2000
+03.4 = 12/01/1999
+03.3 = 09/01/1999
+03.2 = 06/01/1999
+03.1 = 03/01/1999
+02.4 = 12/01/1998
+02.3 = 09/01/1998
+02.2b = 08/04/1998
+02.2 = 06/01/1998
+02.1 = ????
+01.2 = 12/01/97
+</field><field name="MaxY">45.4</field><field name="MinY">44.5</field><field name="MinX">-94.0</field><field name="MaxX">-92.7</field><field name="ContentDate">2013-07-25T00:00:00Z</field><field name="Location">{"download": "None available"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;&lt;idinfo&gt;&lt;citation&gt;&lt;citeinfo&gt;&lt;origin&gt;NCompass Technologies (formerly The Lawrence Group)&lt;/origin&gt;&lt;pubdate&gt;Periodically revised&lt;/pubdate&gt;&lt;title&gt;NCompass Technologies Street Centerline Edits Table&lt;/title&gt;&lt;mgmg1cid /&gt;&lt;pubinfo&gt;&lt;publish&gt;NCompass Technologies&lt;/publish&gt;&lt;/pubinfo&gt;&lt;onlink&gt;None available&lt;/onlink&gt;&lt;/citeinfo&gt;&lt;/citation&gt;&lt;descript&gt;&lt;abstract&gt;This dataset is used to track changes between monthly versions of the Street Centerline and Address Range dataset developed by NCompass Technologies for the Twin Cities Metropolitan Area.
+
+The Street Centerline dataset contains a unique identification number for each segment.  As segments are modified, deleted or added, new ID numbers may be created and old IDs may be deleted.  With each monthly update of the Street Centerline dataset, NCompass Technologies provides a copy of the NCompassEdits.dbf dBase table that tracks all such changes made to the dataset from the previous month's version.
+
+Files are named 'NCompassEdits_########'', where ''########'' represents the date in &amp;#8220;yyyymmdd&amp;#8221; format.  Prior to 2012, quarterly updates were named 'NCompassEdits_###'', where ''###'' represents the version number.  The table below lists the version number with the corresponding date.
+
+14.8 = 12/06/2011
+14.7 = 09/08/2011
+14.6 = 06/07/2011
+14.5 = 03/10/2011
+14.4 = 12/08/2010
+14.3 = 09/07/2010
+14.2 = 06/08/2010
+14.1 = 03/08/2010
+13.4 = 12/04/2009
+13.3 = 09/09/2009
+13.2 = 06/09/2009
+13.1 = 03/06/2009
+12.4 = 12/01/2008
+12.3 = 09/01/2008
+12.2 = 06/01/2008
+12.1 = 03/01/2008
+11.4 = 12/01/2007
+11.3 = 09/01/2007
+11.2 = 06/01/2007
+11.1 = 03/01/2007
+10.4 = 12/01/2006
+10.3 = 09/01/2006
+10.2 = 06/01/2006
+10.1 = 03/01/2006
+09.4 = 12/01/2005
+09.3 = 09/01/2005
+09.2 = 06/01/2005
+09.1 = 03/01/2005
+08.4 = 12/01/2004
+08.3 = 09/01/2004
+08.2 = 06/01/2004
+08.1 = 03/01/2004
+07.4 = 12/01/2003
+07.3 = 09/01/2003
+07.2 = 06/02/2003
+07.1 = 03/01/2003
+06.4 = 12/02/2002
+06.3 = 09/01/2002
+06.2 = 06/01/2002
+06.1 = 03/01/2002
+05.4 = 12/01/2001
+05.3 = 09/01/2001
+05.2 = 06/01/2001
+05.1 = 03/01/2001
+04.4 = 12/01/2000
+04.3 = 09/01/2000
+04.2 = 05/31/2000
+04.1 = 03/01/2000
+03.4 = 12/01/1999
+03.3 = 09/01/1999
+03.2 = 06/01/1999
+03.1 = 03/01/1999
+02.4 = 12/01/1998
+02.3 = 09/01/1998
+02.2b = 08/04/1998
+02.2 = 06/01/1998
+02.1 = ????
+01.2 = 12/01/97
+&lt;/abstract&gt;&lt;purpose&gt;To track monthly changes in the NCompass Technologies Street Centerline and Address Range dataset by unique segment ID.&lt;/purpose&gt;&lt;/descript&gt;&lt;timeperd&gt;&lt;current&gt;Dataset is updated monthly&lt;/current&gt;&lt;/timeperd&gt;&lt;status&gt;&lt;progress&gt;Complete&lt;/progress&gt;&lt;update&gt;Monthly&lt;/update&gt;&lt;/status&gt;&lt;spdom&gt;&lt;bounding&gt;&lt;westbc&gt;-94.0&lt;/westbc&gt;&lt;eastbc&gt;-92.7&lt;/eastbc&gt;&lt;northbc&gt;45.4&lt;/northbc&gt;&lt;southbc&gt;44.5&lt;/southbc&gt;&lt;/bounding&gt;&lt;/spdom&gt;&lt;keywords&gt;&lt;theme&gt;&lt;themekt&gt;None&lt;/themekt&gt;&lt;themekey&gt;tlgedits, centerline, centerlines, address range, street, streets, road, roads, transportation&lt;/themekey&gt;&lt;/theme&gt;&lt;place&gt;&lt;placekey&gt;Minnesota, Twin Cities, Anoka County, Benton County, Blue Earth County, Carlton County, Carver County, Chisago County, Dakota County, Goodhue County, Hennepin County, Isanti County, McLeod County, Morrison, Olmsted County, Pierce County, Polk County, Ramsey County, St. Croix, St. Louis County, Scott County, Sherburne County, Sibley, Stearns County, Washington County, Wright County&lt;/placekey&gt;&lt;/place&gt;&lt;/keywords&gt;&lt;accconst&gt;In May of 1997, an agreement for the use of NCompass Technologies Street Centerline data was completed by Metropolitan Council, Minnesota Department of Transportation (Mn/DOT) and NCompass Technologies. The agreement makes NCompass Technologies Street Centerline data available to all State and Local Government agencies and Colleges and Universities in the State of Minnesota. Mn/DOT and the Metropolitan Council have funded the licensing of the NCompass Technologies Street Centerline data for use by these organizations to promote standardization and sharing of geographic information.&lt;/accconst&gt;&lt;useconst&gt;All users are licensees and the dataset may be used within the licensee's business, organization, or agency only. A licensee may alter the data if records of updates and changes are provided to the Licensing Agent. Altered data may not be otherwise distributed. NCompass Technologies will be the maintenance provider for the street centerline dataset agreements for specific information.
+
+While for the Minnesota public users mentioned in 'Access Constraints' there is no charge for the license, there are some responsibilities by which users agree to abide. These include:
+- Submit roadway and address information additions and changes to NCompass Technologies so that they may be incorporated into the street centerline dataset and made available in future monthly updates. 
+- Take measures to prevent the distribution of the NCompass Technologies data to unauthorized users since it is proprietary trade secret information, making it non-public data. 
+- Determining appropriate applications for the use of the data are the responsibility of the user.&lt;/useconst&gt;&lt;native&gt;dBase table&lt;/native&gt;&lt;crossref&gt;&lt;citeinfo&gt;&lt;title&gt;NCompass Technologies Street Centerline and Address Ranges dataset  ( http://www.datafinder.org/metadata/NCompassRoads.htm )&lt;/title&gt;&lt;/citeinfo&gt;&lt;/crossref&gt;&lt;ptcontac&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;NCompass Technologies&lt;/cntorg&gt;&lt;cntper&gt;Kevin Etherton&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Senior GIS Coordinator/Specialist&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;9855 West 78th Street, Suite 50&lt;/address&gt;&lt;city&gt;Eden Prairie&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55344&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;612.598.0438&lt;/cntvoice&gt;&lt;cntemail&gt;kevin@ncompasstech.com&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/ptcontac&gt;&lt;/idinfo&gt;&lt;dataqual&gt;&lt;attracc&gt;&lt;attraccr&gt;Unknown&lt;/attraccr&gt;&lt;/attracc&gt;&lt;complete&gt;Unknown&lt;/complete&gt;&lt;posacc&gt;&lt;horizpa&gt;&lt;horizpar&gt;Not applicable&lt;/horizpar&gt;&lt;/horizpa&gt;&lt;vertacc&gt;&lt;vertaccr&gt;Not applicable&lt;/vertaccr&gt;&lt;/vertacc&gt;&lt;/posacc&gt;&lt;lineage&gt;&lt;srcinfo&gt;&lt;srcscale /&gt;&lt;/srcinfo&gt;&lt;procstep&gt;&lt;procdesc&gt;Unknown&lt;/procdesc&gt;&lt;/procstep&gt;&lt;/lineage&gt;&lt;/dataqual&gt;&lt;spdoinfo&gt;&lt;indspref&gt;Unique segement ID (''TLGID'')&lt;/indspref&gt;&lt;mgmg3obj /&gt;&lt;mgmg3til /&gt;&lt;direct /&gt;&lt;/spdoinfo&gt;&lt;eainfo&gt;&lt;overview&gt;&lt;eaover&gt;Field Definitions:
+ 
+TLGID:      The consistent, unique segment ID assigned by NCompass Technologies.
+ 
+Change_dat: The date of the most recent change of any type to the segment.
+ 
+County:     The name of the county in which the segment resides.
+ 
+Change_id1: The new unique segment ID that replaces the existing Tlgid. 
+ 
+Change_id2: In the case of road splits, this will represent the 2nd of two
+            segments replacing the original segment.  Road splits are comprised
+            of one deletion and two additions.
+ 
+Old_id:     The ID of the segment previous to a split or other renumbering.  
+            Available in TLG version 3.2 and newer.
+ 
+Deleted:    The date a street segment was deleted from the dataset.
+ 
+Name_ch:    The date the street_nam and the associated parsed street name 
+            components were last changed.
+ 
+Altnam1_ch: The date that the Alt_nam1 attribute was last changed.  
+            Available in TLG version 3.2 and newer.
+ 
+Altnam2_ch: The date that the Alt_nam2 attribute was last changed.
+            Available in TLG version 3.2 and newer.
+ 
+Fclass_ch:  The date that the Fclass attribute was last changed.
+            Available in TLG version 3.2 and newer.
+ 
+Address_ch: The date that l_f_add, l_t_add, r_f_add, and/or r_t_add were last
+            changed.
+ 
+Other_atr_: The date that any other attribute was last changed; 
+            e.g., a zip code or city code field.
+ 
+Node_move:  The date of the last repositioning of either of the segment 
+            endpoints.
+ 
+Vertex_ch:  The date of the last vertex movement, addition, or deletion on the 
+            segment.
+ 
+Id_change:  The date that the segment was renumbered due to a split or other 
+            necessary cause.
+ 
+New_seg:    The date that a new street segment was entered into the dataset, 
+            could be from a split, renumbering, or addition.
+ 
+Added_new:  The date that a new road segment was added.  Added_new is only 
+            calculated when a segment is added to the dataset, and should 
+            remain constant even after an ID change.  This lets us know how 
+            long the SEGMENT has been in the data.&lt;/eaover&gt;&lt;eadetcit&gt;None&lt;/eadetcit&gt;&lt;/overview&gt;&lt;/eainfo&gt;&lt;distinfo&gt;&lt;resdesc&gt;NCompassEdits&lt;/resdesc&gt;&lt;distliab&gt;NCompass Technologies and Metropolitan Council shall use its best efforts to ensure the dataset is delivered free of physical defect and shall have sole authority to determine whether the dataset was free of any physical defect at the time of delivery. The dataset and associated manuals, reference materials, and technical documentation (if any) are provided 'as is', without warranty as to their performance, merchantability, or fitness for any particular purpose. The entire risk as to the results and performance of the dataset is assumed by the user. The Metropolitan Council and NCompass Technologies shall not be liable for indirect, special, incidental, compensatory, or consequential damages or third party claims which may result from the use of the dataset, even if the Council or NCompass Technologies has been advised of the possibility of such potential loss or damage. 
+
+See license agreement for complete information.&lt;/distliab&gt;&lt;stdorder&gt;&lt;digform&gt;&lt;digtinfo&gt;&lt;formname&gt;dBase file&lt;/formname&gt;&lt;formvern&gt;4&lt;/formvern&gt;&lt;transize&gt;Monthly NCompassEdits.dbf files range in size from 0.5 Mb to 2.0 Mb.&lt;/transize&gt;&lt;/digtinfo&gt;&lt;/digform&gt;&lt;ordering&gt;This dataset is available only to licensed users.
+
+FOR MINNESOTA PUBLIC USERS (see 'Access Constraints' in Section 1 of the full metadata.):
+Instructions for licensing and obtaining the dataset may be found on the MetroGIS web site at http://www.metrogis.org/data/datasets/street_centerlines/order_info/index.shtml .   You may download copies of the license agreement and instructions via this link.  Once you have completed and signed the license, it must be sent to NCompass Technologies.  NCompass Technologies will sign the agreements, return a copy to you and inform the Metropolitan Council that you are a new licensee.  Metropolitan Council will then send an account ID and password to you, allowing you to download the data and future updates according to the provisions of the license. 
+
+FOR OTHER USERS:
+Contact Kevin Etherton at NCompass Technologies (see 'Contact Person' in Section 1).&lt;/ordering&gt;&lt;/stdorder&gt;&lt;distrib&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Jon Hoekenga&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;GIS Specialist&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;Minnesota&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-602-1561&lt;/cntvoice&gt;&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;&lt;cntemail&gt;jonathan.hoekenga@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/distrib&gt;&lt;/distinfo&gt;&lt;metainfo&gt;&lt;metd&gt;20120214&lt;/metd&gt;&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;&lt;metstdv&gt;1.2&lt;/metstdv&gt;&lt;metextns&gt;&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;&lt;/metextns&gt;&lt;metc&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Jon Hoekenga&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;GIS Specialist&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;Minnesota&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-602-1561&lt;/cntvoice&gt;&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;&lt;cntemail&gt;jonathan.hoekenga@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/metc&gt;&lt;/metainfo&gt;&lt;Esri&gt;&lt;ModDate&gt;20110729&lt;/ModDate&gt;&lt;ModTime&gt;14541300&lt;/ModTime&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20110729&lt;/mdDateSt&gt;&lt;/metadata&gt;</field></doc></add>

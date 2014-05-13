@@ -1,0 +1,96 @@
+<add allowDups="false"><doc><field name="LayerId">Census2010Population</field><field name="Name">Census2010Population</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType" /><field name="DataTypeSort" /><field name="Availability">Online</field><field name="LayerDisplayName">Decennial Census 2010</field><field name="LayerDisplayNameSort">Decennial Census 2010</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">U.S. Census Bureau</field><field name="OriginatorSort">U.S. Census Bureau</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">Decennial Census 2010 includes tabulations of housing units, total population and adult population by race and Hispanicity. Geographies nationwide can be obtained from Census, with disaggregate geographic detail down to Block-level. Metropolitan Council is publishing files for 2010 Blocks, Block Groups and Tracts.</field><field name="MaxY">49.37</field><field name="MinY">43.5</field><field name="MinX">-97.23</field><field name="MaxX">-89.53</field><field name="ContentDate">2010-01-01T00:00:00Z</field><field name="Location">{"download": "ftp://gisftp.metc.state.mn.us/Census2010Population.zip"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;&lt;idinfo&gt;&lt;citation&gt;&lt;citeinfo&gt;&lt;title&gt;Decennial Census 2010&lt;/title&gt;&lt;origin&gt;U.S. Census Bureau&lt;/origin&gt;&lt;pubinfo&gt;&lt;publish&gt;Metropolitan Council&lt;/publish&gt;&lt;/pubinfo&gt;&lt;pubdate&gt;20110317&lt;/pubdate&gt;&lt;onlink&gt;ftp://gisftp.metc.state.mn.us/Census2010Population.zip&lt;/onlink&gt;&lt;/citeinfo&gt;&lt;/citation&gt;&lt;descript&gt;&lt;abstract&gt;Decennial Census 2010 includes tabulations of housing units, total population and adult population by race and Hispanicity. Geographies nationwide can be obtained from Census, with disaggregate geographic detail down to Block-level. Metropolitan Council is publishing files for 2010 Blocks, Block Groups and Tracts.&lt;/abstract&gt;&lt;purpose&gt;Decennial Census 2010 includes tabulations of housing units, total population and adult population by race and Hispanicity. Data are population and housing from a "100% count." The Census Bureau attempts to survey or interview all known addresses. Geographies nationwide can be obtained from Census, with disaggregate geographic detail down to Block-level.  Metropolitan Council is publishing files for 2010 Blocks, Block Groups and Tracts.&lt;/purpose&gt;&lt;/descript&gt;&lt;timeperd&gt;&lt;timeinfo&gt;&lt;sngdate&gt;&lt;caldate&gt;2010&lt;/caldate&gt;&lt;/sngdate&gt;&lt;/timeinfo&gt;&lt;current&gt;2010&lt;/current&gt;&lt;/timeperd&gt;&lt;status&gt;&lt;progress&gt;Complete&lt;/progress&gt;&lt;update&gt;None Planned&lt;/update&gt;&lt;/status&gt;&lt;spdom&gt;&lt;bounding&gt;&lt;westbc&gt;-97.23&lt;/westbc&gt;&lt;eastbc&gt;-89.53&lt;/eastbc&gt;&lt;northbc&gt;49.37&lt;/northbc&gt;&lt;southbc&gt;43.5&lt;/southbc&gt;&lt;/bounding&gt;&lt;/spdom&gt;&lt;keywords&gt;&lt;theme&gt;&lt;themekey&gt;Census, demographic, population, tracts, block groups, blocks&lt;/themekey&gt;&lt;themekt&gt;None&lt;/themekt&gt;&lt;/theme&gt;&lt;/keywords&gt;&lt;accconst&gt;None&lt;/accconst&gt;&lt;useconst&gt;None&lt;/useconst&gt;&lt;browse&gt;&lt;browsen&gt;None available&lt;/browsen&gt;&lt;browsed /&gt;&lt;/browse&gt;&lt;crossref&gt;&lt;citeinfo&gt;&lt;title&gt;Census Geography 2010 - TIGER shapefiles and Census Geography 2010 - Realigned shapefiles&lt;/title&gt;&lt;/citeinfo&gt;&lt;/crossref&gt;&lt;native&gt;Oracle Version 10g, Release 2&lt;/native&gt;&lt;ptcontac&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Matt Schroeder&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Senior Researcher&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651.602.1513&lt;/cntvoice&gt;&lt;cntemail&gt;matt.schroeder@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/ptcontac&gt;&lt;/idinfo&gt;&lt;dataqual&gt;&lt;attracc&gt;&lt;attraccr&gt;The Decennial Census, SF1, reports population and housing from a "100% count." The Census Bureau attempts to survey or interview all known addresses. Still, the data are subject to error. The errors derive from survey data collection (response errors, field follow-up for missing cases) and processing by the Census Bureau (geolocation of population and housing, data coding, compilation processes, and imputation of missing cases).&lt;/attraccr&gt;&lt;/attracc&gt;&lt;lineage&gt;&lt;procstep&gt;&lt;procdesc&gt;Data presented were compiled by US Census Bureau. To compare 2010 Tracts and Block Groups with historical statistics, the tabulation Blocks of past Censuses should be compiled into 2010 Tracts and Block Groups via "spatial join" and summarization.&lt;/procdesc&gt;&lt;/procstep&gt;&lt;srcinfo&gt;&lt;srcscale /&gt;&lt;/srcinfo&gt;&lt;/lineage&gt;&lt;logic&gt;Data presented were compiled by US Census Bureau. To compare 2010 Tracts and Block Groups with historical statistics, the tabulation Blocks of past Censuses should be compiled into 2010 Tracts and Block Groups via "spatial join" and summarization.
+
+Data presented have been assigned new field names by Metroplitan Council in order to aid usability.&lt;/logic&gt;&lt;complete&gt;Entire state is covered.&lt;/complete&gt;&lt;/dataqual&gt;&lt;spdoinfo&gt;&lt;mgmg3obj /&gt;&lt;mgmg3til /&gt;&lt;indspref /&gt;&lt;direct /&gt;&lt;/spdoinfo&gt;&lt;spref&gt;&lt;vertdef&gt;&lt;altsys&gt;&lt;altdatum&gt;Not applicable&lt;/altdatum&gt;&lt;altunits&gt;NA&lt;/altunits&gt;&lt;/altsys&gt;&lt;depthsys&gt;&lt;depthdn&gt;NA&lt;/depthdn&gt;&lt;depthdu&gt;NA&lt;/depthdu&gt;&lt;/depthsys&gt;&lt;/vertdef&gt;&lt;/spref&gt;&lt;eainfo&gt;&lt;overview&gt;&lt;eaover&gt;Attributes for table: 
+
+The following appear as labels or headings in tables compiled by Metropolitan Council:
+
+GEOG_UNIT= Metropolitan Council-provided identifier (for Tracts and Block Groups this is identical to field GEOID2); 
+GEOG_LEVEL= Metropolitan Council-provided summarization level; 
+GEONAME= Name label for geographic area; 
+GEOID= Census-provided 20-digit string identifying the Census geography sum level and type, FIPS codes, Tract and Block Group identifiers; 
+SUMLEV= Census-provided summarization level; 
+GEOCOMP= Census-provided summarization type ('00' denotes total, other codes denote urban and rural subtotals); 
+STATE= State FIPS code; 
+COUNTY= County FIPS code; 
+GEOID2= Census-provided 12-digit code identifying the FIPS codes, Tract and Block Group identifiers;  
+
+B00001e1= n people in the area;  
+B00002e1= n housing units represented in the area;  
+POPTOTAL= Total number of people, all types (table P1); 
+LIVEDALONE= households with 1 person alone (P21);
+MARRKIDS= family households with children and headed by a married couple (P21); 
+UNMARRKIDS= family households with children and headed by a single person or unmarried people (P21); 
+FAMNOKIDS= family households with no children (P21); 
+NONFAMILY= other households that are not families and with more than 1 person (P21);  
+M_0_4=   males in this age range (P12); 
+M_5_9=   males in this age range (P12); 
+M_10_14= males in this age range (P12); 
+M_15_19= males in this age range (P12); 
+M_20_24= males in this age range (P12); 
+M_25_29= males in this age range (P12); 
+M_30_34= males in this age range (P12); 
+M_35_39= males in this age range (P12); 
+M_40_44= males in this age range (P12);
+M_45_49= males in this age range (P12); 
+M_50_54= males in this age range (P12); 
+M_55_59= males in this age range (P12);
+M_60_64= males in this age range (P12); 
+M_65_69= males in this age range (P12); 
+M_70_74= males in this age range (P12); 
+M_75_79= males in this age range (P12); 
+M_80_84= males in this age range (P12); 
+M_OVER85= males in this age range (P12);  
+F_0_4=   females in this age range (P12); 
+F_5_9=   females in this age range (P12); 
+F_10_14= females in this age range (P12); 
+F_15_19= females in this age range (P12);
+F_20_24= females in this age range (P12);
+F_25_29= females in this age range (P12); 
+F_30_34= females in this age range (P12); 
+F_35_39= females in this age range (P12); 
+F_40_44= females in this age range (P12); 
+F_45_49= females in this age range (P12); 
+F_50_54= females in this age range (P12); 
+F_55_59= females in this age range (P12); 
+F_60_64= females in this age range (P12);
+F_65_69= females in this age range (P12); 
+F_70_74= females in this age range (P12); 
+F_75_79= females in this age range (P12); 
+F_80_84= females in this age range (P12); 
+F_OVER85= females in this age range (P12);  
+WHITENH= population that identifies as white only and non-Hispanic (P5);  
+BLACKNH= population that identifies as black only and non-Hispanic (P5);  
+AMINDNH= population that identifies as American Indian only and non-Hispanic (P5);  
+ASIANNH= population that identifies as Asian/Asian-American only and non-Hispanic (P5);  
+PACIFICNH= population that identifies as Pacific Islander only and non-Hispanic (P5);  
+OTHERNH= population that identifies as other race and non-Hispanic (P5);  
+MULTRACENH= population that identifies as multi-racial and non-Hispanic (P5);  
+HISPPOP= population that identifies as Hispanic in combination with any race (P5);  
+NOTHISPPOP= population that identifies as non-Hispanic (P5);   
+
+HUTOTAL= total housing units (H1); 
+HHTOTAL= total households, also number of occupied housing units (P21);  
+POPINHH= population in households and not in GQ (P16); 
+AVGHHSIZE= average household size (P16/P21);  
+POPINGQ= population in group quarters (P29)
+HOMEOWNPCT= share of households that own their housing (H4); 
+OWNEROCC= owner households or owner-occupied units (H4); 
+RENTEROCC= renter households or renter-occupied units (H4); 
+VACANT= vacant housing units (H5); 
+POPOVER5=  population (age 5+) used as denominator in % calculations (P12); 
+POPOVER16= population age 16+ (P14); 
+POPOVER18= population age 18+ (P11); 
+POPOVER65= population age 65+ (P34); 
+ERRORFLAG= quality control flag should be 0;
+MEDIANAGE= median age for area (P13);
+HH_UNDER18= housieholds with children ages 0-17 present (P20);
+HH_65OVER= households with senior citizens ages 65+ present (P25);
+
+CENSUS_SOURCE= Description of data source; 
+YEAR= Year of data collection;
+TCFLAG= Met Council-assigned code identifying location in the Met Council region (1), an adjacent MN county (2), or an adjacent WI county (3).
+&lt;/eaover&gt;&lt;eadetcit&gt;None&lt;/eadetcit&gt;&lt;/overview&gt;&lt;/eainfo&gt;&lt;distinfo&gt;&lt;resdesc&gt;Decennial Census 2010&lt;/resdesc&gt;&lt;distliab&gt;NOTICE:  The data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The Metropolitan Council developed some of the data for its own internal business purposes and is redistributing data developed by other data providers (e.g., the U.S. Census Bureau and the Minnesota Department of Employment and Economic Development).  The Metropolitan Council does not represent or warrant that the data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the data or your reliance on the data.  You should consult the data documentation for these particular data to determine the limitations of the data.  If you transmit or provide the data (or any portion of it) to another user, it is recommended that the data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;&lt;stdorder&gt;&lt;digform&gt;&lt;digtinfo&gt;&lt;formname&gt;csv file&lt;/formname&gt;&lt;formvern&gt;NA&lt;/formvern&gt;&lt;transize&gt;Less than 10 MB for zip file&lt;/transize&gt;&lt;/digtinfo&gt;&lt;/digform&gt;&lt;ordering&gt;This entire dataset is available on the internet by clicking below after 'Online Linkage'.  Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- XLSX file
+- metadata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.&lt;/ordering&gt;&lt;/stdorder&gt;&lt;distrib&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Matt Schroeder&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Senior Researcher&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651.602.1513&lt;/cntvoice&gt;&lt;cntemail&gt;matt.schroeder@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/distrib&gt;&lt;/distinfo&gt;&lt;metainfo&gt;&lt;metd&gt;20140416&lt;/metd&gt;&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;&lt;metstdv&gt;1.2&lt;/metstdv&gt;&lt;metextns&gt;&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;&lt;/metextns&gt;&lt;metc&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Todd Graham&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Principal Forecaster&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;Saint Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-602-1322&lt;/cntvoice&gt;&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;&lt;cntemail&gt;todd.graham@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/metc&gt;&lt;/metainfo&gt;&lt;Esri&gt;&lt;ModDate&gt;20110726&lt;/ModDate&gt;&lt;ModTime&gt;12064400&lt;/ModTime&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20110726&lt;/mdDateSt&gt;&lt;/metadata&gt;</field></doc></add>

@@ -1,0 +1,383 @@
+<add allowDups="false"><doc><field name="LayerId">Census2000DemProfile1GeneralTract</field><field name="Name">Census2000DemProfile1GeneralTract</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType" /><field name="DataTypeSort" /><field name="Availability">Online</field><field name="LayerDisplayName">Profile of General Demographic Characteristics for Census Tracts: 2000</field><field name="LayerDisplayNameSort">Profile of General Demographic Characteristics for Census Tracts: 2000</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">Metropolitan Council and the U.S. Census Bureau</field><field name="OriginatorSort">Metropolitan Council and the U.S. Census Bureau</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">Summary File 1 Data Profile 1 (SF1 Table DP-1) for Census Tracts in the Minneapolis-St. Paul 7 County metropolitan area is a subset of the profile of general demographic characteristics for 2000 prepared by the U.S. Census Bureau.
+
+This table (DP-1) includes:  Sex and Age, Race, Race alone or in combination with one or more otehr races, Hispanic or Latino and Race, Relationship, Household by Type, Housing Occupancy, Housing Tenure
+
+US Census 2000 Demographic Profiles: 100-percent and Sample Data 
+
+The profile includes four tables (DP-1 thru DP-4) that provide various demographic, social, economic, and housing characteristics for the United States, states, counties, minor civil divisions in selected states, places, metropolitan areas, American Indian and Alaska Native areas, Hawaiian home lands and congressional districts (106th Congress). It includes 100-percent and sample data from Census 2000.  The DP-1 table is available as part of the Summary File 1 (SF 1) dataset, and the other three tables are available as part of the Summary File 3 (SF 3) dataset. 
+
+The US Census provides DP-1 thru DP-4 data at the Census tract level through their DataFinder search engine.  However, since the Metropolitan Council and MetroGIS participants are interested in all Census tracts within the seven county metropolitan area, it was quicker to take the raw Census SF-1 and SF-3 data at tract levels and recreate the DP1-4 variables using the appropriate formula for each DP variable.  This file lists the formulas used to create the DP variables.
+
+This is a MetroGIS Regionally Endorsed dataset.  (See http://www.metrogis.org/data/about/index.shtml#whatis for more information.)</field><field name="MaxY" /><field name="MinY" /><field name="MinX" /><field name="MaxX" /><field name="ContentDate">2000-01-01T00:00:00Z</field><field name="Location">{"download": "ftp://gisftp.metc.state.mn.us/Census2000DemProfile1GeneralTract.zip"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;
+	&lt;idinfo&gt;
+		&lt;citation&gt;
+			&lt;citeinfo&gt;
+				&lt;origin&gt;Metropolitan Council and the U.S. Census Bureau&lt;/origin&gt;
+				&lt;pubdate&gt;20030210&lt;/pubdate&gt;
+				&lt;title&gt;Profile of General Demographic Characteristics for Census Tracts: 2000&lt;/title&gt;
+				&lt;mgmg1cid&gt;N/A&lt;/mgmg1cid&gt;
+				&lt;pubinfo&gt;
+					&lt;publish&gt;Metropolitan Council&lt;/publish&gt;
+				&lt;/pubinfo&gt;
+				&lt;onlink&gt;ftp://gisftp.metc.state.mn.us/Census2000DemProfile1GeneralTract.zip&lt;/onlink&gt;
+			&lt;/citeinfo&gt;
+		&lt;/citation&gt;
+		&lt;descript&gt;
+			&lt;abstract&gt;Summary File 1 Data Profile 1 (SF1 Table DP-1) for Census Tracts in the Minneapolis-St. Paul 7 County metropolitan area is a subset of the profile of general demographic characteristics for 2000 prepared by the U.S. Census Bureau.
+
+This table (DP-1) includes:  Sex and Age, Race, Race alone or in combination with one or more otehr races, Hispanic or Latino and Race, Relationship, Household by Type, Housing Occupancy, Housing Tenure
+
+US Census 2000 Demographic Profiles: 100-percent and Sample Data 
+
+The profile includes four tables (DP-1 thru DP-4) that provide various demographic, social, economic, and housing characteristics for the United States, states, counties, minor civil divisions in selected states, places, metropolitan areas, American Indian and Alaska Native areas, Hawaiian home lands and congressional districts (106th Congress). It includes 100-percent and sample data from Census 2000.  The DP-1 table is available as part of the Summary File 1 (SF 1) dataset, and the other three tables are available as part of the Summary File 3 (SF 3) dataset. 
+
+The US Census provides DP-1 thru DP-4 data at the Census tract level through their DataFinder search engine.  However, since the Metropolitan Council and MetroGIS participants are interested in all Census tracts within the seven county metropolitan area, it was quicker to take the raw Census SF-1 and SF-3 data at tract levels and recreate the DP1-4 variables using the appropriate formula for each DP variable.  This file lists the formulas used to create the DP variables.
+
+This is a MetroGIS Regionally Endorsed dataset.  (See http://www.metrogis.org/data/about/index.shtml#whatis for more information.)&lt;/abstract&gt;
+			&lt;purpose&gt;This table can be joined to the 2000 Census Tract spatial dataset using the TRACT00 field (11 digit State,County,Tract code).  This will allow users to create maps and conduct spatial analyses with the data in this table.&lt;/purpose&gt;
+			&lt;supplinf /&gt;
+		&lt;/descript&gt;
+		&lt;timeperd&gt;
+			&lt;timeinfo&gt;
+				&lt;sngdate&gt;
+					&lt;caldate&gt;2000&lt;/caldate&gt;
+				&lt;/sngdate&gt;
+			&lt;/timeinfo&gt;
+			&lt;current&gt;2000 U.S. Census&lt;/current&gt;
+		&lt;/timeperd&gt;
+		&lt;status&gt;
+			&lt;progress&gt;Complete&lt;/progress&gt;
+			&lt;update&gt;As needed&lt;/update&gt;
+		&lt;/status&gt;
+		&lt;spdom&gt;
+			&lt;bounding&gt;
+				&lt;westbc /&gt;
+				&lt;eastbc /&gt;
+				&lt;northbc /&gt;
+				&lt;southbc /&gt;
+			&lt;/bounding&gt;
+		&lt;/spdom&gt;
+		&lt;keywords&gt;
+			&lt;theme&gt;
+				&lt;themekt&gt;None&lt;/themekt&gt;
+				&lt;themekey&gt;demographics, society, Census, Demographic Profile&lt;/themekey&gt;
+			&lt;/theme&gt;
+			&lt;place&gt;
+				&lt;placekey&gt;Twin Cities, Anoka County, Carver County, Dakota County, Hennepin County, Ramsey County, Scott County, Washington County&lt;/placekey&gt;
+			&lt;/place&gt;
+		&lt;/keywords&gt;
+		&lt;accconst&gt;None&lt;/accconst&gt;
+		&lt;useconst&gt;None&lt;/useconst&gt;
+		&lt;ptcontac&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Tanya Mayer&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Coordinator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1604&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;tanya.mayer@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/ptcontac&gt;
+		&lt;browse&gt;
+			&lt;browsen&gt;http://www.datafinder.org/metadata/SORRY_NO_SAMPLE_GRAPHIC_YET.htm&lt;/browsen&gt;
+			&lt;browsed&gt;No browse graphic is available.&lt;/browsed&gt;
+		&lt;/browse&gt;
+		&lt;native&gt;dBASE IV (DBF 4)&lt;/native&gt;
+		&lt;crossref&gt;
+			&lt;citeinfo&gt;
+				&lt;title&gt;- Census Tract 2000 - TIGER, ( http://www.datafinder.org/metadata/Census2000Tiger.htm ) 
+
+- Census Tract 2000 TLG Aligned ( http://www.datafinder.org/metadata/Census2000TLG.htm )&lt;/title&gt;
+			&lt;/citeinfo&gt;
+		&lt;/crossref&gt;
+	&lt;/idinfo&gt;
+	&lt;dataqual&gt;
+		&lt;attracc&gt;
+			&lt;attraccr&gt;Please see the technical documentation from the Census 2000 Demographic Profiles web site:
+
+http://www.census.gov/Press-Release/www/2002/demoprofiles.html
+
+Please read 'DDP variable formulas for tract level data.xls' for detailed description of the formulas used to extract the raw Census data at tract levels to recreate the DP variables.&lt;/attraccr&gt;
+		&lt;/attracc&gt;
+		&lt;logic /&gt;
+		&lt;complete&gt;Entire seven county geographic area is covered.&lt;/complete&gt;
+		&lt;posacc&gt;
+			&lt;horizpa&gt;
+				&lt;horizpar /&gt;
+			&lt;/horizpa&gt;
+			&lt;vertacc&gt;
+				&lt;vertaccr /&gt;
+			&lt;/vertacc&gt;
+		&lt;/posacc&gt;
+		&lt;lineage&gt;
+			&lt;srcinfo&gt;
+				&lt;srcscale /&gt;
+			&lt;/srcinfo&gt;
+			&lt;procstep&gt;
+				&lt;procdesc /&gt;
+			&lt;/procstep&gt;
+			&lt;procstep&gt;&lt;procdesc /&gt;&lt;/procstep&gt;&lt;/lineage&gt;
+	&lt;/dataqual&gt;
+	&lt;spdoinfo&gt;
+		&lt;indspref&gt;TRACT00:  11 character Census Tract code for 2000 Census (State FIPS, County FIPS, 6 digit Tract code).&lt;/indspref&gt;
+		&lt;direct /&gt;
+		&lt;mgmg3obj /&gt;
+		&lt;mgmg3til&gt;One file for 7 county metropolitan area&lt;/mgmg3til&gt;
+	&lt;/spdoinfo&gt;
+	&lt;spref&gt;
+		&lt;horizsys&gt;
+			&lt;geograph&gt;
+				&lt;latres /&gt;
+				&lt;longres /&gt;
+			&lt;/geograph&gt;
+			&lt;planar&gt;
+				&lt;mapproj&gt;
+					&lt;mapprojn /&gt;
+					&lt;mgmg4par /&gt;
+					&lt;otherprj /&gt;
+				&lt;/mapproj&gt;
+				&lt;gridsys&gt;
+					&lt;gridsysn /&gt;
+					&lt;utm&gt;
+						&lt;utmzone /&gt;
+					&lt;/utm&gt;
+					&lt;spcs&gt;
+						&lt;spcszone /&gt;
+					&lt;/spcs&gt;
+					&lt;mgmg4coz /&gt;
+					&lt;mgmg4adj /&gt;
+				&lt;/gridsys&gt;
+				&lt;planci&gt;
+					&lt;coordrep&gt;
+						&lt;absres /&gt;
+						&lt;ordres /&gt;
+					&lt;/coordrep&gt;
+					&lt;distbrep&gt;
+						&lt;distres /&gt;
+					&lt;/distbrep&gt;
+					&lt;plandu /&gt;
+				&lt;/planci&gt;
+			&lt;/planar&gt;
+			&lt;geodetic&gt;
+				&lt;horizdn /&gt;
+				&lt;ellips /&gt;
+			&lt;/geodetic&gt;
+		&lt;/horizsys&gt;
+		&lt;vertdef&gt;
+			&lt;altsys&gt;
+				&lt;altdatum /&gt;
+				&lt;altunits /&gt;
+			&lt;/altsys&gt;
+			&lt;depthsys&gt;
+				&lt;depthdn /&gt;
+				&lt;depthdu /&gt;
+			&lt;/depthsys&gt;
+		&lt;/vertdef&gt;
+	&lt;/spref&gt;
+	&lt;eainfo&gt;
+		&lt;overview&gt;
+			&lt;eaover&gt;TRACT00    11 character Tract code consisting of: State FIPS code, County FIPS
+           code and 6 character Census Tract code
+STATE      2 digit FIPS State Code
+CO         3 digit FIPS county Code
+TRACT      6 digit numeric 2000 Census Tract Code
+POPTOT     Total population V01 
+POPMALE    Male V02                             SEX AND AGE
+POPFEMALE  Female V03 
+POP_4      Under 5 years V04 
+POP5_9     5 to 9 years V05 
+POP10_14   10 to 14 years V06 
+POP15_19   15 to 19 years V07 
+POP20_24   20 to 24 years V08 
+POP25_34   25 to 34 years V09 
+POP35_44   35 to 44 years V10 
+POP45_54   45 to 54 years V11 
+POP55_59   55 to 59 years V12 
+POP60_64   60 to 64 years V13 
+POP65_74   65 to 74 years V14 
+POP75_84   75 to 84 years V15 
+POP85      85 years and over V16 
+AGEMED     Median age (years) 
+           (1 expressed decimal) V17 
+POP18      18 years and over V18 
+POPM18     Male V19 
+POPF18     Female V20 
+POP21      21 years and over V21 
+POP62      62 years and over V22 
+POP65      65 years and over V23 
+POPM65     Male V24 
+POPF65     Female V25 
+POPRACE1   One race V26                         RACE
+POPWH_A    White V27 
+POPBL_A    Black or African American V28 
+POPAMIN_A  American Indian and Alaska Native V29 
+POPAS_A    Asian V30 
+POPASIN_A  Asian Indian V31 
+POPCHIN_A  Chinese V32 
+POPFIL_A   Filipino V33 
+POPJAP_A   Japanese V34 
+POPKOR_A   Korean V35 
+POPVIET_A  Vietnamese V36 
+POPASOT_A  Other Asian *4 V37 
+POPHAPI_A  Native Hawaiian and Other Pacific 
+           Islander V38 
+POPHA_A    Native Hawaiian V39 
+POPGUAM_A  Guamanian or Chamorro V40 
+POPSAM_A   Samoan V41 
+POPPIOT_A  Other Pacific Islander *5 V42 
+POPROTH_A  Some other race V43 
+POPRACE2   Two or more races V44 
+POPWH_C    White V45                            Race alone or in combination 
+                                                with one or more other races *6: 
+POPBL_C    Black or African American V46 
+POPAMIN_C  American Indian and Alaska Native V47 
+POPAS_C    Asian V48 
+POPHAPI_C  Native Hawaiian and Other Pacific 
+           Islander V49 
+POPROTH_C  Some other race V50 
+POPTOT     Total population V51                 HISPANIC OR LATINO AND RACE
+POPHISP    Hispanic or Latino (of any race) V52 
+POPHISPMX  Mexican V53 
+POPHISPPR  Puerto Rican V54 
+POPHISPCB  Cuban V55 
+POPHISPOT  Other Hispanic or Latino V56 
+POPNONHIS  Not Hispanic or Latino V57 
+POPHISPWH  White alone V58 
+POPTOT     Total population V59                 RELATIONSHIP
+POPINHS    In households V60 
+POPHSHLDR  Householder V61 
+POPSPOUSE  Spouse V62 
+POPKID     Child V63 
+POPKID_17  Own child under 18 years V64 
+POPRELOTH  Other relatives V65 
+POPHH_17   Under 18 years V66 
+POPRELNON  Nonrelatives V67 
+POPUMPART  Unmarried partner V68 
+POPGQ      In group quarters V69 
+POPGQINST  Institutionalized population V70 
+POPGQNINST Noninstitutionalized population V71 
+HSHLDS     Total households V72                 HOUSEHOLD BY TYPE
+FAMS       Family households (families) V73 
+FAMSKID_17 With own children under 18 years V74 
+FAMSMAR    Married-couple family V75 
+FAMMKID_17 With own children under 18 years V76 
+FAMFEM     Female householder, no husband 
+           present V77 
+FAMFEM_17  With own children under 18 years V78 
+NONFAMS    Nonfamily households V79 
+HHER_A     Householder living alone V80 
+HHER_A65   Householder 65 years and over V81 
+HHLDS_17   Households with individuals under 18 
+           years V82 
+HHLDS65    Households with individuals 65 years 
+           and over V83 
+HHLDSIZE   Average household size 
+           (2 expressed decimals) V84 
+AVEFSIZE   Average family size 
+           (2 expressed decimals) V85 
+HSGUNITS   Total housing units V86              HOUSING OCCUPANCY
+HSGOCC     Occupied housing units V87 
+HSGVAC     Vacant housing units V88 
+HSGSEAS    For seasonal, recreational, or 
+           occasional use V89 
+VACOWN     Homeowner vacancy rate (percent) 
+           (1 expressed decimal) V90 
+VACRENT    Rental vacancy rate (percent) 
+           (1 expressed decimal) V91 
+HSGOCC     Occupied housing units V92           HOUSING TENURE
+HSGOCCOWN  Owner-occupied housing units V93 
+HSGOCCREN  Renter-occupied housing units V94 
+HSGSIZOWN  Average household size of owner-
+           occupied units (2 expressed decimals) V95 
+HSGSIZREN  Average household size of renter-
+           occupied units (2 expressed decimals) V96 
+
+*4. Other Asian alone, or two or more Asian categories.
+*5. Other Pacific Islander alone, or two or more Native Hawaiian and Other 
+Pacific Islander categories.
+*6. In combination with one or more of the other races listed.
+The six numbers may add to more than the total population 
+and the six percentages may add to more than 100 percent 
+because individuals may report more than one race.&lt;/eaover&gt;
+			&lt;eadetcit&gt;U.S. Census Bureau, Census 2000  Table DP-1. Profile of General Demographic Characteristics: 2000
+
+http://www.census.gov/prod/cen2000/doc/ProfileTD.pdf
+
+'DP variable formulas for tract level data.xls' describes the variables and formulas used to extract from the raw Summary File (SF) data and recreate the DP variables at the Census Tract level.&lt;/eadetcit&gt;
+		&lt;/overview&gt;
+	&lt;/eainfo&gt;
+	&lt;distinfo&gt;
+		&lt;distrib&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Mark Kotz&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Database Administrator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1644&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;mark.kotz@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/distrib&gt;
+		&lt;resdesc&gt;Census2000DemProfile1GeneralTract&lt;/resdesc&gt;
+		&lt;distliab&gt;NOTICE:  The Geographic Information System (GIS) Data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE GIS DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The GIS Data were developed by the Metropolitan Council for its own internal business purposes.  The Metropolitan Council does not represent or warrant that the GIS Data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the GIS Data or your reliance on the GIS Data.  You should consult the data documentation for this particular GIS Data to determine the limitations of the GIS Data and the precision with which the GIS Data may depict distance, direction, location, or other geographic features.  If you transmit or provide the GIS Data (or any portion of it) to another user, it is recommended that the GIS Data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;
+		&lt;stdorder&gt;
+			&lt;digform&gt;
+				&lt;digtinfo&gt;
+					&lt;formname&gt;dBASE IV&lt;/formname&gt;
+					&lt;formvern&gt;DBF 4&lt;/formvern&gt;
+					&lt;transize&gt;0.2 MB for zip file.&lt;/transize&gt;
+				&lt;/digtinfo&gt;
+			&lt;/digform&gt;
+			&lt;ordering&gt;This dataset is distributed on the internet by clicking below after 'Online Linkage'.  Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- dBase table of demographic data
+- Excel spreadsheet of showing formulas for data extraction
+- metadata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.&lt;/ordering&gt;
+		&lt;/stdorder&gt;
+	&lt;/distinfo&gt;
+	&lt;metainfo&gt;
+		&lt;metd&gt;20030224&lt;/metd&gt;
+		&lt;metc&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Tanya Mayer&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Coordinator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1604&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;tanya.mayer@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/metc&gt;
+		&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;
+		&lt;metstdv&gt;1.2&lt;/metstdv&gt;
+		&lt;metextns&gt;
+			&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;
+		&lt;/metextns&gt;
+	&lt;/metainfo&gt;
+	&lt;Esri&gt;&lt;ModDate&gt;20110729&lt;/ModDate&gt;&lt;ModTime&gt;13253000&lt;/ModTime&gt;&lt;CreaDate&gt;20030224&lt;/CreaDate&gt;&lt;CreaTime&gt;11022600&lt;/CreaTime&gt;&lt;SyncOnce&gt;TRUE&lt;/SyncOnce&gt;&lt;MetaID&gt;{2A9A950A-4819-11D7-B06E-0002A51B7211}&lt;/MetaID&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20110729&lt;/mdDateSt&gt;&lt;distInfo&gt;&lt;distributor&gt;&lt;distorTran&gt;&lt;onLineSrc&gt;&lt;linkage Sync="TRUE"&gt;file://\\metc-gisserv.metc.state.mn.us\gu\gu_tanya\projects\census\data_2000\tract_data\Data_for_library\demog_profile_1_general_tract&lt;/linkage&gt;&lt;protocol Sync="TRUE"&gt;Local Area Network&lt;/protocol&gt;&lt;/onLineSrc&gt;&lt;/distorTran&gt;&lt;/distributor&gt;&lt;/distInfo&gt;&lt;/metadata&gt;</field></doc></add>

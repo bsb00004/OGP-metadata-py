@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+	<idinfo><citation><citeinfo><title>Ramsey County Buildings</title><origin>Ramsey County</origin><pubinfo><publish>Ramsey County</publish></pubinfo><pubdate>Periodically revised</pubdate><onlink></onlink></citeinfo></citation><descript><abstract>This data set primarily contains buildings with an area of 80 square feet or greater.  Structure outlines are derived from aerial photography observation and interpretation utilizing stereo processing techniques.  Vector line work was originally stereo plotted from 2003 photography.  All graphical lines contain a character based a layer name that identify the different mapping features.
+The flight height for the aerial photography utilized in this project is approximately 5000 feet.  The mapping scale for aerial photography utilized in this project is 1 inch equals 833 feet.</abstract><purpose>Buildings residing in this data set support many functions including thematic mapping, land records, property assessment, surveying and engineering projects.</purpose><supplinf>Ramsey County</supplinf></descript><timeperd><timeinfo><sngdate><caldate>20030408</caldate></sngdate></timeinfo><current>Data is based upon the most recent aerial photography available.</current></timeperd><status><progress>Complete</progress><update>Scheduled to be updated every 3 years.</update></status><spdom><bounding><westbc>-93.2294</westbc><eastbc>-92.9817</eastbc><northbc>45.1255</northbc><southbc>44.8895</southbc></bounding></spdom><keywords><place><placekey>Minnesota, Ramsey County</placekey></place><theme><themekey>Buildings</themekey><themekt>None</themekt></theme></keywords><accconst>This data set is available to everyone.  Fees and policy are published in the Ramsey County Fee Schedule.  Charges are variable and are subject to change.  See the Ramsey County Fee Schedule for specific information on fees and policy.</accconst><useconst>The data is Copyright by the County of Ramsey. All rights reserved.  Except as expressly provided herein, no part of this data may be copied, reproduced, sold, transferred, or transmitted in any form, or by any means, whether graphic, electronic, or mechanical, including photocopying, recording, or by an information storage or retrieval system, without express prior written permission of the County of Ramsey.</useconst><ptcontac><cntinfo><cntperp><cntper>Curt Peterson</cntper><cntorg>Ramsey County Surveyor's Office</cntorg></cntperp><cntpos>GIS Supervisor</cntpos><cntaddr><address>1425 Paul Kirkwold Dr</address><city>Arden Hills</city><state>MN</state><postal>55112</postal></cntaddr><cntvoice>651-266-7172</cntvoice><cntfax>651-266-7180</cntfax><cntemail>curtis.peterson@co.ramsey.mn.us</cntemail></cntinfo></ptcontac><browse><browsen>http://www.co.ramsey.mn.us/cs/docs/buildings.pdf</browsen><browsed></browsed></browse><crossref><citeinfo><title>Graphic:  
+Airports (Runways and taxiways)
+Bridges (Bridges and overpasses)
+Bridge Lines (Outlines of bridges and overpasses)
+Dams (Locks and dams)
+Dam Lines (Outlines of locks and dams)
+Pools (Archived as of 1996 - data is not scheduled to be updated)
+Buildings (Structures &gt;=80 sq. ft.)
+Building Lines (Outline of structures &gt;= 80 sq. ft.) 
+Water (Open water areas)
+Waterlines (Outlines of open water areas)
+Water Towers 
+Water Tower Lines (Outlines of water towers)
+Trees (Boulevard, St Paul only; Archived as of 1985 - data is not scheduled for update)
+Roads (Road edges - thoroughfares and cul-de-sacs)
+Railroads (Centerline of tracks)
+PLS (Public Land Survey)</title></citeinfo></crossref><native>Microsoft Windows 2000 Version 5.0 (Build 2195) Service Pack 4; ESRI ArcCatalog 8.3.0.800</native></idinfo><dataqual><attracc><attraccr>Feature attributes are identified using analytical and softcopy photogrammetric compilation methods.  Automated GIS processes supplement the photo identified feature attributing with the numerical parameters.</attraccr></attracc><logic>Graphical elements are topologically clean as the majority of the linework is intended to create closed boundaries or polygons.  The linework represents physical features existing at the time of data collection.
+
+The aerotriangulation solutions, model set-ups, existing DEM reference models, and the ground control assured the integrity of the spatial relationships among the planimetric, drainage, and road features collected.</logic><complete>All features of this type photogrammetrically identifiable within the Ramsey County coverage are included.</complete><posacc><horizpa><horizpar>Analytical Aerial Triangulation Summary Date: 05-30-03.  This data meets or exceeds the National Map Accuracy Standard (NMAS) - 1/30 of 1 inch at map scale.</horizpar></horizpa><vertacc><vertaccr>Not Applicable as it pertains to a two-dimensional Arc/INFO Coverage.  However, during feature compilation the vertical accuarcy meets NMAS - 1/6000 of flight height above mean terrain.</vertaccr></vertacc></posacc><lineage><procstep><procdesc>Color aerial photography and airborne GPS used for aerotriangulation.  Aerotrianglution solution used with analytical and soft-copy
+Stereo plotters to collect limited planimetric feature.  LIDAR DEM provide by Ramsey County under separate contract with Waggoner Inc. of Jackson, Mississippi was used to create digital ortho images.
+Update made to correct trapped polygons associated with downtown Saint Paul skyways.</procdesc></procstep><srcinfo><srcscale>2400</srcscale></srcinfo></lineage></dataqual><spdoinfo><indspref></indspref><direct>Vector</direct><mgmg3obj></mgmg3obj><mgmg3til></mgmg3til></spdoinfo><spref><horizsys><geograph><latres></latres><longres></longres></geograph><planar><gridsys><gridsysn>County Coordinates</gridsysn><utm><utmzone></utmzone></utm><spcs><spcszone></spcszone></spcs><mgmg4coz>43</mgmg4coz><mgmg4adj></mgmg4adj></gridsys><mapproj><mapprojn></mapprojn><mgmg4par></mgmg4par><otherprj></otherprj></mapproj><planci><plandu>Feet</plandu><coordrep><absres></absres><ordres></ordres></coordrep></planci></planar><geodetic><ellips>GRS80</ellips><horizdn>NAD83</horizdn></geodetic></horizsys></spref><eainfo><overview><eaover>Arc/INFO Coverage Attribute Table derived from DXFARC, .acode table joined to .aat with dropitem dxf-handle.  Entity Type Label encoded in dxf-layer (see buildings_lines metadata).</eaover><eadetcit>Entity Attributes for Polygons:
+AREA
+PERIMETER
+BUILDINGS#
+BUILDINGS-ID
+
+Entity Attributes for Lines:
+Fnode_
+Tnode_
+Lpoly_
+Rpoly_
+Length
+Buildings#
+Buildings_id
+Dxf_layer
+Dxf_color
+Dxf_thickness
+Dxf_type
+Dxf_elevation
+Dxf_curve
+	
+Look Up Table: (Dxf_layer)
+Structure Types:
+BLDG  Buildings
+BLDG_MBL  Mobile Home</eadetcit></overview></eainfo><distinfo><distrib><cntinfo><cntperp><cntper>David Wilford</cntper><cntorg>Ramsey County Surveyor's Office</cntorg></cntperp><cntpos>GIS Technician</cntpos><cntaddr><address>1425 Paul Kirkwold Dr</address><city>Arden Hills</city><state>MN</state><postal>55112</postal></cntaddr><cntvoice>651-266-7175</cntvoice><cntfax>651-266-7180</cntfax><cntemail>david.wilford@co.ramsey.mn.us</cntemail></cntinfo></distrib><resdesc>Ramsey County Mapping Project</resdesc><distliab>DISCLAIMER
+EXCEPT AS EXPRESSLY STATED HEREIN, THIS DATA IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. LICENSEE BEARS ANY AND ALL RISK RELATING TO  QUALITY AND PERFORMANCE OF THIS DATA.
+
+Limit on Liability
+This data is not a legally recorded map or survey and is not intended to be used as one. This data is a compilation of records and information from various state, county, and city offices, and other sources, and should be used for reference only.
+
+In no event will the County of Ramsey be liable for direct, indirect, special, incidental, or consequential damages arising out of the use of, or inability to use, the data, even if advised of  the possibility of such damages.  Specifically, the County of Ramsey is not responsible for any costs including, but not limited to, those incurred as a result of lost profits or revenue, loss of use of data, the costs of recovering such programs or data, the cost of any substitute programs or data, claims by third parties, or for other similar costs. 
+
+The sole liability of the County of Ramsey and the licensee's exclusive remedy for any substantial defect which impairs the licensee's use of the data for purposes stated herein shall be the right to terminate this license and refund any fee paid.</distliab><stdorder><digform><digtinfo><formname>Geodatabase, Shapefile, Coverage</formname><formvern>ArcMap 8.3</formvern><transize>62.183</transize></digtinfo></digform><ordering>Contact distributor</ordering></stdorder></distinfo><metainfo><metd>20050318</metd><metc><cntinfo><cntperp><cntper>Chris Ulrich</cntper><cntorg>Ramsey County Surveyor's Office</cntorg></cntperp><cntpos>GIS Technician</cntpos><cntaddr><address>1425 Paul Kirkwold Dr</address><city>Arden Hills</city><state>MN</state><postal>55112</postal></cntaddr><cntvoice>651-266-7176</cntvoice><cntfax>651-266-7180</cntfax><cntemail>christina.ulrich@co.ramsey.mn.us</cntemail></cntinfo></metc><metstdn>Minnesota Geographic Metadata Guidelines</metstdn><metstdv>1.2</metstdv><metextns><onlink>http://www.gis.state.mn.us/stds/metadata.htm</onlink></metextns></metainfo><Esri><ModDate>20080213</ModDate><ModTime>15050300</ModTime></Esri><mdDateSt Sync="TRUE">20080213</mdDateSt></metadata>

@@ -1,0 +1,115 @@
+<add allowDups="false"><doc><field name="LayerId">rams_streetcenterlines</field><field name="Name">rams_streetcenterlines</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Line</field><field name="DataTypeSort">Line</field><field name="Availability">Online</field><field name="LayerDisplayName">Ramsey County Centerlines (StrCenterlines)</field><field name="LayerDisplayNameSort">Ramsey County Centerlines (StrCenterlines)</field><field name="Publisher">Ramsey County</field><field name="PublisherSort">Ramsey County</field><field name="Originator">Ramsey County</field><field name="OriginatorSort">Ramsey County</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">This data set contains centerlines of Federal, State, County and Municipal roads.  In 1986, the road centerlines [CENTLINE] were digitized from hand drawn 1:2400 half and 1:1200 quarter section maps.  In 1995, the parcel data layer was converted to ArcINFO format and held in the ArcStorm data base.  Centerlines were converted in 2005 to an ESRI ArcGIS GeoDatabase.
+
+The vector data is updated utilizing positions calculated from plats using coordinate geometry programs.  Plated, Public road centerlines are captured within this database.  Private roads may not be shown.  All graphical lines contain a character based layer name that identifies the different mapping features.  
+
+The centerlines usually represent the center of the road right of way. Exceptions to this are freeways and large divided highways, which are represented by double lines. The center of physical roadway pavement may or may not represent the center of the road right of way.  Road right of ways may taper or change width. There has been no attempt to alter the road centerline to conform to right of way that is not parallel or alters in width.</field><field name="MaxY">45.125028</field><field name="MinY">44.890676</field><field name="MinX">-93.228436</field><field name="MaxX">-92.982566</field><field name="ContentDate">2005-01-01T00:00:00Z</field><field name="Location">{"download": null}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata xml:lang="en"&gt;&lt;idinfo&gt;&lt;citation&gt;&lt;citeinfo&gt;&lt;title&gt;Ramsey County Centerlines (StrCenterlines)&lt;/title&gt;&lt;origin&gt;Ramsey County&lt;/origin&gt;&lt;pubinfo&gt;&lt;publish&gt;Ramsey County&lt;/publish&gt;&lt;/pubinfo&gt;&lt;pubdate&gt;Periodically revised&lt;/pubdate&gt;&lt;onlink /&gt;&lt;/citeinfo&gt;&lt;/citation&gt;&lt;descript&gt;&lt;abstract&gt;This data set contains centerlines of Federal, State, County and Municipal roads.  In 1986, the road centerlines [CENTLINE] were digitized from hand drawn 1:2400 half and 1:1200 quarter section maps.  In 1995, the parcel data layer was converted to ArcINFO format and held in the ArcStorm data base.  Centerlines were converted in 2005 to an ESRI ArcGIS GeoDatabase.
+
+The vector data is updated utilizing positions calculated from plats using coordinate geometry programs.  Plated, Public road centerlines are captured within this database.  Private roads may not be shown.  All graphical lines contain a character based layer name that identifies the different mapping features.  
+
+The centerlines usually represent the center of the road right of way. Exceptions to this are freeways and large divided highways, which are represented by double lines. The center of physical roadway pavement may or may not represent the center of the road right of way.  Road right of ways may taper or change width. There has been no attempt to alter the road centerline to conform to right of way that is not parallel or alters in width.&lt;/abstract&gt;&lt;purpose&gt;The road centerlines database represents public roads in Ramsey County.  Road centerlines help support map general production, thematic mapping, land surveying and engineering projects.&lt;/purpose&gt;&lt;supplinf&gt;Ramsey County&lt;/supplinf&gt;&lt;/descript&gt;&lt;timeperd&gt;&lt;timeinfo&gt;&lt;sngdate&gt;&lt;caldate&gt;2005&lt;/caldate&gt;&lt;/sngdate&gt;&lt;/timeinfo&gt;&lt;current&gt;Data set is current and updated weekly.&lt;/current&gt;&lt;/timeperd&gt;&lt;status&gt;&lt;progress&gt;Complete&lt;/progress&gt;&lt;update&gt;Data set is maintained continuously.  Major updates are released monthly.&lt;/update&gt;&lt;/status&gt;&lt;spdom&gt;&lt;bounding&gt;&lt;westbc&gt;-93.228436&lt;/westbc&gt;&lt;eastbc&gt;-92.982566&lt;/eastbc&gt;&lt;northbc&gt;45.125028&lt;/northbc&gt;&lt;southbc&gt;44.890676&lt;/southbc&gt;&lt;/bounding&gt;&lt;/spdom&gt;&lt;keywords&gt;&lt;place&gt;&lt;placekey&gt;Minnesota, Ramsey County&lt;/placekey&gt;&lt;/place&gt;&lt;theme&gt;&lt;themekey&gt;Centerlines, road&lt;/themekey&gt;&lt;themekt /&gt;&lt;/theme&gt;&lt;/keywords&gt;&lt;accconst&gt;This data set is available to everyone.  Fees and policy are published in the Ramsey County Fee Schedule.  Charges are variable and are subject to change.  See the Ramsey County Fee Schedule for specific information on fees and policy.&lt;/accconst&gt;&lt;useconst&gt;COPYRIGHT NOTICE
+The data is Copyright &amp;#169; by the County of Ramsey. All rights reserved.  Except as expressly provided herein, no part of this data may be copied, reproduced, sold, transferred, or transmitted in any form, or by any means, whether graphic, electronic, or mechanical, including photocopying, recording, or by an information storage or retrieval system, without express prior written permission of the County of Ramsey.&lt;/useconst&gt;&lt;ptcontac&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntper&gt;Curt Peterson&lt;/cntper&gt;&lt;cntorg&gt;Ramsey County Surveyor's Office&lt;/cntorg&gt;&lt;/cntperp&gt;&lt;cntpos&gt;GIS Supervisor&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;50 Kellogg Blvd West, Suite 910&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55102&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-266-2623&lt;/cntvoice&gt;&lt;cntfax&gt;651-266-2615&lt;/cntfax&gt;&lt;cntemail&gt;curtis.peterson@co.ramsey.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/ptcontac&gt;&lt;browse&gt;&lt;browsen&gt;http://www.co.ramsey.mn.us/cs/docs/StreetCenterlines.pdf&lt;/browsen&gt;&lt;browsed /&gt;&lt;/browse&gt;&lt;crossref&gt;&lt;citeinfo&gt;&lt;title&gt;Graphic:  
+Annotation (parcel, road and water map text)
+Info  (landties, cartographic elements)		
+StrCenterlines  (road centerlines)
+Point (land ownership points)
+Line (land division outlines)
+ParComp (land division areas)
+Parcel (land ownership regions)
+PLS (Public Land Survey)
+
+Attribute:
+stcodetab.dbf (street codes and full names)
+streetcdn.dbf (street codes and names)&lt;/title&gt;&lt;/citeinfo&gt;&lt;/crossref&gt;&lt;native&gt;Microsoft Windows 2000 Version 5.0 (Build 2195) Service Pack 4; ESRI ArcCatalog 9.0.0.535&lt;/native&gt;&lt;/idinfo&gt;&lt;dataqual&gt;&lt;attracc&gt;&lt;attraccr&gt;Attributes held within the GIS graphical database are manually entered by GIS personnel.  There are check plots produced to verify information.  Line symbology is periodically checked by automated programs to verify consistency.&lt;/attraccr&gt;&lt;/attracc&gt;&lt;logic&gt;Graphical elements are not topologically clean.  Over shoots and undershoots may be common in this data set.  Linework depicted here was not originally intended to create closed boundaries or polygons.  However, as the information is updated, the new data sets produced are topologically clean (overshoots or undershoots are not permitted; except in the case of cul-de-sacs).&lt;/logic&gt;&lt;complete&gt;Entire Ramsey County coverage&lt;/complete&gt;&lt;posacc&gt;&lt;horizpa&gt;&lt;horizpar&gt;Digitized information is generally &amp;#177; 7 feet; some areas have been found to be &amp;#177; 30 feet.  COGO (coordinate geometry) accuracy generally is &amp;#177; 1.0 foot.&lt;/horizpar&gt;&lt;/horizpa&gt;&lt;vertacc&gt;&lt;vertaccr /&gt;&lt;/vertacc&gt;&lt;/posacc&gt;&lt;lineage&gt;&lt;procstep&gt;&lt;procdesc&gt;PROCEDURE:  This layer contains a combination of digitized parcel information and parcel data rectified utilizing positions calculated with COGO programs.
+    
+MAP SOURCE: Digitized from 1 inch = 200 feet 1/2 section maps.
+    
+ACCURACY:  Digitized information is generally &amp;#177; 7 feet; some areas have been found to be &amp;#177; 30 feet.  COGO (coordinate geometry) accuracy generally is &amp;#177; 1.0 foot.
+    
+PROJECTION:  Ramsey County Coordinate System&lt;/procdesc&gt;&lt;/procstep&gt;&lt;srcinfo&gt;&lt;srcscale&gt;2400&lt;/srcscale&gt;&lt;/srcinfo&gt;&lt;/lineage&gt;&lt;/dataqual&gt;&lt;spdoinfo&gt;&lt;indspref&gt;Street name, Street code&lt;/indspref&gt;&lt;direct&gt;Vector&lt;/direct&gt;&lt;mgmg3obj&gt;Arcs and Points&lt;/mgmg3obj&gt;&lt;mgmg3til /&gt;&lt;/spdoinfo&gt;&lt;spref&gt;&lt;horizsys&gt;&lt;geograph&gt;&lt;latres /&gt;&lt;longres /&gt;&lt;/geograph&gt;&lt;planar&gt;&lt;gridsys&gt;&lt;gridsysn&gt;County Coordinates&lt;/gridsysn&gt;&lt;utm&gt;&lt;utmzone /&gt;&lt;/utm&gt;&lt;spcs&gt;&lt;spcszone /&gt;&lt;/spcs&gt;&lt;mgmg4coz&gt;43&lt;/mgmg4coz&gt;&lt;mgmg4adj /&gt;&lt;/gridsys&gt;&lt;mapproj&gt;&lt;mapprojn /&gt;&lt;mgmg4par /&gt;&lt;otherprj /&gt;&lt;/mapproj&gt;&lt;planci&gt;&lt;plandu&gt;Feet&lt;/plandu&gt;&lt;coordrep&gt;&lt;absres /&gt;&lt;ordres /&gt;&lt;/coordrep&gt;&lt;/planci&gt;&lt;/planar&gt;&lt;geodetic&gt;&lt;ellips&gt;GRS80&lt;/ellips&gt;&lt;horizdn&gt;NAD83&lt;/horizdn&gt;&lt;/geodetic&gt;&lt;/horizsys&gt;&lt;/spref&gt;&lt;eainfo&gt;&lt;overview&gt;&lt;eaover&gt;This layer represents the centerline of municipal, county, state and federal roadways.  Attribute information includes road type, name and code identification information.&lt;/eaover&gt;&lt;eadetcit&gt;Entity Attributes for Shapefiles:
+ObjectID
+Shape
+Length
+ASCL_
+ASCL_ID
+Angle
+Distance
+Radius
+Delta
+Tangent
+Arclength
+Side
+St_code
+Dxf_curve
+One_way
+Cooid
+L_t_add
+L_f_add
+R_f_add
+R_t_add
+Conflate_status
+Street _nam
+F_class
+Alt_nam1
+Alt_nam2
+Centract_l
+Centract_r
+Cenmun_l
+Cenmun_r
+Cencty_l
+Cencty_r
+Zip5_l
+Zip5_r
+Zip_4l
+Zip_4r
+DateTag
+CityLeft
+CityRigt
+Predir
+Street
+Typec
+SufDir
+City
+County
+Speed_Lim
+OneWay
+Sidewalk
+Date_Con
+Date_Recon
+Maint_Stat
+Cond_Rate
+Plow_Route
+Road_No
+POI
+Object__ID
+Shape_Length
+Lyr
+Dxf_layer	
+
+
+Lookup Table: (Dxf_layer)
+LINE TYPES:	
+C-LCO              COUNTY CENTERLINES (C/L)
+C-LCOC            COMPUTED COUNTY C/L
+C-LCSAH	         COUNTY STATE AID HIGHWAY C/L 
+C-LCSAHC        COMPUTED COUNTY STATE AID HIGHWAY C/L
+C-LFED             FEDERAL C/L
+C-LFEDC	         COMPUTED FEDERAL C/L
+C-LMUN  	         MUNICIPAL C/L
+C-LMUNC         COMPUTED MUNICIPAL C/L
+C-LMUNSA       MUNICIPAL STATE AID C/L
+C-LMUNSAC     COMPUTED MUNICIPAL STATE AID C/L
+C-LMUNCSA     MUNICIPAL COUNTY STATE AID C/L
+C-LMUNCSAC   COMPUTED MUNICIPAL COUNTY STATE AID C/L
+C-LNOBLD        C/L OF UNCONSTRUCTED ROADS 
+C-LPRIV            PRIVATE ROADS (often not plated; e.g., mobile home roads)
+C-LPRIVC          COMPUTED PRIVATE ROADS
+C-LST                STATE C/L
+C-LSTC              COMPUTED STATE C/L&lt;/eadetcit&gt;&lt;/overview&gt;&lt;/eainfo&gt;&lt;distinfo&gt;&lt;distrib&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntper&gt;David Wilford&lt;/cntper&gt;&lt;cntorg&gt;Ramsey County Surveyor's Office&lt;/cntorg&gt;&lt;/cntperp&gt;&lt;cntpos&gt;GIS Technician&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;50 Kellogg Blvd West, Suite 910&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55102&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-266-2604&lt;/cntvoice&gt;&lt;cntfax&gt;651-266-2615&lt;/cntfax&gt;&lt;cntemail&gt;david.wilford@co.ramsey.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/distrib&gt;&lt;resdesc&gt;Downloadable Data&lt;/resdesc&gt;&lt;distliab&gt;DISCLAIMER
+EXCEPT AS EXPRESSLY STATED HEREIN, THIS DATA IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. LICENSEE BEARS ANY AND ALL RISK RELATING TO QUALITY AND PERFORMANCE OF THIS DATA.
+
+Limit on Liability
+This data is not a legally recorded map or survey and is not intended to be used as one. This data is a compilation of records and information from various state, county, and city offices, and other sources, and should be used for reference only.
+
+In no event will the County of Ramsey be liable for direct, indirect, special, incidental, or consequential damages arising out of the use of, or inability to use, the data, even if advised of the possibility of such damages.  Specifically, the County of Ramsey is not responsible for any costs including, but not limited to, those incurred as a result of lost profits or revenue, loss of use of data, the costs of recovering such programs or data, the cost of any substitute programs or data, claims by third parties, or for other similar costs. 
+
+The sole liability of the County of Ramsey and the licensee's exclusive remedy for any substantial defect which impairs the licensee's use of the data for purposes stated herein shall be the right to terminate this license and refund any fee paid.&lt;/distliab&gt;&lt;stdorder&gt;&lt;digform&gt;&lt;digtinfo&gt;&lt;formname&gt;Geodatabase, Shapefile, DWG &amp;amp; DXF&lt;/formname&gt;&lt;formvern&gt;ArcGIS 9.0&lt;/formvern&gt;&lt;transize /&gt;&lt;/digtinfo&gt;&lt;/digform&gt;&lt;ordering&gt;Contact distributor&lt;/ordering&gt;&lt;/stdorder&gt;&lt;/distinfo&gt;&lt;metainfo&gt;&lt;metd&gt;20050302&lt;/metd&gt;&lt;metc&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntper&gt;Chris Ulrich&lt;/cntper&gt;&lt;cntorg&gt;Ramsey County Surveyor's Office&lt;/cntorg&gt;&lt;/cntperp&gt;&lt;cntpos&gt;GIS Technician&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;50 Kellogg Blvd West, Suite 910&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55102&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651-266-2603&lt;/cntvoice&gt;&lt;cntfax&gt;651-266-2615&lt;/cntfax&gt;&lt;cntemail&gt;christina.ulrich@co.ramsey.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/metc&gt;&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;&lt;metstdv&gt;1.2&lt;/metstdv&gt;&lt;metextns&gt;&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;&lt;/metextns&gt;&lt;/metainfo&gt;&lt;Esri&gt;&lt;ModDate&gt;20080213&lt;/ModDate&gt;&lt;ModTime&gt;15073400&lt;/ModTime&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20080213&lt;/mdDateSt&gt;&lt;/metadata&gt;</field></doc></add>

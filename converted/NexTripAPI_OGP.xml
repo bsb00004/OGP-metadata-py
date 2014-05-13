@@ -1,0 +1,195 @@
+<add allowDups="false"><doc><field name="LayerId">NexTripAPI</field><field name="Name">NexTripAPI</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Point</field><field name="DataTypeSort">Point</field><field name="Availability">Online</field><field name="LayerDisplayName">NexTrip API</field><field name="LayerDisplayNameSort">NexTrip API</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">Metropolitan Council - Metro Transit</field><field name="OriginatorSort">Metropolitan Council - Metro Transit</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">
+        The NexTrip API is a real-time transit departure data web service for third-party application developers using Metro Transit information
+
+        NexTrip departure information updates every 30 seconds. Help conserve our bandwidth and server resources by writing your applications responsibly. Third party applications should not update departure information more frequently than every 30 seconds. Applications making excessive calls and updating more frequently than 30 seconds will be subject to restriction.
+      </field><field name="MaxY">45.415</field><field name="MinY">44.471</field><field name="MinX">-94.012</field><field name="MaxX">-92.732</field><field name="ContentDate">UNKNOWN</field><field name="Location">{"download": "http://svc.metrotransit.org/NexTrip/help"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;
+	&lt;idinfo&gt;
+		&lt;citation&gt;
+			&lt;citeinfo&gt;
+				&lt;title&gt;NexTrip API&lt;/title&gt;
+				&lt;origin&gt;Metropolitan Council - Metro Transit&lt;/origin&gt;
+				&lt;pubinfo&gt;
+					&lt;publish&gt;Metropolitan Council&lt;/publish&gt;
+				&lt;/pubinfo&gt;
+				&lt;pubdate&gt;Unpublished material&lt;/pubdate&gt;
+				&lt;onlink&gt;http://svc.metrotransit.org/NexTrip/help&lt;/onlink&gt;
+			&lt;/citeinfo&gt;
+		&lt;/citation&gt;
+		&lt;descript&gt;
+			&lt;abstract&gt;
+        The NexTrip API is a real-time transit departure data web service for third-party application developers using Metro Transit information
+
+        NexTrip departure information updates every 30 seconds. Help conserve our bandwidth and server resources by writing your applications responsibly. Third party applications should not update departure information more frequently than every 30 seconds. Applications making excessive calls and updating more frequently than 30 seconds will be subject to restriction.
+      &lt;/abstract&gt;
+			&lt;purpose&gt;The service provides a predictable, uniform and easy way for developers to use NexTrip data in their own apps.&lt;/purpose&gt;
+			&lt;supplinf&gt;Twin Cities 7 County Metropolitan Area.  Some data information may extend into Sherburne County&lt;/supplinf&gt;
+		&lt;/descript&gt;
+		&lt;timeperd&gt;
+			&lt;timeinfo&gt;
+				&lt;sngdate&gt;
+					&lt;caldate /&gt;
+				&lt;/sngdate&gt;
+			&lt;/timeinfo&gt;
+			&lt;current&gt;Information in the NexTrip API is updated every 30 seconds to reflect real-time changes in transit service.&lt;/current&gt;
+		&lt;/timeperd&gt;
+		&lt;status&gt;
+			&lt;progress&gt;Complete&lt;/progress&gt;
+			&lt;update&gt;Every 30 seconds&lt;/update&gt;
+		&lt;/status&gt;
+		&lt;spdom&gt;
+			&lt;bounding&gt;&lt;westbc&gt;-94.012&lt;/westbc&gt;&lt;eastbc&gt;-92.732&lt;/eastbc&gt;&lt;northbc&gt;45.415&lt;/northbc&gt;&lt;southbc&gt;44.471&lt;/southbc&gt;&lt;/bounding&gt;
+		&lt;/spdom&gt;
+		&lt;keywords&gt;
+			&lt;place&gt;
+				&lt;placekey&gt;Minneapolis, Saint Paul, Twin Cities, Anoka County, Carver County, Dakota County, Hennepin County, Ramsey County, Scott County, Washington County&lt;/placekey&gt;
+			&lt;/place&gt;
+			&lt;theme&gt;
+				&lt;themekey&gt;transportation, transit, buses, nodes, transportation, lrt, light rail, real-time&lt;/themekey&gt;
+				&lt;themekt&gt;None&lt;/themekt&gt;
+			&lt;/theme&gt;
+		&lt;/keywords&gt;&lt;accconst&gt;None&lt;/accconst&gt;&lt;useconst&gt;None&lt;/useconst&gt;&lt;ptcontac&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntper&gt;John Siqveland&lt;/cntper&gt;&lt;cntorg&gt;Metro Transit&lt;/cntorg&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Public Relations Manager&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;560 Sixth Avenue North&lt;/address&gt;&lt;city&gt;Minneapolis&lt;/city&gt;&lt;state&gt;Minnesota&lt;/state&gt;&lt;postal&gt;55411-4398&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice /&gt;&lt;cntfax /&gt;&lt;cntemail&gt;john.siqveland@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/ptcontac&gt;&lt;browse&gt;&lt;browsen&gt;None available&lt;/browsen&gt;&lt;browsed&gt;No Image available&lt;/browsed&gt;&lt;/browse&gt;&lt;crossref&gt;&lt;citeinfo&gt;&lt;title /&gt;&lt;/citeinfo&gt;&lt;/crossref&gt;&lt;native /&gt;
+	&lt;/idinfo&gt;
+	&lt;dataqual&gt;
+		&lt;attracc&gt;
+			&lt;attraccr&gt;Attributes are assumed to be accurate.&lt;/attraccr&gt;
+		&lt;/attracc&gt;
+		&lt;logic&gt;N/A&lt;/logic&gt;
+		&lt;complete&gt;Metro Transit service area is covered.&lt;/complete&gt;
+		&lt;posacc&gt;&lt;horizpa&gt;&lt;horizpar&gt;Positional Accuracy has not been formally tested but is typically within 3-5 meters when reported. Zero values in the location coordinate fields indicate an unreported position.&lt;/horizpar&gt;&lt;/horizpa&gt;&lt;vertacc&gt;&lt;vertaccr /&gt;&lt;/vertacc&gt;&lt;/posacc&gt;
+		&lt;lineage&gt;
+			&lt;procstep&gt;
+				&lt;procdesc /&gt;
+			&lt;/procstep&gt;
+			&lt;srcinfo&gt;
+				&lt;srcscale /&gt;
+			&lt;/srcinfo&gt;
+		&lt;/lineage&gt;
+	&lt;/dataqual&gt;
+	&lt;spdoinfo&gt;
+		&lt;indspref&gt;None&lt;/indspref&gt;
+		&lt;direct&gt;Point&lt;/direct&gt;
+		&lt;mgmg3obj /&gt;
+		&lt;mgmg3til /&gt;
+	&lt;/spdoinfo&gt;
+	&lt;spref&gt;
+		&lt;horizsys&gt;
+			&lt;geograph&gt;
+				&lt;latres /&gt;
+				&lt;longres /&gt;
+				&lt;geogunit /&gt;
+			&lt;/geograph&gt;
+			&lt;planar&gt;
+				&lt;gridsys&gt;
+					&lt;gridsysn&gt;Other&lt;/gridsysn&gt;
+					&lt;utm&gt;
+						&lt;utmzone /&gt;
+					&lt;/utm&gt;
+					&lt;spcs&gt;
+						&lt;spcszone /&gt;
+					&lt;/spcs&gt;
+					&lt;mgmg4coz /&gt;
+					&lt;mgmg4adj /&gt;
+				&lt;/gridsys&gt;
+				&lt;mapproj&gt;
+					&lt;mapprojn /&gt;
+					&lt;mgmg4par /&gt;
+					&lt;otherprj /&gt;
+				&lt;/mapproj&gt;
+				&lt;planci&gt;
+					&lt;plandu /&gt;
+					&lt;coordrep&gt;&lt;absres /&gt;&lt;ordres /&gt;&lt;/coordrep&gt;&lt;/planci&gt;&lt;/planar&gt;&lt;geodetic&gt;&lt;ellips&gt;GRS80&lt;/ellips&gt;&lt;horizdn&gt;NAD83&lt;/horizdn&gt;&lt;/geodetic&gt;
+		&lt;/horizsys&gt;
+	&lt;/spref&gt;
+	&lt;eainfo&gt;
+		&lt;overview&gt;
+			&lt;eaover&gt;
+        There are six requests with three different response schema.
+
+        Two departure requests, GetTimePointDepartures and GetDepartures, return NexTrip departure information.
+        GetTimePointDepartures requires Route, Direction and Stop as part of the URL. GetDepartures requires stopID
+
+        The GetTimePointDepartures and GetDepartures requests respond with NexTrip departure information formatted in these fields:
+        Actual:                    Transit vehicle departure prediction is using Actual(real-time) or scheduled information
+        BlockNumber:          Relates to "block_id" in the Google transit feed data.
+        DepartureText:       Departure time if "Actual" field is false, Countdown in minutes if Actual is true
+        DepartureTime:       Predicted departure time
+        Description:             Text describing transit vehicle destination as well as vehicle scroll (above front windshield)
+        Gate:                       Gate of predicted departure if applicable
+        Route:                     Route number for current departure
+        RouteDirection:       Direction of route
+        Terminal:                 Terminal letter of route - indicates variant of route
+        VehicleHeading:       Not currently in use
+        VehicleLatitude:       location coordinate field - decimal degrees latitude
+        VehicleLongitude:    location coordinate field - decimal degrees longitude
+
+        Route requests returns a list of routes with description and providerID.
+        
+        The Route Directional (North, South, East or West), Providers (Metro Transit, MVTA, etc...) and Stop requests return lists of directionals by route, providers, or nodes by route and directional respectively.  The response schema is the same for all three request types:
+        Text:    String content - depending on request either Routes, Directionals, Providers or Nodes
+        Value:    String content - depending on request either Routes, Directionals, Providers or Nodes
+
+        Direction values:
+        1 = Southbound
+        2 = Eastbound
+        3 = Westbound
+        4 = Northbound
+
+        The value field in the response from the above requests can be used to compose the GetTimepointDepartures request URL
+
+        For example, to get a list of routes:
+        http://svc.metrotransit.org/NexTrip/Routes
+
+        To get a list of directionals on a route (21, in this case):
+        http://svc.metrotransit.org/NexTrip/Directions/21
+
+        To get a list of Stops on a route by direction (21, Westbound):
+        http://svc.metrotransit.org/NexTrip/Stops/21/3
+
+        To get NexTrip information by Route, Directional, and Stop:
+        http://svc.metrotransit.org/NexTrip/21/3/SNUN
+      &lt;/eaover&gt;
+			&lt;eadetcit&gt;http://svc.metrotransit.org/NexTrip/help/operations/GetDepartures&lt;/eadetcit&gt;
+		&lt;/overview&gt;
+	&lt;/eainfo&gt;
+	&lt;distinfo&gt;
+		&lt;distrib&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;John Sanborn&lt;/cntper&gt;
+					&lt;cntorg&gt;Metro Transit&lt;/cntorg&gt;
+				&lt;/cntperp&gt;&lt;cntpos&gt;Principal Web Developer&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;address&gt;560 Sixth Avenue North&lt;/address&gt;
+					&lt;city&gt;Minneapolis&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55411-4398&lt;/postal&gt;
+				&lt;/cntaddr&gt;&lt;cntvoice /&gt;&lt;cntfax /&gt;&lt;cntemail&gt;john.sanborn@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/distrib&gt;&lt;resdesc&gt;NexTripAPI&lt;/resdesc&gt;&lt;distliab&gt;NOTICE:  The Geographic Information System (GIS) Data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE GIS DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The GIS Data were developed by the Metropolitan Council for its own internal business purposes.  The Metropolitan Council does not represent or warrant that the GIS Data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the GIS Data or your reliance on the GIS Data.  You should consult the data documentation for this particular GIS Data to determine the limitations of the GIS Data and the precision with which the GIS Data may depict distance, direction, location, or other geographic features.  If you transmit or provide the GIS Data (or any portion of it) to another user, it is recommended that the GIS Data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;&lt;stdorder&gt;&lt;digform&gt;&lt;digtinfo&gt;&lt;formname&gt;XML or JSON&lt;/formname&gt;&lt;formvern /&gt;&lt;transize /&gt;&lt;/digtinfo&gt;&lt;/digform&gt;&lt;ordering&gt;This dataset is available for direct use via web services via direct link by clicking below after 'Online Linkage'&lt;/ordering&gt;&lt;/stdorder&gt;&lt;/distinfo&gt;
+	&lt;metainfo&gt;
+    &lt;metd&gt;20120328&lt;/metd&gt;
+    &lt;metc&gt;
+      &lt;cntinfo&gt;
+        &lt;cntperp&gt;
+          &lt;cntper&gt;Matt McGuire&lt;/cntper&gt;
+          &lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+        &lt;/cntperp&gt;
+        &lt;cntpos&gt;GIS Web Administrator&lt;/cntpos&gt;
+        &lt;cntaddr&gt;
+          &lt;address&gt;390 Robert Street North&lt;/address&gt;
+          &lt;city&gt;St. Paul&lt;/city&gt;
+          &lt;state&gt;Minnesota&lt;/state&gt;
+          &lt;postal&gt;55101-1805&lt;/postal&gt;
+        &lt;/cntaddr&gt;
+        &lt;cntvoice&gt;651-602-1964&lt;/cntvoice&gt;
+        &lt;cntfax&gt;
+        &lt;/cntfax&gt;
+        &lt;cntemail&gt;matt.mcguire@metc.state.mn.us&lt;/cntemail&gt;
+      &lt;/cntinfo&gt;
+    &lt;/metc&gt;
+    &lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;
+    &lt;metstdv&gt;1.2&lt;/metstdv&gt;
+    &lt;metextns&gt;
+      &lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;
+    &lt;/metextns&gt;
+	&lt;/metainfo&gt;
+	&lt;mdDateSt Sync="TRUE"&gt;20111209&lt;/mdDateSt&gt;
+&lt;/metadata&gt;</field></doc></add>

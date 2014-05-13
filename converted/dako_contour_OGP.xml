@@ -1,0 +1,1603 @@
+<add allowDups="false"><doc><field name="LayerId">dako_contour</field><field name="Name">dako_contour</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Undefined</field><field name="DataTypeSort">Undefined</field><field name="Availability">Online</field><field name="LayerDisplayName">Contour Lines</field><field name="LayerDisplayNameSort">Contour Lines</field><field name="Publisher">Dakota County Office of Geographic Information Systems</field><field name="PublisherSort">Dakota County Office of Geographic Information Systems</field><field name="Originator">Dakota County</field><field name="OriginatorSort">Dakota County</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">Elevation contours exist for Dakota County and are as current as the date of the aerial photography.  Two foot contours exist for the urban areas of Dakota County, as well as for Nininger Township, for Lake Byllesby Regional Park and for Miesville Ravine Park Reserve.  Ten foot contours exist for the rural areas of Dakota County except for Nininger Township, Lake Byllesby Regional Park and Miesville Ravine Park Reserve.</field><field name="MaxY">44.919955</field><field name="MinY">44.468168</field><field name="MinX">-93.330015</field><field name="MaxX">-92.729819</field><field name="ContentDate">1992-01-01T00:00:00Z</field><field name="Location">{"download": "http://www.co.dakota.mn.us/gis/maps/topomap.htm"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;
+	&lt;idinfo&gt;
+		&lt;citation&gt;
+			&lt;citeinfo&gt;
+				&lt;origin&gt;Dakota County&lt;/origin&gt;
+				&lt;pubdate&gt;Periodically revised&lt;/pubdate&gt;
+				&lt;title&gt;Contour Lines&lt;/title&gt;
+				&lt;pubinfo&gt;
+					&lt;publish&gt;Dakota County Office of Geographic Information Systems&lt;/publish&gt;
+				&lt;/pubinfo&gt;
+				&lt;onlink&gt;http://www.co.dakota.mn.us/gis/maps/topomap.htm&lt;/onlink&gt;
+				&lt;ftname Sync="TRUE"&gt;contour&lt;/ftname&gt;&lt;geoform Sync="TRUE"&gt;vector digital data&lt;/geoform&gt;&lt;/citeinfo&gt;
+		&lt;/citation&gt;
+		&lt;descript&gt;
+			&lt;abstract&gt;Elevation contours exist for Dakota County and are as current as the date of the aerial photography.  Two foot contours exist for the urban areas of Dakota County, as well as for Nininger Township, for Lake Byllesby Regional Park and for Miesville Ravine Park Reserve.  Ten foot contours exist for the rural areas of Dakota County except for Nininger Township, Lake Byllesby Regional Park and Miesville Ravine Park Reserve.&lt;/abstract&gt;
+			&lt;purpose&gt;Elevation Contours can be used for surface water modeling applications to delineate watersheds as well as determine direction and volume of water runoff.  They can also be used to determine areas of the County that are susceptible to erosion.  Used by the private sector for preliminary planning of developments.&lt;/purpose&gt;
+			&lt;supplinf&gt;Dakota County&lt;/supplinf&gt;
+			&lt;langdata Sync="TRUE"&gt;en&lt;/langdata&gt;&lt;/descript&gt;
+		&lt;timeperd&gt;
+			&lt;timeinfo&gt;
+				&lt;sngdate&gt;
+					&lt;caldate&gt;1992&lt;/caldate&gt;
+				&lt;/sngdate&gt;
+			&lt;/timeinfo&gt;
+			&lt;current&gt;1992-updates are ongoing.  Areas of update are choosen based on building permits, last date flown and roadway construction.&lt;/current&gt;
+		&lt;/timeperd&gt;
+		&lt;status&gt;
+			&lt;progress&gt;Complete&lt;/progress&gt;
+			&lt;update&gt;Irregular&lt;/update&gt;
+		&lt;/status&gt;
+		&lt;spdom&gt;
+			&lt;bounding&gt;
+				&lt;westbc Sync="TRUE"&gt;-93.330015&lt;/westbc&gt;
+				&lt;eastbc Sync="TRUE"&gt;-92.729819&lt;/eastbc&gt;
+				&lt;northbc Sync="TRUE"&gt;44.919955&lt;/northbc&gt;
+				&lt;southbc Sync="TRUE"&gt;44.468168&lt;/southbc&gt;
+			&lt;/bounding&gt;
+			&lt;lboundng&gt;&lt;leftbc Sync="TRUE"&gt;496542.175950&lt;/leftbc&gt;&lt;rightbc Sync="TRUE"&gt;652028.314783&lt;/rightbc&gt;&lt;bottombc Sync="TRUE"&gt;99166.699116&lt;/bottombc&gt;&lt;topbc Sync="TRUE"&gt;263344.945687&lt;/topbc&gt;&lt;/lboundng&gt;&lt;/spdom&gt;
+		&lt;keywords&gt;
+			&lt;theme&gt;
+				&lt;themekey&gt;Elevation&lt;/themekey&gt;
+				&lt;themekey&gt;Contours&lt;/themekey&gt;&lt;themekey&gt;Topography&lt;/themekey&gt;&lt;/theme&gt;
+			&lt;place&gt;
+				&lt;placekey&gt;Dakota County&lt;/placekey&gt;
+				&lt;placekey&gt;Apple Valley&lt;/placekey&gt;
+				&lt;placekey&gt;Burnsville&lt;/placekey&gt;
+				&lt;placekey&gt;Castle Rock Township&lt;/placekey&gt;
+				&lt;placekey&gt;Coates&lt;/placekey&gt;
+				&lt;placekey&gt;Douglas Township&lt;/placekey&gt;
+				&lt;placekey&gt;Eagan&lt;/placekey&gt;
+				&lt;placekey&gt;Empire Township&lt;/placekey&gt;
+				&lt;placekey&gt;Farmington&lt;/placekey&gt;
+				&lt;placekey&gt;Greenvale Township&lt;/placekey&gt;
+				&lt;placekey&gt;Hampton&lt;/placekey&gt;
+				&lt;placekey&gt;Hampton Township&lt;/placekey&gt;
+				&lt;placekey&gt;Hastings&lt;/placekey&gt;
+				&lt;placekey&gt;Inver Grove Heights&lt;/placekey&gt;
+				&lt;placekey&gt;Lakeville&lt;/placekey&gt;
+				&lt;placekey&gt;Lilydale&lt;/placekey&gt;
+				&lt;placekey&gt;Marshan Township&lt;/placekey&gt;
+				&lt;placekey&gt;Mendota&lt;/placekey&gt;
+				&lt;placekey&gt;Mendota Heights&lt;/placekey&gt;
+				&lt;placekey&gt;Miesville&lt;/placekey&gt;
+				&lt;placekey&gt;New Trier&lt;/placekey&gt;
+				&lt;placekey&gt;Nininger Township&lt;/placekey&gt;
+				&lt;placekey&gt;Northfield&lt;/placekey&gt;
+				&lt;placekey&gt;Randolph&lt;/placekey&gt;
+				&lt;placekey&gt;Randolph Township&lt;/placekey&gt;
+				&lt;placekey&gt;Ravenna Township&lt;/placekey&gt;
+				&lt;placekey&gt;Rosemount&lt;/placekey&gt;
+				&lt;placekey&gt;Sciota Township&lt;/placekey&gt;
+				&lt;placekey&gt;South St. Paul&lt;/placekey&gt;
+				&lt;placekey&gt;Sunfish Lake&lt;/placekey&gt;
+				&lt;placekey&gt;Vermillion&lt;/placekey&gt;
+				&lt;placekey&gt;Vermillion Township&lt;/placekey&gt;
+				&lt;placekey&gt;Waterford Township&lt;/placekey&gt;
+				&lt;placekey&gt;West St. Paul&lt;/placekey&gt;
+			&lt;/place&gt;
+			&lt;stratum&gt;&lt;stratkey&gt;Surface&lt;/stratkey&gt;&lt;/stratum&gt;&lt;/keywords&gt;
+		&lt;accconst&gt;Licensed.  contour data is available to anyone.  Fees are charged according to the Dakota County GIS Data pricing policy.  MetroGIS participants and the municipalities within Dakota County receive the data at no cost.  Data can be delivered to municipalities on CDROM or via ftp.  Data can be purchased by other entities with a minimum charge of $50.  For current pricing information visit the digital data portion of the Dakota County Office of Geographic Information Systesm website.  Http://www.co.dakota.mn.us/gis/data/digital_data.htm&lt;/accconst&gt;
+		&lt;useconst&gt;Licensed&lt;/useconst&gt;
+		&lt;ptcontac&gt;
+			&lt;cntinfo&gt;
+				&lt;cntaddr&gt;
+					&lt;address&gt;14955 Galaxie Avenue&lt;/address&gt;
+					&lt;city&gt;Apple Valley&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55124&lt;/postal&gt;
+					&lt;addrtype&gt;mailing and physical address&lt;/addrtype&gt;&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;952.891.7081&lt;/cntvoice&gt;
+				&lt;cntfax&gt;952.891.7097&lt;/cntfax&gt;
+				&lt;cntemail&gt;GIS@co.dakota.mn.us&lt;/cntemail&gt;
+				&lt;cntorgp&gt;&lt;cntorg&gt;Dakota County Office of Geographic Information Systems&lt;/cntorg&gt;&lt;cntper&gt;Department Staff&lt;/cntper&gt;&lt;/cntorgp&gt;&lt;hours&gt;8AM to 4:30PM&lt;/hours&gt;&lt;/cntinfo&gt;
+		&lt;/ptcontac&gt;
+		&lt;browse&gt;
+			&lt;browsen&gt;http://www.co.dakota.mn.us/gis/maps/topomap.htm&lt;/browsen&gt;
+			&lt;browsed&gt;Sample map of data&lt;/browsed&gt;
+		&lt;/browse&gt;
+		&lt;native&gt;Microsoft Windows NT Version 4.0 ESRI ArcCatalog 8.2.0.700&lt;/native&gt;
+		&lt;crossref&gt;
+			&lt;citeinfo&gt;
+			&lt;/citeinfo&gt;
+		&lt;/crossref&gt;
+		&lt;natvform Sync="TRUE"&gt;Shapefile&lt;/natvform&gt;&lt;/idinfo&gt;
+	&lt;dataqual&gt;
+		&lt;attracc&gt;
+			&lt;attraccr&gt;The physical features overall have been collected with a high degree of confidence and are as current as the date of the aerial photography.  The physical features collected from the lower level photography (flying height of 3000 &amp;amp; 5000 feet) were more readily identifiable then those of the higher level photography (flying height of 20,000).&lt;/attraccr&gt;&lt;/attracc&gt;
+		&lt;posacc&gt;
+			&lt;horizpa&gt;
+				&lt;horizpar&gt;The physical features overall have been collected with a high degree of confidence and are as current as the date of the aerial photography.  The physical features collected from the lower level photography (flying height of 3000 &amp;amp; 5000 feet) were more readily identifiable then those of the higher level photography (flying height of 20,000).&lt;/horizpar&gt;&lt;/horizpa&gt;
+			&lt;vertacc&gt;
+			&lt;/vertacc&gt;
+		&lt;/posacc&gt;
+		&lt;lineage&gt;
+			&lt;srcinfo&gt;
+			&lt;/srcinfo&gt;
+			&lt;procstep&gt;
+				&lt;procdesc&gt;Contracted vendors used to stereo-digitize elevation 'spot' points and break lines to create an ASCII file.  The Department of Survey and Land Information then processed this information to create an elevation coverage called Contour2.  Contour2 tiles are merged and converted to a shapefile for network distribution.&lt;/procdesc&gt;
+			&lt;/procstep&gt;
+			&lt;procstep&gt;&lt;proccont&gt;&lt;cntinfo&gt;&lt;cntorgp&gt;&lt;cntorg&gt;Dakota County Office of Geographic Information Systems&lt;/cntorg&gt;&lt;cntper&gt;GIS Staff&lt;/cntper&gt;&lt;/cntorgp&gt;&lt;cntaddr&gt;&lt;addrtype&gt;mailing and physical address&lt;/addrtype&gt;&lt;address&gt;14955 Galaxie Ave&lt;/address&gt;&lt;city&gt;Apple Valley&lt;/city&gt;&lt;state&gt;Minnesota&lt;/state&gt;&lt;postal&gt;55124&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;952.891.7081&lt;/cntvoice&gt;&lt;cntfax&gt;952.891.7097&lt;/cntfax&gt;&lt;cntemail&gt;GIS@co.dakota.mn.us&lt;/cntemail&gt;&lt;hours&gt;8AM to 4:30PM&lt;/hours&gt;&lt;/cntinfo&gt;&lt;/proccont&gt;&lt;procdesc&gt;Aerial photography is acquired from vendor, aerotriangulation and data collection takes place in-house by the Office of Geographic Information Systems in Microstation, and is then processed to an an elevation coverage called Contour2.  Contour2 tiles are merged and converted to a shapefile for network distribution.&lt;/procdesc&gt;&lt;/procstep&gt;&lt;/lineage&gt;
+	&lt;/dataqual&gt;
+	&lt;spdoinfo&gt;
+		&lt;direct Sync="TRUE"&gt;Vector&lt;/direct&gt;
+		&lt;ptvctinf&gt;&lt;esriterm Name="contour"&gt;&lt;efeatyp Sync="TRUE"&gt;Simple&lt;/efeatyp&gt;&lt;efeageom Sync="TRUE"&gt;Polyline&lt;/efeageom&gt;&lt;esritopo Sync="TRUE"&gt;FALSE&lt;/esritopo&gt;&lt;efeacnt Sync="TRUE"&gt;389639&lt;/efeacnt&gt;&lt;spindex Sync="TRUE"&gt;TRUE&lt;/spindex&gt;&lt;linrefer Sync="TRUE"&gt;FALSE&lt;/linrefer&gt;&lt;/esriterm&gt;&lt;sdtsterm Name="contour"&gt;&lt;sdtstype Sync="TRUE"&gt;String&lt;/sdtstype&gt;&lt;ptvctcnt Sync="TRUE"&gt;389639&lt;/ptvctcnt&gt;&lt;/sdtsterm&gt;&lt;/ptvctinf&gt;&lt;/spdoinfo&gt;
+	&lt;spref&gt;
+		&lt;horizsys&gt;
+			&lt;planar&gt;
+				&lt;planci&gt;
+					&lt;coordrep&gt;
+						&lt;absres Sync="TRUE"&gt;0.000256&lt;/absres&gt;
+						&lt;ordres Sync="TRUE"&gt;0.000256&lt;/ordres&gt;
+					&lt;/coordrep&gt;
+					&lt;plandu Sync="TRUE"&gt;survey feet&lt;/plandu&gt;
+					&lt;plance Sync="TRUE"&gt;coordinate pair&lt;/plance&gt;&lt;/planci&gt;
+				&lt;mapproj&gt;&lt;mapprojn Sync="TRUE"&gt;Lambert Conformal Conic&lt;/mapprojn&gt;&lt;lambertc&gt;&lt;stdparll Sync="TRUE"&gt;44.516667&lt;/stdparll&gt;&lt;stdparll Sync="TRUE"&gt;44.916667&lt;/stdparll&gt;&lt;longcm Sync="TRUE"&gt;-93.316667&lt;/longcm&gt;&lt;latprjo Sync="TRUE"&gt;44.471944&lt;/latprjo&gt;&lt;feast Sync="TRUE"&gt;500000.000000&lt;/feast&gt;&lt;fnorth Sync="TRUE"&gt;100000.000000&lt;/fnorth&gt;&lt;/lambertc&gt;&lt;/mapproj&gt;&lt;/planar&gt;
+			&lt;geodetic&gt;
+				&lt;horizdn Sync="TRUE"&gt;D_MN_Dakota&lt;/horizdn&gt;
+				&lt;ellips Sync="TRUE"&gt;MN_Dakota&lt;/ellips&gt;
+				&lt;semiaxis Sync="TRUE"&gt;6378421.989000&lt;/semiaxis&gt;&lt;denflat Sync="TRUE"&gt;298.257213&lt;/denflat&gt;&lt;/geodetic&gt;
+			&lt;cordsysn&gt;&lt;geogcsn Sync="TRUE"&gt;GCS_MN_Dakota&lt;/geogcsn&gt;&lt;projcsn Sync="TRUE"&gt;MN_Dakota_Lambert_Conformal_Conic&lt;/projcsn&gt;&lt;/cordsysn&gt;&lt;/horizsys&gt;
+		&lt;vertdef&gt;
+			&lt;altsys&gt;
+				&lt;altdatum&gt;NGVD29&lt;/altdatum&gt;
+				&lt;altunits&gt;Feet&lt;/altunits&gt;
+			&lt;/altsys&gt;
+			&lt;depthsys&gt;
+			&lt;/depthsys&gt;
+		&lt;/vertdef&gt;
+	&lt;/spref&gt;
+	&lt;eainfo&gt;
+		&lt;overview&gt;
+			&lt;dsoverv&gt;The Dakota County Contour Elevation dataset contains lines produced from series of elevation points and breaklines created during the Softcopy Photogrammetry updating process.&lt;/dsoverv&gt;&lt;/overview&gt;
+		&lt;detailed Name="contour"&gt;&lt;enttyp&gt;&lt;enttypl&gt;Contour&lt;/enttypl&gt;&lt;enttypt Sync="TRUE"&gt;Feature Class&lt;/enttypt&gt;&lt;enttypc Sync="TRUE"&gt;389639&lt;/enttypc&gt;&lt;enttypd&gt;Line shapefile containing elevation information&lt;/enttypd&gt;&lt;enttypds&gt;Dakota County Office of Geographic Information Systems&lt;/enttypds&gt;&lt;/enttyp&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;FID&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;FID&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;OID&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;4&lt;/attwidth&gt;&lt;atprecis Sync="TRUE"&gt;0&lt;/atprecis&gt;&lt;attscale Sync="TRUE"&gt;0&lt;/attscale&gt;&lt;attrdef Sync="TRUE"&gt;Internal feature number.&lt;/attrdef&gt;&lt;attrdefs Sync="TRUE"&gt;ESRI&lt;/attrdefs&gt;&lt;attrdomv&gt;&lt;udom Sync="TRUE"&gt;Sequential unique whole numbers that are automatically generated.&lt;/udom&gt;&lt;/attrdomv&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;Shape&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;Shape&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Geometry&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;0&lt;/attwidth&gt;&lt;atprecis Sync="TRUE"&gt;0&lt;/atprecis&gt;&lt;attscale Sync="TRUE"&gt;0&lt;/attscale&gt;&lt;attrdef Sync="TRUE"&gt;Feature geometry.&lt;/attrdef&gt;&lt;attrdefs Sync="TRUE"&gt;ESRI&lt;/attrdefs&gt;&lt;attrdomv&gt;&lt;udom Sync="TRUE"&gt;Coordinates defining the features.&lt;/udom&gt;&lt;/attrdomv&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;FNODE_&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;FNODE_&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;11&lt;/attwidth&gt;&lt;attrdef&gt;ID number of the node where the line segment begins.  Generated by the ArcInfo creation process.&lt;/attrdef&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;TNODE_&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;TNODE_&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;11&lt;/attwidth&gt;&lt;attrdef&gt;ID number of the node where the line segment ends.  Generated by the ArcInfo creation process.&lt;/attrdef&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;LPOLY_&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;LPOLY_&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;11&lt;/attwidth&gt;&lt;attrdef&gt;Polygon indicator.  Generated by the ArcInfo creation process.&lt;/attrdef&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;RPOLY_&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;RPOLY_&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;11&lt;/attwidth&gt;&lt;attrdef&gt;Polygon indicator.  Generated by the ArcInfo creation process.&lt;/attrdef&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;LENGTH&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;LENGTH&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;18&lt;/attwidth&gt;&lt;atnumdec Sync="TRUE"&gt;5&lt;/atnumdec&gt;&lt;attrdef&gt;Length of the line segment in feet.  Generated by the ArcInfo creation process.&lt;/attrdef&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;CONTOUR2_&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;CONTOUR2_&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;11&lt;/attwidth&gt;&lt;attrdef&gt;Line segment record number.  Generated by the ArcInfo creation process.&lt;/attrdef&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;CONTOUR2_I&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;CONTOUR2_I&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;11&lt;/attwidth&gt;&lt;attrdef&gt;Line segment ID number.  Generated by the ArcInfo creation process.&lt;/attrdef&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;ELEVATION&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;ELEVATION&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;12&lt;/attwidth&gt;&lt;attrdef&gt;Elevation of line segment in feet.&lt;/attrdef&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;/attr&gt;&lt;attr&gt;&lt;attrlabl Sync="TRUE"&gt;FEATURE&lt;/attrlabl&gt;&lt;attalias Sync="TRUE"&gt;FEATURE&lt;/attalias&gt;&lt;attrtype Sync="TRUE"&gt;Number&lt;/attrtype&gt;&lt;attwidth Sync="TRUE"&gt;6&lt;/attwidth&gt;&lt;attrdomv&gt;&lt;edom&gt;&lt;edomv&gt;200&lt;/edomv&gt;&lt;edomvd&gt;2-foot interval line segment.&lt;/edomvd&gt;&lt;edomvds&gt;Dakota County Office of Geographic Information Systems&lt;/edomvds&gt;&lt;/edom&gt;&lt;edom&gt;&lt;edomv&gt;201&lt;/edomv&gt;&lt;edomvd&gt;10-foot interval line segment.&lt;/edomvd&gt;&lt;edomvds&gt;Dakota County Office of Geographic Information Systems&lt;/edomvds&gt;&lt;/edom&gt;&lt;/attrdomv&gt;&lt;attrdefs&gt;Dakota County Office of Geographic Information Systems&lt;/attrdefs&gt;&lt;attrdef&gt;Feature code.&lt;/attrdef&gt;&lt;/attr&gt;&lt;/detailed&gt;&lt;/eainfo&gt;
+	&lt;distinfo&gt;
+		&lt;distrib&gt;
+			&lt;cntinfo&gt;
+				&lt;cntaddr&gt;
+					&lt;address&gt;14955 Galaxie Avenue&lt;/address&gt;
+					&lt;city&gt;Apple Valley&lt;/city&gt;
+					&lt;state&gt;MN&lt;/state&gt;
+					&lt;postal&gt;55124&lt;/postal&gt;
+					&lt;addrtype&gt;mailing and physical address&lt;/addrtype&gt;&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;952.891.7081&lt;/cntvoice&gt;
+				&lt;cntfax&gt;952.891.7097&lt;/cntfax&gt;
+				&lt;cntemail&gt;GIS@co.dakota.mn.us&lt;/cntemail&gt;
+				&lt;cntorgp&gt;&lt;cntorg&gt;Dakota County Office of Geographic Information Systems&lt;/cntorg&gt;&lt;cntper&gt;Department Staff&lt;/cntper&gt;&lt;/cntorgp&gt;&lt;hours&gt;8AM to 4:30PM&lt;/hours&gt;&lt;/cntinfo&gt;
+		&lt;/distrib&gt;
+		&lt;distliab&gt;License Agreement&lt;/distliab&gt;
+		&lt;stdorder&gt;
+			&lt;digform&gt;
+				&lt;digtinfo&gt;
+					&lt;formname&gt;ARC/INFO, ArcView, DXF &amp;amp; DWG&lt;/formname&gt;
+					&lt;transize&gt;Varies based on format and area of interest requested.&lt;/transize&gt;
+					&lt;dssize Sync="TRUE"&gt;462.632&lt;/dssize&gt;&lt;/digtinfo&gt;
+			&lt;/digform&gt;
+			&lt;ordering&gt;http://www.co.dakota.mn.us/gis/data/digital_data_request_process.htm or Contact Distributor&lt;/ordering&gt;
+			&lt;fees&gt;Visit for fees:  http://www.co.dakota.mn.us/gis/data/digital_data.htm&lt;/fees&gt;&lt;/stdorder&gt;
+		&lt;resdesc&gt;Downloadable Data&lt;/resdesc&gt;&lt;/distinfo&gt;
+	&lt;metainfo&gt;
+		&lt;metd Sync="TRUE"&gt;20040312&lt;/metd&gt;
+		&lt;metc&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Department Staff&lt;/cntper&gt;
+					&lt;cntorg&gt;Dakota County Office of Geographic Information Systems&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntaddr&gt;
+					&lt;address&gt;14955 Galaxie Avenue&lt;/address&gt;
+					&lt;city&gt;Apple Valley&lt;/city&gt;
+					&lt;state&gt;MN&lt;/state&gt;
+					&lt;postal&gt;55124&lt;/postal&gt;
+					&lt;addrtype&gt;mailing and physical address&lt;/addrtype&gt;&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;952.891.7081&lt;/cntvoice&gt;
+				&lt;cntfax&gt;952.891.7097&lt;/cntfax&gt;
+				&lt;cntemail&gt;GIS@co.dakota.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/metc&gt;
+		&lt;metstdn Sync="TRUE"&gt;FGDC Content Standards for Digital Geospatial Metadata&lt;/metstdn&gt;
+		&lt;metstdv Sync="TRUE"&gt;FGDC-STD-001-1998&lt;/metstdv&gt;
+		&lt;metextns&gt;
+		&lt;/metextns&gt;
+		&lt;langmeta Sync="TRUE"&gt;en&lt;/langmeta&gt;&lt;mettc Sync="TRUE"&gt;local time&lt;/mettc&gt;&lt;metextns&gt;&lt;onlink Sync="TRUE"&gt;http://www.esri.com/metadata/esriprof80.html&lt;/onlink&gt;&lt;metprof Sync="TRUE"&gt;ESRI Metadata Profile&lt;/metprof&gt;&lt;/metextns&gt;&lt;/metainfo&gt;
+	&lt;Esri&gt;&lt;MetaID&gt;{F6FD5B97-3CDE-4DE8-B537-EABD39DAB8E1}&lt;/MetaID&gt;&lt;CreaDate&gt;20040206&lt;/CreaDate&gt;&lt;CreaTime&gt;11284000&lt;/CreaTime&gt;&lt;SyncOnce&gt;FALSE&lt;/SyncOnce&gt;&lt;SyncDate&gt;20040206&lt;/SyncDate&gt;&lt;SyncTime&gt;11284000&lt;/SyncTime&gt;&lt;ModDate&gt;20040312&lt;/ModDate&gt;&lt;ModTime&gt;09492400&lt;/ModTime&gt;&lt;/Esri&gt;&lt;dataIdInfo&gt;&lt;envirDesc Sync="TRUE"&gt;Microsoft Windows 2000 Version 5.1 (Build 2600) Service Pack 1; ESRI ArcCatalog 8.3.0.800&lt;/envirDesc&gt;&lt;dataLang&gt;&lt;languageCode Sync="TRUE" value="en" /&gt;&lt;/dataLang&gt;&lt;idCitation&gt;&lt;resTitle Sync="TRUE"&gt;contour&lt;/resTitle&gt;&lt;presForm&gt;&lt;PresFormCd Sync="TRUE" value="005" /&gt;&lt;/presForm&gt;&lt;/idCitation&gt;&lt;spatRpType&gt;&lt;SpatRepTypCd Sync="TRUE" value="001" /&gt;&lt;/spatRpType&gt;&lt;dataExt&gt;&lt;geoEle&gt;&lt;GeoBndBox esriExtentType="native"&gt;&lt;westBL Sync="TRUE"&gt;496542.17595&lt;/westBL&gt;&lt;eastBL Sync="TRUE"&gt;652028.314783&lt;/eastBL&gt;&lt;northBL Sync="TRUE"&gt;263344.945687&lt;/northBL&gt;&lt;southBL Sync="TRUE"&gt;99166.699116&lt;/southBL&gt;&lt;exTypeCode Sync="TRUE"&gt;1&lt;/exTypeCode&gt;&lt;/GeoBndBox&gt;&lt;/geoEle&gt;&lt;/dataExt&gt;&lt;geoBox esriExtentType="decdegrees"&gt;&lt;westBL Sync="TRUE"&gt;-93.330015&lt;/westBL&gt;&lt;eastBL Sync="TRUE"&gt;-92.729819&lt;/eastBL&gt;&lt;northBL Sync="TRUE"&gt;44.919955&lt;/northBL&gt;&lt;southBL Sync="TRUE"&gt;44.468168&lt;/southBL&gt;&lt;exTypeCode Sync="TRUE"&gt;1&lt;/exTypeCode&gt;&lt;/geoBox&gt;&lt;/dataIdInfo&gt;&lt;mdLang&gt;&lt;languageCode Sync="TRUE" value="en" /&gt;&lt;/mdLang&gt;&lt;mdStanName Sync="TRUE"&gt;ISO 19115 Geographic Information - Metadata&lt;/mdStanName&gt;&lt;mdStanVer Sync="TRUE"&gt;DIS_ESRI1.0&lt;/mdStanVer&gt;&lt;mdChar&gt;&lt;CharSetCd Sync="TRUE" value="004" /&gt;&lt;/mdChar&gt;&lt;mdHrLv&gt;&lt;ScopeCd Sync="TRUE" value="005" /&gt;&lt;/mdHrLv&gt;&lt;mdHrLvName Sync="TRUE"&gt;dataset&lt;/mdHrLvName&gt;&lt;distInfo&gt;&lt;distributor&gt;&lt;distorTran&gt;&lt;onLineSrc&gt;&lt;orDesc Sync="TRUE"&gt;002&lt;/orDesc&gt;&lt;linkage Sync="TRUE"&gt;file://\\thor\d$\gisdata\data\gis\ARCDAT\DAK\contour.shp&lt;/linkage&gt;&lt;protocol Sync="TRUE"&gt;Local Area Network&lt;/protocol&gt;&lt;/onLineSrc&gt;&lt;transSize Sync="TRUE"&gt;462.632&lt;/transSize&gt;&lt;/distorTran&gt;&lt;distorFormat&gt;&lt;formatName Sync="TRUE"&gt;Shapefile&lt;/formatName&gt;&lt;/distorFormat&gt;&lt;/distributor&gt;&lt;/distInfo&gt;&lt;refSysInfo&gt;&lt;RefSystem&gt;&lt;refSysID&gt;&lt;identCode Sync="TRUE"&gt;MN_Dakota_Lambert_Conformal_Conic&lt;/identCode&gt;&lt;/refSysID&gt;&lt;/RefSystem&gt;&lt;/refSysInfo&gt;&lt;spatRepInfo&gt;&lt;VectSpatRep&gt;&lt;topLvl&gt;&lt;TopoLevCd Sync="TRUE" value="001" /&gt;&lt;/topLvl&gt;&lt;geometObjs Name="contour"&gt;&lt;geoObjTyp&gt;&lt;GeoObjTypCd Sync="TRUE" value="001" /&gt;&lt;/geoObjTyp&gt;&lt;geoObjCnt Sync="TRUE"&gt;389639&lt;/geoObjCnt&gt;&lt;/geometObjs&gt;&lt;/VectSpatRep&gt;&lt;/spatRepInfo&gt;&lt;mdDateSt Sync="TRUE"&gt;20040312&lt;/mdDateSt&gt;&lt;Binary&gt;&lt;Thumbnail&gt;&lt;Data EsriPropertyType="Picture"&gt;Qk3uNwEAAAAAADYAAAAoAAAAyAAAAIUAAAABABgAAAAAALg3AQAAAAAAAAAAAAAAAAAAAAAA5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq7sfH5aqq5aqq////////////
+5aqq9+Pj////////////////////5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqq3I6O03Fx5aqq5aqq
+5aqq5aqq03Fx5aqq5aqq5aqq3I6O5aqq5aqq7sfH5aqq5aqq9+Pj7sfH5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq03Fx03Fx5aqq5aqqylVV5aqq5aqq5aqq5aqq5aqq3I6O5aqq5aqq5aqq
+03Fx5aqq5aqq5aqq5aqq5aqq////7sfH9+Pj////5aqq////////7sfH9+Pj////////////////
+////////////////////9+Pj7sfH////////////////////////5aqq////////9+Pj5aqq9+Pj
+////5aqq9+Pj7sfH9+Pj7sfH5aqq////9+Pj5aqq5aqq3I6OylVV5aqq5aqq3I6O3I6O5aqq5aqq
+9+Pj5aqq5aqq7sfH9+Pj5aqq5aqq5aqq7sfH5aqq5aqq9+Pj////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////7sfH9+Pj7sfH7sfH7sfH5aqq////////////3I6O////7sfH5aqq5aqq5aqq5aqq5aqq
+5aqq7sfH5aqq7sfH5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqqylVV5aqq5aqq////3I6O////
+7sfH5aqq////7sfH5aqq////////////////////////////////////////////9+Pj5aqq5aqq
+////5aqq5aqq3I6O3I6O5aqq3I6OylVV3I6O5aqq5aqqylVV5aqq3I6OylVV3I6OylVV03Fx03Fx
+03Fx3I6O3I6O5aqq03Fx5aqq5aqq7sfH////////////////////////7sfH5aqq5aqq////////
+////////////7sfH3I6O////////5aqq////////////////////////5aqq////////03Fx////
+////////////////5aqq5aqq7sfH3I6O3I6O5aqq5aqq7sfH7sfH5aqq7sfH7sfH7sfH5aqq5aqq
+5aqq5aqq5aqq////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////5aqq////5aqq5aqq5aqq////
+////////7sfH3I6O9+Pj////////////////5aqq5aqq5aqq9+Pj7sfH////////////3I6O////
+////////////////////3I6O////3I6O////5aqq////////5aqq////////5aqq5aqq5aqq5aqq
+9+Pj////////9+Pj9+Pj////9+Pj9+Pj////////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq03Fx
+ylVV5aqq5aqqylVV5aqq5aqq03Fx3I6O3I6O3I6O3I6O03Fx03Fx3I6O3I6O3I6O5aqq5aqq5aqq
+5aqq5aqq////////////5aqq////////////////////7sfH5aqq9+Pj////////////9+Pj7sfH
+////////////////////7sfH9+Pj////5aqq////////////////////////////5aqq9+Pj3I6O
+5aqq3I6O5aqq7sfH9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////9+Pj////////////9+Pj5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq////////5aqq5aqq5aqq5aqq////////////////9+Pj////////////////////
+5aqq5aqq5aqq7sfH9+Pj////5aqq5aqq3I6O////////////////////////5aqq////////9+Pj
+9+Pj5aqq9+Pj////5aqq9+Pj////////////////7sfH5aqq5aqq7sfH7sfH5aqq7sfH7sfH5aqq
+5aqq9+Pj////////////7sfH5aqq5aqq5aqq5aqq5aqqylVV03Fx5aqqylVVylVV5aqq03FxylVV
+03FxylVV03Fx03Fx03Fx3I6O03Fx3I6O3I6O5aqq7sfH////5aqq////5aqq////////////////
+9+Pj5aqq9+Pj////////////////////////5aqq////////////////////////5aqq////9+Pj
+7sfH////////////////////////////5aqq7sfH3I6O5aqq5aqq5aqq7sfH7sfH7sfH3I6O3I6O
+9+Pj5aqq5aqq5aqq7sfH5aqq5aqq////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////5aqq////////////5aqq////////////////////////////5aqq////5aqq5aqq5aqq5aqq
+////////////////////////////////////////5aqq5aqq5aqq////7sfH5aqq////////////
+////////////////////////5aqq////////9+Pj////////7sfH9+Pj////7sfH9+Pj////////
+////////////////////////////////////////////7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq3I6O5aqq5aqq7sfH5aqq5aqq7sfH5aqq5aqq5aqq3I6O5aqq03Fx3I6O3I6O5aqq
+03Fx3I6O03Fx3I6O3I6O03Fx5aqq5aqq7sfH9+Pj5aqq5aqq9+Pj////////////////////////
+5aqq////////////////////////5aqq////////5aqq////////////////////////////5aqq
+////5aqq5aqq5aqq5aqq5aqq5aqq7sfH3I6O5aqq5aqq5aqq5aqq5aqq////////////3I6O////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////3I6O////////////5aqq////////////
+////////////////7sfH9+Pj5aqq5aqq5aqq5aqq////////////////////////////////////
+////5aqq5aqq////5aqq////////////////////////////////////////////5aqq////////
+////9+Pj////////7sfH5aqq////7sfH5aqq5aqq9+Pj////////////////////////////////
+////////////////////////////////////////////////////////5aqq5aqq7sfH5aqq5aqq
+7sfH5aqq7sfH7sfH5aqq3I6O5aqq03Fx3I6O03Fx3I6O3I6O3I6O5aqq3I6O5aqq3I6O5aqq5aqq
+5aqq////////5aqq////////////////5aqq5aqq7sfH////////////////////9+Pj7sfH////
+////5aqq////////////////////////////5aqq////5aqq5aqq5aqq5aqq5aqq7sfH9+Pj5aqq
+3I6O5aqq7sfH5aqq5aqq5aqq9+Pj////9+Pj7sfH////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////5aqq////////////////////////////5aqq5aqq5aqq////5aqq
+5aqq////////////////////////////////////////5aqq7sfH9+Pj5aqq////////////////
+////////////////////////////////5aqq////////////5aqq////////////5aqq////////
+////7sfH7sfH////////////////////////////////////////////////////////////////
+////7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj7sfH5aqq7sfH5aqq5aqq5aqq5aqq5aqqylVV
+3I6O03Fx3I6O5aqqylVV3I6O3I6O03Fx3I6O3I6O3I6O03Fx5aqq////5aqq////////3I6O////
+////////////////////////////5aqq////////////9+Pj7sfH////////////////////////
+7sfH9+Pj7sfH7sfH7sfH3I6O5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq7sfH7sfH7sfH7sfH////
+5aqq////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////3I6O////////////////5aqq////
+////////////////////5aqq7sfH9+Pj5aqq5aqq5aqq////////////////////////////////
+////////5aqq5aqq5aqq////////////////////////////////////////////////////5aqq
+////////////////5aqq////////////5aqq7sfH////////9+Pj5aqq5aqq9+Pj////////////
+////////////////////////////////////////9+Pj3I6O////////////////////3I6O////
+3I6O////////5aqq////////3I6O////////////5aqq5aqq3I6O5aqq5aqq5aqq5aqq5aqq7sfH
+5aqq5aqq9+Pj7sfH5aqq9+Pj5aqq////9+Pj5aqq////////////////////////////5aqq////
+////////////5aqq////////3I6O////////////9+Pj7sfH////5aqq5aqq7sfH5aqq5aqq5aqq
+7sfH5aqq5aqq7sfH5aqq5aqq9+Pj7sfH7sfH9+Pj////5aqq////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////5aqq////////////////7sfH5aqq////////////////////9+Pj7sfH5aqq5aqq
+5aqq7sfH9+Pj////////////////////9+Pj////////////5aqq5aqq5aqq////////////////
+////////////////////////////////////5aqq////////////////////5aqq5aqq7sfH////
+9+Pj5aqq5aqq////////////7sfH5aqq5aqq9+Pj////////////////////////////////////
+////5aqq9+Pj5aqq7sfH9+Pj5aqq5aqq5aqq////5aqq////////5aqq////////////5aqq////
+////////9+Pj7sfH5aqq5aqq5aqq5aqq9+Pj5aqq7sfH5aqq7sfH5aqq////7sfH7sfH5aqq7sfH
+////5aqq////////////7sfH5aqq5aqq////////////////////5aqq////////////////////
+////5aqq////////5aqq9+Pj7sfH5aqq5aqq5aqq5aqq7sfH5aqq7sfH5aqq7sfH5aqq7sfH9+Pj
+5aqq////9+Pj7sfH////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+9+Pj5aqq////////////////////5aqq5aqq5aqq5aqq////5aqq////////////////////3I6O
+5aqq5aqq////5aqq5aqq5aqq////////////////////////////////////////////////////
+5aqq////////////////////////////9+Pj5aqq7sfH////////5aqq5aqq5aqq5aqq5aqq5aqq
+7sfH7sfH////////////////////////9+Pj5aqq5aqq5aqq5aqq////9+Pj7sfH////////////
+////5aqq////////5aqq////////////9+Pj5aqq////////////9+Pj7sfH////5aqq5aqq3I6O
+7sfH5aqq7sfH3I6O////5aqq9+Pj9+Pj5aqq9+Pj5aqq7sfH7sfH////////5aqq////////////
+////////////////5aqq////////////////////////5aqq////////5aqq////5aqq7sfH9+Pj
+5aqq5aqq5aqq5aqq5aqq9+Pj5aqq5aqq7sfH5aqq////5aqq////7sfH9+Pj////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////9+Pj////////////////////////////5aqq////////////////5aqq5aqq
+5aqq5aqq////5aqq////////////////////5aqq////5aqq////5aqq5aqq5aqq////////////
+////////////////////////////////////////7sfH5aqq5aqq3I6O////////////////////
+////9+Pj5aqq////////////////////////////5aqq9+Pj5aqq5aqq5aqq3I6O3I6O5aqq7sfH
+5aqq5aqq5aqq5aqq////////////////////////5aqq9+Pj////////5aqq////////////////
+////3I6O////////////9+Pj3I6O////5aqq9+Pj5aqq5aqq7sfH5aqq5aqq////5aqq////////
+5aqq9+Pj5aqq7sfH9+Pj7sfH7sfH////////////9+Pj03Fx5aqq7sfH9+Pj7sfH////////////
+////////5aqq////////5aqq////9+Pj7sfH5aqq7sfH7sfH5aqq7sfH5aqq5aqq7sfH5aqq7sfH
+7sfH5aqq9+Pj5aqq9+Pj7sfH9+Pj////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////7sfH9+Pj////////////
+////////////////5aqq////////////5aqq5aqq5aqq5aqq////5aqq////////////////////
+7sfH3I6O////5aqq////5aqq5aqq////////////////////////////////////////////////
+////////////////////7sfH////////////////////////////5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq////5aqq////////////////9+Pj////////5aqq////////////////////////5aqq5aqq
+5aqq////////////////5aqq////////////////5aqq9+Pj////////////////9+Pj7sfH5aqq
+////5aqq5aqq5aqq5aqq5aqq////5aqq////////////7sfH7sfH7sfH5aqq////9+Pj5aqq9+Pj
+////////5aqq////9+Pj5aqq////////////////////////5aqq////////5aqq////////9+Pj
+7sfH5aqq7sfH5aqq7sfH7sfH5aqq5aqq5aqq5aqq7sfH9+Pj5aqq9+Pj7sfH9+Pj7sfH5aqq5aqq
+7sfH////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////7sfH5aqq5aqq////////////////////9+Pj7sfH////////5aqq
+5aqq5aqq5aqq////5aqq////////////////////////////////5aqq5aqq////5aqq////////
+////////////////////////////////////////////5aqq5aqq5aqq5aqq5aqq3I6O////////
+////////////////////////////////////////9+Pj7sfH////5aqq////////////////////
+5aqq////////////////////////7sfH9+Pj////////////////9+Pj3I6O////////////7sfH
+5aqq////////////////////////9+Pj7sfH9+Pj7sfH5aqq5aqq5aqq5aqq5aqq////5aqq////
+////////////5aqq7sfH9+Pj5aqq7sfH////7sfH7sfH////////5aqq////////////////////
+////////////5aqq////////5aqq////////////7sfH9+Pj5aqq5aqq7sfH7sfH7sfH5aqq5aqq
+5aqq5aqq7sfH7sfH7sfH7sfH7sfH9+Pj////////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+5aqq9+Pj////////////////5aqq////5aqq////5aqq5aqq5aqq////5aqq////////////////
+////////////////5aqq5aqq5aqq////////////////////////////////////////////////
+////////5aqq////////////////7sfH3I6O9+Pj////////////////////////////////////
+////////5aqq////////3I6O////////////////3I6O////////////////////////5aqq////
+////////////3I6O7sfH////////////////5aqq////////////////////////////5aqq////
+////5aqq5aqq5aqq5aqq5aqq9+Pj7sfH5aqq////////////////9+Pj7sfH5aqq5aqq9+Pj5aqq
+7sfH9+Pj5aqq9+Pj7sfH9+Pj////////////////////////////5aqq////////7sfH9+Pj////
+////////7sfH7sfH7sfH5aqq7sfH7sfH5aqq5aqq5aqq5aqq3I6O5aqq5aqq7sfH5aqq7sfH5aqq
+5aqq5aqq5aqq9+Pj////////////////////3I6O////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////5aqq////////////////5aqq////5aqq
+////5aqq5aqq5aqq////5aqq////////////////////////////////5aqq5aqq5aqq////////
+////////////////////////////////////////////////5aqq////////////////////5aqq
+7sfH5aqq////////////////////////////////////////9+Pj7sfH////5aqq////////9+Pj
+5aqq////////////////////////////5aqq////////////5aqq////////////////////5aqq
+////////////////////////////////5aqq////////5aqq5aqq5aqq5aqq7sfH7sfH7sfH5aqq
+////////////////////9+Pj7sfH9+PjylVV5aqq03Fx5aqq7sfH7sfH9+Pj7sfH7sfH////////
+////9+Pj5aqq5aqq9+Pj////////////5aqq////////////////5aqq7sfH9+Pj5aqq5aqq9+Pj
+3I6O03Fx5aqq5aqq3I6O03Fx03Fx5aqq3I6O5aqq////////////7sfH5aqq5aqq////////////
+7sfH9+Pj////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////5aqq////////////////////5aqq5aqq////5aqq5aqq5aqq////7sfH7sfH////////
+////////////////////5aqq5aqq5aqq////////////////////////////////////////////
+////////////5aqq////////////////////////5aqq////5aqq////////////////////////
+////////////9+Pj7sfH////5aqq////////5aqq////////////////7sfH5aqq////////5aqq
+////////////5aqq////////////////7sfH9+Pj////////////////////////////////9+Pj
+7sfH////5aqq7sfH5aqq9+Pj5aqq5aqq5aqq5aqq////////////////////////9+Pj7sfH////
+03Fx5aqq3I6O7sfH5aqq7sfH7sfH7sfH9+Pj////////5aqq////////////////////////////
+5aqq////////////7sfH9+Pj5aqq9+Pj7sfH5aqq9+Pj7sfH03Fx03Fx3I6O3I6O3I6O3I6O5aqq
+5aqq3I6O5aqq5aqq5aqq5aqq9+Pj5aqq9+Pj////////5aqq////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////5aqq////////5aqq5aqq5aqq03Fx
+////////5aqq5aqq5aqq////////9+Pj3I6O////////////////////////5aqq5aqq5aqq03Fx
+////////////////////////////////////////////////////5aqq////////////////////
+////9+Pj7sfH////5aqq////////////////7sfH////////////5aqq////////5aqq////////
+5aqq////////////7sfH9+Pj////5aqq03Fx////////////5aqq3I6O////////////3I6O9+Pj
+////////////////////////////////////////5aqq////5aqq////5aqq5aqq5aqq5aqq5aqq
+5aqq////////////////////////////5aqq5aqq9+Pj5aqq3I6O5aqq5aqq5aqq7sfH5aqq7sfH
+7sfH////5aqq5aqq////////////////////////9+Pj5aqq////////////5aqq////5aqq9+Pj
+7sfH7sfH5aqq9+Pj5aqq3I6O5aqq5aqq5aqq3I6O5aqq3I6O5aqq5aqq7sfH////7sfH5aqq7sfH
+5aqq////7sfH5aqq5aqq////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////7sfH9+Pj////5aqq////////5aqq////////5aqq5aqq5aqq////////////9+Pj
+7sfH////////////////////5aqq5aqq5aqq3I6O7sfH////////////////////////////////
+////////////////5aqq////////////////////////////9+Pj5aqq5aqq////////////5aqq
+9+Pj5aqq////////////5aqq////5aqq////////5aqq////////9+Pj7sfH////////////////
+////////////5aqq////////9+Pj5aqq////////////5aqq5aqq5aqq9+Pj////////////////
+////9+Pj7sfH5aqq////5aqq5aqq5aqq5aqq5aqq5aqq////////////////////////////5aqq
+////////////03Fx03Fx5aqq5aqq03Fx3I6O5aqq5aqq5aqq5aqq////5aqq9+Pj////////////
+////7sfH9+Pj////////////7sfH9+Pj////5aqq7sfH5aqq////5aqq9+Pj9+Pj5aqq7sfH5aqq
+5aqq5aqq3I6O5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj5aqq5aqq5aqq5aqq
+5aqq7sfH////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////5aqq////////5aqq////7sfH
+9+Pj////9+Pj7sfH5aqq5aqq////////////////5aqq////////////////////5aqq5aqq5aqq
+5aqq5aqq////////////////////////////////////////////5aqq////////////////////
+////////////////////////////////////5aqq////////5aqq9+Pj////5aqq////7sfH9+Pj
+////5aqq////7sfH7sfH////////////////////////////////5aqq////3I6O7sfH////7sfH
+5aqq5aqq////////////7sfH5aqq5aqq7sfH////////////5aqq9+Pj7sfH5aqq5aqq5aqq9+Pj
+03Fx5aqq////////////////////////////5aqq////////5aqq////5aqq3I6O3I6O7sfH5aqq
+3I6O3I6O3I6O7sfH5aqq5aqq7sfH9+Pj////////5aqq5aqq////////////////////5aqq////
+9+Pj7sfH////5aqq5aqq7sfH7sfH////5aqq7sfH7sfH5aqq5aqq5aqq5aqq3I6O5aqq5aqq////
+5aqq5aqq5aqq5aqq5aqq03Fx3I6O5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////
+////////////////////////////////////////////////////////////////////////////
+////////////////5aqq////////5aqq////5aqq////////5aqq////5aqq5aqq////////////
+////5aqq////////////////////5aqq5aqq5aqq3I6O3I6O////////////////////////////
+////5aqq5aqq5aqq7sfH////////////////////////////////////////////////////////
+5aqq////////////5aqq////////5aqq////5aqq////5aqq////5aqq////////////////////
+////////////9+Pj5aqq5aqq////////5aqq9+Pj////////////////////////////////9+Pj
+5aqq////////9+Pj7sfH5aqq5aqq9+Pj5aqq7sfH5aqq3I6O7sfH////////////////////////
+9+Pj7sfH////5aqq////////7sfH3I6O3I6O5aqq3I6O5aqq5aqq5aqq5aqq7sfH5aqq7sfH7sfH
+////7sfH7sfH////////////////////3I6O////////9+Pj5aqq////////5aqq9+Pj5aqq7sfH
+7sfH7sfH3I6O////5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq3I6O5aqq5aqq7sfH7sfH5aqq5aqq
+5aqq5aqq9+Pj5aqq5aqq////////////5aqq////////////////////////////////////////
+////////////////////////////////////////////////////////5aqq////////5aqq5aqq
+////////////5aqq////5aqq5aqq////////////////5aqq////////9+Pj5aqq5aqq9+Pj5aqq
+3I6O9+Pj////////////////////////////////7sfH9+Pj////////////////////////////
+////////////////////////////////////9+Pj7sfH////////////5aqq////////5aqq////
+5aqq////5aqq9+Pj7sfH////////////////////////////////5aqq////5aqq////////5aqq
+////////////////////////////////////////////5aqq////////5aqq5aqq5aqq////5aqq
+5aqq5aqq3I6O7sfH9+Pj5aqq5aqq5aqq9+Pj////////5aqq////9+Pj7sfH////////7sfH9+Pj
+5aqq3I6O5aqq5aqq3I6O5aqq5aqq5aqq5aqq5aqq5aqq9+Pj9+Pj7sfH////////5aqq5aqq9+Pj
+9+Pj////////////5aqq9+Pj////5aqq9+Pj7sfH5aqq5aqq7sfH5aqq5aqq5aqq7sfH5aqq7sfH
+5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq9+Pj////////5aqq5aqq////5aqq9+Pj////////
+5aqq9+Pj////////////////////////////////////////////////////////////////////
+////////////////////5aqq////////3I6O9+Pj////////5aqq////5aqq////5aqq////////
+////////7sfH9+Pj3I6O03Fx////////////5aqq////7sfH5aqq////////////////////////
+////////5aqq5aqq3I6O////////////////////////////////////////////////////////
+5aqq////////////////5aqq////9+Pj7sfH////5aqq////5aqq5aqq////////////////////
+////////////7sfH9+Pj////5aqq////3I6O////////////////////////////////////////
+////////5aqq////5aqq////7sfH7sfH7sfH5aqq5aqq5aqqylVV////5aqq////////////7sfH
+5aqq////9+Pj7sfH////9+Pj5aqq////////5aqq////////5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+7sfH5aqq7sfH7sfH7sfH9+Pj////7sfH9+Pj////////////////////////7sfH9+Pj////7sfH
+7sfH9+Pj5aqq9+Pj5aqq5aqq9+Pj5aqq5aqq9+Pj5aqq5aqq////5aqq5aqq5aqq9+Pj5aqq5aqq
+7sfH5aqq5aqq7sfH////5aqq9+Pj7sfH5aqq////////7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq9+Pj////////7sfH5aqq5aqq5aqq////////////////7sfH9+Pj////////////
+////////////5aqq////5aqq////5aqq////////////5aqq3I6O03Fx////////5aqq3I6O////
+3I6O9+Pj5aqq7sfH////////////////////////////////////////9+Pj7sfH////////////
+////////////////////////////////////////////5aqq////////////////5aqq5aqq////
+////5aqq////5aqq5aqq////////////////////////////////9+Pj7sfH////5aqq5aqq////
+////////////////////////////////////////////////////5aqq5aqq////7sfH9+Pj5aqq
+5aqq5aqq5aqq3I6O7sfH5aqq////////////////9+Pj7sfH////5aqq////////////5aqq5aqq
+03Fx5aqq5aqq5aqq3I6O5aqq5aqq7sfH7sfH5aqq7sfH9+Pj5aqq9+Pj7sfH7sfH9+Pj////5aqq
+////////////////////////////7sfH7sfH////9+Pj7sfH////5aqq7sfH////7sfH5aqq////
+5aqq5aqq7sfH5aqq5aqq5aqq7sfH5aqq5aqq7sfH5aqq5aqq5aqq9+Pj5aqq5aqq7sfH7sfH////
+5aqq7sfH////////////////////////////////////////////7sfH5aqq5aqq9+Pj////////
+////////////////////5aqq////////////////////////7sfH9+Pj////5aqq////5aqq////
+7sfH5aqq////////ylVV////////////5aqq5aqq////5aqq9+Pj////////////////////////
+////////////////////5aqq////////7sfH7sfH////////////////////////////////////
+////////5aqq////3I6O5aqq5aqq////5aqq////////5aqq////5aqq5aqq////////////////
+////////////////////5aqq7sfH9+Pj5aqq////////////////////////////////////9+Pj
+////////////////5aqq5aqq////7sfH9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////
+////////7sfH9+Pj9+Pj5aqq5aqq9+Pj////////////////9+Pj5aqq9+Pj7sfH9+Pj5aqq5aqq
+9+Pj7sfH5aqq////5aqq7sfH9+Pj7sfH9+Pj7sfH9+Pj////////////////////7sfH7sfH5aqq
+////////7sfH9+Pj////9+Pj5aqq9+Pj////5aqq5aqq////9+Pj5aqq5aqq9+Pj9+Pj5aqq9+Pj
+9+Pj5aqq7sfH9+Pj5aqq5aqq9+Pj5aqq3I6O5aqq5aqq3I6O3I6O5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////////5aqq////////////
+////////////5aqq////////5aqq////5aqq////5aqq////////////ylVV////////////5aqq
+5aqq5aqq////ylVV////3I6O5aqq5aqq7sfH////////////////////9+Pj7sfH////////5aqq
+9+Pj5aqq9+Pj////////////////////////////////9+Pj7sfH////5aqq////////9+Pj7sfH
+////5aqq5aqq////5aqq////5aqq////////////////////////////////5aqq5aqq////5aqq
+////////////////////////////////3I6O5aqq////////////////5aqq5aqq////////5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq////5aqq////////////////////7sfH9+Pj////////7sfH5aqq
+9+Pj////////////////////9+Pj7sfH5aqq////5aqq5aqq////5aqq7sfH9+Pj5aqq////5aqq
+////5aqq////////////9+Pj5aqq9+Pj9+Pj7sfH////////////5aqq////////////7sfH5aqq
+9+Pj////5aqq5aqq5aqq////7sfH5aqq7sfH7sfH5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq////7sfH9+Pj////////////////////9+Pj7sfH////5aqq////////5aqq
+////5aqq////9+Pj////3I6O7sfH////////5aqq5aqq9+Pj7sfH////////5aqq////////9+Pj
+5aqq5aqq5aqq5aqq3I6O5aqq////////////9+Pj////5aqq////////////////////////////
+////////5aqq////////5aqq////9+Pj7sfH////3I6O////////////5aqq////5aqq////////
+////////////////////////7sfH9+Pj5aqq5aqq////////////////////////////5aqq////
+5aqq////////////////5aqq5aqq////////5aqq5aqq5aqq5aqq5aqq5aqq5aqq////7sfH9+Pj
+////////////////////5aqq9+Pj////////////7sfH5aqq////////////9+Pj7sfH////5aqq
+////5aqq7sfH9+Pj9+Pj7sfH5aqq9+Pj7sfH7sfH9+Pj7sfH9+Pj////////5aqq////////////
+////////////////9+Pj5aqq7sfH////////////7sfH5aqq7sfH////////5aqq5aqq////9+Pj
+5aqq7sfH////5aqq5aqq7sfH////7sfH5aqq7sfH5aqq5aqq5aqq03FxylVV5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////5aqq7sfH////////////
+////5aqq5aqq7sfH////////5aqq////////9+Pj7sfH5aqq5aqq5aqq5aqq////7sfH5aqq5aqq
+7sfH9+Pj5aqq5aqq5aqq5aqq9+Pj////////////////////////////////////7sfH////////
+////////5aqq7sfH7sfH////////////////////////////7sfH5aqq3I6O////////5aqq////
+////5aqq////////////5aqq////5aqq////////////////////////////////////5aqq5aqq
+5aqq////////////////////////////////5aqq5aqq////////////////////7sfH////7sfH
+9+Pj5aqq5aqq5aqq5aqq5aqq5aqq////////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+9+Pj////////5aqq5aqq5aqq7sfH////////5aqq////5aqq////5aqq////5aqq5aqq////5aqq
+////5aqq////5aqq////5aqq9+Pj////////////////////////9+Pj5aqq5aqq////////////
+////////////9+Pj7sfH////////////5aqq9+Pj////9+Pj5aqq7sfH////9+Pj5aqq5aqq9+Pj
+9+Pj5aqq5aqq7sfH////////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq////////////////////9+Pj5aqq////////////////////5aqq////////
+5aqq////5aqq5aqq5aqq5aqq////////////////////////9+Pj7sfH////////////////////
+////////////////////////////9+Pj////////7sfH////5aqq////9+Pj5aqq////////////
+////////////////////////////5aqq////////////5aqq////////////5aqq////5aqq////
+////////////////////////////////5aqq5aqq5aqq////////////////////////////////
+////////////////////////////////////5aqq////5aqq5aqq5aqq5aqq5aqq5aqq////////
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH////7sfH7sfH////////////5aqq5aqq9+Pj7sfH
+9+Pj9+Pj7sfH9+Pj7sfH////5aqq5aqq////5aqq////5aqq////5aqq9+Pj7sfH////////////
+////////////////5aqq////////////////////////////////////9+Pj7sfH////////////
+7sfH5aqq9+Pj////9+Pj5aqq5aqq////////7sfH5aqq5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////////9+Pj
+5aqq////////////////9+Pj5aqq////////////5aqq////5aqq7sfH7sfH5aqq////////////
+////////////5aqq////////////////////////////////////////////9+Pj9+Pj9+Pj5aqq
+5aqq9+Pj////9+Pj9+Pj////5aqq////////////////////////////////////5aqq////////
+////////3I6O////////////5aqq////5aqq////////////////////////////////////5aqq
+5aqq////5aqq////////////////////////////////////////////////////////////5aqq
+////7sfH9+Pj5aqq5aqq5aqq5aqq5aqq////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6O5aqq
+7sfH////9+Pj5aqq7sfH5aqq////////7sfH7sfH////5aqq////5aqq////////5aqq5aqq////
+5aqq////5aqq////5aqq5aqq////////////////////////////5aqq////////////5aqq5aqq
+5aqq5aqq////////////////9+Pj5aqq////////////////7sfH5aqq5aqq////////5aqq5aqq
+5aqq5aqq////////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH////5aqq5aqq5aqq
+5aqq5aqq9+Pj5aqq7sfH////////////9+Pj7sfH////////////////9+Pj7sfH////////////
+////5aqq////5aqq9+Pj////5aqq////////////////////9+Pj7sfH7sfH7sfH////////////
+////////////////////////5aqq7sfH7sfH////////////////////////////5aqq////////
+////////////////////////////5aqq////////////////5aqq////////////9+Pj7sfH////
+5aqq7sfH////////////////////////////5aqq////5aqq5aqq////////03Fx5aqq5aqq9+Pj
+////////////////////////////////////5aqq////5aqq////5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq9+Pj////////5aqq5aqq5aqq////////////9+Pj////////9+Pj////
+////////5aqq////5aqq////////5aqq5aqq////5aqq9+Pj7sfH9+Pj7sfH5aqq////////////
+////////////////9+Pj7sfH////////5aqq////////////5aqq5aqq5aqq5aqq5aqq7sfH////
+////////////////////////5aqq5aqq////////////////5aqq5aqq5aqq9+Pj////////////
+////////////////////9+Pj5aqq////////////////////7sfH////////////////////5aqq
+////////////////9+Pj7sfH////////////////////////5aqq9+Pj7sfH5aqq5aqq////////
+////////////5aqq////5aqq7sfH3I6O////////////////////////////////5aqq////9+Pj
+5aqq7sfH////////////////////5aqq////////////////////////////9+Pj5aqq////////
+////////////5aqq////////////////5aqq////////9+Pj5aqq9+Pj////////////////////
+5aqq////7sfH7sfH7sfH7sfH9+Pj////////5aqq////////////////////////////////////
+5aqq////7sfH9+Pj5aqq5aqq5aqq5aqq5aqq3I6O3I6O5aqq3I6O03Fx03Fx3I6O7sfH////5aqq
+7sfH9+Pj3I6O5aqq5aqq5aqq5aqq5aqq7sfH9+Pj////////5aqq////5aqq////////5aqq5aqq
+////5aqq5aqq////5aqq////5aqq5aqq5aqq9+Pj////////////////////9+Pj5aqq////////
+5aqq////3I6O5aqq5aqq9+Pj////5aqq////////////////////////////////////////5aqq
+7sfH////////////////////7sfH5aqq5aqq5aqq5aqq////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq////////////////5aqq////////////9+Pj7sfH////9+Pj9+Pj////
+////////////////7sfH5aqq9+Pj////////////9+Pj3I6O////5aqq////5aqq3I6O5aqq5aqq
+////////////////////////////5aqq5aqq7sfH////5aqq////////7sfH9+Pj////7sfH9+Pj
+////////////3I6O5aqq5aqq5aqq////////////////////////5aqq////////////////9+Pj
+7sfH////////////7sfH5aqq5aqq9+Pj////////7sfH9+Pj////5aqq5aqq5aqq////////////
+7sfH9+Pj////////////////////////////////9+Pj7sfH////5aqq5aqq5aqq5aqq5aqq03Fx
+3I6O5aqq5aqq5aqq3I6O3I6O03Fx3I6O7sfH7sfH9+Pj5aqq////////////////////////////
+7sfH9+Pj////5aqq////5aqq////////5aqq5aqq////5aqq5aqq////5aqq5aqq////5aqq////
+7sfH5aqq////////////////////////5aqq////7sfH9+Pj5aqq////////7sfH5aqq////5aqq
+5aqq5aqq////////////////////////////////9+Pj5aqq5aqq5aqq5aqq////////////////
+////////5aqq7sfH////////////////////////////////////////////////////////7sfH
+9+Pj////////7sfH7sfH////////5aqq7sfH3I6O9+Pj////9+Pj7sfH////////5aqq9+Pj////
+////5aqq5aqq////5aqq////5aqq3I6O7sfH5aqq////////////////////////////7sfH////
+////////5aqq////////9+Pj////////////5aqq////////////5aqq////////////////////
+////////////9+Pj7sfH////////////////////5aqq////////////////////////5aqq////
+////9+Pj7sfH////5aqq5aqq5aqq////////////////5aqq////////////////////////////
+////7sfH9+Pj9+Pj7sfH5aqq5aqq5aqq5aqqylVV5aqq5aqq5aqqylVV5aqq5aqq5aqq5aqqylVV
+////5aqq5aqq////9+Pj5aqq5aqq9+Pj////////////5aqq7sfH9+Pj////5aqq////7sfH9+Pj
+5aqq////5aqq5aqq////5aqq5aqq////5aqq////////////3I6O////////////////////5aqq
+////9+Pj7sfH5aqq////3I6O5aqq5aqq5aqq5aqq7sfH////5aqq5aqq5aqq5aqq5aqq3I6O5aqq
+5aqq5aqq9+Pj////////////3I6O////////////////////////////////////////////////
+////////////////////5aqq////////7sfH7sfH////////9+Pj7sfH////////5aqq////////
+////5aqq9+Pj5aqq7sfH7sfH////////5aqq////////////7sfH////5aqq////5aqqylVV////
+5aqq////////////////////////////////////////9+Pj7sfH////////////////////////
+5aqq////////////5aqq////////////////////////////////5aqq////////////////////
+5aqq////////////////////////////5aqq////////5aqq////////5aqq5aqq7sfH9+Pj////
+////////5aqq////////////////////7sfH5aqq5aqq9+Pj////5aqq////5aqq5aqq5aqq5aqq
+03Fx3I6O5aqq5aqq5aqq3I6O03Fx7sfH03Fx5aqq////9+Pj7sfH5aqq7sfH////////7sfH5aqq
+////////5aqq5aqq////////5aqq////5aqq////5aqq5aqq////5aqq7sfH9+Pj5aqq////5aqq
+////////////5aqq////////////////////5aqq////5aqq////5aqq////5aqq9+Pj5aqq5aqq
+9+Pj9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH7sfH5aqq////////////
+////////////////////////////////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq////5aqq5aqq9+Pj
+////////9+Pj7sfH////////7sfH9+Pj////////////////5aqq5aqq////5aqq////////5aqq
+////////////////////5aqq////5aqq3I6O////5aqq////////////////////////7sfH3I6O
+////////5aqq////////////////////////////5aqq////////////5aqq////////////////
+////////////5aqq////////////////////////5aqq////////////////////////////5aqq
+////////5aqq////////5aqq5aqq////5aqq////////////5aqq////////////////////5aqq
+////////////3I6O////7sfH9+Pj5aqq5aqq5aqq5aqqylVV5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq////////5aqq////////////////////////5aqq////5aqq5aqq////////5aqq7sfH9+Pj
+5aqq////5aqq////5aqq5aqq////5aqq////5aqq////////////5aqq////////////////9+Pj
+5aqq////5aqq////5aqq////5aqq5aqq////////7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq7sfH5aqq9+Pj////////////////////////////////////////////03Fx7sfH
+////////5aqq5aqq5aqq5aqq5aqq////////////////7sfH7sfH////////7sfH7sfH////////
+////////////5aqq5aqq////5aqq////////5aqq////////////////////5aqq////5aqq9+Pj
+////5aqq////////////////////9+Pj7sfH9+Pj7sfH////5aqq////////////////////////
+////5aqq////////////5aqq////////////////////////////5aqq////////////////////
+////5aqq////////////////////////////5aqq////////5aqq////////5aqq5aqq5aqq////
+////////////5aqq////////////////////5aqq////////3I6O////////5aqq////5aqq5aqq
+5aqq5aqqylVV5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////5aqq5aqq5aqq7sfH////
+////9+Pj7sfH////5aqq////7sfH9+Pj5aqq////5aqq////5aqq////5aqq5aqq////5aqq////
+5aqq////////////5aqq////////////////5aqq9+Pj////5aqq////5aqq////5aqq5aqq////
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////5aqq9+Pj7sfH////////////
+////////////////////////5aqq5aqq3I6O5aqq5aqq5aqq9+Pj5aqq5aqq5aqq5aqq////////
+////7sfH9+Pj////////////5aqq////////////////////////5aqq5aqq////////5aqq////
+5aqq////////////////////5aqq////5aqq////////5aqq////////////////////5aqq////
+5aqq////////5aqq////////////////////////////5aqq////////////7sfH9+Pj////////
+////////////7sfH7sfH////////////////////////5aqq////////////////////////////
+5aqq////////////5aqq////5aqq5aqq5aqq////////////////5aqq////////////////7sfH
+9+Pj////5aqq3I6O////////5aqq////7sfH3I6O5aqq5aqq5aqq3I6O03Fx5aqq5aqq5aqq5aqq
+7sfH9+Pj5aqq7sfH////////////////7sfH9+Pj////////5aqq////////7sfH9+Pj9+Pj7sfH
+////5aqq////5aqq9+Pj7sfH5aqq////5aqq////5aqq////////////7sfH9+Pj////////7sfH
+9+Pj////////5aqq////5aqq////5aqq5aqq////5aqq////////////////////////////////
+////5aqq5aqq////////5aqq7sfH7sfH////////////////////////3I6O5aqq3I6O3I6O3I6O
+5aqq5aqq5aqq7sfH7sfH5aqq5aqq5aqq////////7sfH7sfH////////7sfH5aqq////////////
+////////////////5aqq5aqq////////5aqq////5aqq////////////////////5aqq////5aqq
+////////5aqq////////////////////////5aqq5aqq////////5aqq////////////////////
+////////5aqq////////////////5aqq////////////////9+Pj7sfH////////////////////
+////////5aqq////////////////////////7sfH9+Pj////////////5aqq////5aqq5aqq5aqq
+////////////////5aqq////////////9+Pj5aqq////7sfH9+Pj////////////9+Pj7sfH////
+ylVV5aqq5aqq5aqq5aqq03Fx9+Pj03Fx7sfH////////5aqq////9+Pj5aqq5aqq////////////
+5aqq////////7sfH9+Pj////5aqq////5aqq////5aqq////5aqq////5aqq////5aqq9+Pj7sfH
+////5aqq////////////////5aqq////////5aqq////////////5aqq////5aqq////5aqq5aqq
+////5aqq////3I6O5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH////5aqq7sfH9+Pj7sfH9+Pj5aqq
+7sfH////////////7sfH9+Pj9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq5aqq////
+7sfH7sfH////////7sfH9+Pj////////////////////////////////5aqq5aqq////////5aqq
+////5aqq////////////////////7sfH9+Pj5aqq////////5aqq////////////////////////
+7sfH////////9+Pj5aqq////////////////////////////5aqq////////////////////5aqq
+////////////5aqq////////////////////////////9+Pj7sfH////////////////////////
+5aqq////////////////5aqq////5aqq5aqq5aqq////////////////5aqq////////////5aqq
+////////5aqq////////////////9+Pj7sfH7sfH3I6O5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+////////5aqq////////////////5aqq5aqq////////5aqq////////5aqq5aqq9+Pj5aqq////
+9+Pj7sfH////5aqq////5aqq////5aqq5aqq////////5aqq////////////7sfH5aqq////////
+5aqq////////////5aqq////5aqq////5aqq5aqq////5aqq////5aqq////////////////////
+////////5aqq////////5aqq////5aqq////////9+Pj5aqq////////5aqq////5aqq3I6O5aqq
+9+Pj3I6O5aqq5aqq5aqq7sfH////////////5aqq7sfH////////7sfH9+Pj////////////////
+////////////////////5aqq5aqq////////5aqq////5aqq////////////////////5aqq////
+5aqq////////5aqq////////////////////////////////3I6O7sfH////////////////////
+////////////5aqq////////////////7sfH9+Pj////////5aqq////////////////////////
+////////5aqq////////////////////////////5aqq////////////////5aqq////5aqq5aqq
+5aqq////////////////9+Pj7sfH////////5aqq////////5aqq////////////////5aqq////
+5aqq5aqq5aqq5aqq5aqqylVV5aqq////5aqq5aqq////////////5aqq5aqq7sfH////////////
+5aqq////////5aqq7sfH////9+Pj////5aqq////5aqq////////5aqq5aqq9+Pj5aqq////5aqq
+////5aqq////////////////5aqq////////////5aqq////////5aqq////////5aqq7sfH9+Pj
+5aqq////5aqq////5aqq////////////////////////////5aqq////////5aqq////5aqq////
+////////7sfH9+Pj////5aqq9+Pj7sfH5aqq5aqq5aqq////////////////////////////////
+9+Pj////////7sfH7sfH////////////////////////////////////////5aqq5aqq////////
+5aqq////5aqq////////////////////5aqq////5aqq////////5aqq////////////////////
+////9+Pj03Fx////////////////////////////////////////5aqq////////////7sfH9+Pj
+////////////5aqq////////////////////////9+Pj5aqq9+Pj////////////////////////
+9+Pj5aqq////////////////5aqq////5aqq5aqq5aqq////////////////////5aqq////7sfH
+9+Pj////////5aqq////////7sfH5aqq9+Pj////5aqq5aqq5aqq5aqq03Fx3I6O5aqq5aqq9+Pj
+7sfH////////////////////9+Pj5aqq7sfH////////5aqq////////9+Pj5aqq5aqq5aqq////
+9+Pj7sfH////5aqq////5aqq9+Pj7sfH5aqq////9+Pj5aqq////////////5aqq////////////
+////5aqq////////5aqq////5aqq////5aqq////5aqq5aqq////7sfH9+Pj////////////////
+////////////5aqq////////5aqq////5aqq////////////////5aqq////5aqq5aqq////5aqq
+5aqq5aqq////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq////////7sfH7sfH////////////////////
+////////////////////////5aqq5aqq////////5aqq////5aqq////////////////////5aqq
+////5aqq////////5aqq////////////////////////7sfH9+Pj5aqq5aqq7sfH////////////
+////////////////9+Pj7sfH////7sfH5aqq////////////7sfH9+Pj////////9+Pj5aqq5aqq
+5aqq7sfH////////////////////////5aqq5aqq7sfH////////////////////5aqq////5aqq
+5aqq5aqq////////////////////5aqq////5aqq////////////5aqq////////////5aqq////
+////5aqq5aqq5aqq5aqqylVV5aqq5aqq5aqq5aqq////////////////////////////////9+Pj
+7sfH////////5aqq////////////////////7sfH7sfH////9+Pj3I6O7sfH9+Pj5aqq7sfH9+Pj
+9+Pj3I6O////////////////5aqq////////////////9+Pj7sfH////5aqq////5aqq////5aqq
+////5aqq5aqq////5aqq////////////////////////////////5aqq////////5aqq////5aqq
+////////////////7sfH5aqq5aqq5aqq9+Pj7sfH5aqq5aqq03Fx7sfH////////////////////
+////////7sfH7sfH////////////5aqq5aqq5aqq////////////////////////5aqq5aqq////
+////5aqq////5aqq////////////////////5aqq////5aqq////////9+Pj5aqq9+Pj////////
+////////////////////////9+Pj5aqq////////////////////////////9+Pj5aqq9+Pj////
+////////7sfH7sfH////////5aqq7sfH////////////////5aqq9+Pj////7sfH5aqq5aqq////
+////5aqq5aqq9+Pj////////9+Pj3I6O////5aqq9+Pj3I6O9+Pj////////////////9+Pj5aqq
+9+Pj////////////5aqq////////////5aqq////////5aqq5aqq5aqq5aqqylVV5aqq5aqq5aqq
+5aqq9+Pj5aqq5aqq////////////////////////5aqq////////////5aqq5aqq5aqq////5aqq
+9+Pj////7sfH7sfH////5aqq5aqq////5aqq////5aqq////////////////////5aqq////////
+////////5aqq////////5aqq////5aqq////5aqq9+Pj7sfH5aqq////////5aqq////////////
+////////////////5aqq////////5aqq////5aqq////////////////////////////5aqq5aqq
+9+Pj03Fx9+Pj7sfH////////////////////////////9+Pj7sfH////////////9+Pj7sfH////
+////5aqq9+Pj////////////////7sfH3I6O////////7sfH9+Pj7sfH9+Pj////////////////
+5aqq////////5aqq////////////7sfH5aqq5aqq5aqq////////5aqq3I6O9+Pj////////5aqq
+////////////////////////////////7sfH5aqq5aqq5aqq9+Pj////////5aqq////////////
+////5aqq5aqq////7sfH5aqq9+Pj////////////7sfH9+Pj////7sfH5aqq5aqq7sfH////////
+5aqq////5aqq5aqq////////////////////////////////////////5aqq////////////5aqq
+////////5aqq5aqq5aqq5aqqylVV5aqq5aqq5aqq5aqq5aqq////////5aqq5aqq////////////
+////////5aqq9+Pj////////////////5aqq////////9+Pj7sfH////5aqq9+Pj7sfH5aqq////
+7sfH9+Pj////////////////5aqq////////////////////5aqq////////5aqq////5aqq9+Pj
+7sfH5aqq9+Pj7sfH////5aqq////////////////////////////////5aqq////////5aqq////
+5aqq////////////////////////7sfH9+Pj5aqq5aqq5aqq5aqq////////////////////////
+////////7sfH////////////9+Pj5aqq////////////////5aqq////////////////////03Fx
+9+Pj////////5aqq////5aqq////////////////5aqq////7sfH9+Pj////////////////////
+////5aqq////////5aqq5aqq7sfH9+Pj5aqq////////////////////////////03Fx5aqq9+Pj
+////////////////////7sfH9+Pj////9+Pj5aqq5aqq////////////////////////////////
+////5aqq////5aqq5aqq////////////////////5aqq////5aqq5aqq////////////////////
+////////////////9+Pj5aqq////////////5aqq////////3I6O5aqq5aqq5aqqylVV5aqq5aqq
+5aqq5aqq5aqq////////////////5aqq5aqq9+Pj////////////7sfH7sfH9+Pj5aqq////9+Pj
+5aqq5aqq7sfH////7sfH9+Pj5aqq5aqq////7sfH9+Pj////////////////////////5aqq////
+////////9+Pj7sfH////5aqq////9+Pj7sfH5aqq////3I6O5aqq////5aqq////////////////
+////////////////5aqq////////////5aqq////5aqq////////////////////////5aqq9+Pj
+7sfH5aqq5aqq5aqq////////////////////////////////////////////5aqq7sfH////////
+////////////9+Pj7sfH////////////////5aqq5aqq////////5aqq////5aqq////////////
+////5aqq////////5aqq////////////5aqq////9+Pj7sfH7sfH5aqq5aqq5aqq5aqq7sfH////
+////////////5aqq5aqq5aqq////////5aqq////////////////////////5aqq////////3I6O
+////////////////////////////////////5aqq5aqq7sfH////5aqq////5aqq7sfH7sfH5aqq
+5aqq5aqq////5aqq////5aqq////////////////////////////9+Pj////5aqq////////////
+5aqq////////5aqq5aqq5aqq5aqqylVV5aqq5aqq5aqq5aqq5aqq////////////////////////
+7sfH9+Pj////////////9+Pj7sfH////5aqq7sfH////////9+Pj5aqq9+Pj7sfH9+Pj5aqq7sfH
+7sfH////////////////////////////5aqq////////////5aqq////////5aqq////5aqq////
+5aqq5aqq////9+Pj7sfH9+Pj7sfH////////////////////////////5aqq////////////5aqq
+////9+Pj5aqq5aqq////5aqq5aqq5aqq9+Pj5aqq9+Pj7sfH5aqq5aqq////////////////////
+////////////////7sfH5aqq////////////////////////////////5aqq////////////////
+5aqq5aqq////////5aqq////3I6O9+Pj////////////7sfH9+Pj////9+Pj5aqq5aqq9+Pj7sfH
+5aqq7sfH5aqq7sfH////////////////////////////////////5aqq////////5aqq////5aqq
+////////////////////////5aqq////////5aqq5aqq5aqq7sfH////////////////////5aqq
+////////////////5aqq////////9+Pj9+Pj////////////7sfH7sfH////5aqq////////////
+////////////9+Pj5aqq5aqq7sfH7sfH////////5aqq////////5aqq5aqq5aqq5aqqylVV5aqq
+ylVV////5aqq5aqq////////////////////////////7sfH7sfH////////////////////////
+////5aqq5aqq7sfH////7sfH9+Pj5aqq9+Pj7sfH////////7sfH9+Pj////////////////7sfH
+5aqq5aqq5aqq5aqq////9+Pj7sfH////5aqq5aqq////5aqq////7sfH9+Pj////5aqq////////
+////////////////////5aqq////////////5aqq////////////////5aqq9+Pj////7sfH5aqq
+9+Pj5aqq9+Pj7sfH5aqq////////////////////////////////7sfH7sfH////////////////
+////////////////////9+Pj7sfH////////////5aqq5aqq////9+Pj7sfH////5aqq3I6O////
+////////5aqq////////////////////5aqq9+Pj3I6O5aqq////////////////////////////
+////////////////////5aqq////9+Pj5aqq3I6O////////////////////7sfH9+Pj////////
+5aqq5aqq////7sfH9+Pj////////////5aqq3I6O9+Pj////////////5aqq7sfH////////////
+////7sfH03Fx9+Pj////////7sfH5aqq9+Pj////////////////5aqq////////7sfH5aqq////
+////7sfH9+Pj////5aqq7sfH3I6O5aqqylVV5aqqylVV////5aqq5aqq////////////////////
+////////////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////9+Pj5aqq9+Pj5aqq7sfH5aqq
+////9+Pj5aqq7sfH5aqq////////////////////////////////////////5aqq////5aqq////
+5aqq////5aqq////5aqq////////3I6O9+Pj////////////////9+Pj3I6O////////////5aqq
+////////////////////////////9+Pj7sfH////5aqq9+Pj5aqq////5aqq////////////////
+////////////////7sfH////////////////////////////////////////////5aqq////////
+////9+Pj7sfH5aqq7sfH////5aqq////////////////////5aqq////////////9+Pj////////
+////5aqq////////////////////////////////////////////////////////5aqq////////
+////////////////////////5aqq////////////9+Pj7sfH5aqq5aqq////7sfH9+Pj////////
+////7sfH5aqq5aqq////////9+Pj5aqq5aqq5aqq5aqq7sfH9+Pj5aqq5aqq5aqq////////7sfH
+5aqq7sfH////////9+Pj7sfH////////////////////7sfH9+Pj////////5aqq5aqq03Fx03Fx
+03Fx5aqq5aqq5aqq5aqq////////////////////////////////////////////////////////
+////9+Pj5aqq5aqq7sfH5aqq5aqq////5aqq9+Pj5aqq7sfH////////5aqq////////////////
+////////////////////9+Pj7sfH////5aqq9+Pj7sfH////5aqq////5aqq////////5aqq////
+////////////7sfH7sfH////////////5aqq9+Pj////////9+Pj////////////////////5aqq
+////////5aqq9+Pj7sfH9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////////////
+////9+Pj////////////////////////5aqq////////////7sfH7sfH7sfH5aqq9+Pj////////
+////////5aqq9+Pj////////7sfH7sfH3I6O5aqq5aqq9+Pj////////////////////////////
+////////////////////////////9+Pj7sfH////////////////////////////5aqq////////
+////////7sfH9+Pj9+Pj5aqq7sfH7sfH5aqq5aqq5aqq////////////5aqq5aqq5aqq5aqq7sfH
+////////9+Pj5aqq5aqq////////5aqq5aqq5aqq////9+Pj5aqq////////5aqq////////////
+////////5aqq////////////5aqq9+Pj03FxylVVylVV5aqq5aqq5aqq5aqq////////////////
+////5aqq5aqq9+Pj////////////////9+Pj5aqq5aqq7sfH////7sfH5aqq////5aqq5aqq3I6O
+5aqq9+Pj////////////////5aqq////////////////////////////////5aqq////5aqq////
+5aqq////////5aqq////////5aqq////5aqq////////////7sfH7sfH////////9+Pj5aqq////
+////////5aqq7sfH5aqq5aqq9+Pj////////////5aqq9+Pj////5aqq9+Pj7sfH////////////
+////////////////////////////////////////9+Pj7sfH5aqq////////////////////////
+5aqq////////////9+Pj9+Pj////////////////9+Pj5aqq////////////7sfH9+Pj////3I6O
+7sfH9+Pj////////////////////////////////////////////////3I6O9+Pj////////5aqq
+////////////////////////////5aqq////////////////////7sfH7sfH////////////////
+////////5aqq5aqq9+Pj////////////////9+Pj5aqq5aqq5aqq7sfH////5aqq5aqq////////
+////5aqq9+Pj////5aqq////////5aqq////////////////3I6O////////////5aqq////5aqq
+ylVVylVVylVV5aqq5aqq5aqq////////////////3I6O////////7sfH5aqq5aqq5aqq5aqq7sfH
+////////9+Pj5aqq9+Pj9+Pj5aqq9+Pj3I6O////////5aqq7sfH////////////9+Pj7sfH////
+////////////////////5aqq////////5aqq////5aqq////////5aqq////////9+Pj7sfH////
+5aqq5aqq5aqq9+Pj////////7sfH7sfH////////5aqq5aqq////////////////5aqq7sfH////
+////////5aqq////9+Pj7sfH5aqq////////////////////7sfH5aqq5aqq////////////////
+9+Pj7sfH////////5aqq////////////////////7sfH5aqq9+Pj////////////////////////
+////5aqq////////////9+Pj7sfH////////5aqq5aqq////////////////////////////////
+////////////////3I6O////////////////5aqq////////////////////////5aqq////////
+////////////////////////////////////////////////////////7sfH5aqq9+Pj////////
+////9+Pj5aqq9+Pj9+Pj5aqq7sfH////5aqq5aqq////////7sfH9+Pj7sfH9+Pj////5aqq////
+////////////5aqq////////////5aqq////5aqq3I6OylVVylVV03Fx5aqq5aqq////////////
+3I6O////////////////////////////////////5aqq5aqq7sfH9+Pj5aqq5aqq////5aqq////
+////7sfH9+Pj5aqq////////////////5aqq////////////////////7sfH5aqq////9+Pj7sfH
+////5aqq////////5aqq////////////5aqq////////7sfH////////////9+Pj7sfH////////
+5aqq////////////////////////////5aqq////////////7sfH9+Pj////7sfH9+Pj3I6O5aqq
+5aqq5aqq5aqq9+Pj////////////////////9+Pj5aqq////////////9+Pj7sfH////////////
+////////////7sfH5aqq7sfH////////////////////9+Pj7sfH////////5aqq////////////
+5aqq9+Pj5aqq5aqq5aqq9+Pj////////9+Pj3I6O5aqq5aqq////9+Pj7sfH////////////////
+5aqq////////////7sfH5aqq5aqq////////////////////////////////////7sfH5aqq5aqq
+5aqq5aqq9+Pj////////////////7sfH5aqq5aqq5aqq7sfH////7sfH5aqq7sfH9+Pj5aqq9+Pj
+////5aqq9+Pj////5aqq////5aqq////7sfH9+Pj////////////9+Pj7sfH////////5aqq////
+5aqq3I6O03FxylVV5aqq3I6O5aqq7sfH////////5aqq////////////////////9+Pj5aqq5aqq
+5aqq////////////5aqq////7sfH5aqq9+Pj5aqq5aqq5aqq////////5aqq////////////9+Pj
+5aqq5aqq7sfH5aqq5aqq9+Pj////////5aqq////////5aqq////////5aqq////////////5aqq
+////////////////////9+Pj7sfH////////5aqq////////////////////////////////5aqq
+////////////////5aqq////////5aqq////////////////////////////////////////////
+5aqq////////////////////7sfH7sfH////////////////////////5aqq////////////////
+////////////5aqq////////////5aqq9+Pj5aqq////////////////////5aqq////////////
+7sfH5aqq3I6O////5aqq////////////////////5aqq////////////5aqq////////////////
+////////////////////////////5aqq////////////////7sfH5aqq5aqq7sfH////////////
+////////////////////////9+Pj5aqq7sfH7sfH7sfH////7sfH7sfH////5aqq9+Pj7sfH////
+5aqq////////////////5aqq////////5aqq5aqq////ylVV5aqq5aqq3I6O03Fx5aqq9+Pj7sfH
+////5aqq////7sfH5aqq5aqq5aqq7sfH////////////7sfH5aqq5aqq////5aqq9+Pj////3I6O
+9+Pj////////////////9+Pj7sfH////////////////////9+Pj////////////////5aqq////
+////5aqq9+Pj////////5aqq////////////9+Pj5aqq////////////////5aqq////////5aqq
+9+Pj////////////////////////////////5aqq////////////////5aqq////////9+Pj3I6O
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////5aqq////////////////////////9+Pj5aqq
+////////////////////5aqq////////////////////////////5aqq////////////////7sfH
+////////7sfH9+Pj////////5aqq////////////////////////////////5aqq5aqq////////
+////5aqq////////////5aqq////////////////////////////////////////////5aqq////
+////////////////////////9+Pj7sfH////////////////////9+Pj5aqq5aqq////////5aqq
+////5aqq////////9+Pj7sfH5aqq9+Pj7sfH////5aqq////////////////5aqq////////5aqq
+9+Pj7sfH5aqq3I6O03Fx5aqq5aqq03Fx9+Pj5aqq////5aqq////5aqq////////////////9+Pj
+5aqq5aqq9+Pj////////9+Pj7sfH////5aqq////////////////////////////5aqq////////
+////////////////////////////7sfH9+Pj////7sfH9+Pj////////5aqq////////////////
+5aqq////////////////////5aqq////////5aqq////////5aqq9+Pj////////////////////
+9+Pj7sfH////////////////5aqq5aqq////////////9+Pj5aqq5aqq5aqq5aqq5aqq////////
+3I6O5aqq////////////////////////////9+Pj5aqq////////////////7sfH9+Pj////////
+////////////////5aqq////////////////////////////5aqq3I6O////////5aqq////////
+////////////////////////////////////////5aqq////////////////5aqq////////////
+////////////////////////////////5aqq////////////////////////////////7sfH9+Pj
+////////////5aqq7sfH////5aqq////////5aqq////5aqq////////////5aqq5aqq5aqq////
+////5aqq////////////////5aqq////////5aqq////5aqq5aqq5aqq3I6O7sfH3I6O03Fx5aqq
+7sfH9+Pj5aqq////5aqq////5aqq5aqq5aqq7sfH////////////////////5aqq////////5aqq
+////////////////////////////9+Pj5aqq////////////////////////9+Pj5aqq7sfH////
+7sfH9+Pj////////5aqq9+Pj////////////7sfH9+Pj////////////////////5aqq////////
+5aqq////////5aqq5aqq////////////////////////5aqq////////////////////////5aqq
+5aqq5aqq7sfH////////////////////////////5aqq////////////////////////////////
+////////3I6O////////////////5aqq////5aqq5aqq5aqq5aqq5aqq3I6O////////////////
+////////////5aqq////5aqq5aqq////////////////////////////////////////////////
+5aqq9+Pj////////3I6O5aqq7sfH////////////////////////////////////////////5aqq
+////////////////////////////////////7sfH5aqq5aqq5aqq////////////9+Pj7sfH////
+5aqq////9+Pj7sfH////////5aqq5aqq5aqq////////5aqq////////////////5aqq////////
+5aqq////3I6O5aqq5aqq5aqq5aqq5aqq3I6O7sfH5aqq5aqq5aqq////5aqq////5aqq////////
+9+Pj5aqq3I6O7sfH////////5aqq////7sfH9+Pj////////////////////////////////////
+5aqq9+Pj////9+Pj5aqq5aqq7sfH////////9+Pj7sfH////////5aqq////////////7sfH5aqq
+9+Pj////////////////////9+Pj7sfH////////5aqq////////5aqq5aqq////////////////
+////////5aqq////////////////////////////////////7sfH5aqq5aqq5aqq5aqq5aqq////
+////5aqq////////////////////5aqq7sfH////////////5aqq////////////5aqq////5aqq
+////9+Pj////////////////////////////////////////////5aqq////5aqq9+Pj5aqq////
+////////////////////////////////////5aqq////////////////////5aqq5aqq7sfH////
+////////////////////////////////////5aqq////////////////////////////////////
+////////////////////////////////5aqq////5aqq////////5aqq////////5aqq5aqq5aqq
+////////5aqq////////////////////5aqq5aqq////5aqq////3I6O5aqq5aqq3I6O3I6O5aqq
+5aqq5aqq9+Pj03Fx9+Pj7sfH5aqq////9+Pj5aqq7sfH////////9+Pj5aqq3I6O////////5aqq
+////////////////////////////////////////////7sfH5aqq7sfH////////////////////
+5aqq////////5aqq////////////7sfH9+Pj////////////////////////7sfH7sfH////////
+5aqq////////////5aqq5aqq////////////////5aqq5aqq9+Pj////////////////7sfH5aqq
+5aqq5aqq5aqq9+Pj////////9+Pj5aqq5aqq5aqq5aqq////////////////9+Pj5aqq////9+Pj
+7sfH////////////5aqq7sfH////5aqq////5aqq5aqq7sfH5aqq9+Pj////////////////////
+////////////////5aqq////9+Pj5aqq5aqq5aqq5aqq5aqq3I6O////////////////////////
+////////////////////////////////7sfH9+Pj////////////////////////////////////
+5aqq////////////////////////////////////////////////////////////////////5aqq
+////5aqq////////5aqq////////5aqq5aqq5aqq////////9+Pj7sfH////5aqq////////////
+////5aqq////5aqq9+Pj5aqq5aqq03Fx5aqq3I6O5aqq5aqq7sfH03Fx3I6O////5aqq////5aqq
+////////////////////////////////5aqq////////////////////////////////////////
+////////////////////////////////////////5aqq////////5aqq////////9+Pj7sfH////
+////////////5aqq////9+Pj7sfH////////9+Pj7sfH////////////5aqq5aqq////////////
+5aqq////////////////////////////5aqq////////////////////5aqq5aqq5aqq5aqq5aqq
+////////////////////7sfH7sfH////////////9+Pj7sfH////////7sfH9+Pj////5aqq////
+5aqq3I6O////////5aqq9+Pj////////////////////////////////////5aqq3I6O7sfH9+Pj
+////////////5aqq////////////////////7sfH9+Pj////////////////////////////////
+5aqq////////////////////////////////////5aqq////////////////////////////////
+////////////////////////////////////5aqq////5aqq////////3I6O////3I6O////5aqq
+5aqq////////////5aqq3I6O9+Pj5aqq5aqq////////9+Pj7sfH////5aqq7sfH5aqq3I6O03Fx
+3I6O5aqq5aqq5aqq5aqq3I6O03Fx////9+Pj7sfH////////////////////////////9+Pj7sfH
+////////////3I6O7sfH////////////////////////////////////////////////////////
+5aqq////////7sfH9+Pj////////5aqq////////////////////////////5aqq////////////
+5aqq////////////////7sfH////////////////5aqq////////////////////////////3I6O
+////7sfH5aqq5aqq5aqq////5aqq5aqq5aqq5aqq////////////////5aqq7sfH////////////
+////////5aqq////////5aqq////////5aqq////5aqq5aqq03Fx5aqq////5aqq////////////
+////////////////////////7sfH9+Pj////5aqq5aqq5aqq////5aqq////////9+Pj5aqq5aqq
+9+Pj////////////////////////////////////9+Pj7sfH////////////5aqq////////////
+////5aqq////////////////////////////////////////////////////////////////////
+7sfH9+Pj9+Pj7sfH////5aqq////5aqq////5aqq5aqq////////////ylVV9+Pj////////////
+5aqq5aqq////5aqq////5aqq////5aqq3I6O03Fx3I6O03Fx5aqq5aqq5aqq3I6O03Fx////5aqq
+////////////////////////////////5aqq////////7sfH5aqq////9+Pj5aqq5aqq5aqq7sfH
+////////////////9+Pj5aqq7sfH////////////5aqq////7sfH7sfH////////////5aqq////
+////////////////////7sfH9+Pj////////7sfH7sfH////////////////////////////////
+5aqq////////////////////////9+Pj5aqq9+Pj9+Pj7sfH////////9+Pj5aqq5aqq3I6O5aqq
+5aqq////////////3I6O////////////////////////////5aqq////5aqq////////////5aqq
+5aqq5aqq5aqq////5aqq5aqq////////////////////////////////////////5aqq////////
+////////5aqq////5aqq9+Pj5aqq7sfH////////////////////////////////////////////
+////////5aqq////9+Pj5aqq////5aqq////////9+Pj7sfH////////////////////////////
+////////////////////////////////////////////5aqq////5aqq////5aqq////5aqq9+Pj
+7sfH5aqq////////////3I6O////////////////////9+Pj7sfH5aqq////////5aqq5aqq5aqq
+03Fx3I6O3I6O03Fx5aqq5aqqylVV5aqq////5aqq////////7sfH5aqq5aqq5aqq5aqq5aqq////
+////5aqq9+Pj////////////////////////7sfH9+Pj////////////5aqq////5aqq////////
+////5aqq////5aqq////////7sfH5aqq5aqq////////////////////////5aqq////////9+Pj
+7sfH////////////////////////////9+Pj5aqq////////////////////////////3I6O////
+////5aqq////5aqq5aqq3I6O5aqq5aqq7sfH5aqq5aqq////////5aqq////////////////////
+////7sfH5aqq9+Pj////5aqq9+Pj////////5aqq5aqq5aqq9+Pj7sfH7sfH3I6O////////////
+////////////////////////7sfH9+Pj////5aqq7sfH////5aqq9+Pj7sfH5aqq////////////
+////////////////////////////////////////////////9+Pj5aqq7sfH////////////5aqq
+9+Pj7sfH////////////////////////////////////////////////////////////////////
+////////9+Pj7sfH////5aqq9+Pj7sfH5aqq5aqq////5aqq////////////3I6O////////////
+////////////5aqq9+Pj7sfH////5aqq////ylVV5aqq03Fx3I6O03Fx3I6O5aqqylVV5aqq////
+5aqq////9+Pj7sfH////////////////////////7sfH7sfH////////////////////////////
+////5aqq////////////5aqq////////5aqq////9+Pj7sfH////5aqq////5aqq9+Pj////////
+////7sfH////////////5aqq////////////5aqq////////////////////////////////5aqq
+////////////5aqq7sfH////////////5aqq////7sfH9+Pj5aqq////5aqq5aqq3I6O5aqq3I6O
+5aqq5aqq////5aqq////////////////////////7sfH9+Pj////5aqq5aqq5aqq5aqq////5aqq
+7sfH5aqq9+Pj7sfH5aqq////3I6O7sfH////////////////////////////////7sfH7sfH////
+5aqq5aqq5aqq////5aqq////5aqq////////////////////////////////////////////////
+////////////////////////////////////9+Pj3I6O9+Pj////////////////////////////
+////////////////////////////////////////////////////5aqq////5aqq////5aqq5aqq
+9+Pj7sfH5aqq////////////ylVV////////////////////////////5aqq7sfH7sfH9+Pj5aqq
+3I6O03Fx5aqqylVV5aqqylVV5aqq03Fx5aqq9+Pj5aqq////5aqq////////////////////////
+9+Pj7sfH////////////////////////////////////////5aqq////////5aqq////////5aqq
+////5aqq////////5aqq9+Pj7sfH////////////////9+Pj////////////5aqq////////5aqq
+////////////////7sfH////////////////5aqq////////////5aqq5aqq////////////5aqq
+////5aqq9+Pj7sfH5aqq5aqq5aqq5aqq7sfH9+Pj////////9+Pj7sfH////////////////////
+////5aqq////////5aqq////////////5aqq////////5aqq////5aqq5aqq////7sfH5aqq9+Pj
+////////////////////////////////7sfH9+Pj7sfH5aqq5aqq9+Pj7sfH5aqq////////////
+////////////////////////////////////////////////////////////////////////////
+////5aqq////////////////////////////////////////////////////////////////////
+////////////////5aqq////5aqq////////5aqq5aqq5aqq5aqq////////5aqq5aqq////////
+////////////////////9+Pj7sfH9+Pj5aqq9+Pj03Fx3I6O03Fx3I6O03Fx3I6O03Fx5aqq5aqq
+5aqq5aqq////5aqq////////////////////////5aqq////////////////////////////////
+////////////9+Pj7sfH////5aqq////////5aqq////5aqq////5aqq////5aqq////////9+Pj
+////////////////5aqq5aqq////////9+Pj7sfH////////5aqq5aqq9+Pj5aqq////////9+Pj
+7sfH////////////5aqq5aqq////////////5aqq////5aqq5aqq9+Pj7sfH5aqq5aqq////5aqq
+////5aqq5aqq5aqq////////////////////////5aqq////////5aqq////////7sfH5aqq5aqq
+////9+Pj7sfH////7sfH5aqq7sfH////5aqq3I6O////////////////////////////////5aqq
+////////9+Pj5aqq9+Pj7sfH5aqq////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////5aqq////////5aqq////
+7sfH3I6O7sfH9+Pj5aqq////5aqq5aqq////////////////////7sfH////////7sfH7sfH////
+3I6O03Fx3I6O03Fx3I6O03Fx3I6O03Fx3I6O5aqq5aqq7sfH9+Pj////5aqq////////////9+Pj
+5aqq////////////////////////////////////////////////////5aqq////////5aqq////
+5aqq////5aqq////5aqq////5aqq5aqq5aqq7sfH5aqq7sfH5aqq5aqq////////////////5aqq
+////9+Pj5aqq////////////5aqq////////5aqq////////////////5aqq5aqq////////////
+5aqq////5aqq5aqq5aqq5aqq////5aqq5aqq////3I6O9+Pj////9+Pj////////////////////
+////5aqq////9+Pj7sfH////9+Pj7sfH////////////5aqq////////////7sfH3I6O////5aqq
+////5aqq////////////////////////////9+Pj5aqq3I6O////9+Pj03Fx3I6O5aqq////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////9+Pj7sfH////3I6O////////5aqq5aqq5aqq5aqq////////03Fx////
+////////////5aqq5aqq7sfH////////5aqq////7sfH03FxylVV5aqqylVV5aqqylVV3I6OylVV
+5aqq5aqq////5aqq7sfH9+Pj////////9+Pj5aqq////////////////////////////////////
+////////////////////9+Pj7sfH////5aqq////////5aqq5aqq////5aqq////////////////
+////////9+Pj////////////////9+Pj5aqq9+Pj////5aqq////////////////////5aqq////
+5aqq////////////////5aqq5aqq////////9+Pj7sfH////5aqq5aqq5aqq5aqq9+Pj7sfH5aqq
+7sfH9+Pj////////////////////////////////9+Pj7sfH////5aqq////////5aqq////////
+////9+Pj7sfH////////9+Pj3I6O5aqq////9+Pj7sfH9+Pj5aqq5aqq////////////////////
+////////9+Pj7sfH3I6O3I6O3I6O03Fx////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////7sfH9+Pj////
+5aqq////5aqq5aqq5aqq5aqq////////////////////9+Pj5aqq////////9+Pj7sfH////5aqq
+////5aqq5aqq3I6O03FxylVV5aqqylVV5aqq3I6O3I6O3I6O5aqq////5aqq////////////5aqq
+////////////////////////////////////////////////////////////////5aqq////5aqq
+////9+Pj5aqq7sfH5aqq////////////////////////////////////////7sfH5aqq7sfH////
+////5aqq////////////////////////5aqq////5aqq////////////////5aqq7sfH////////
+5aqq////7sfH9+Pj5aqq5aqq5aqq5aqq////5aqq5aqq5aqq5aqq3I6O////////////////////
+////9+Pj5aqq////7sfH7sfH5aqq////////////9+Pj5aqq////////7sfH5aqq3I6O5aqq////
+////5aqq5aqq////////5aqq5aqq5aqq5aqq////////////////5aqq9+Pj7sfHylVV3I6O5aqq
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////7sfH7sfH////////////////////////////////
+////////////////////////////////5aqq////9+Pj7sfH5aqq5aqq5aqq5aqq////////////
+////////5aqq////////////////9+Pj7sfH7sfH9+Pj5aqq5aqq5aqqylVV5aqqylVVylVV5aqq
+5aqq5aqq5aqq03Fx9+Pj5aqq////////9+Pj7sfH////////////////////////////////////
+////////////////////////////9+Pj5aqq5aqq////5aqq5aqq5aqq9+Pj////////////////
+////7sfH5aqq5aqq5aqq5aqq9+Pj////////////7sfH9+Pj9+Pj5aqq7sfH////////////5aqq
+////9+Pj7sfH////////////5aqq////////////5aqq////5aqq5aqq9+Pj7sfH5aqq5aqq5aqq
+////5aqq5aqq////////////////////////////////7sfH5aqq3I6O////5aqq5aqq////////
+////5aqq////////////9+Pj5aqq5aqq9+Pj////////////////5aqq5aqq3I6O////////5aqq
+////////////////9+Pj7sfH5aqq3I6O03Fx5aqq5aqq9+Pj////////////////////////////
+////////////////////////////////////////////////////////////////////////9+Pj
+3I6O5aqq9+Pj////////////////////////////////////////////////////9+Pj5aqq5aqq
+9+Pj9+Pj7sfH5aqq5aqq5aqq5aqq////////////////////5aqq////////////////////5aqq
+////5aqq5aqq5aqq5aqqylVV5aqqylVV3I6O03Fx5aqq5aqq5aqq5aqq5aqq5aqq////////5aqq
+////////////////////////////////////////////////////////////////////////9+Pj
+3I6O9+Pj9+PjwTg49+Pj7sfH5aqq5aqq5aqq5aqq5aqq9+Pj////////////////////////5aqq
+5aqq7sfH////5aqq////7sfH9+Pj////////5aqq////////5aqq////////////9+Pj9+Pj////
+////7sfH9+Pj5aqq7sfH5aqq9+Pj5aqq5aqq////5aqq5aqq5aqq////////////////////////
+////9+Pj7sfH////9+Pj////5aqq5aqq////////5aqq9+Pj////////5aqq7sfH5aqq7sfH5aqq
+5aqq5aqq5aqq5aqq9+Pj////5aqq////////5aqq////////////////////5aqq9+Pj7sfH5aqq
+3I6O7sfH5aqq////////////////////////////////////////9+Pj5aqq5aqq7sfH////////
+////5aqq5aqq7sfH////////////9+Pj////////9+Pj////////////////////////////////
+////////////////////////////5aqq////////////5aqq////5aqq5aqq5aqq5aqq////////
+////////5aqq////////////////////////5aqq////5aqq5aqq5aqq5aqqylVV5aqq3I6O03Fx
+03Fx3I6O5aqq5aqq5aqq5aqq5aqq////////5aqq////////////////////////////////////
+////////////////////////////////////////9+Pj03Fx5aqqylVV5aqq9+Pj////////////
+////////////////////////7sfH5aqq5aqq////////////////5aqq////////5aqq////////
+9+Pj7sfH////7sfH9+Pj////////////////////////////5aqq7sfH9+Pj5aqq5aqq5aqq9+Pj
+7sfH5aqq5aqq5aqq////7sfH////////////////////5aqq////////9+Pj5aqq9+Pj5aqq////
+3I6O3I6O5aqq5aqq5aqq9+Pj5aqq9+Pj5aqq////////9+Pj////////5aqq////5aqq////////
+5aqq////////////////////7sfH5aqq7sfH9+Pj03Fx3I6O7sfH9+Pj////////////////////
+////////////7sfH7sfH////////9+Pj5aqq5aqq5aqq////////9+Pj5aqq5aqq5aqq3I6O7sfH
+////////////////////////////////////////////////////////////////////5aqq////
+5aqq5aqq////3I6O9+Pj7sfH5aqq5aqq////////////////5aqq////////////////////////
+5aqq////5aqq9+Pj03Fx5aqqylVV5aqq5aqqylVV5aqq03Fx3I6O5aqq5aqq5aqq5aqq////////
+5aqq////////////////////////////////////////////////////////////////////////
+////3I6O03Fx5aqqylVV5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////
+////////5aqq5aqq7sfH////////7sfH9+Pj////////9+Pj7sfH////5aqq////////////////
+////////////5aqq////5aqq5aqq7sfH9+Pj5aqq5aqq5aqq5aqq5aqq7sfH9+Pj////03Fx9+Pj
+////////5aqq5aqq////5aqq////7sfH9+Pj5aqq5aqq7sfH5aqq////7sfH7sfH5aqq7sfH////
+5aqq5aqq7sfH5aqq7sfH////5aqq7sfH9+Pj////5aqq////////////////////////9+Pj5aqq
+7sfH03Fx5aqq5aqq5aqq////////////////////////////7sfH9+Pj////////////////////
+////////////////////////////////////5aqq////////////////////////////////////
+////////////////9+Pj7sfH////////7sfH9+Pj5aqq////5aqq////9+Pj7sfH5aqq5aqq////
+////////////5aqq////////////////////////5aqq////5aqq////ylVV5aqq3I6OylVV5aqq
+ylVV5aqq5aqq3I6OylVV5aqq5aqq5aqq////////5aqq////////////////////////////////
+////////////////////////////////////////5aqq5aqq03Fx////03Fx5aqq7sfH////9+Pj
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////////////////5aqq
+5aqq////////9+Pj7sfH9+Pj7sfH////////////////////////7sfH9+Pj5aqq7sfH9+Pj5aqq
+5aqq5aqq5aqq5aqqylVV5aqq5aqq////3I6O7sfH////7sfH9+Pj5aqq5aqq9+Pj7sfH7sfH9+Pj
+7sfH5aqq////////5aqq9+Pj3I6O9+Pj5aqq5aqq////////////////9+Pj7sfH7sfH9+Pj5aqq
+////5aqq////////////////////////////9+Pj7sfH////7sfH5aqq7sfH5aqq7sfH9+Pj////
+////////////5aqq////////////////////////////////////////////////////////////
+////5aqq////////////////////////////////////////////9+Pj7sfH5aqq////////////
+5aqq9+Pj7sfH5aqq////////5aqq5aqq9+Pj5aqq////////5aqq////////////////////////
+////5aqq////9+Pj7sfH5aqqylVV5aqqylVV5aqq5aqqylVV5aqq5aqqylVV5aqq5aqq9+Pj7sfH
+////5aqq////////////////////////////////////////////////////////////////////
+9+Pj7sfH5aqq5aqq////7sfH7sfH9+Pj5aqq7sfH////////////////////////9+Pj5aqq5aqq
+5aqq5aqq5aqq7sfH7sfH5aqq5aqq5aqq////////////5aqq5aqq////5aqq////5aqq////////
+////////////////////5aqq5aqq////5aqq5aqq5aqq7sfH3I6O5aqq3I6O03Fx5aqq3I6O9+Pj
+////////5aqq////5aqq9+Pj5aqq9+Pj////5aqq9+Pj5aqq////5aqq////7sfH9+Pj5aqq////
+////////9+Pj5aqq5aqq5aqq7sfH9+Pj5aqq7sfH9+Pj5aqq////////////////////////////
+////9+Pj7sfH////5aqq3I6O5aqq9+Pj7sfH5aqq5aqq5aqq5aqq////////////////////////
+////////////////////////////////////////////5aqq////////////////////////////
+////////////5aqq7sfH////9+Pj7sfH////////5aqq////5aqq7sfH9+Pj////5aqq////5aqq
+////5aqq9+Pj7sfH////////////////////////////5aqq////////5aqq5aqqylVV5aqq3I6O
+03Fx5aqq03Fx3I6O5aqq3I6O3I6O3I6O////5aqq////9+Pj7sfH////////////////////////
+////////////////////////////////////7sfH7sfH7sfH7sfH7sfH////////9+Pj5aqq////
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH////////////7sfH7sfH7sfH9+Pj////////////5aqq
+5aqq7sfH////////5aqq9+Pj7sfH9+Pj7sfH////////////////////////5aqq7sfH9+Pj5aqq
+5aqq7sfH9+PjylVV5aqq5aqqylVV5aqq////5aqq////7sfH9+Pj5aqq////5aqq////////7sfH
+9+Pj5aqq9+Pj5aqq9+Pj7sfH7sfH7sfH9+Pj////9+Pj5aqq7sfH////////9+Pj5aqq7sfH9+Pj
+5aqq5aqq5aqq////////////////////////////////////5aqq////////9+Pj5aqq3I6O7sfH
+////////////////////////////////////////////////////////////////////////////
+////////9+Pj5aqq5aqq5aqq5aqq////////////////5aqq5aqq////////////////5aqq////
+////5aqq////5aqq////5aqq////5aqq////5aqq////////7sfH////////////////////////
+////////5aqq////9+Pj7sfH5aqqylVV5aqq5aqqylVV5aqq5aqqylVV5aqq5aqq5aqqylVV////
+5aqq////////7sfH7sfH////////////////////////////////////////////////////7sfH
+9+Pj////5aqq5aqq////////////9+Pj////5aqq////////////////5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq9+Pj7sfH9+Pj////9+Pj5aqq////////////9+Pj5aqq////5aqq////5aqq////5aqq
+////////////////////////5aqq////5aqq5aqq5aqq9+Pj5aqq03Fx5aqq5aqq3I6O03Fx////
+5aqq////5aqq////5aqq////5aqq////////5aqq////ylVV7sfH////7sfH7sfH7sfH9+Pj////
+5aqq7sfH////////////////////9+Pj7sfH5aqq5aqq5aqq9+Pj5aqq////////////////////
+////////////7sfH9+Pj////////5aqq////9+Pj7sfH////////////////////////////////
+////////////////////////////////////////////////////////////////////5aqq5aqq
+5aqq5aqq////////////////////////5aqq////////5aqq////5aqq////5aqq////5aqq////
+7sfH9+Pj////////////////////////////////////7sfH9+Pj////5aqq////5aqq5aqq03Fx
+3I6O3I6O03Fx5aqq3I6O03Fx5aqq5aqq5aqq5aqq////5aqq////////9+Pj5aqq5aqq7sfH////
+////////////////////////9+Pj5aqq////5aqq////9+Pj7sfH5aqq7sfH////5aqq5aqq5aqq
+////5aqq5aqq5aqq5aqq////////////9+Pj5aqq5aqq5aqq5aqq7sfH7sfH5aqq7sfH////5aqq
+5aqq5aqq////////3I6O////5aqq7sfH9+Pj5aqq////////////9+Pj7sfH////5aqq////5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqqylVV////5aqq////5aqq9+Pj7sfH5aqq////////9+Pj
+5aqq9+Pj03Fx3I6OylVV03Fx5aqq9+Pj7sfH5aqq////////////5aqq5aqq5aqq5aqq7sfH5aqq
+5aqq5aqq5aqq////9+Pj5aqq9+Pj////////////////////////////5aqq5aqq5aqq3I6O9+Pj
+////9+Pj7sfH////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////7sfH
+9+Pj////5aqq////5aqq////5aqq7sfH9+Pj////////5aqq////////////////5aqq////////
+////////5aqq////////5aqq////5aqq5aqq5aqqylVV5aqqylVV5aqq5aqqylVV5aqq5aqq5aqq
+5aqq////5aqq////////////////////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq3I6O7sfH////5aqq
+////9+Pj7sfH7sfH7sfH7sfH5aqq////////////5aqq////////7sfH5aqq5aqq5aqq5aqq7sfH
+////5aqq5aqq5aqq7sfH5aqq5aqq5aqq7sfH////////////5aqq9+Pj////5aqq5aqq////5aqq
+5aqq////////////5aqq5aqq////5aqq////5aqq9+Pj03Fx5aqq5aqq5aqq5aqq5aqq5aqqylVV
+5aqq3I6O9+Pj7sfH5aqq5aqq5aqq////////5aqq////5aqq5aqqylVV////////5aqq5aqq9+Pj
+////////7sfH5aqq////////////////5aqq7sfH5aqq7sfH5aqq7sfH////////7sfH5aqq9+Pj
+////////////////5aqq////////////9+Pj5aqq9+Pj////9+Pj5aqq////////////////////
+////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////////////////////////////
+////////////////////////////////////////5aqq////5aqq////5aqq////5aqq7sfH9+Pj
+////9+Pj3I6O////////////03Fx7sfH7sfH////////////5aqq////////5aqq////5aqq5aqq
+5aqqylVV5aqq03Fx3I6O5aqq03Fx5aqq3I6O5aqq3I6O3I6O7sfH3I6O5aqq5aqq7sfH////////
+////////////////////////////////////////9+Pj7sfH7sfH7sfH5aqq////////////////
+7sfH5aqq5aqq5aqq9+Pj////9+Pj5aqq5aqq5aqq5aqq9+Pj5aqq////7sfH9+Pj////////9+Pj
+5aqq5aqq5aqq////7sfH5aqq7sfH7sfH7sfH5aqq////5aqq////////5aqq5aqq////5aqq////
+5aqq////ylVV5aqq5aqq5aqq5aqq03Fx3I6O5aqq////////5aqq////5aqq3I6O3I6O////5aqq
+////7sfH5aqq5aqq5aqq3I6O5aqq////////////5aqq5aqq7sfH////////////////////////
+5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq////5aqq////9+Pj5aqq5aqq////3I6O////////5aqq
+////////////////////5aqq5aqq5aqq5aqq5aqq5aqq////////////////////////////////
+////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////////////////////////////////
+////5aqq////5aqq////5aqq////5aqq////5aqq////9+Pj7sfH////////////////5aqq////
+////////////5aqq////////5aqq////5aqq5aqq5aqq5aqq03Fx3I6O5aqq3I6O3I6O5aqq3I6O
+03Fx5aqq5aqq3I6O03Fx5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////////5aqq
+5aqq7sfH7sfH9+Pj7sfH9+Pj////////5aqq5aqq7sfH////7sfH5aqq5aqq5aqq7sfH7sfH5aqq
+5aqq5aqq7sfH////5aqq5aqq7sfH5aqq5aqq5aqq5aqq7sfH////5aqq5aqq9+Pj5aqq5aqq7sfH
+7sfH7sfH5aqq////////////////////5aqq////5aqq////ylVV5aqq5aqq5aqqylVV5aqq5aqq
+5aqq////////5aqq7sfH5aqq////5aqq////5aqq9+Pj5aqq7sfH7sfH9+Pj5aqq5aqq////7sfH
+5aqq////////5aqq5aqq5aqq5aqq////////////9+Pj7sfH5aqq7sfH7sfH5aqq5aqq////5aqq
+5aqq7sfH7sfH////////////5aqq////9+Pj7sfH////5aqq5aqq////////////////////////
+////////////////////////////////////////////////////////////////////////////
+7sfH5aqq5aqq////////////////////////////9+Pj7sfH////5aqq5aqq////////5aqq////
+7sfH9+Pj////5aqq////////////////////////////////////9+Pj7sfH////5aqq////5aqq
+////03Fx3I6O5aqq3I6O3I6O7sfH3I6O5aqq5aqq5aqq03Fx03Fx03Fx3I6O3I6O5aqq5aqq5aqq
+9+Pj////////////////7sfH5aqq5aqq5aqq////////5aqq9+Pj5aqq7sfH////////3I6O////
+7sfH9+Pj5aqq7sfH5aqq5aqq5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqq7sfH////5aqq5aqq5aqq
+5aqq5aqq9+Pj5aqq5aqq9+Pj7sfH5aqq7sfH5aqq5aqq7sfH9+Pj5aqq////////////////5aqq
+////5aqq////3I6O03Fx5aqq5aqqylVV5aqq3I6O7sfH////5aqq////////7sfH5aqq9+Pj9+Pj
+7sfH5aqq5aqq////5aqq5aqq////5aqq7sfH9+Pj////9+Pj5aqq////////////////5aqq7sfH
+////////7sfH9+Pj5aqq5aqq5aqq////5aqq5aqq5aqq5aqq////////9+Pj5aqq////////5aqq
+5aqq5aqq7sfH5aqq3I6O9+Pj////////////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+9+Pj5aqq5aqq5aqq5aqq5aqq5aqq////////////////////////5aqq9+Pj////////////////
+7sfH7sfH////////5aqq5aqq////9+Pj7sfH////////5aqq////9+Pj7sfH////////////////
+////////////////5aqq////////5aqq////5aqq////5aqq5aqq03Fx3I6O5aqq5aqq7sfH5aqq
+5aqq5aqq3I6O5aqq5aqq3I6O3I6O5aqq3I6O5aqq03Fx5aqq5aqq5aqq5aqq5aqq9+Pj////5aqq
+5aqq5aqq5aqq5aqq7sfH7sfH5aqq5aqq7sfH5aqq9+Pj7sfH7sfH7sfH////////5aqq5aqq5aqq
+9+Pj5aqq5aqq5aqq7sfH9+Pj5aqq5aqq5aqq5aqq7sfH////5aqq5aqq7sfH7sfH5aqq5aqq5aqq
+7sfH7sfH7sfH5aqq////5aqq////////////5aqq////5aqq////3I6O03Fx5aqq5aqqylVV03Fx
+7sfH7sfH////5aqq////3I6O7sfH9+Pj7sfH5aqq5aqq////9+Pj7sfH5aqq5aqq5aqq////5aqq
+////7sfH7sfH////////////7sfH03Fx9+Pj9+Pj7sfH////////5aqq////5aqq9+Pj7sfH5aqq
+5aqq5aqq3I6O5aqq5aqq7sfH////////////////////////////////5aqq7sfH5aqq7sfH5aqq
+7sfH////////////////////////////////////7sfH////////////////////////5aqq5aqq
+5aqq////////////////7sfH5aqq////////////5aqq////////////5aqq5aqq////////5aqq
+////////9+Pj5aqq////5aqq////////////////////////////////5aqq////////5aqq////
+9+Pj7sfH5aqq5aqq5aqq3I6O7sfH5aqq3I6O3I6O5aqq5aqq5aqq03Fx3I6O3I6O3I6O5aqq5aqq
+3I6O5aqq5aqq5aqq5aqq5aqq5aqq3I6O5aqq9+Pj5aqq5aqq5aqq5aqq9+Pj////9+Pj7sfH5aqq
+7sfH9+Pj7sfH9+Pj5aqq5aqq5aqq////7sfH5aqq7sfH////////////9+Pj5aqq5aqq5aqq5aqq
+7sfH9+Pj5aqq5aqq5aqq9+Pj5aqq////5aqq5aqq5aqq5aqq5aqq9+Pj7sfH////5aqq////7sfH
+9+Pj////5aqq////ylVV5aqq5aqq3I6O03Fx03Fx9+Pj7sfH9+Pj5aqq9+Pj7sfH7sfH5aqq////
+5aqq////3I6O9+Pj5aqq5aqq3I6O5aqq9+Pj7sfH////5aqq7sfH////////////////7sfH9+Pj
+////5aqq////////9+Pj7sfH9+Pj7sfH5aqq5aqq5aqq5aqq////////////////////////////
+9+Pj5aqq5aqq9+Pj////////5aqq////9+Pj////////////////////////////////////5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////5aqq9+Pj////////////////5aqq////
+////5aqq////////5aqq9+Pj7sfH9+Pj////7sfH9+Pj////////5aqq////5aqq////////////
+////////////////9+Pj7sfH////////5aqq////9+Pj7sfH5aqq9+Pj5aqq3I6O7sfH5aqq7sfH
+5aqq5aqq03Fx5aqq5aqq5aqq3I6O5aqq3I6O5aqq5aqq5aqqylVV3I6O5aqq5aqq5aqq7sfH5aqq
+7sfH5aqq3I6O3I6O3I6O////7sfH5aqq7sfH9+Pj7sfH7sfH9+Pj5aqq9+Pj5aqq5aqq5aqq9+Pj
+////////9+Pj5aqq5aqq9+Pj////7sfH5aqq7sfH9+Pj5aqq5aqq9+Pj////5aqq9+Pj5aqq5aqq
+3I6O7sfH5aqq7sfH7sfH7sfH9+Pj9+Pj5aqq5aqq////////5aqq////ylVV5aqq5aqqylVV5aqq
+5aqq7sfH7sfH5aqq////5aqq////5aqq////////7sfH7sfH7sfH3I6O3I6O5aqq5aqq5aqq7sfH
+////9+Pj////9+Pj5aqq9+Pj////////////////////5aqq////////////9+Pj7sfH5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq3I6O////////////5aqq////////7sfH5aqq9+Pj9+Pj7sfH////
+////////3I6O5aqq5aqq5aqq5aqq5aqq5aqq////////////////7sfH5aqq5aqq7sfH////7sfH
+5aqq9+Pj////7sfH7sfH////////////////5aqq////5aqq////5aqq////////////5aqq9+Pj
+////7sfH5aqq////////5aqq5aqq////////////////////////7sfH7sfH////////////5aqq
+////5aqq////5aqq////5aqq5aqq7sfH9+Pj5aqq5aqq5aqq3I6O5aqq3I6O5aqq5aqq5aqq3I6O
+3I6O5aqq5aqq5aqq03Fx03Fx5aqq5aqq03FxylVVylVV5aqq5aqq5aqq5aqq03Fx3I6O5aqq5aqq
+7sfH////5aqq5aqq9+Pj7sfH////////5aqq5aqq5aqq5aqq7sfH////////7sfH5aqq9+Pj////
+9+Pj5aqq5aqq5aqq7sfH5aqq9+Pj7sfH7sfH5aqq3I6O7sfH5aqq5aqq5aqq////5aqq////////
+////////////5aqq////ylVV5aqq5aqq3I6O5aqq5aqq7sfH5aqq5aqq////5aqq////5aqq////
+9+Pj5aqq03Fx3I6O03Fx3I6O5aqq7sfH9+Pj////7sfH5aqq////////////5aqq////////////
+////////5aqq////////////////9+Pj5aqq5aqq5aqq5aqq7sfH////////////5aqq////////
+5aqq////////////////////7sfH9+Pj9+Pj7sfH////////5aqq////////////////////////
+////////5aqq5aqq9+Pj////////9+Pj5aqq7sfH////7sfH7sfH////5aqq////////////7sfH
+9+Pj////5aqq////5aqq////////////////7sfH5aqq9+Pj////5aqq7sfH5aqq5aqq////////
+////9+Pj5aqq5aqq9+Pj////////////7sfH9+Pj////5aqq////5aqq////5aqq7sfH9+Pj7sfH
+7sfH9+Pj5aqq7sfH5aqq5aqq5aqq3I6O5aqq5aqq5aqq03Fx03Fx5aqq5aqq3I6OylVV3I6O5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq3I6O5aqq5aqq5aqq5aqq5aqq7sfH5aqq7sfH5aqq5aqq5aqq////
+////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH////5aqq7sfH7sfH7sfH9+Pj
+3I6O7sfH3I6O9+Pj5aqq5aqq5aqq9+Pj7sfH////////////5aqq////5aqq5aqq5aqq3I6O7sfH
+03Fx7sfH7sfH5aqq5aqq9+Pj7sfH////5aqq////3I6O5aqq03Fx3I6OylVV5aqq////5aqq////
+////5aqq5aqq////////////5aqq////////////////////5aqq////////////////////5aqq
+5aqq5aqq5aqq7sfH5aqq5aqq7sfH5aqq////9+Pj7sfH////////////////////////7sfH9+Pj
+7sfH9+Pj5aqq////////7sfH5aqq5aqq5aqq5aqq5aqq5aqq////////////////////////////
+9+Pj5aqq9+Pj7sfH9+Pj5aqq////////////5aqq////5aqq////////5aqq////////////////
+9+Pj5aqq7sfH7sfH////5aqq5aqq7sfH9+Pj////03Fx7sfH////////////////////9+Pj7sfH
+////7sfH9+Pj////5aqq////9+Pj7sfH5aqq9+Pj9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6O
+3I6O5aqq5aqq7sfH5aqq5aqq5aqq5aqq03FxylVVylVVylVVylVVylVVylVVylVV5aqq5aqq5aqq
+5aqq5aqqylVV3I6O5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq7sfH9+Pj5aqq7sfH9+Pj5aqq9+Pj5aqq5aqq5aqq5aqq7sfH7sfH5aqq5aqq7sfH5aqq
+////////////5aqq////5aqq5aqq5aqqylVV7sfH3I6O5aqq////5aqq9+Pj5aqq////7sfH7sfH
+7sfH3I6O7sfH5aqq5aqq5aqq5aqq////5aqq////////5aqq5aqq////////////5aqq////////
+////////////5aqq////////////////////9+Pj7sfH5aqq5aqq5aqq////9+Pj7sfH5aqq////
+5aqq////////////////////////////////7sfH9+Pj5aqq9+Pj7sfH////5aqq////////////
+////////////////////7sfH5aqq5aqq5aqq5aqq5aqq////7sfH7sfH5aqq////5aqq////5aqq
+////7sfH9+Pj////////3I6O////////////9+Pj5aqq////5aqq3I6O5aqq5aqq9+Pj5aqq5aqq
+////5aqq////////////////9+Pj5aqq7sfH////7sfH7sfH////////5aqq////////5aqq////
+7sfH5aqq9+Pj////9+Pj5aqq7sfH5aqq5aqq7sfH5aqq5aqq5aqq03Fx5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6OylVVylVV5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq9+Pj9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj5aqq7sfH9+Pj5aqq////5aqq
+9+Pj5aqq5aqq7sfH5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq9+Pj9+Pj7sfH5aqq5aqqylVV
+5aqq5aqq5aqq5aqq////7sfH9+Pj////5aqq////5aqq5aqq5aqq5aqq////5aqq5aqq////5aqq
+////////5aqq7sfH9+Pj////////5aqq////////////9+Pj5aqq3I6OylVVylVV7sfH////////
+////5aqq7sfH7sfH7sfH5aqq5aqq////5aqq5aqq7sfH////////////////////////////////
+////5aqq////5aqq7sfH9+Pj7sfH9+Pj////////////////////////5aqq9+Pj////03Fx5aqq
+5aqq////5aqq////5aqq5aqq////5aqq9+Pj7sfH////5aqq////////7sfH9+Pj3I6O5aqq5aqq
+7sfH////////7sfH////5aqq5aqq5aqq5aqq5aqq9+Pj////5aqq////////////5aqq////////
+////5aqq////////9+Pj7sfH////////5aqq7sfH5aqq////7sfH5aqq5aqq5aqq9+Pj5aqq////
+5aqq9+Pj5aqq5aqq////5aqq3I6OylVVylVV5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqqylVVylVV
+03Fx5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq7sfH////5aqq5aqq5aqq////
+9+Pj7sfH////5aqq9+Pj9+Pj7sfH////5aqq////5aqq5aqq5aqq7sfH5aqq9+Pj5aqq5aqq5aqq
+5aqq////////////////5aqq////5aqq03Fx3I6O5aqq5aqq5aqq5aqq////9+Pj5aqq9+Pj5aqq
+7sfH9+Pj5aqq5aqq5aqq7sfH9+Pj5aqq////5aqq////////5aqq5aqq////////////////5aqq
+5aqq5aqq7sfH////////////////////////////5aqq////////5aqq5aqq7sfH9+Pj5aqq5aqq
+9+Pj5aqq////////////////////////////////////////5aqq9+Pj7sfH7sfH9+Pj5aqq////
+3I6O5aqq5aqq5aqq5aqq////////////5aqq////////5aqq////5aqq5aqq5aqq7sfH9+Pj5aqq
+////////3I6O////////5aqq////5aqq////5aqq5aqq5aqq5aqq9+Pj5aqq5aqq7sfH3I6O5aqq
+7sfH5aqq7sfH9+Pj7sfH////////5aqq////////////5aqq////////5aqq////////////9+Pj
+5aqq////5aqq5aqq5aqq5aqq9+Pj5aqq7sfH5aqq9+Pj7sfH////////5aqq5aqq7sfH5aqq5aqq
+ylVVylVVylVVylVV5aqq5aqq5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6O3I6O5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq////////////5aqq7sfH9+Pj5aqq////7sfH9+Pj9+Pj7sfH////
+5aqq9+Pj7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////////////5aqq////3I6O03Fx
+5aqq5aqq5aqq5aqq5aqq////7sfH7sfH5aqq9+Pj7sfH5aqq5aqq5aqq5aqq5aqq5aqq////////
+5aqq////////5aqq5aqq////////////////////////////////////////////7sfH5aqq////
+////5aqq////////5aqq////5aqq7sfH7sfH5aqq5aqq9+Pj5aqq////////////////////////
+////////////9+Pj7sfH9+Pj7sfH7sfH9+Pj5aqq5aqq////////////////////////////7sfH
+7sfH////7sfH5aqq3I6O5aqq03Fx5aqq////5aqq7sfH5aqq////////////5aqq////5aqq////
+5aqq////////////////////////3I6O5aqq5aqq5aqq7sfH7sfH7sfH7sfH9+Pj7sfH9+Pj////
+////5aqq////////////5aqq////////////////////////////5aqq7sfH////7sfH7sfH9+Pj
+7sfH5aqq9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6O5aqq5aqq3I6O03Fx
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq7sfH////5aqq////7sfH9+Pj9+Pj7sfH9+Pj5aqq5aqq5aqq7sfH5aqq5aqq7sfH5aqq
+5aqq5aqq7sfH////////7sfH9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////5aqq7sfH
+9+Pj5aqq5aqq5aqq03Fx9+Pj5aqq5aqq////////5aqq////////////9+Pj////////////9+Pj
+5aqq5aqq5aqq5aqq9+Pj9+Pj5aqq9+Pj5aqq////////5aqq////////5aqq9+Pj9+Pj7sfH5aqq
+7sfH9+Pj5aqq////////////////////////////////////7sfH5aqq9+Pj5aqq9+Pj7sfH5aqq
+7sfH9+Pj5aqq////////////////////////3I6O////7sfH5aqq5aqq5aqq5aqq5aqq5aqq////
+5aqq5aqq////////////////7sfH7sfH5aqq////5aqq////7sfH5aqq7sfH////////////5aqq
+5aqq5aqq5aqq5aqq7sfH9+Pj5aqq7sfH9+Pj////////5aqq////////////5aqq////7sfH5aqq
+7sfH9+Pj5aqq5aqq////9+Pj5aqq5aqq9+Pj5aqq9+Pj7sfH5aqq3I6O03FxylVVylVVylVV5aqq
+5aqq5aqq5aqq5aqq5aqq3I6O5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH
+5aqq5aqq5aqq5aqq5aqq5aqq7sfH////9+Pj5aqq////////9+Pj7sfH////5aqq9+Pj7sfH7sfH
+9+Pj5aqq////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq9+Pj5aqq////5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq////7sfH7sfH5aqq7sfH9+Pj5aqqylVV5aqq////5aqq5aqq////
+////5aqq////////////////////////7sfH7sfH////////////////7sfH7sfH////5aqq////
+////////7sfH9+Pj////////5aqq9+Pj7sfH9+Pj5aqq5aqq////5aqq////////////////////
+////////////5aqq////5aqq7sfH5aqq7sfH7sfH5aqq5aqq////5aqq9+Pj////////////////
+5aqq3I6O9+Pj7sfH5aqq5aqq5aqq03Fx5aqq5aqq7sfH5aqq////////////////////9+Pj7sfH
+////5aqq////5aqq////9+Pj7sfH////////9+Pj5aqq5aqq5aqq7sfH5aqq5aqq5aqq////5aqq
+////////5aqq////////7sfH9+Pj////5aqq////9+Pj7sfH////5aqq5aqq5aqq5aqq7sfH5aqq
+9+Pj5aqq9+Pj7sfH7sfH5aqq03FxylVVylVVylVVylVV5aqq9+Pj////////3I6O3I6O5aqq5aqq
+////7sfH5aqq5aqq5aqq5aqq5aqq5aqq03Fx3I6O5aqq5aqq5aqq5aqq5aqq////9+Pj5aqq7sfH
+////5aqq5aqq////9+Pj7sfH////7sfH9+Pj9+Pj7sfH////5aqq5aqq5aqq7sfH3I6O7sfH3I6O
+5aqq5aqq5aqq////////7sfH7sfH7sfH9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq////9+Pj7sfH
+9+Pj5aqq5aqq5aqq5aqq5aqq5aqq////5aqq////////5aqq////////////////////7sfH9+Pj
+////////////////////////////////5aqq////////////////7sfH7sfH////////5aqq9+Pj
+5aqq5aqq9+Pj3I6O9+Pj////////////9+Pj////////////7sfH7sfH////////9+Pj7sfH7sfH
+7sfH5aqq7sfH5aqq////7sfH9+Pj////////////5aqq5aqq7sfH9+Pj5aqq5aqqylVV5aqq7sfH
+5aqq5aqq03Fx////////////////////////////5aqq////7sfH9+Pj////////9+Pj7sfH////
+////5aqq7sfH5aqq7sfH5aqq7sfH3I6O7sfH5aqq////7sfH9+Pj////7sfH9+Pj////////5aqq
+////////5aqq5aqq////////////////9+Pj7sfH7sfH9+Pj5aqq9+Pj3I6O5aqq5aqq3I6O5aqq
+5aqq5aqqylVV03Fx3I6O5aqq////7sfH5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq////////5aqq9+Pj9+Pj5aqq////7sfH
+9+Pj9+Pj7sfH9+Pj7sfH5aqq5aqq5aqq5aqq5aqq3I6O03Fx5aqq////////////////5aqq////
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////5aqq9+Pj7sfH5aqq5aqq5aqq5aqq5aqq////5aqq
+////////7sfH5aqq7sfH////////5aqq9+Pj////////////////////////////////////9+Pj
+7sfH////////////7sfH7sfH////////////5aqq////5aqq7sfH7sfH5aqq////////7sfH7sfH
+9+Pj////7sfH7sfH////////////////9+Pj7sfH7sfH7sfH5aqq5aqq5aqq////7sfH5aqq5aqq
+3I6O5aqq5aqq7sfH5aqq////5aqq7sfH////////5aqq5aqq////////////////////////////
+////9+Pj7sfH////5aqq9+Pj////////5aqq////////5aqq////5aqq5aqq7sfH7sfH5aqq3I6O
+3I6O9+Pj////5aqq////9+Pj7sfH////////9+Pj7sfH////5aqq////////////////////////
+7sfH9+Pj5aqq////5aqq////5aqq5aqq5aqq////////////////5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq7sfH////////////////7sfH5aqq7sfH////////////////////9+Pj5aqq5aqq5aqq
+9+Pj////5aqq5aqq////7sfH7sfH////5aqq7sfH7sfH5aqq7sfH5aqq5aqq7sfH5aqq3I6O5aqq
+5aqq3I6O3I6O5aqq5aqq////////7sfH9+Pj5aqq////3I6O7sfH5aqq5aqq5aqq5aqq////////
+5aqq9+Pj7sfH3I6O03Fx9+Pj7sfH5aqq////5aqq////////////////9+Pj5aqq5aqq////////
+5aqq5aqq5aqq9+Pj////////////////////////5aqq////////////5aqq////////////////
+5aqq////////5aqq7sfH7sfH9+Pj9+Pj7sfH////5aqq////5aqq////////////////////////
+9+Pj5aqq7sfH7sfH5aqq5aqq5aqq9+Pj5aqq5aqq3I6O5aqq7sfH3I6O5aqq5aqq9+Pj9+Pj////
+////////////3I6O////////////////////////////////9+Pj7sfH////7sfH5aqq3I6O////
+////////////5aqq////5aqq5aqq5aqq7sfH5aqq3I6O5aqq////5aqq////////9+Pj5aqq////
+5aqq////////5aqq////////////////////////////5aqq////5aqq9+Pj3I6O9+Pj7sfH5aqq
+////////////////7sfH9+Pj////////////////////////////////9+Pj5aqq5aqq9+Pj////
+////////////////////////7sfH7sfH////////7sfH5aqq5aqq////5aqq5aqq9+Pj5aqq9+Pj
+9+Pj5aqq////7sfH5aqq5aqq5aqq7sfH5aqq3I6O5aqq3I6O03Fx5aqq9+Pj5aqq5aqq7sfH////
+5aqq5aqq5aqq5aqq////5aqq5aqq////5aqq////5aqq////5aqqylVV5aqq5aqq////5aqq////
+5aqq////////////9+Pj////////////9+Pj5aqq////////////7sfH9+Pj////////////////
+////5aqq////////////5aqq////////////////////5aqq////////5aqq7sfH7sfH5aqq7sfH
+9+Pj5aqq////5aqq////////////////////////////////5aqq7sfH7sfH7sfH5aqq7sfH////
+////9+Pj3I6O3I6O5aqq5aqq5aqq7sfH7sfH5aqq7sfH////////////5aqq////////////////
+////////////////9+Pj5aqq////////////////////////////7sfH9+Pj9+Pj7sfH5aqq5aqq
+7sfH3I6O03Fx9+Pj9+Pj7sfH////////////5aqq5aqq////////9+Pj7sfH////////////////
+////////7sfH9+Pj9+Pj7sfH////5aqq9+Pj7sfH////////////////////5aqq5aqq5aqq5aqq
+5aqq////////////5aqq7sfH////////////////////////////7sfH5aqq5aqq9+Pj9+Pj5aqq
+5aqq5aqq5aqq////5aqq5aqq////5aqq7sfH7sfH5aqq9+Pj5aqq5aqq////5aqq5aqq5aqq5aqq
+5aqq5aqq03Fx3I6O3I6O3I6O////////////5aqq////5aqq5aqq5aqq7sfH9+Pj5aqq////5aqq
+7sfH9+Pj7sfH3I6O03Fx5aqq9+Pj7sfH5aqq////5aqq////////////5aqq5aqq5aqq5aqq7sfH
+9+Pj5aqq////////////7sfH5aqq9+Pj////////////5aqq////////////5aqq////////////
+////////9+Pj7sfH////////5aqq7sfH7sfH7sfH5aqq9+Pj7sfH5aqq////////////////////
+////7sfH5aqq7sfH5aqq7sfH5aqq5aqq3I6OylVVylVVylVV3I6O5aqq5aqq////////////////
+////5aqq////////////5aqq////////////////////9+Pj5aqq5aqq9+Pj////5aqq////////
+////////////////////5aqq////7sfH7sfH7sfH5aqq03Fx3I6O5aqq////7sfH5aqq////////
+9+Pj9+Pj////////////5aqq////////////////////////9+Pj7sfH////9+Pj3I6O////5aqq
+////////////////////////////////////////////5aqq7sfH5aqq////////////////9+Pj
+5aqq5aqq5aqq5aqq9+Pj////////////////////////////////5aqq7sfH////5aqq7sfH9+Pj
+5aqq9+Pj7sfH5aqq9+Pj5aqq7sfH5aqq5aqq7sfH3I6O3I6O3I6O03Fx3I6O////5aqq5aqq3I6O
+////////5aqq5aqq5aqq9+Pj7sfH5aqq////5aqq7sfH////5aqq3I6O3I6O7sfH7sfH5aqq5aqq
+////5aqq////////////////5aqq5aqq5aqq////5aqq9+Pj7sfH////////////////7sfH5aqq
+////////9+Pj7sfH////////5aqq////////////////////////9+Pj7sfH////9+Pj5aqq5aqq
+7sfH7sfH5aqq5aqq5aqq////////////////////9+Pj7sfH////9+Pj5aqq5aqq5aqq5aqq5aqq
+5aqq3I6O5aqq5aqq5aqq7sfH////////////////9+Pj7sfH////////////9+Pj7sfH////////
+////////5aqq////////7sfH7sfH////5aqq////////////////5aqq5aqq9+Pj5aqq////5aqq
+5aqq5aqq5aqq3I6O3I6O7sfH////////5aqq////////////////////////9+Pj7sfH////////
+////////////////9+Pj5aqq////////5aqq////3I6O9+Pj////////////////////////////
+////////////9+Pj////////////////5aqq7sfH////////////////////////////////////
+////////////////////9+Pj5aqq9+Pj9+Pj5aqq9+Pj7sfH5aqq////7sfH5aqq5aqq7sfH5aqq
+3I6O5aqq5aqq3I6O03Fx3I6O7sfH////////////////5aqq////5aqq5aqq////5aqq5aqq////
+5aqq5aqq////5aqq5aqq5aqq5aqq5aqq5aqq5aqq////5aqq////////////////////////5aqq
+////5aqq////9+Pj3I6O////////////////9+Pj5aqq5aqq////5aqq////////7sfH9+Pj////
+////////////////////5aqq////////9+Pj7sfH5aqq7sfH9+Pj3I6O7sfH5aqq9+Pj////////
+////5aqq////////////////5aqq7sfH5aqq03Fx5aqq5aqqwTg4ylVV5aqq9+Pj////////////
+////7sfH9+Pj////////////////5aqq////////////////5aqq////////////9+Pj5aqq////
+5aqq////////////5aqq////7sfH3I6O7sfH5aqq7sfH7sfH03Fx5aqq5aqq9+Pj5aqq////9+Pj
+7sfH////////////////////////5aqq////////////////////////////////5aqq7sfH9+Pj
+5aqq////7sfH7sfH////////9+Pj5aqq////////////////////////////////9+Pj5aqq////
+////////////////////////////////5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////7sfH5aqq
+////7sfH5aqq////5aqq5aqq9+Pj7sfH5aqq5aqq5aqq5aqq03Fx3I6O3I6O03Fx7sfH5aqq9+Pj
+////5aqq7sfH9+Pj7sfH5aqq////5aqq5aqq////5aqq////3I6O5aqq5aqq5aqq7sfH5aqq5aqq
+5aqq7sfH5aqq////////////////5aqq5aqq9+Pj7sfH9+Pj9+Pj5aqq5aqq5aqq5aqq5aqq////
+////////5aqq////5aqq////////////7sfH7sfH////////////////////////5aqq////////
+9+Pj7sfH5aqq7sfH03Fx5aqq03Fx5aqq////////9+Pj7sfH////////////////////7sfH5aqq
+9+Pj5aqq7sfH////////03Fx03Fx9+Pj////////////////5aqq////////////////5aqq////
+////////////5aqq////////////////////5aqq9+Pj5aqq9+Pj////5aqq////////////9+Pj
+5aqq////5aqq3I6O3I6O5aqq9+Pj////5aqq7sfH5aqq////////////////////////9+Pj5aqq
+////////////////////////////////7sfH////5aqq////////5aqq////////9+Pj7sfH5aqq
+5aqq////3I6O5aqq////7sfH5aqq5aqq////////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq////
+////////////////////7sfH5aqq5aqq7sfH////5aqq5aqq////5aqq5aqq////5aqq5aqq7sfH
+5aqq3I6O3I6O3I6O3I6O03Fx3I6O5aqq////7sfH5aqq////////5aqq////5aqq////5aqq5aqq
+////5aqq7sfH3I6O////3I6O7sfH5aqq5aqq5aqq5aqq5aqq////5aqq5aqq5aqq5aqq////////
+7sfH7sfH9+Pj7sfH////9+Pj5aqq9+Pj////5aqq7sfH////////5aqq9+Pj7sfH////////////
+5aqq////////////////////////5aqq////////////9+Pj7sfH5aqq3I6O5aqq3I6O3I6O////
+3I6O5aqq////////////////////////////////7sfH////////////5aqq9+Pj////////////
+////////////5aqq////03Fx5aqq5aqq3I6O9+Pj////////////5aqq////////////////////
+////7sfH7sfH7sfH5aqq9+Pj////////////////5aqq7sfH9+Pj5aqq5aqq5aqq7sfH5aqq9+Pj
+5aqq7sfH9+Pj////////////////////////9+Pj7sfH////////////////////////////////
+////9+Pj7sfH////5aqq////////////7sfH9+Pj////3I6O////////5aqq9+Pj////////7sfH
+5aqq7sfH////////////////////////////////////////////////////////////////9+Pj
+5aqq7sfH////5aqq5aqq////5aqq7sfH5aqq5aqq7sfH5aqq3I6O5aqq03Fx03Fx3I6O9+Pj5aqq
+7sfH////////////5aqq////5aqq7sfH9+Pj5aqq////5aqq9+Pj////////5aqq7sfH5aqq5aqq
+5aqq5aqq5aqq5aqq////////////////////7sfH5aqq9+Pj7sfH////////03Fx5aqq5aqq5aqq
+9+Pj7sfH////////5aqq////5aqq////////////5aqq////////////////////////////5aqq
+////////////9+Pj7sfH3I6O5aqq5aqqylVVylVV9+Pj////////////////////////////////
+////////////////////5aqq////////////////7sfH5aqq5aqq9+Pj////5aqq////////9+Pj
+9+Pj////////////5aqq////////////9+Pj3I6O5aqq////9+Pj7sfH////////////////////
+////5aqq5aqq////5aqq9+Pj5aqq5aqq9+Pj7sfH5aqq7sfH5aqq////////5aqq7sfH////////
+////5aqq////////////////////////////////////////7sfH5aqq5aqq////////////////
+5aqq////////////////7sfH5aqq5aqq5aqq9+Pj////////////////////////9+Pj5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq////////////////////9+Pj5aqq7sfH////5aqq7sfH9+Pj7sfH
+5aqq5aqq5aqq3I6O5aqq03Fx3I6O03Fx7sfH5aqq9+Pj5aqq5aqq5aqq////5aqq////5aqq////
+5aqq////5aqq////////////5aqq////5aqq7sfH7sfH5aqq5aqq3I6O5aqq9+Pj5aqq5aqq5aqq
+9+Pj////5aqq////////////03Fx5aqq5aqq5aqq5aqq////////////5aqq////////5aqq9+Pj
+////5aqq////////////////////////////5aqq////////////////7sfH9+Pj5aqq7sfH3I6O
+3I6O3I6O9+Pj////////////////////////3I6O5aqq9+Pj7sfH5aqq5aqq9+Pj5aqq////////
+9+Pj5aqq5aqq5aqq5aqq5aqq9+Pj////////////////////////5aqq5aqq////////////5aqq
+////////5aqq7sfH9+Pj5aqq9+Pj////////////////5aqq5aqq////5aqq////5aqq////5aqq
+////5aqq5aqq5aqq////////9+Pj03Fx////////////////5aqq////////////////////////
+7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH////////7sfH5aqq7sfH////////////
+7sfH5aqq5aqq5aqq5aqq5aqq5aqq7sfH////////////////////////////////5aqq5aqq5aqq
+5aqq5aqq5aqq9+Pj9+Pj5aqq////9+Pj5aqq7sfH7sfH5aqq3I6O3I6O3I6O5aqq03Fx03Fx5aqq
+////5aqq9+Pj////////////5aqq////5aqq////5aqq////5aqq////////////5aqq////7sfH
+9+Pj7sfH5aqq5aqq5aqq5aqq7sfH////////////7sfH3I6O7sfH5aqq7sfH7sfHylVV////5aqq
+3I6O5aqq7sfH////////7sfH5aqq9+Pj////7sfH5aqq7sfH////////////////////////7sfH
+5aqq////////////////////5aqq9+Pj7sfH03Fx5aqq3I6O5aqq////////////////5aqq5aqq
+////////7sfH9+Pj////////5aqq9+Pj5aqq7sfH////////////////////////////////7sfH
+5aqq5aqq5aqq5aqq////////////////////5aqq////////////9+Pj5aqq////7sfH7sfH////
+////////5aqq5aqq////5aqq////5aqq5aqq////9+Pj5aqq9+Pj7sfH5aqq////////////////
+////////5aqq////////////////////3I6O5aqq7sfH7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqq9+Pj////9+Pj5aqq////////////////////
+////////////////////////////////////////////////////5aqq////////5aqq////////
+5aqq5aqq7sfH03Fx3I6O5aqq3I6O03Fx3I6O5aqq5aqq////7sfH7sfH////7sfH9+Pj7sfH9+Pj
+////5aqq////5aqq////////////5aqq////5aqq////////5aqq5aqq7sfH5aqq9+Pj////////
+5aqq7sfH5aqq9+Pj////9+Pj9+Pj03Fx7sfH9+Pj5aqq5aqq5aqq////////////////5aqq9+Pj
+////////////////////////////////////5aqq////////9+Pj5aqq////////5aqq////7sfH
+3I6O5aqq5aqq3I6O5aqq////5aqq5aqq////////////////////////////9+Pj////7sfH5aqq
+9+Pj5aqq9+Pj////5aqq5aqq5aqq5aqq5aqq9+Pj////////////////////////////////////
+5aqq////////////////////5aqq////9+Pj5aqq////9+Pj7sfH5aqq////5aqq////5aqq5aqq
+////5aqq////////5aqq////5aqq////////////////////7sfH9+Pj////////////9+Pj7sfH
+////9+Pj7sfH7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////9+Pj5aqq5aqq
+5aqq5aqq5aqq7sfH////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////
+////////////////////5aqq////////5aqq9+Pj////7sfH5aqq03Fx3I6O5aqq03Fx03Fx3I6O
+7sfH9+Pj5aqq9+Pj9+Pj5aqq5aqq////5aqq////5aqq////9+Pj7sfH9+Pj////////5aqq////
+5aqq////////////5aqq5aqq5aqq7sfH5aqq5aqq7sfH5aqq9+Pj5aqq9+Pj////7sfH5aqq7sfH
+////5aqq5aqq5aqq////////////////////5aqq////////////////////9+Pj5aqq5aqq3I6O
+9+Pj////5aqq7sfH////5aqq5aqq5aqq////////3I6O5aqq03Fx5aqq7sfH9+Pj5aqq////////
+////////////////////5aqq7sfH5aqq5aqq9+Pj5aqq9+Pj7sfH5aqq////////7sfH7sfH////
+7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////5aqq////////////////////////5aqq////
+////5aqq3I6O////5aqq9+Pj7sfH////5aqq9+Pj7sfH5aqq9+Pj////9+Pj5aqq////5aqq7sfH
+////////////7sfH9+Pj////9+Pj5aqq5aqq////7sfH7sfH////5aqq////////////////////
+////////7sfH5aqq5aqq5aqq5aqq5aqq////////5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////
+////////////////////////////7sfH5aqq5aqq7sfH////////////////9+Pj7sfH////////
+7sfH9+Pj////5aqq5aqq03Fx3I6O5aqq03Fx03Fx7sfH5aqq////7sfH9+Pj////////7sfH9+Pj
+////5aqq////5aqq////5aqq9+Pj5aqq9+Pj////////5aqq////////9+Pj5aqq5aqq3I6O////
+5aqq9+Pj7sfH7sfH////7sfH5aqq////////////5aqq////5aqq5aqq////////////////////
+////5aqq5aqq5aqq5aqq5aqq7sfH////////////////////5aqq////9+Pj3I6O5aqq5aqq////
+5aqq5aqq5aqq5aqq5aqq5aqq9+Pj7sfH////////////////9+Pj9+Pj////5aqq////////////
+7sfH5aqq7sfH5aqq7sfH////5aqq9+Pj9+Pj5aqq5aqq5aqq5aqq5aqq7sfH////////////5aqq
+5aqq3I6O////////////////////////9+Pj5aqq5aqq5aqq5aqq3I6O////5aqq////////5aqq
+////7sfH9+Pj7sfH5aqq9+Pj////5aqq9+Pj9+Pj5aqq5aqq5aqq7sfH////7sfH7sfH////////
+7sfH7sfH////////5aqq////////////////3I6O5aqq5aqq9+Pj////////////7sfH5aqq5aqq
+5aqq////////////9+Pj9+Pj////////7sfH5aqq5aqq7sfH////////////////////////////
+////9+Pj5aqq7sfH////////////9+Pj7sfH////////5aqq////9+Pj5aqq03Fx3I6O5aqq03Fx
+ylVV7sfH9+Pj5aqq////5aqq////////5aqq////7sfH9+Pj////5aqq////////7sfH9+Pj////
+////////5aqq////////////7sfH5aqq5aqq5aqq9+Pj9+Pj5aqq////////////5aqq////9+Pj
+5aqq////9+Pj5aqq////5aqq////////////////////////////////////////////////////
+////////5aqq////////9+Pj9+Pj////////5aqq////5aqq5aqq3I6O7sfH5aqq5aqq////////
+////////7sfH7sfH7sfH5aqq5aqq////////5aqq5aqq////5aqq9+Pj9+Pj5aqq////7sfH5aqq
+5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////////////////////////////5aqq7sfH
+9+Pj5aqq5aqq5aqq5aqq5aqq9+Pj9+Pj5aqq7sfH////////5aqq9+Pj////7sfH5aqq9+Pj7sfH
+7sfH////////////////5aqq9+Pj////5aqq5aqq9+Pj////7sfH5aqq5aqq////////////////
+5aqq////////////////5aqq5aqq9+Pj////7sfH5aqq5aqq5aqq5aqq7sfH7sfH5aqq9+Pj////
+////////9+Pj5aqq5aqq5aqq7sfH////////////////////////9+Pj5aqq////////////7sfH
+9+Pj////9+Pj7sfH////5aqq3I6O03Fx5aqq03Fx3I6O5aqq5aqq9+Pj7sfH////5aqq5aqq////
+7sfH9+Pj////5aqq////////////////////5aqq5aqq5aqq////////////////////9+Pj5aqq
+5aqq5aqq5aqq5aqq9+Pj////////5aqq////5aqq9+Pj////5aqq////////9+Pj5aqq5aqq5aqq
+5aqq9+Pj////////////9+Pj5aqq5aqq5aqq5aqq////5aqq////////////////7sfH5aqq5aqq
+5aqq5aqq3I6O5aqq3I6O5aqq5aqq////////////////7sfH7sfH////////////////////////
+5aqq////5aqq9+Pj7sfH5aqq5aqq5aqq7sfH////5aqq5aqq////3I6O5aqq7sfH5aqq////5aqq
+////////////////////////////////5aqq////7sfH////////////////////////3I6O////
+////////////////7sfH5aqq////////5aqq////9+Pj5aqq5aqq9+Pj5aqq9+Pj////7sfH9+Pj
+////7sfH5aqq9+Pj////////////////7sfH5aqq7sfH////////5aqq5aqq////7sfH5aqq5aqq
+9+Pj7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////9+Pj5aqq5aqq
+5aqq5aqq////////////////5aqq5aqq9+Pj////7sfH5aqq////7sfH9+Pj5aqq5aqq5aqq03Fx
+3I6O3I6O5aqq7sfH5aqq9+Pj7sfH////7sfH7sfH7sfH////7sfH9+Pj////////////////5aqq
+////////////////////////////////////////5aqq3I6O5aqq7sfH5aqq////////7sfH9+Pj
+////5aqq9+Pj////5aqq5aqq5aqq////////////////7sfH5aqq5aqq5aqq5aqq5aqq5aqq9+Pj
+////5aqq9+Pj5aqq////////5aqq9+Pj5aqq5aqq5aqq5aqq7sfH5aqq3I6O5aqq7sfH////////
+////////9+Pj7sfH////////////////////////5aqq////////7sfH9+Pj////5aqq////7sfH
+5aqq////////9+Pj7sfH////5aqq////5aqq7sfH9+Pj////////////////////////////////
+5aqq////////////////////9+Pj5aqq////////////////////////////5aqq////////////
+5aqq////////////7sfH////9+Pj5aqq9+Pj7sfH5aqq9+Pj////7sfH5aqq5aqq5aqq5aqq9+Pj
+////7sfH5aqq5aqq////////5aqq9+Pj7sfH5aqq5aqq9+Pj7sfH5aqq5aqq5aqq5aqq9+Pj7sfH
+5aqq5aqq5aqq7sfH7sfH5aqq5aqq5aqq5aqq7sfH////////5aqq5aqq5aqq////////////7sfH
+5aqq7sfH////5aqq////5aqq7sfH3I6O5aqq5aqq5aqq03Fx7sfH5aqq5aqq5aqq9+Pj5aqq7sfH
+9+Pj7sfH5aqq9+Pj9+Pj5aqq5aqq9+Pj////7sfH9+Pj////////////////////////////////
+////////3I6O7sfH9+Pj5aqq////////////5aqq////////7sfH5aqq////////////5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj7sfH5aqq5aqq7sfH7sfH9+Pj7sfH9+Pj9+Pj////
+////7sfH5aqq5aqq7sfH3I6O5aqq////////////////////////5aqq////////////////5aqq
+5aqq7sfH////////////7sfH5aqq////5aqq9+Pj////5aqq5aqq5aqq////////////5aqq9+Pj
+7sfH5aqq////////////////////////////////9+Pj7sfH////////////////5aqq////////
+////////////////////////5aqq////////////9+Pj5aqq5aqq////9+Pj5aqq7sfH////7sfH
+9+Pj////9+Pj5aqq9+Pj////////////5aqq5aqq5aqq9+Pj////5aqq5aqq5aqq////5aqq9+Pj
+5aqq5aqq5aqq9+Pj////7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq7sfH////////
+9+Pj5aqq////////////////5aqq5aqq5aqq9+Pj////9+Pj5aqq7sfH7sfH9+Pj7sfH3I6O5aqq
+5aqq03Fx5aqq7sfH7sfH5aqq5aqq3I6O9+Pj9+Pj5aqq9+Pj9+Pj5aqq7sfH////////5aqq////
+////5aqq////////7sfH9+Pj////////////////////////5aqq7sfH5aqq////7sfH5aqq5aqq
+7sfH5aqq5aqq9+Pj////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6O7sfH////7sfH
+5aqq5aqq9+Pj5aqq7sfH5aqq5aqq5aqq7sfH5aqq5aqq9+Pj////7sfH5aqq9+Pj03Fx5aqq9+Pj
+9+Pj5aqq5aqq3I6O9+Pj3I6O3I6O////5aqq////////////////////////////////////////
+7sfH5aqq////////////////////////////5aqq7sfH7sfH5aqq////////////////////////
+////////5aqq////////////5aqq////////////////////////////////////5aqq////////
+////////////////5aqq7sfH////////7sfH9+Pj////5aqq7sfH////9+Pj5aqq5aqq5aqq////
+////5aqq5aqq5aqq////9+Pj5aqq3I6O9+Pj5aqq9+Pj5aqq5aqq5aqq5aqq9+Pj5aqq5aqq7sfH
+5aqq5aqq5aqq9+Pj7sfH5aqq7sfH9+Pj5aqq5aqq7sfH////5aqq////////////////////////
+7sfH5aqq5aqq9+Pj7sfH7sfH7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH9+Pj5aqq7sfH5aqq
+5aqq////7sfH5aqq9+Pj5aqq5aqq5aqq5aqq////////5aqq////5aqq7sfH7sfH3I6O////////
+7sfH5aqq5aqq3I6O9+Pj////////5aqq////7sfH9+Pj////////7sfH5aqq5aqq7sfH////9+Pj
+5aqq5aqq5aqq5aqq9+Pj////////////////////////////7sfH5aqq7sfH5aqq7sfH////7sfH
+5aqq5aqq5aqq5aqq5aqq9+Pj7sfH7sfH////7sfH7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj
+7sfH////////////////////////////5aqq5aqq3I6O////////////////////////////////
+7sfH9+Pj5aqq////5aqq5aqq5aqq////////////////////5aqq////////////5aqq////////
+////////////////////////////////5aqq////////////////////////////////5aqq9+Pj
+////5aqq////9+Pj5aqq7sfH////////////5aqq5aqq////////9+Pj5aqq7sfH////5aqq7sfH
+9+Pj7sfH////5aqq5aqq5aqq5aqq7sfH7sfH5aqq5aqq5aqq9+Pj7sfH5aqq5aqq9+Pj5aqq7sfH
+////9+Pj7sfH////5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////7sfH7sfH5aqq5aqq9+Pj5aqq
+5aqq5aqq7sfH3I6O5aqq5aqq7sfH7sfH5aqq7sfH5aqq5aqq5aqq5aqq7sfH9+Pj5aqq5aqq3I6O
+9+Pj7sfH9+Pj5aqq////////////////5aqq9+Pj7sfH////////////////////9+Pj7sfH////
+////5aqq////////////////////9+Pj5aqq7sfH////////////////7sfH5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq7sfH5aqq7sfH7sfH5aqq9+Pj////////////////////5aqq9+Pj////////
+3I6O5aqq////5aqq5aqq5aqq5aqq7sfH3I6O7sfH9+Pj5aqq////////////7sfH5aqq5aqq////
+////////////////////////////////////////////5aqq9+Pj5aqq5aqq////////5aqq9+Pj
+////////////7sfH9+Pj////////5aqq////////////////////////////////////////////
+5aqq7sfH////////////7sfH7sfH5aqq////////7sfH9+Pj////5aqq////////5aqq5aqq5aqq
+////9+Pj5aqq5aqq7sfH////7sfH5aqq////5aqq7sfH5aqq5aqq////5aqq5aqq5aqq9+Pj9+Pj
+5aqq5aqq7sfH7sfH5aqq5aqq9+Pj5aqq5aqq9+Pj5aqq7sfH7sfH9+Pj////////////////////
+////////5aqq5aqq////5aqq7sfH9+Pj5aqq5aqq7sfH5aqq5aqq7sfH5aqq7sfH5aqq9+Pj7sfH
+5aqq9+Pj5aqq7sfH5aqq5aqq7sfH7sfH////////7sfH9+Pj5aqq5aqq////////////3I6O////
+5aqq////////////////5aqq9+Pj5aqq////////////5aqq////////////////////////////
+9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq////////5aqq9+Pj7sfH////5aqq
+3I6O03Fx03Fx03Fx5aqq03Fx9+Pj////////9+Pj7sfH9+Pj5aqq////5aqq5aqq5aqq5aqq5aqq
+03Fx////////3I6O////////9+Pj7sfH////////////////////////////////////////////
+////////5aqq////////////5aqq3I6O////7sfH5aqq5aqq7sfH9+Pj7sfH////////////5aqq
+////////////////////////////////////////////5aqq5aqq9+Pj03Fx3I6O7sfH////////
+7sfH9+Pj////7sfH9+Pj9+Pj5aqq////////7sfH5aqq7sfH////////9+Pj5aqq9+Pj9+Pj5aqq
+////5aqq////5aqq5aqq////7sfH5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq9+Pj7sfH5aqq9+Pj
+5aqq7sfH7sfH7sfH7sfH7sfH////////////////9+Pj5aqq////////3I6O9+Pj7sfH5aqq7sfH
+7sfH7sfH5aqq5aqq7sfH5aqq7sfH5aqq5aqq7sfH5aqq3I6O5aqq5aqq5aqq5aqq5aqq3I6OylVV
+////////5aqqylVV5aqq5aqq////5aqq////////5aqq////////////////5aqq5aqq////5aqq
+5aqq3I6O////////////////////////////////5aqq////////////////////////9+Pj////
+////////////5aqq5aqq7sfH5aqq////////////////9+Pj9+Pj////////////7sfH5aqq5aqq
+7sfH9+Pj7sfH////5aqq////7sfH7sfH5aqq5aqq5aqq5aqq////5aqq////////5aqq////////
+////7sfH5aqq5aqq5aqq////////////////////////////9+Pj7sfH////////////////5aqq
+////////////9+Pj7sfH////////////5aqq////////////////////////////////////////
+////5aqq9+Pj////////////////7sfH5aqq7sfH////5aqq////5aqq////5aqq////9+Pj5aqq
+9+Pj////////9+Pj5aqq7sfH////9+Pj7sfH////5aqq9+Pj7sfH9+Pj9+Pj5aqq9+Pj////7sfH
+5aqq////////7sfH5aqq7sfH7sfH5aqq7sfH7sfH5aqq9+Pj5aqq7sfH5aqq7sfH5aqq9+Pj5aqq
+5aqq7sfH9+Pj7sfH////9+Pj7sfH5aqq7sfH9+Pj5aqq7sfH9+Pj5aqq5aqq7sfH5aqq7sfH5aqq
+03Fx5aqq3I6O5aqq3I6O5aqqylVVylVV5aqq5aqq////////3I6O03Fx5aqq5aqq////7sfH5aqq
+3I6O////////////////////////////////////////////////////////////////////////
+////5aqq////////////////////////3I6O5aqq5aqq5aqq////////////7sfH9+Pj7sfH////
+5aqq////////////////////////////////////////3I6O////5aqq////7sfH////9+Pj5aqq
+03Fx3I6O5aqq////7sfH9+Pj////5aqq////////3I6O9+Pj////////////5aqq////////////
+////////////////7sfH9+Pj////////////7sfH9+Pj////////////////////////9+Pj7sfH
+////////////////////////////9+Pj9+Pj////////5aqq////////////////////////////
+9+Pj5aqq7sfH9+Pj5aqq5aqq////////5aqq////7sfH5aqq5aqq7sfH////////5aqq7sfH////
+5aqq////////5aqq////5aqq////7sfH5aqq9+Pj////5aqq5aqq5aqq7sfH9+Pj5aqq5aqq9+Pj
+5aqq7sfH5aqq7sfH7sfH5aqq7sfH7sfH7sfH////////////////5aqq////////5aqq9+Pj7sfH
+5aqq////5aqq5aqq9+Pj5aqq7sfH7sfH5aqq5aqq5aqq5aqq5aqq03Fx3I6O3I6O5aqq5aqq5aqq
+3I6O////5aqq5aqq7sfH7sfH03Fx9+Pj////////////////////////////////////////////
+////////////////////////////////////////7sfH9+Pj////////////////////5aqq////
+////////////5aqq5aqq7sfH7sfH////9+Pj3I6O7sfH////////////////9+Pj5aqq5aqq5aqq
+5aqq5aqq////9+Pj7sfH7sfH7sfH5aqq5aqq9+Pj3I6O03Fx5aqq7sfH////5aqq////5aqq////
+5aqq////////////////////9+Pj5aqq////////////////////////////7sfH9+Pj////////
+////5aqq9+Pj////////////////9+Pj5aqq////////////////5aqq5aqq5aqq5aqq7sfH7sfH
+5aqq5aqq7sfH////////5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq5aqq7sfH5aqq5aqq7sfH
+9+Pj5aqq////////////////3I6O////////3I6O////////3I6O////7sfH9+Pj5aqq9+Pj////
+////////////////////9+Pj5aqq5aqq////5aqq5aqq9+Pj5aqq7sfH5aqq9+Pj5aqq9+Pj5aqq
+////////////////9+Pj7sfH////5aqq////5aqq////5aqq9+Pj7sfH5aqq7sfH7sfH5aqq7sfH
+5aqq5aqq3I6O5aqq3I6O3I6O03Fx5aqq5aqq5aqq7sfH3I6O9+Pj5aqq5aqq7sfH7sfH////////
+////////9+Pj3I6O////////////////7sfH5aqq7sfH////////////////////////////////
+////5aqq////////////////////////5aqq9+Pj3I6O5aqq////////////7sfH////////////
+9+Pj////////////7sfH5aqq7sfH////////////////////////////5aqq////5aqq////7sfH
+9+Pj5aqq03Fx3I6O9+Pj5aqq9+Pj03Fx////9+Pj7sfH////////////////////////////5aqq
+9+Pj////////////////////////5aqq////////////////7sfH5aqq5aqq9+Pj5aqq7sfH////
+////////////3I6O////////////////////////////////////5aqq5aqq9+Pj5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq3I6O3I6O3I6O3I6O5aqq5aqq5aqq5aqq5aqq7sfH////5aqq////////
+5aqq////////5aqq////////5aqq9+Pj5aqq5aqq7sfH////////9+Pj7sfH////7sfH5aqq////
+////////5aqq////7sfH7sfH7sfH7sfH5aqq9+Pj5aqq7sfH////5aqq////5aqq////////5aqq
+////5aqq////5aqq9+Pj7sfH5aqq7sfH5aqq5aqq5aqq5aqq3I6O03Fx5aqq3I6O5aqq5aqq5aqq
+5aqq5aqq5aqq////5aqq9+Pj5aqq7sfH5aqq9+Pj////////////////////////////////9+Pj
+5aqq9+Pj////////////////////////////////////9+Pj5aqq////////////////////03Fx
+7sfH////////5aqq9+Pj////////////////////////////9+Pj5aqq9+Pj////////////////
+////////////////////5aqq////////5aqq9+Pj5aqq7sfH5aqq3I6O5aqq9+Pj5aqq3I6O7sfH
+5aqq////////////////////////////////////7sfH7sfH////////////////////////5aqq
+////////////////////////7sfH////////////////////5aqq////////////7sfH5aqq5aqq
+5aqq5aqq5aqq5aqq////5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqq5aqq3I6O5aqq5aqq03Fx03Fx
+3I6O3I6O5aqq5aqq7sfH9+Pj7sfH9+Pj7sfH////5aqq////////9+Pj7sfH////////5aqq9+Pj
+////9+Pj5aqq5aqq7sfH9+Pj5aqq7sfH////////////////////5aqq////9+Pj5aqq7sfH5aqq
+7sfH9+Pj9+Pj5aqq////5aqq////5aqq////9+Pj7sfH////5aqq9+Pj5aqq9+Pj7sfH5aqq5aqq
+3I6O5aqq5aqq3I6O3I6O5aqq3I6O5aqq5aqq5aqq03Fx03Fx3I6O5aqq////5aqq9+Pj5aqq9+Pj
+7sfH5aqq5aqq5aqq5aqq////////////////////////////////////////////////////////
+////////////9+Pj5aqq5aqq7sfH////////9+Pj////////////////7sfH5aqq5aqq5aqq7sfH
+7sfH5aqq5aqq7sfH////////////7sfH5aqq5aqq5aqq5aqq5aqq5aqq3I6O5aqq7sfH////////
+7sfH03Fx////5aqq5aqq3I6O5aqq5aqq5aqq5aqq5aqq////////////////////////////////
+9+Pj9+Pj9+Pj7sfH////////////////////////5aqq5aqq7sfH////////////////////5aqq
+5aqq5aqq5aqq9+Pj////////7sfH9+Pj9+Pj5aqq5aqq5aqq5aqq5aqq5aqq9+Pj5aqq5aqq5aqq
+5aqq5aqq5aqq3I6O5aqq5aqq03Fx5aqq3I6O5aqq3I6O3I6O03Fx5aqq5aqq3I6O5aqq7sfH5aqq
+9+Pj7sfH5aqq////////3I6O7sfH////////7sfH5aqq5aqq9+Pj////////////////////////
+////////////////////3I6O////////7sfH7sfH3I6O7sfH5aqq5aqq////7sfH9+Pj9+Pj7sfH
+////7sfH7sfH////7sfH7sfH5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq3I6O5aqq5aqq3I6O5aqq
+5aqq9+Pj9+Pj03Fx03Fx3I6O9+Pj5aqq9+Pj7sfH5aqq5aqq7sfH////////5aqq5aqq////////
+////////////////////////////////////////////9+Pj////////////////5aqq////////
+////////7sfH9+Pj////////////////////9+Pj9+Pj////////////////////5aqq9+Pj////
+////////////////////5aqq////9+Pj5aqq5aqq9+Pj////////5aqq5aqq7sfH9+Pj5aqq3I6O
+03Fx5aqq////////////7sfH5aqq5aqq5aqq5aqq7sfH5aqq////5aqq////////////////////
+////////////9+Pj5aqq5aqq5aqq5aqq5aqq////////////////////////7sfH7sfHylVV03Fx
+ylVVylVVylVVylVVylVVylVV03Fx5aqq5aqq5aqq5aqq5aqq5aqq3I6O5aqq3I6O5aqqylVV5aqq
+ylVV3I6O3I6O3I6OylVV3I6O5aqq03Fx3I6O3I6O3I6O5aqq5aqq5aqq5aqq9+Pj9+Pj5aqq5aqq
+5aqq////////7sfH5aqq5aqq5aqq9+Pj////////////////////////////////5aqq////////
+5aqq////5aqq////////5aqq9+Pj5aqq////9+Pj5aqq////9+Pj5aqq7sfH9+Pj5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq7sfHylVVylVVylVV3I6O5aqq7sfH
+5aqq5aqq////9+Pj5aqq7sfH////9+Pj5aqq////////////////////////////5aqq5aqq5aqq
+5aqq3I6O3I6O////////////////5aqq////////////7sfH9+Pj7sfH5aqq5aqq5aqq5aqq7sfH
+////////////////////////5aqq////////////////////////////////5aqq////////////
+////7sfH5aqq9+Pj////5aqq5aqq5aqq5aqq5aqq03Fx9+Pj5aqq////////5aqq////////////
+////////////5aqq////5aqq5aqq////////////////////////////////////////////////
+////////9+Pj5aqq5aqq5aqq9+Pj7sfH3I6OylVV5aqq5aqqylVVylVVylVVylVVylVVylVV03Fx
+5aqq5aqq5aqq5aqq5aqq3I6O3I6O03Fx5aqqylVV5aqq03FxylVV03Fx5aqq03FxylVV5aqq03Fx
+03Fx3I6O3I6O5aqq3I6O7sfH7sfH5aqq5aqq9+Pj////5aqq5aqq5aqq////////////7sfH5aqq
+////////////////////////////5aqq////////////5aqq9+Pj5aqq9+Pj////5aqq7sfH9+Pj
+////////5aqq5aqq////9+Pj5aqq5aqq5aqq5aqq5aqq3I6OylVV3I6O5aqq5aqq5aqq9+Pj5aqq
+9+Pj////9+Pj9+PjylVVylVVwTg4ylVV3I6OylVV3I6O5aqq5aqq5aqq7sfH9+Pj5aqq////////
+5aqq7sfH////5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////5aqq////////////////////5aqq
+////5aqq9+Pj////////////////////////9+Pj5aqq////////5aqq5aqq5aqq////////7sfH
+ylVVylVVylVV03Fx////////9+Pj7sfH////3I6O5aqq9+Pj////7sfH5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq7sfH9+Pj////5aqq////////////////////////7sfH9+Pj////////5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH////////////7sfH3I6OylVV
+5aqq03FxylVV5aqq3I6OylVVylVVylVVylVV03Fx5aqq5aqq5aqq5aqq5aqq3I6O5aqq3I6O3I6O
+5aqq03Fx3I6O5aqq3I6O03Fx3I6O5aqq3I6O3I6O3I6O3I6O03Fx5aqq5aqq5aqq5aqq7sfH////
+7sfH5aqq5aqq////////5aqq5aqq9+Pj////////5aqq////////////////////////5aqq////
+////////5aqq////////7sfH5aqq7sfH9+Pj5aqq5aqq9+Pj////////5aqq5aqq5aqq////7sfH
+5aqq5aqq5aqq5aqq3I6O5aqq5aqq5aqq5aqq////7sfH5aqq7sfH7sfH3I6O3I6OylVVylVVuBwc
+wTg4uBwcylVVwTg4ylVV3I6O5aqq7sfH5aqq5aqq5aqq5aqq5aqq////////5aqq03Fx5aqq5aqq
+03Fx5aqq5aqq////5aqq////////////////7sfH5aqq////7sfH5aqq5aqq5aqq5aqq5aqq////
+////5aqq////////////5aqq5aqq5aqq5aqq7sfH9+Pj5aqq5aqq5aqq5aqq3I6OylVV5aqq5aqq
+9+Pj////7sfH5aqq5aqq5aqq5aqq3I6O5aqq5aqq5aqq5aqq5aqq7sfH9+Pj////5aqq////////
+////////////////////7sfH5aqq////////////////////////7sfH5aqq5aqq////9+Pj5aqq
+5aqq5aqq5aqq5aqq5aqq3I6O3I6O3I6O5aqq3I6O03Fx3I6O9+Pj5aqq7sfH////////////////
+9+Pj5aqq5aqq5aqq5aqq9+Pj9+Pj7sfH////7sfH7sfH9+Pj5aqq7sfH7sfH3I6O5aqq3I6O03Fx
+5aqq5aqq3I6O5aqq5aqq5aqq7sfH5aqq9+Pj5aqq////////////5aqq////////////7sfH7sfH
+////////5aqq5aqq////////5aqq5aqq9+Pj////////////5aqq////////////////5aqq03Fx
+5aqq5aqq03FxylVV5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq7sfH9+Pj5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq////9+Pj03FxylVVylVVylVVylVVuBwcrwAArwAAuBwcrwAArwAArwAAylVVylVV
+03Fx5aqq5aqq5aqq5aqqylVV5aqq9+Pj5aqq5aqq5aqq5aqq5aqq5aqq7sfH5aqq5aqq5aqq7sfH
+////5aqq5aqq9+Pj5aqq5aqq5aqq9+Pj////5aqq5aqq5aqq////////9+Pj////////////////
+9+Pj7sfH9+Pj5aqq5aqq5aqq03Fx5aqq5aqq5aqq7sfH5aqq7sfH////9+Pj5aqq5aqq5aqq7sfH
+5aqq5aqq5aqq5aqq5aqq////////5aqq////////////////////7sfH5aqq7sfH////5aqq5aqq
+5aqq5aqq5aqq5aqq9+Pj////////5aqq7sfH////////////////////////////5aqq5aqq5aqq
+5aqq03Fx3I6O7sfH////7sfH5aqq5aqq5aqq5aqq5aqq5aqq7sfH////////7sfH9+Pj9+Pj7sfH
+////9+Pj7sfH7sfH7sfH5aqq////5aqq3I6O5aqq3I6O03Fx5aqq5aqq5aqq5aqq3I6O7sfH5aqq
+////5aqq////////////5aqq////////////9+Pj5aqq9+Pj////////5aqq5aqq////////////
+////////////9+Pj7sfH////9+Pj////////////5aqq5aqq5aqq5aqq3I6O5aqq5aqq7sfH5aqq
+5aqq5aqq5aqq7sfH9+Pj5aqq5aqq5aqq5aqq5aqq5aqq////////5aqq9+PjylVV03FxwTg4uBwc
+rwAArwAAwTg4wTg4rwAArwAAuBwcuBwcrwAAuBwcwTg4wTg403FxylVVylVV5aqq5aqq3I6O5aqq
+5aqq9+Pj5aqq5aqq5aqq5aqq5aqq7sfH////9+Pj5aqq7sfH5aqq5aqq5aqq5aqq9+Pj7sfH5aqq
+9+Pj////////////////5aqq////////////5aqq5aqq5aqq7sfH5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq9+Pj5aqq7sfH////5aqq7sfH5aqq3I6O9+Pj5aqq5aqq////5aqq5aqq////////
+////////////5aqq9+Pj////9+Pj5aqq////////////////////////////5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6O7sfH3I6O3I6O3I6O3I6O5aqq5aqq9+Pj////////////
+////////////9+Pj5aqq5aqq9+Pj7sfH9+Pj9+Pj7sfH////7sfH9+Pj7sfH9+Pj5aqq5aqq5aqq
+5aqq5aqq5aqq3I6O5aqq5aqq5aqq7sfH5aqq7sfH5aqq////5aqq////////////5aqq////////
+////////7sfH5aqq9+Pj////////7sfH5aqq5aqq5aqq5aqq5aqq5aqq7sfH7sfH7sfH5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH7sfH5aqq5aqq5aqq7sfH9+Pj5aqq5aqq5aqq5aqq5aqq
+5aqq9+Pj5aqq7sfH////5aqq03FxylVVylVVylVVylVVylVVuBwcrwAArwAArwAArwAArwAArwAA
+rwAArwAArwAArwAArwAArwAArwAArwAArwAArwAA3I6O5aqq5aqq5aqq5aqq7sfH5aqq3I6OylVV
+ylVVylVV3I6O5aqq5aqq7sfH5aqq7sfH5aqq5aqq03Fx03Fx5aqq5aqq5aqq5aqq7sfH5aqq3I6O
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq////7sfH////////////5aqq5aqq5aqq5aqq5aqq5aqq3I6O
+5aqq5aqq3I6O9+Pj7sfH7sfH9+Pj5aqq////////////7sfH5aqq////////////////////5aqq
+5aqq////////////////5aqq////////7sfH9+Pj////5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6O
+5aqq5aqq5aqq5aqq////9+Pj5aqq5aqq5aqq5aqq5aqq5aqq////////////////5aqq////5aqq
+////9+Pj7sfH////5aqq////5aqq7sfH5aqq9+Pj5aqq9+Pj7sfH5aqq5aqq5aqq9+Pj5aqq5aqq
+5aqq9+Pj7sfH////5aqq////////////5aqq////////////////////7sfH5aqq5aqq9+Pj////
+////////////3I6O5aqq5aqq9+Pj////////////////////////////////7sfH7sfH9+Pj5aqq
+5aqq9+Pj////9+Pj5aqq5aqq5aqq5aqq9+Pj////////7sfH9+Pj9+Pj7sfH////5aqq03FxuBwc
+rwAArwAArwAArwAAylVVrwAArwAAuBwcrwAArwAArwAArwAArwAArwAArwAArwAArwAArwAArwAA
+rwAAuBwcylVV9+Pj////5aqq3I6O5aqq03FxylVVylVVylVVylVVylVVylVV3I6O5aqqylVVylVV
+ylVVylVV3I6O03Fx5aqq5aqq5aqq7sfH5aqq7sfH7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH7sfH////5aqq////
+////////5aqq////////////////////////////////5aqq5aqq7sfH7sfH9+Pj////9+Pj7sfH
+7sfH5aqq////7sfH5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq7sfH////////////
+////////////5aqq5aqq7sfH////9+Pj7sfH7sfH9+Pj////7sfH9+Pj5aqq////5aqq5aqq////
+7sfH7sfH7sfH5aqq5aqq7sfH5aqq5aqq03Fx5aqq9+Pj7sfH5aqq////9+Pj7sfH////////7sfH
+7sfH////////////////////////////////////////////////5aqq////////////////////
+////////////////////////////9+Pj5aqq7sfH////7sfH5aqq5aqq5aqq5aqq5aqq7sfH7sfH
+5aqq9+Pj////5aqq////9+Pj7sfH7sfH////////////////////////3I6O////////7sfH5aqq
+9+Pj5aqq7sfH9+Pj5aqq5aqq5aqq5aqq5aqq5aqq03FxwTg4ylVV3I6O5aqq5aqq3I6OylVV3I6O
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq03Fx3I6O03Fx5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq3I6O
+5aqq5aqq3I6O5aqq5aqq7sfH////7sfH5aqq////////5aqq////////////////////5aqq5aqq
+9+Pj////////////9+Pj9+Pj////9+Pj5aqq////////7sfH5aqq9+Pj////7sfH5aqq5aqq3I6O
+5aqq3I6O5aqq3I6O5aqq////////////////////////////////////////9+Pj5aqq9+Pj5aqq
+////5aqq////////5aqq7sfH9+Pj3I6O5aqq////5aqq5aqq5aqq7sfH5aqq7sfH5aqq////////
+////5aqq5aqq5aqq////////9+Pj7sfH////////9+Pj3I6O7sfH////////////////////////
+////////////////5aqq////////////////////////////////////////////////////////
+9+Pj5aqq5aqq5aqq5aqq5aqq5aqq9+Pj9+Pj5aqq7sfH7sfH5aqq////5aqq////7sfH9+Pj7sfH
+////5aqq5aqq////////////5aqq7sfH////////7sfH5aqq9+Pj5aqq5aqq7sfH5aqq7sfH7sfH
+5aqq03FxylVV03Fx03FxylVV03Fx5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq
+5aqq5aqq5aqq3I6O03Fx3I6O5aqq5aqq03FxylVVylVV3I6O5aqq5aqq5aqq7sfH5aqq5aqq5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqqylVVylVVylVV5aqq5aqq7sfH9+Pj////5aqq5aqq9+Pj////
+////9+Pj7sfH////////////////////5aqq////5aqq////////////////////////5aqq////
+////5aqq9+Pj////5aqq5aqq9+Pj////5aqq5aqq5aqq5aqq////5aqq////////////////////
+////////////////////////////////5aqq5aqq////5aqq////////5aqq5aqq7sfH7sfH5aqq
+5aqq5aqq5aqq5aqq7sfH5aqq7sfH9+Pj5aqq5aqq5aqq9+Pj5aqq5aqq////////////5aqq////
+9+Pj5aqq7sfH////////////////////////9+Pj5aqq5aqq5aqq5aqq9+Pj////////////7sfH
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////////////////7sfH5aqq
+9+Pj9+Pj7sfH9+Pj5aqq9+Pj5aqq5aqq////9+Pj5aqq////////5aqq5aqq////////9+Pj5aqq
+5aqq5aqq////5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq03FxylVV03FxylVVylVV3I6O03Fx5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqq5aqqylVV3I6O3I6O5aqqylVVylVV5aqq
+5aqq5aqq5aqq5aqq5aqq5aqq9+Pj5aqq5aqq5aqq5aqq5aqqylVV5aqq3I6OylVVylVV5aqq5aqq
+5aqq5aqq5aqq9+Pj7sfH5aqq////////7sfH5aqq5aqq7sfH////////////////////////5aqq
+////7sfH9+Pj////////////////7sfH9+Pj////5aqq////9+Pj5aqq////7sfH5aqq03Fx5aqq
+5aqq7sfH5aqq9+Pj7sfH////////////////////////////////////////////////////5aqq
+////5aqq5aqq////7sfH9+Pj03Fx9+Pj5aqq3I6O5aqq5aqq5aqq5aqq7sfH9+Pj5aqq5aqq////
+9+Pj5aqq5aqq7sfH7sfH////////5aqq////9+Pj7sfH////////////////////////7sfH5aqq
+7sfH////////5aqq5aqq5aqq5aqq5aqq5aqq9+Pj////////////////////////////////////
+////////7sfH5aqq5aqq7sfH////////////////7sfH9+Pj9+Pj5aqq////7sfH5aqq////&lt;/Data&gt;&lt;/Thumbnail&gt;&lt;/Binary&gt;&lt;/metadata&gt;</field></doc></add>

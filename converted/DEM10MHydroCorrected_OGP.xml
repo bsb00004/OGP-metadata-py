@@ -1,0 +1,264 @@
+<add allowDups="false"><doc><field name="LayerId">DEM10MHydroCorrected</field><field name="Name">DEM10MHydroCorrected</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Raster</field><field name="DataTypeSort">Raster</field><field name="Availability">Online</field><field name="LayerDisplayName">Hydrologically Corrected 10 Meter Digital Elevation Model</field><field name="LayerDisplayNameSort">Hydrologically Corrected 10 Meter Digital Elevation Model</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">Metropolitan Council, DNR</field><field name="OriginatorSort">Metropolitan Council, DNR</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">This dataset is a hydrologically correct 10 meter digital elevation model of the seven county Twin Cities metropolitan area.  ''Hydrologically Corrected'' means that the DEM was adjusted to accurately depict surface water drainage, even when the drainage is in underground storm sewers, etc.  In some places this DEM will be very different than a normal height-of-land DEM.</field><field name="MaxY">47.526</field><field name="MinY">44.244</field><field name="MinX">-96.912</field><field name="MaxX">-92.521</field><field name="ContentDate">1980-01-01T00:00:00Z</field><field name="Location">{"download": "ftp://gisftp.metc.state.mn.us/DEM10MHydroCorrected.zip"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;
+	&lt;idinfo&gt;
+		&lt;citation&gt;
+			&lt;citeinfo&gt;
+				&lt;origin&gt;Metropolitan Council, DNR&lt;/origin&gt;
+				&lt;pubdate&gt;Unpublished material&lt;/pubdate&gt;
+				&lt;title&gt;Hydrologically Corrected 10 Meter Digital Elevation Model&lt;/title&gt;
+				&lt;mgmg1cid /&gt;
+				&lt;pubinfo&gt;
+					&lt;publish&gt;Metropolitan Council&lt;/publish&gt;
+				&lt;/pubinfo&gt;
+				&lt;onlink&gt;ftp://gisftp.metc.state.mn.us/DEM10MHydroCorrected.zip&lt;/onlink&gt;
+			&lt;/citeinfo&gt;
+		&lt;/citation&gt;
+		&lt;descript&gt;
+			&lt;abstract&gt;This dataset is a hydrologically correct 10 meter digital elevation model of the seven county Twin Cities metropolitan area.  ''Hydrologically Corrected'' means that the DEM was adjusted to accurately depict surface water drainage, even when the drainage is in underground storm sewers, etc.  In some places this DEM will be very different than a normal height-of-land DEM.&lt;/abstract&gt;
+			&lt;purpose&gt;To develop a digital elevation model that accurately reflects surface water drainage in the Twin Cities metropolitan area.&lt;/purpose&gt;
+			&lt;supplinf&gt;Includes 89 USGS 7.5 minute quadrangles intersecting the minor watersheds intersecting the Twin Cities 7 County Metropolitan Area.  This includes the counties of Anoka, Carver, Dakota, Hennepin, Ramsey, Scott and Washington.&lt;/supplinf&gt;
+		&lt;/descript&gt;
+		&lt;timeperd&gt;
+			&lt;timeinfo&gt;
+				&lt;sngdate&gt;
+					&lt;caldate&gt;1980&lt;/caldate&gt;
+				&lt;/sngdate&gt;
+			&lt;/timeinfo&gt;
+			&lt;current&gt;Base information is as current as the publication of its source USGS quadrangle maps which vary in publication date from 1979 to 1990, and the DNR lakes and stream database, assembled from various sources (MNDOT base map, DLG, DRQ and WMO subsurface drainage data).&lt;/current&gt;
+		&lt;/timeperd&gt;
+		&lt;status&gt;
+			&lt;progress&gt;Complete&lt;/progress&gt;
+			&lt;update&gt;None planned&lt;/update&gt;
+		&lt;/status&gt;
+		&lt;spdom&gt;
+			&lt;bounding&gt;
+				&lt;westbc&gt;-96.912&lt;/westbc&gt;
+				&lt;eastbc&gt;-92.521&lt;/eastbc&gt;
+				&lt;northbc&gt;47.526&lt;/northbc&gt;
+				&lt;southbc&gt;44.244&lt;/southbc&gt;
+			&lt;/bounding&gt;
+		&lt;/spdom&gt;
+		&lt;keywords&gt;
+			&lt;theme&gt;
+				&lt;themekt&gt;None&lt;/themekt&gt;
+				&lt;themekey&gt;elevation, drainage, watershed delineation, topography, DEM, digital elevation model&lt;/themekey&gt;
+			&lt;/theme&gt;
+			&lt;place&gt;
+				&lt;placekey&gt;Twin Cities, Anoka County, Carver County, Dakota County, Hennepin County, Ramsey County, Scott County, Washington County&lt;/placekey&gt;
+			&lt;/place&gt;
+		&lt;/keywords&gt;
+		&lt;accconst&gt;None&lt;/accconst&gt;
+		&lt;useconst&gt;None&lt;/useconst&gt;
+		&lt;ptcontac&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Steve Kloiber&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council Environmental Services&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;Senior Water Resource Planner&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1056&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1130&lt;/cntfax&gt;
+				&lt;cntemail&gt;steve.kloiber@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/ptcontac&gt;
+		&lt;browse&gt;
+			&lt;browsen&gt;http://www.datafinder.org/metadata/bg/DEM10MHYDROCORRECTED.jpg&lt;/browsen&gt;
+			&lt;browsed&gt;Sample map showing the DEM10MHYDROCORRECTED layer.&lt;/browsed&gt;
+		&lt;/browse&gt;
+		&lt;native&gt;ArcInfo Version 8x Grid&lt;/native&gt;
+		&lt;crossref&gt;
+			&lt;citeinfo&gt;
+				&lt;title&gt;10-foot elevation contours,
+Metro Streams Network&lt;/title&gt;
+			&lt;/citeinfo&gt;
+		&lt;/crossref&gt;
+	&lt;/idinfo&gt;
+	&lt;dataqual&gt;
+		&lt;attracc&gt;
+			&lt;attraccr&gt;This dataset is a grid file with elevation as the only attribute.  The accuracy of this attribute is discussed under the topic of vertical position accuracy in this metadata file.&lt;/attraccr&gt;
+		&lt;/attracc&gt;
+		&lt;logic&gt;The data are topologically correct and verified&lt;/logic&gt;
+		&lt;complete&gt;The dataset is complete for the 89 USGS 7.5 minute quadrangles.&lt;/complete&gt;
+		&lt;posacc&gt;
+			&lt;horizpa&gt;
+				&lt;horizpar&gt;Positional accuracy for areas derived from 7.5 minute quads cannot be assumed to exceed National Map Accuracy Standards for 1:24,000 scale maps (+/- 40 feet).&lt;/horizpar&gt;
+			&lt;/horizpa&gt;
+			&lt;vertacc&gt;
+				&lt;vertaccr&gt;Vertical accuracy for areas derived from 7.5 minute quads cannot be assumed to exceed National Map Accuracy Standards for 1:24,000 scale maps with 10-foot elevation contours (+/- 5 feet).&lt;/vertaccr&gt;
+			&lt;/vertacc&gt;
+		&lt;/posacc&gt;
+		&lt;lineage&gt;
+			&lt;srcinfo&gt;
+				&lt;srcscale&gt;24000&lt;/srcscale&gt;
+			&lt;/srcinfo&gt;
+			&lt;procstep&gt;
+				&lt;procdesc&gt;TOPOGRID processing was performed on digital elevation contours to derive the hydrologically correct elevation model MCDEM.  DLG derived contours, depression points, lakes, and streams were used as input for the process.
+
+Datatype contour (UPLNDLN, item elev1)
+Tolerances used: 5, Horizontal error 1, Vertical error 1
+Margin 1
+Enforce on
+Sink TGSINK
+Lake TGLAKE
+Stream TGSTRM 
+
+Lake surface elevations were calculated as zonal minimums of surface elevations for each lake. The resulting output is in a floating point grid, with units of feet.  One DEM (USGS quad 3725) was generated with point elevation data from a level 1 DEM with 30-m cells. Contours and sink inputs were absent for this quad.
+
+The following layers were used in or resulted from the processing:
+TGSTRM, streams input for processing,
+TGSINK, depression elevation points used as input, no sink depth value defined,
+TGLAKE, lakes input,
+UPLNDLN, elevation contours
+LK_MASK, lake surface elevations
+MCDEM_CM, integer elevation values in centimeters
+MCDEM_FT, integer elevation values in feet
+Regional DEM MCDEM_FT was divided into 9 watershed DEMs:
+MCDEM1 - Mississippi River, St. Cloud Watershed (Clearwater and Elk River)
+MCDEM2 - Crow River Watershed
+MCDEM3 - South Fork Crow River Watershed
+MCDEM4 - Rum River Watershed
+MCDEM5 - Mississippi River, Twin Cities Watershed
+MCDEM6 - Lower Minnesota River Watershed
+MCDEM7 - Lower St. Croix River Watershed
+MCDEM8 - Rush-Vermillion River Watershed
+MCDEM9 - Cannon River Watershed&lt;/procdesc&gt;
+			&lt;/procstep&gt;
+		&lt;/lineage&gt;
+	&lt;/dataqual&gt;
+	&lt;spdoinfo&gt;
+		&lt;indspref&gt;None&lt;/indspref&gt;
+		&lt;direct&gt;Raster&lt;/direct&gt;
+		&lt;mgmg3obj&gt;Integer grid, 10 meter cell size&lt;/mgmg3obj&gt;
+		&lt;mgmg3til&gt;One layer for entire area.&lt;/mgmg3til&gt;
+	&lt;/spdoinfo&gt;
+	&lt;spref&gt;
+		&lt;horizsys&gt;
+			&lt;geograph&gt;
+				&lt;latres /&gt;
+				&lt;longres /&gt;
+				&lt;geogunit /&gt;&lt;/geograph&gt;
+			&lt;planar&gt;
+				&lt;mapproj&gt;
+					&lt;mapprojn /&gt;
+					&lt;mgmg4par /&gt;
+					&lt;otherprj /&gt;
+				&lt;/mapproj&gt;
+				&lt;gridsys&gt;
+					&lt;gridsysn&gt;UTM&lt;/gridsysn&gt;
+					&lt;utm&gt;
+						&lt;utmzone&gt;15&lt;/utmzone&gt;
+					&lt;/utm&gt;
+					&lt;spcs&gt;
+						&lt;spcszone /&gt;
+					&lt;/spcs&gt;
+					&lt;mgmg4coz /&gt;
+					&lt;mgmg4adj /&gt;
+				&lt;/gridsys&gt;
+				&lt;planci&gt;
+					&lt;coordrep&gt;
+						&lt;absres&gt;10&lt;/absres&gt;
+						&lt;ordres&gt;10&lt;/ordres&gt;
+					&lt;/coordrep&gt;
+					&lt;distbrep&gt;
+						&lt;distres&gt;10&lt;/distres&gt;
+					&lt;/distbrep&gt;
+					&lt;plandu&gt;Meters&lt;/plandu&gt;
+				&lt;/planci&gt;
+			&lt;/planar&gt;
+			&lt;geodetic&gt;
+				&lt;horizdn&gt;NAD83&lt;/horizdn&gt;
+				&lt;ellips&gt;GRS80&lt;/ellips&gt;
+			&lt;/geodetic&gt;
+		&lt;/horizsys&gt;
+		&lt;vertdef&gt;
+			&lt;altsys&gt;
+				&lt;altdatum&gt;NAVD88&lt;/altdatum&gt;
+				&lt;altunits&gt;Feet&lt;/altunits&gt;
+			&lt;/altsys&gt;
+			&lt;depthsys&gt;
+				&lt;depthdn&gt;Not applicable&lt;/depthdn&gt;
+				&lt;depthdu /&gt;
+			&lt;/depthsys&gt;
+		&lt;/vertdef&gt;
+	&lt;/spref&gt;
+	&lt;eainfo&gt;
+		&lt;overview&gt;
+			&lt;eaover&gt;Attributes retain the elevation of the grid cell as derivedfrom the topogrid 
+processing, described in Lineage.
+ 
+No value attribute table was created.&lt;/eaover&gt;
+			&lt;eadetcit&gt;None&lt;/eadetcit&gt;
+		&lt;/overview&gt;
+	&lt;/eainfo&gt;
+	&lt;distinfo&gt;
+		&lt;distrib&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Mark Kotz&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Database Administrator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1644&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;mark.kotz@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/distrib&gt;
+		&lt;resdesc&gt;DEM10MHYDROCORRECTED&lt;/resdesc&gt;
+		&lt;distliab&gt;NOTICE:  The Geographic Information System (GIS) Data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE GIS DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The GIS Data were developed by the Metropolitan Council for its own internal business purposes.  The Metropolitan Council does not represent or warrant that the GIS Data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the GIS Data or your reliance on the GIS Data.  You should consult the data documentation for this particular GIS Data to determine the limitations of the GIS Data and the precision with which the GIS Data may depict distance, direction, location, or other geographic features.  If you transmit or provide the GIS Data (or any portion of it) to another user, it is recommended that the GIS Data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;
+		&lt;stdorder&gt;
+			&lt;digform&gt;
+				&lt;digtinfo&gt;
+					&lt;formname&gt;zipped grid dataset&lt;/formname&gt;
+					&lt;formvern&gt;ArcInfo: 8x&lt;/formvern&gt;
+					&lt;transize&gt;45 MB for zip file.&lt;/transize&gt;
+				&lt;/digtinfo&gt;
+			&lt;/digform&gt;
+			&lt;ordering&gt;This dataset is distributed on the internet by clicking below after 'Online Linkage'.  Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- Grid dataset
+- metdata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.
+&lt;/ordering&gt;
+		&lt;/stdorder&gt;
+	&lt;/distinfo&gt;
+	&lt;metainfo&gt;
+		&lt;metd&gt;20011030&lt;/metd&gt;
+		&lt;metc&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Mark Kotz&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Database Administrator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651-602-1644&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651-602-1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;mark.kotz@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/metc&gt;
+		&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;
+		&lt;metstdv&gt;1.2&lt;/metstdv&gt;
+		&lt;metextns&gt;
+			&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;
+		&lt;/metextns&gt;
+	&lt;/metainfo&gt;
+	&lt;Esri&gt;&lt;ModDate&gt;20060113&lt;/ModDate&gt;&lt;ModTime&gt;13250600&lt;/ModTime&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20060113&lt;/mdDateSt&gt;&lt;/metadata&gt;</field></doc></add>

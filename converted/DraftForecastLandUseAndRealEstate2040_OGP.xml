@@ -1,0 +1,140 @@
+<add allowDups="false"><doc><field name="LayerId">DraftForecastLandUseAndRealEstate2040</field><field name="Name">DraftForecastLandUseAndRealEstate2040</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Undefined</field><field name="DataTypeSort">Undefined</field><field name="Availability">Online</field><field name="LayerDisplayName">2040 Draft Local Forecast Land Use and Real Estate Variables</field><field name="LayerDisplayNameSort">2040 Draft Local Forecast Land Use and Real Estate Variables</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">Metropolitan Council</field><field name="OriginatorSort">Metropolitan Council</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">This file includes Transportation Analysis Zone (TAZ) level land use and real estate inputs informing the local forecast model.  2040 Draft Local Forecasts  were released in February 2014.  The file shows the most recent land use policy inputs used in the forecast model. The file also shows inputs about real estate land consumption rates, single family detached lot sizes, estimated rents, and estimated construction costs.  
+
+</field><field name="MaxY">45.415</field><field name="MinY">44.471</field><field name="MinX">-94.012</field><field name="MaxX">-92.732</field><field name="ContentDate">2014-03-12T00:00:00Z</field><field name="Location">{"download": "ftp://gisftp.metc.state.mn.us/DraftForecastLandUseAndRealEstate2040.zip"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;&lt;eainfo&gt;&lt;overview&gt;&lt;eaover&gt;Attributes 
+ 
+TAZ:  TAZ number
+
+Max_Type: Indicated whether the values in the next two fields (i.e. Resident, Large_Lot) represent the maximum number of acres allowed in the Planned Land Use or the maximum housing units allowed in the Planned Land Use.  
+
+Max Acres = maximum acres
+Max HU = maximum housing units
+
+Resident: Number of acres or housing units (see Max_Type description) designated in 2030 Planned Land Use for residential uses, excluding mixed uses and large lot single family detached homes (&amp;gt;=1 acre).  Includes mixed land use acres that allow for residential uses. 
+
+Large_Lot: Number of acres or housing units (see Max_Type description) designated in 2030 Planned Land Use for large lot single family detached homes (&amp;gt;=1 acre) 
+
+NonRes: Number of acres designated in 2030 Planned Land Use for nonresidential uses (excluding institutional uses).  Includes mixed land use acres that allow for nonresidential uses. 
+
+Inst: Number of acres designated in 2030 Planned Land Use for institutional uses
+
+SFDS_LAND: Estimated average zonal land consumption (in acres) for small lot single family detached homes (&amp;lt;.25 acre).  Includes land consumed by local street network.
+
+SFDM_LAND: Estimated average zonal  land consumption (in acres) for medium lot single family detached homes (&amp;gt;=.25 acre and &amp;lt;1 acre).  Includes land consumed by local street network.
+
+SFDL_LAND: Estimated average zonal  land consumption (in acres) for large lot single family detached homes (&amp;gt;=1 acre). Includes land consumed by local street network.
+
+DUPLEX_LAND: Estimated average zonal lot size per unit (in acres) for small apartment buildings (i.e. between 2-4 units). Includes land consumed by local street network.
+
+TH_LAND: Estimated average zonal lot size per unit (in acres) for single family attached units (e.g. townhomes). Includes land consumed by local street network. 
+
+APT_LAND: Estimated average zonal lot size per unit (in acres) for large apartment buildings (i.e. &amp;gt;= 5 units). Includes land consumed by local street network. 
+
+CONDO_LAND: Estimated average zonal lot size per unit (in acres) for condominiums. Includes land consumed by local street network.
+
+MH_LAND: Estimated average zonal lot size (in acres) for manufactured homes. Includes land consumed by local street network.
+
+IND_LAND: Estimated average zonal lot size (in acres) per 1,000 built square feet of industrial units. Includes land consumed by local street network.
+
+OFC_LAND: Estimated average zonal lot size (in acres) per 1,000 built square feet of office units. Includes land consumed by local street network.
+
+COM_LAND: Estimated average zonal lot size (in acres) per 1,000 built square feet of commercial units. Includes land consumed by local street network.
+
+INS_LAND: Estimated average zonal lot size (in acres) per 1,000 built square feet of institutional units. Includes land consumed by local street network.
+
+SFDS_LOT: Estimated average zonal lot size (in acres) for small lot single family detached homes (&amp;lt;.25 acre) 
+
+SFDM_LOT: Estimated average zonal lot size (in acres) for medium lot single family detached homes (&amp;gt;=.25 acre and &amp;lt;1 acre) 
+
+SFDL_LOT: Estimated average zonal lot size (in acres) for small lot single family detached homes (&amp;gt;=1 acre) 
+
+SFDS_SQFT: Estimated average zonal built (or finished) square feet for small lot single family detached homes (&amp;lt;.25 acre) 
+
+SFDM_SQFT: Estimated average zonal built (or finished)  square feet for medium lot single family detached homes (&amp;gt;=.25 acre and &amp;lt;1 acre) 
+
+SFDL_SQFT: Estimated average zonal built (or finished) square feet for large lot single family detached homes (&amp;gt;=1 acre) 
+
+SFA_SQFT: Estimated average zonal built (or finished) square feet for single family attached units (e.g. townhomes) 
+
+DUP_SQFT: Estimated average zonal built (or finished) square feet for small apartment building units (i.e. between 2-4 units)
+ 
+APT_SQFT: Estimated average zonal built (or finished) square feet for large apartment building units (i.e. &amp;gt;= 5 units)  
+
+CONDO_SQFT: Estimated average zonal built (or finished) square feet for condominium units
+
+MH_SQFT: Estimated average zonal built (or finished) square feet for manufactured homes
+
+SFDS_RENT: Estimated average zonal monthly rent for small lot single family detached homes (&amp;lt;.25 acre) 
+
+SFDM_RENT: Estimated average zonal monthly rent for medium lot single family detached homes (&amp;gt;=.25 acre and &amp;lt;1 acre) 
+
+SFDL_RENT: Estimated average zonal monthly rent for large lot single family detached homes (&amp;gt;=1 acre) 
+
+SFA_Rent: Estimated average zonal monthly rent for single family attached units (e.g. townhomes) 
+
+DUP_RENT: Estimated average zonal monthly rent for small apartment buildings (i.e. between 2-4 units)
+
+APT_RENT: Estimated average zonal monthly rent for large apartment buildings (i.e. &amp;gt;= 5 units)  
+
+CONDO_RENT: Estimated average zonal monthly rent for condominiums
+
+MH_RENT: Estimated average zonal monthly rent for manufactured homes
+
+IND_RENT: Estimated average zonal monthly rent per 1,000 built square feet of industrial space
+
+OFC_RENT: Estimated average zonal montly rent per 1,000 built square feet of office space
+
+COM_RENT: Estimated average zonal monthly rent per 1,000 built square feet of commercial space
+
+INS_RENT: Estimated average zonal monthly rent per 1,000 built square feet of institutional space
+
+SFDS_COST: Estimated average zonal monthly construction cost for small lot single family detached homes (&amp;lt;.25 acre) 
+
+SFDM_COST: Estimated average zonal monthly construction cost for medium lot single family detached homes (&amp;gt;=.25 acre and &amp;lt;1 acre) 
+
+SFDL_COST: Estimated average zonal monthly construction cost for large lot single family detached homes (&amp;gt;=1 acre) 
+
+SFA_COST: Estimated average zonal monthly construction cost for for single family attached units (e.g. townhomes) 
+
+DUP_COST: Estimated average zonal monthly construction cost for small apartment buildings (i.e. between 2-4 units)
+
+APT_COST: Estimated average zonal monthly construction cost for large apartment buildings (i.e. &amp;gt;= 5 units)  
+
+CONDO_COST: Estimated average zonal monthly construction cost for condominiums
+
+MH_COST: Estimated average zonal monthly construction cost for manufactured home
+
+IND_COST: Estimated average zonal monthly construction cost per 1,000 built square feet of industrial space
+
+OFC_COST:  Estimated average zonal monthly construction cost per 1,000 built square feet of office space
+
+COM_COST: Estimated average zonal monthly construction cost per 1,000 built square feet of commercial space
+ 
+INS_COST: Estimated average zonal monthly construction cost per 1,000 built square feet of institutional space
+
+ 
+ 
+&lt;/eaover&gt;&lt;/overview&gt;&lt;/eainfo&gt;&lt;idinfo&gt;&lt;citation&gt;&lt;citeinfo&gt;&lt;origin&gt;Metropolitan Council&lt;/origin&gt;&lt;title&gt;2040 Draft Local Forecast Land Use and Real Estate Variables&lt;/title&gt;&lt;pubinfo&gt;&lt;publish&gt;Metropolitan Council&lt;/publish&gt;&lt;/pubinfo&gt;&lt;pubdate&gt;20140312&lt;/pubdate&gt;&lt;onlink&gt;ftp://gisftp.metc.state.mn.us/DraftForecastLandUseAndRealEstate2040.zip&lt;/onlink&gt;&lt;/citeinfo&gt;&lt;/citation&gt;&lt;descript&gt;&lt;abstract&gt;This file includes Transportation Analysis Zone (TAZ) level land use and real estate inputs informing the local forecast model.  2040 Draft Local Forecasts  were released in February 2014.  The file shows the most recent land use policy inputs used in the forecast model. The file also shows inputs about real estate land consumption rates, single family detached lot sizes, estimated rents, and estimated construction costs.  
+
+&lt;/abstract&gt;&lt;purpose&gt;To show information about land use and real estate characteristics used in the local forecast model.  &lt;/purpose&gt;&lt;supplinf&gt;Twin Cities 7 county metropolitan area.  This includes the counties of Anoka, Carver, Dakota, Hennepin, Ramsey, Scott and Washington.&lt;/supplinf&gt;&lt;/descript&gt;&lt;timeperd&gt;&lt;timeinfo&gt;&lt;sngdate&gt;&lt;caldate&gt;20140312&lt;/caldate&gt;&lt;/sngdate&gt;&lt;/timeinfo&gt;&lt;/timeperd&gt;&lt;status&gt;&lt;progress&gt;In work&lt;/progress&gt;&lt;update&gt;As Needed&lt;/update&gt;&lt;/status&gt;&lt;spdom&gt;&lt;bounding&gt;&lt;westbc&gt;-94.012&lt;/westbc&gt;&lt;eastbc&gt;-92.732&lt;/eastbc&gt;&lt;northbc&gt;45.415&lt;/northbc&gt;&lt;southbc&gt;44.471&lt;/southbc&gt;&lt;/bounding&gt;&lt;/spdom&gt;&lt;useconst&gt;By acceptance of this data, the user agrees to include a copy of this metadata record, including the liability disclaimer, whenever the user transmits or provides the GIS Data (or any portion of it) to another user.&lt;/useconst&gt;&lt;accconst&gt;The data in this file are preliminary; they are subject to change based on data revision and input from local communities.&lt;/accconst&gt;&lt;ptcontac&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Dennis Farmer, AICP&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Research Analyst&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651.602.1552&lt;/cntvoice&gt;&lt;cntemail&gt;dennis.farmer@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/ptcontac&gt;&lt;/idinfo&gt;&lt;distinfo&gt;&lt;distliab&gt;NOTICE:  The Geographic Information System (GIS) Data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE GIS DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The GIS Data were developed by the Metropolitan Council for its own internal business purposes.  The Metropolitan Council does not represent or warrant that the GIS Data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the GIS Data or your reliance on the GIS Data.  You should consult the data documentation for this particular GIS Data to determine the limitations of the GIS Data and the precision with which the GIS Data may depict distance, direction, location, or other geographic features.  If you transmit or provide the GIS Data (or any portion of it) to another user, it is recommended that the GIS Data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;&lt;stdorder&gt;&lt;ordering&gt;This dataset is distributed on the internet by clicking below after 'Online Linkage'.  Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- ArcView shape files
+- metadata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.
+
+Additionally, this dataset is available for direct use via one or more map services.  More information about what a map service is can be found at http://www.datafinder.org/services/.  The specific map service and layer name for this dataset can be found by clicking the "Services" link for this dataset in the DataFinder Catalog at http://www.datafinder.org/catalog/ .&lt;/ordering&gt;&lt;/stdorder&gt;&lt;distrib&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Jon Hoekenga&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;GIS Specialist&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651.602.1561&lt;/cntvoice&gt;&lt;cntemail&gt;jonathan.hoekenga@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/distrib&gt;&lt;/distinfo&gt;&lt;metainfo&gt;&lt;metd&gt;20120305&lt;/metd&gt;&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;&lt;metstdv&gt;1.2&lt;/metstdv&gt;&lt;metextns&gt;&lt;onlink&gt;http://www.mngeo.state.mn.us/committee/standards/mgmg/metadata.htm&lt;/onlink&gt;&lt;/metextns&gt;&lt;metc&gt;&lt;cntinfo&gt;&lt;cntperp&gt;&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;&lt;cntper&gt;Dennis Farmer, AICP&lt;/cntper&gt;&lt;/cntperp&gt;&lt;cntpos&gt;Research Analyst&lt;/cntpos&gt;&lt;cntaddr&gt;&lt;address&gt;390 Robert Street North&lt;/address&gt;&lt;city&gt;St. Paul&lt;/city&gt;&lt;state&gt;MN&lt;/state&gt;&lt;postal&gt;55101-1805&lt;/postal&gt;&lt;/cntaddr&gt;&lt;cntvoice&gt;651.602.1552&lt;/cntvoice&gt;&lt;cntemail&gt;dennis.farmer@metc.state.mn.us&lt;/cntemail&gt;&lt;/cntinfo&gt;&lt;/metc&gt;&lt;/metainfo&gt;&lt;dataqual&gt;&lt;lineage&gt;&lt;procstep&gt;&lt;procdesc&gt;The Transportation Analysis Zones (TAZ) are based on the 2000 TAZ system.
+
+The file details the land use and real estate characteristic data informing the local forecast model.  The information in this file originate from a number of different data sources. 
+ The calculation of planned land use acres and allowable housing types  is based on Regional Planned Land Use for the Twin Cities Metropolitan Area file, which is a compilation of individual land use plans from communities within the seven-county Twin Cities metropolitan area into a single regional data layer.   
+Estimated average residential zonal land consumption and average zonal lot sizes were estimated using a combination of 2010 Census ACS housing unit counts, 2010 Census counts of owner and rental households, and summarizations of both the 2010 Generalized Land Use and parcel data.
+
+Estimated nonresidential land use (per 1,000 square feet) are based on analysis of 2010 Generalized Land Use, Minnesota Department of Employment and Economic Development (DEED) Quarterly Census of Employment and Wages (QCEW) data, and Minnesota Commercial Association of Realtors (MnCAR) data.  
+
+Estimated average zonal residential finished square footage values used summarizations of parcel data, Minnesota Area Association of Realtors (MAAR data), and GVA Marquette data.  
+
+Estimated average zonal residential rents were calculated based on data from the 2010 ACS Census data and analysis of Minnesota Area Association of Realtors (MAAR data) sales data. 
+
+Estimated average zonal nonresidential rents were calculated using analysis of MnCAR data.
+
+Supply costs were estimated by combining estimations of land supply costs and building costs.  Land supply costs were estimated using geographically weighted averaging of county accessors data for vacant parcels.  Average zonal monthly residential construction costs were estimated using summarizations of US Department of Commerce building permit data (for single family attached and multifamily housing) and RSMeans Residential Cost data (for single family detached housing).   Average zonal monthly nonresidential construction costs were estimated using Metropolitan Council nonresidential building permit data.  For zones that were considered fully developed (defined as &amp;gt;85% of land developed),  estimated supply costs were raised 50% to account for additional costs associated with redevelopment. 
+
+&lt;/procdesc&gt;&lt;/procstep&gt;&lt;/lineage&gt;&lt;/dataqual&gt;&lt;spref&gt;&lt;horizsys&gt;&lt;planar&gt;&lt;gridsys&gt;&lt;gridsysn&gt;Universal Transverse Mercator&lt;/gridsysn&gt;&lt;utm&gt;&lt;utmzone&gt;15&lt;/utmzone&gt;&lt;/utm&gt;&lt;/gridsys&gt;&lt;planci&gt;&lt;plandu&gt;meters&lt;/plandu&gt;&lt;/planci&gt;&lt;/planar&gt;&lt;geodetic&gt;&lt;horizdn&gt;NAD83&lt;/horizdn&gt;&lt;ellips&gt;GRS80&lt;/ellips&gt;&lt;/geodetic&gt;&lt;/horizsys&gt;&lt;/spref&gt;&lt;/metadata&gt;</field></doc></add>

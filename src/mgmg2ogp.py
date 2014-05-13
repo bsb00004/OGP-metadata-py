@@ -10,6 +10,8 @@ import random
 from logger import Logger
 from keyword_parse import keywordParse
 from datatype_parse import dataTypeParseMGMG
+import ast
+
 try:
     from lxml import etree as et
 except ImportError:
@@ -67,9 +69,9 @@ def MGMG(workspace,output_path,error_tolerance):
     
     #List of layers and their respective URLs from Datafinder.org
     
-    #df_lyrs_file = open("G:\\GoogleDrive\\Google Drive\\GitHub\\OGP-metadata-py\\tests\\datafinder_layers.json",'r')
-    #df_lyrs = json.loads(df_lyrs_file.read())
-    df_lyrs = {}
+    df_lyrs_file = open(os.path.abspath(os.path.relpath("tests/datafinder_layers.json",os.getcwd())),'r')
+    df_lyrs = json.loads(df_lyrs_file.read())
+
 
    
     #start the clock! 
@@ -89,21 +91,19 @@ def MGMG(workspace,output_path,error_tolerance):
         #print 'layerid is ', LAYERID
         
         try:
-            if df_lyrs.has_key(LAYERID):
-                NAME = unicode(df_lyrs[LAYERID]["name"])
-            else:
                 NAME = LAYERID
         except AttributeError as e:
             print "Name field doesn't exist! Setting to UNKNOWN for now"
             NAME = "UNKNOWN"
             error_counter += 1
-        
-        try:
-            if df_lyrs.has_key(LAYERID):
-                WORKSPACENAME = unicode(df_lyrs[LAYERID]["WorkspaceName"])
-        except AttributeError as e:
-            print 'Workspace name error: ',e
-            error_counter += 1
+
+        #Workspacename does not make sense here, unless we want to document the "Folder" of ArcGIS Services.
+        # try:
+        #     if df_lyrs.has_key(LAYERID):
+        #         WORKSPACENAME = unicode(df_lyrs[LAYERID]["WorkspaceName"])
+        # except AttributeError as e:
+        #     print 'Workspace name error: ',e
+        #     error_counter += 1
 
         DATATYPE = dataTypeParseMGMG(root)
         if DATATYPE == "Undefined":
@@ -115,8 +115,8 @@ def MGMG(workspace,output_path,error_tolerance):
 
         COLLECTIONID = "initial collection"
         
-        INSTITUTION = "University of Minnesota"
-        INSTITUTIONSORT = "University of Minnesota"
+        INSTITUTION = "Minnesota"
+        INSTITUTIONSORT = "Minnesota"
         
         #to avoid authentication complications, for now we'll just set access field to public
         ACCESS= "Public"
@@ -212,14 +212,7 @@ def MGMG(workspace,output_path,error_tolerance):
         except AttributeError as e:
             print "North Bounding Coordinate not found!"
             error_counter += 1
-           
-                
-
-
-        
-
-        
-        
+                  
         try:
             if root.find("idinfo/timeperd/timeinfo/sngdate/caldate") is not None:
                 dateText = root.find("idinfo/timeperd/timeinfo/sngdate/caldate").text
@@ -275,21 +268,24 @@ def MGMG(workspace,output_path,error_tolerance):
     ##        LOCATION = '{"ArcGIS93Rest" : "' + REST_URL + '", "tilecache" : "None", "download" : "' + DOWNLOAD_URL + '", "wfs" : "None"}'
         try:
             if df_lyrs.has_key(LAYERID):
-                ARCGISREST = df_lyrs[LAYERID]["ArcGISRest"]             
-                SERVERTYPE = df_lyrs[LAYERID]["ServerType"]
+                dictCurrentLayer = ast.literal_eval(df_lyrs[LAYERID])
+                ARCGISREST = dictCurrentLayer["ArcGISRest"]
+                NAME = dictCurrentLayer["layerId"]
                 #print 'Found',LAYERID,' so removing it from df_lyrs'
-                df_lyrs.pop(LAYERID) 
+                df_lyrs.pop(LAYERID)
+
+
                 if root.find("idinfo/citation/citeinfo/onlink") is not None:
                     DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
                     LOCATION = json.dumps({
-                        'ArcGISRest': ARCGISREST,
+                        #It is tricky to add layerId here since we might complicate the location field to contain json-in-json.
+                        #Currently, we neglect layerId but use layerName, which is LAYERID, a.k.a NAME field in OGP metadata format to access layer.
+                        'ArcGISRest': ARCGISREST+"/export",
                         'download' : DOWNLOAD_URL,
-                        'ServerType': SERVERTYPE
                         })
                 else:
                     LOCATION = json.dumps({
                         'ArcGISRest': ARCGISREST,
-                        'ServerType': SERVERTYPE
                         })
             else:
                 if root.find("idinfo/citation/citeinfo/onlink") is not None:

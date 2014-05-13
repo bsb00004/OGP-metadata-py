@@ -1,0 +1,281 @@
+<add allowDups="false"><doc><field name="LayerId">Census2000TigerCombinedTracts1990_2000</field><field name="Name">1</field><field name="CollectionId">initial collection</field><field name="Institution">Minnesota</field><field name="InstitutionSort">Minnesota</field><field name="Access">Public</field><field name="DataType">Polygon</field><field name="DataTypeSort">Polygon</field><field name="Availability">Online</field><field name="LayerDisplayName">1990 to 2000 Census Tract Correspondence and Combined Tracts</field><field name="LayerDisplayNameSort">1990 to 2000 Census Tract Correspondence and Combined Tracts</field><field name="Publisher">Metropolitan Council</field><field name="PublisherSort">Metropolitan Council</field><field name="Originator">Metropolitan Council</field><field name="OriginatorSort">Metropolitan Council</field><field name="ThemeKeywords">None</field><field name="PlaceKeywords">None</field><field name="Abstract">This dataset consists of a correspondence table and shape file of the combined 1990 and 2000 Census tracts.
+
+Note:  Census tracts from 1990 and 2000 do not match in all areas.  This dataset is an attempt to match them.  Some combining and splitting of tracts was necessary.  See the Lineage in Section 2 of the metadata for more information.</field><field name="MaxY">45.415</field><field name="MinY">44.471</field><field name="MinX">-94.012</field><field name="MaxX">-92.732</field><field name="ContentDate">2000-01-01T00:00:00Z</field><field name="Location">{"download": "ftp://gisftp.metc.state.mn.us/Census2000TigerCombinedTracts1990_2000.zip", "ArcGISRest": "http://gis2.metc.state.mn.us/ArcGIS/rest/services/MetroGIS/Demographics/MapServer/export"}</field><field name="WorkspaceName" /><field name="FgdcText">&lt;?xml version="1.0"?&gt;&lt;metadata&gt;
+	&lt;idinfo&gt;
+		&lt;citation&gt;
+			&lt;citeinfo&gt;
+				&lt;origin&gt;Metropolitan Council&lt;/origin&gt;
+				&lt;pubdate&gt;Unpublished material&lt;/pubdate&gt;
+				&lt;title&gt;1990 to 2000 Census Tract Correspondence and Combined Tracts&lt;/title&gt;
+				&lt;mgmg1cid&gt;N/A&lt;/mgmg1cid&gt;
+				&lt;pubinfo&gt;
+					&lt;publish&gt;Metropolitan Council&lt;/publish&gt;
+				&lt;/pubinfo&gt;
+				&lt;onlink&gt;ftp://gisftp.metc.state.mn.us/Census2000TigerCombinedTracts1990_2000.zip&lt;/onlink&gt;
+			&lt;/citeinfo&gt;
+		&lt;/citation&gt;
+		&lt;descript&gt;
+			&lt;abstract&gt;This dataset consists of a correspondence table and shape file of the combined 1990 and 2000 Census tracts.
+
+Note:  Census tracts from 1990 and 2000 do not match in all areas.  This dataset is an attempt to match them.  Some combining and splitting of tracts was necessary.  See the Lineage in Section 2 of the metadata for more information.&lt;/abstract&gt;
+			&lt;purpose&gt;The correspondence table and subsequent shape file allow for the comparison of 1990 and 2000 Census tract data by designating 1 new 'combined' tract number that accounts for each 1990 and 2000 Census tract.&lt;/purpose&gt;
+			&lt;supplinf&gt;Twin Cities 7 County Metropolitan Area.  This includes the counties of Anoka, Carver, Dakota, Hennepin, Ramsey, Scott and Washington in Minnesota.&lt;/supplinf&gt;
+		&lt;/descript&gt;
+		&lt;timeperd&gt;
+			&lt;timeinfo&gt;
+				&lt;sngdate&gt;
+					&lt;caldate&gt;2000&lt;/caldate&gt;
+				&lt;/sngdate&gt;
+			&lt;/timeinfo&gt;
+			&lt;current&gt;The 2000 Census&lt;/current&gt;
+		&lt;/timeperd&gt;
+		&lt;status&gt;
+			&lt;progress&gt;Complete&lt;/progress&gt;
+			&lt;update&gt;None planned&lt;/update&gt;
+		&lt;/status&gt;
+		&lt;spdom&gt;
+			&lt;bounding&gt;
+				&lt;westbc&gt;-94.012&lt;/westbc&gt;
+				&lt;eastbc&gt;-92.732&lt;/eastbc&gt;
+				&lt;northbc&gt;45.415&lt;/northbc&gt;
+				&lt;southbc&gt;44.471&lt;/southbc&gt;
+			&lt;/bounding&gt;
+		&lt;/spdom&gt;
+		&lt;keywords&gt;
+			&lt;theme&gt;
+				&lt;themekt&gt;None&lt;/themekt&gt;
+				&lt;themekey&gt;census, demographics, census tracts, tract correspondence&lt;/themekey&gt;
+			&lt;/theme&gt;
+			&lt;place&gt;
+				&lt;placekey&gt;Twin Cities, Anoka County, Carver County, Dakota County, Hennepin County, Ramsey County, Scott County, Washington County&lt;/placekey&gt;
+			&lt;/place&gt;
+		&lt;/keywords&gt;
+		&lt;accconst&gt;None&lt;/accconst&gt;
+		&lt;useconst&gt;None&lt;/useconst&gt;
+		&lt;ptcontac&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Todd Graham&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;Research&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1322&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;todd.graham@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/ptcontac&gt;
+		&lt;browse&gt;
+			&lt;browsen&gt;http://www.datafinder.org/metadata/bg/Census2000TigerCombinedTracts1990_2000.jpg&lt;/browsen&gt;
+			&lt;browsed&gt;Sample map showing the combined tracts shape file.&lt;/browsed&gt;
+		&lt;/browse&gt;
+		&lt;native&gt;ArcGIS 8&lt;/native&gt;
+		&lt;crossref&gt;
+			&lt;citeinfo&gt;
+				&lt;title&gt;1990 Census Tracts, 2000 Census Tracts, TIGER&lt;/title&gt;
+			&lt;/citeinfo&gt;
+		&lt;/crossref&gt;
+	&lt;/idinfo&gt;
+	&lt;dataqual&gt;
+		&lt;attracc&gt;
+			&lt;attraccr&gt;Unknown&lt;/attraccr&gt;
+		&lt;/attracc&gt;
+		&lt;logic&gt;The dataset is topologically 'clean'.&lt;/logic&gt;
+		&lt;complete&gt;Entire seven county geographic area is covered.&lt;/complete&gt;
+		&lt;posacc&gt;
+			&lt;horizpa&gt;
+				&lt;horizpar&gt;The positional accuracy of the dataset has not been tested under the National Standards for Spatial Data Accuracy.&lt;/horizpar&gt;
+			&lt;/horizpa&gt;
+			&lt;vertacc&gt;
+				&lt;vertaccr /&gt;
+			&lt;/vertacc&gt;
+		&lt;/posacc&gt;
+		&lt;lineage&gt;
+			&lt;srcinfo&gt;
+				&lt;srcscale /&gt;
+			&lt;/srcinfo&gt;
+			&lt;procstep&gt;
+				&lt;procdesc&gt;1990 and 2000 Census tracts were plotted on a map.  In order to compare 1990 with 2000 data, the geographic areas need to be the same.  A new 'combined' tract number was created using that map. For tracts that did not change between 1990 and 2000, no change was made in their tract number.  Where boundaries differed, one of the following prefixes was added,  (6) 2 or more 1990 tracts were merged in to 1 2000 tract; (7) only minor differences between 1990 and 2000, no changes made except to note difference; (8) 2 or more 1990 tracts were combined with 2 or more 2000 tracts; or (9) a 1990 tract was split in to 2 or more 2000 tracts.
+
+Relating the table to the 2000 Census Tract coverage (TIGER/Line file based) on tract00, a dissolve on the combined item created the combined coverage.  In AV 3.2, the coverage was converted to a shape file.&lt;/procdesc&gt;
+			&lt;/procstep&gt;
+		&lt;/lineage&gt;
+	&lt;/dataqual&gt;
+	&lt;spdoinfo&gt;
+		&lt;indspref&gt;Tract number&lt;/indspref&gt;
+		&lt;direct&gt;Vector&lt;/direct&gt;
+		&lt;mgmg3obj&gt;Polygon shapes&lt;/mgmg3obj&gt;
+		&lt;mgmg3til&gt;One layer for entire seven county region.&lt;/mgmg3til&gt;
+	&lt;/spdoinfo&gt;
+	&lt;spref&gt;
+		&lt;horizsys&gt;
+			&lt;geograph&gt;
+				&lt;latres /&gt;
+				&lt;longres /&gt;
+				&lt;geogunit /&gt;&lt;/geograph&gt;
+			&lt;planar&gt;
+				&lt;mapproj&gt;
+					&lt;mapprojn /&gt;
+					&lt;mgmg4par /&gt;
+					&lt;otherprj /&gt;
+				&lt;/mapproj&gt;
+				&lt;gridsys&gt;
+					&lt;gridsysn&gt;UTM&lt;/gridsysn&gt;
+					&lt;utm&gt;
+						&lt;utmzone&gt;15&lt;/utmzone&gt;
+					&lt;/utm&gt;
+					&lt;spcs&gt;
+						&lt;spcszone /&gt;
+					&lt;/spcs&gt;
+					&lt;mgmg4coz /&gt;
+					&lt;mgmg4adj /&gt;
+				&lt;/gridsys&gt;
+				&lt;planci&gt;
+					&lt;coordrep&gt;
+						&lt;absres /&gt;
+						&lt;ordres /&gt;
+					&lt;/coordrep&gt;
+					&lt;distbrep&gt;
+						&lt;distres /&gt;
+					&lt;/distbrep&gt;
+					&lt;plandu&gt;Meters&lt;/plandu&gt;
+				&lt;/planci&gt;
+			&lt;/planar&gt;
+			&lt;geodetic&gt;
+				&lt;horizdn&gt;NAD83&lt;/horizdn&gt;
+				&lt;ellips&gt;GRS80&lt;/ellips&gt;
+			&lt;/geodetic&gt;
+		&lt;/horizsys&gt;
+		&lt;vertdef&gt;
+			&lt;altsys&gt;
+				&lt;altdatum /&gt;
+				&lt;altunits /&gt;
+			&lt;/altsys&gt;
+			&lt;depthsys&gt;
+				&lt;depthdn /&gt;
+				&lt;depthdu /&gt;
+			&lt;/depthsys&gt;
+		&lt;/vertdef&gt;
+	&lt;/spref&gt;
+	&lt;eainfo&gt;
+		&lt;overview&gt;
+			&lt;eaover&gt;Attributes for COMBINED_TRACTS_1990-2000.SHP polygon shape file
+
+AREA:       The area of the polygon in square meters
+
+
+
+COMBINED:   2000 Combined Tract
+
+
+Attributes for TRACT_CORRESPONDANCE_1990-2000.DBF Table
+
+STATE:      2 digit FIPS state code
+
+CO:         3 digit FIPS county code
+
+TRACT_1990: 6 digit 1990 tract code
+
+TRACT_2000: 6 digit 2000 tract code
+
+TRACT90:    11 digit FIPS state and county codes, and 1990 tract code
+
+TRACT00:    11 digit FIPS state and county codes, and 2000 tract code
+
+COMBINED:   7 digit combined tract code
+
+PREFIX:     1 digit prefix used for COMBINED code to identify differences 
+            between 1990 and 2000 tract codes
+
+NO:         unique number scheme identifying all the 1990 and 2000 tracts
+
+
+Table field definitions in ArcInfo terminology
+
+   10 ITEMS: STARTING IN POSITION    1
+  COL  ITEM NAME         WDTH OPUT TYP N.DEC  ALTERNATE NAME
+    1  STATE               2    2  I    -
+    3  CO                  3    3  C    -
+    6  TRACT_1990          6    6  I    -
+   12  TRACT_2000          6    6  I    -
+   18  TRACT90            11   11  i    -
+   29  TRACT00            11   11  I    -
+   40  COMBINED            7    7  C    -
+   47  PREFIX              1    1  I    -
+   48  DESCRIPTION        10   10  C    -
+   58  NO                  3    3  I    -&lt;/eaover&gt;
+			&lt;eadetcit&gt;None&lt;/eadetcit&gt;
+		&lt;/overview&gt;
+	&lt;/eainfo&gt;
+	&lt;distinfo&gt;
+		&lt;distrib&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Mark Kotz&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Database Administrator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1644&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;mark.kotz@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/distrib&gt;
+		&lt;resdesc&gt;Census2000TigerCombinedTracts1990_2000&lt;/resdesc&gt;
+		&lt;distliab&gt;NOTICE:  The Geographic Information System (GIS) Data to which this notice is attached are made available pursuant to the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13).  THE GIS DATA ARE PROVIDED TO YOU AS IS AND WITHOUT ANY WARRANTY AS TO THEIR PERFORMANCE, MERCHANTABILITY, OR FITNESS FOR ANY PARTICULAR PURPOSE.  The GIS Data were developed by the Metropolitan Council for its own internal business purposes.  The Metropolitan Council does not represent or warrant that the GIS Data or the data documentation are error-free, complete, current, or accurate.  You are responsible for any consequences resulting from your use of the GIS Data or your reliance on the GIS Data.  You should consult the data documentation for this particular GIS Data to determine the limitations of the GIS Data and the precision with which the GIS Data may depict distance, direction, location, or other geographic features.  If you transmit or provide the GIS Data (or any portion of it) to another user, it is recommended that the GIS Data include a copy of this disclaimer and this metadata.&lt;/distliab&gt;
+		&lt;stdorder&gt;
+			&lt;digform&gt;
+				&lt;digtinfo&gt;
+					&lt;formname&gt;Shape file&lt;/formname&gt;
+					&lt;formvern&gt;ArcGIS 8x&lt;/formvern&gt;
+					&lt;transize /&gt;
+				&lt;/digtinfo&gt;
+			&lt;/digform&gt;
+			&lt;ordering&gt;This dataset is distributed on the internet by clicking below after 'Online Linkage'.  Doing so will tell your browser to download a 'ZIP' file which will contain the following:
+
+- ArcView shape file
+- dBase table (.dbf)
+- metadata for the dataset (.htm)
+- NOTICE.RTF, an important notice about this dataset that can be read by any word processing software.&lt;/ordering&gt;
+		&lt;/stdorder&gt;
+	&lt;/distinfo&gt;
+	&lt;metainfo&gt;
+		&lt;metd&gt;20030130&lt;/metd&gt;
+		&lt;metc&gt;
+			&lt;cntinfo&gt;
+				&lt;cntperp&gt;
+					&lt;cntper&gt;Tanya Mayer&lt;/cntper&gt;
+					&lt;cntorg&gt;Metropolitan Council&lt;/cntorg&gt;
+				&lt;/cntperp&gt;
+				&lt;cntpos&gt;GIS Coordinator&lt;/cntpos&gt;
+				&lt;cntaddr&gt;
+					&lt;addrtype&gt; mailing and physical address &lt;/addrtype&gt;
+					&lt;address&gt;390 Robert Street North&lt;/address&gt;
+					&lt;city&gt;St. Paul&lt;/city&gt;
+					&lt;state&gt;Minnesota&lt;/state&gt;
+					&lt;postal&gt;55101-1805&lt;/postal&gt;
+				&lt;/cntaddr&gt;
+				&lt;cntvoice&gt;651.602.1604&lt;/cntvoice&gt;
+				&lt;cntfax&gt;651.602.1674&lt;/cntfax&gt;
+				&lt;cntemail&gt;tanya.mayer@metc.state.mn.us&lt;/cntemail&gt;
+			&lt;/cntinfo&gt;
+		&lt;/metc&gt;
+		&lt;metstdn&gt;Minnesota Geographic Metadata Guidelines&lt;/metstdn&gt;
+		&lt;metstdv&gt;1.2&lt;/metstdv&gt;
+		&lt;metextns&gt;
+			&lt;onlink&gt;http://www.gis.state.mn.us/stds/metadata.htm&lt;/onlink&gt;
+		&lt;/metextns&gt;
+	&lt;/metainfo&gt;
+	&lt;Esri&gt;&lt;ModDate&gt;20090226&lt;/ModDate&gt;&lt;ModTime&gt;10103500&lt;/ModTime&gt;&lt;/Esri&gt;&lt;mdDateSt Sync="TRUE"&gt;20090226&lt;/mdDateSt&gt;&lt;/metadata&gt;</field></doc></add>

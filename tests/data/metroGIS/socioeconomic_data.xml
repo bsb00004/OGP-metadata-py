@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>MetroGIS Socioeconomic Needs Workgroup and the University's Minnesota Population Center</origin>
+				<pubdate></pubdate>
+				<title>Sources of Socioeconomic Data</title>
+				<mgmg1cid>N/A</mgmg1cid>
+				<pubinfo>
+					<publish>various</publish>
+				</pubinfo>
+				<onlink></onlink>
+			</citeinfo>
+		</citation>
+		<descript>
+			<abstract>Socioeconomic data is collected and delivered by many different organizations.  This metadata record is a generic reference for a set of data providers who help meet the socioeconomic information needs of the MetroGIS Community.  Those providers were identified in 2003 by a workgroup of MetroGIS looking for data that was freely available to meet those needs for summary data about small areas like cities, counties, or census tracts. The University's Minnesota Population Center has accepted the role of Regional Custodian for this page.  Significant upgrades were made in 2009.
+
+Socioeconomic information needs were identified in the following areas: demographic, employment location, housing, transportation, service facility location, K-12 education, building permits, taxes, and crime.  The workgroup looked to identify sources that would provide data to meet these needs in the seven-county Twin Cities metropolitan area of Minneapolis-St. Paul.  To meet those needs, the goal was to identify data sources with the following specifications: sub-city resolution, annual updates, and 10-year or longer times series.  Not all of the identified data sources meet these specifications.
+
+35 different data sources have been identified.  Documentation levels vary as do access levels.  At the best level, for example, the US Census of Population and Housing, data are fully documented and files can be downloaded from the Internet.  In some cases, data can be viewed online, but machine readable data must be ordered from the supplier - sometimes for a small fee.  Commercial data sources are also included.
+
+For more information, go to http://www.datafinder.org/mg/socioeconomic_resources/index.asp .</abstract>
+			<purpose>To help GIS users find socioeconomic data in the Twin Cities Metropolitan Area</purpose>
+			<supplinf></supplinf>
+		</descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate></caldate>
+				</sngdate>
+			</timeinfo>
+			<current>Various time periods</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>As needed</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc></westbc>
+				<eastbc></eastbc>
+				<northbc></northbc>
+				<southbc></southbc>
+			</bounding>
+		</spdom>
+		<keywords>
+			<theme>
+				<themekt>None</themekt>
+				<themekey>socioeconomic characteristics, census, demographics, housing, age, poverty, race, ethnicity, gender, education, income, employment, business, crime, travel, migration, foreclosure, taxes</themekey>
+			</theme>
+			<place>
+				<placekey>Twin Cities, Anoka County, Carver County, Dakota County, Hennepin County, Ramsey County, Scott County, Washington County</placekey>
+			</place>
+		</keywords>
+		<accconst>See individual data sources</accconst>
+		<useconst>See individual data sources</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntperp>
+					<cntper>See individual data sources</cntper>
+					<cntorg></cntorg>
+				</cntperp>
+				<cntpos></cntpos>
+				<cntaddr>
+					<addrtype> mailing and physical address </addrtype>
+					<address></address>
+					<city></city>
+					<state>Minnesota</state>
+					<postal></postal>
+				</cntaddr>
+				<cntvoice></cntvoice>
+				<cntfax></cntfax>
+				<cntemail></cntemail>
+			</cntinfo>
+		</ptcontac>
+		<browse>
+			<browsen>http://www.datafinder.org/metadata/SORRY_NO_SAMPLE_GRAPHIC_YET.htm</browsen>
+			<browsed>No browse graphic is available.</browsed>
+		</browse>
+		<native></native>
+		<crossref>
+			<citeinfo>
+				<title></title>
+			</citeinfo>
+		</crossref>
+	</idinfo>
+	<dataqual>
+		<attracc>
+			<attraccr></attraccr>
+		</attracc>
+		<logic></logic>
+		<complete></complete>
+		<posacc>
+			<horizpa>
+				<horizpar></horizpar>
+			</horizpa>
+			<vertacc>
+				<vertaccr></vertaccr>
+			</vertacc>
+		</posacc>
+		<lineage>
+			<srcinfo>
+				<srcscale></srcscale>
+			</srcinfo>
+			<procstep>
+				<procdesc></procdesc>
+			</procstep>
+			<procstep><procdesc></procdesc><srcused Sync="TRUE">L:\Metadata\Layers\demog_profile_1_general_tract</srcused><date Sync="TRUE">20030219</date><time Sync="TRUE">14185800</time></procstep><procstep><procdesc></procdesc><srcused Sync="TRUE">J:\gu_tanya\projects\census\data_2000\tract_data\demog_profile_1_general_tract</srcused><date Sync="TRUE">20030224</date><time Sync="TRUE">11022600</time></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<indspref></indspref>
+		<direct></direct>
+		<mgmg3obj></mgmg3obj>
+		<mgmg3til></mgmg3til>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<geograph>
+				<latres></latres>
+				<longres></longres>
+			</geograph>
+			<planar>
+				<mapproj>
+					<mapprojn></mapprojn>
+					<mgmg4par></mgmg4par>
+					<otherprj></otherprj>
+				</mapproj>
+				<gridsys>
+					<gridsysn></gridsysn>
+					<utm>
+						<utmzone></utmzone>
+					</utm>
+					<spcs>
+						<spcszone></spcszone>
+					</spcs>
+					<mgmg4coz></mgmg4coz>
+					<mgmg4adj></mgmg4adj>
+				</gridsys>
+				<planci>
+					<coordrep>
+						<absres></absres>
+						<ordres></ordres>
+					</coordrep>
+					<distbrep>
+						<distres></distres>
+					</distbrep>
+					<plandu></plandu>
+				</planci>
+			</planar>
+			<geodetic>
+				<horizdn></horizdn>
+				<ellips></ellips>
+			</geodetic>
+		</horizsys>
+		<vertdef>
+			<altsys>
+				<altdatum></altdatum>
+				<altunits></altunits>
+			</altsys>
+			<depthsys>
+				<depthdn></depthdn>
+				<depthdu></depthdu>
+			</depthsys>
+		</vertdef>
+	</spref>
+	<eainfo>
+		<overview>
+			<eaover></eaover>
+			<eadetcit></eadetcit>
+		</overview>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntperp>
+					<cntper></cntper>
+					<cntorg></cntorg>
+				</cntperp>
+				<cntpos></cntpos>
+				<cntaddr>
+					<addrtype> mailing and physical address </addrtype>
+					<address></address>
+					<city></city>
+					<state></state>
+					<postal></postal>
+				</cntaddr>
+				<cntvoice></cntvoice>
+				<cntfax></cntfax>
+				<cntemail></cntemail>
+			</cntinfo>
+		</distrib>
+		<resdesc></resdesc>
+		<distliab></distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname></formname>
+					<formvern></formvern>
+					<transize></transize>
+				</digtinfo>
+			</digform>
+			<ordering></ordering>
+		</stdorder>
+	</distinfo>
+	<metainfo>
+		<metd>20090721</metd>
+		<metc>
+			<cntinfo>
+				<cntperp>
+					<cntper>Tanya Mayer</cntper>
+					<cntorg>Metropolitan Council</cntorg>
+				</cntperp>
+				<cntpos>GIS Coordinator</cntpos>
+				<cntaddr>
+					<addrtype> mailing and physical address </addrtype>
+					<address>390 Robert Street North</address>
+					<city>St. Paul</city>
+					<state>Minnesota</state>
+					<postal>55101-1805</postal>
+				</cntaddr>
+				<cntvoice>651.602.1604</cntvoice>
+				<cntfax>651.602.1674</cntfax>
+				<cntemail>tanya.mayer@metc.state.mn.us</cntemail>
+			</cntinfo>
+		</metc>
+		<metstdn>Minnesota Geographic Metadata Guidelines</metstdn>
+		<metstdv>1.2</metstdv>
+		<metextns>
+			<onlink>http://www.gis.state.mn.us/stds/metadata.htm</onlink>
+		</metextns>
+	</metainfo>
+	<Esri><ModDate>20111207</ModDate><ModTime>10404300</ModTime><CreaDate>20030224</CreaDate><CreaTime>11022600</CreaTime><SyncOnce>TRUE</SyncOnce><MetaID>{2A9A950A-4819-11D7-B06E-0002A51B7211}</MetaID></Esri><mdDateSt Sync="TRUE">20111207</mdDateSt><distInfo><distributor><distorTran><onLineSrc><linkage Sync="TRUE">file://\\metc-gisserv.metc.state.mn.us\gu\gu_tanya\projects\census\data_2000\tract_data\Data_for_library\demog_profile_1_general_tract</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc></distorTran></distributor></distInfo></metadata>
