@@ -42,12 +42,7 @@ def FGDC(workspace, output_path, error_tolerance):
     sys.stdout = Logger(OUTPUT_LOCATION,LOG_NAME)
 
     files = glob.glob(ws+'*[!aux].xml')
-   
-##    fields = ['LayerId', 'Name', 'CollectionId', 'Institution', 'InstitutionSort',
-##              'Access', 'DataType', 'DataTypeSort', 'Availability', 'LayerDisplayName',
-##              'LayerDisplayNameSort', 'Publisher', 'PublisherSort', 'Originator',
-##              'OriginatorSort', 'ThemeKeywords', 'PlaceKeywords', 'Abstract', 'MaxY',
-##              'MinY', 'MinX', 'MaxX', 'ContentDate','Location']
+
     fields = ['LayerId', 'Name', 'CollectionId', 'Institution', 'InstitutionSort',
           'Access', 'DataType', 'DataTypeSort', 'Availability', 'LayerDisplayName',
           'LayerDisplayNameSort', 'Publisher', 'PublisherSort', 'Originator',

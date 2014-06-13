@@ -2,7 +2,8 @@
 import sys
 import argparse
 import os, os.path
-from src import mgmg2ogp,fgdc2ogp
+import glob
+from src import mgmg2ogp,fgdc2ogp,logger
 
 def main():
 
@@ -40,13 +41,34 @@ def main():
         print "Workspace %s does not seem to exist. Are you sure you entered it correctly?" % (ws)
 
     elif os.path.exists(ws) == True:
+        files = glob.glob(os.path.join(self.ws,'*[!aux].xml'))
 
+        d = datetime.today()
+        log_name = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
+        sys.stdout = logger.Logger(self.output_path, log_name)
+
+        for i in files:
+            tree = et.ElementTree()
+            root = tree.parse(i)
+
+            if md.lower() == "mgmg":
+                doc = mgmg2ogp.MGMGDocument(root)
+
+            elif md.lower() == "fgdc":
+                doc = mgmg2ogp.FGDCDocument(root)
+
+            elif md.lower() == "arcgis":
+                doc = mgmg2ogp.ArcGISDocument(root)
+
+
+        """
         if md.lower() == "mgmg":
             mgmg2ogp.MGMG(ws,output, et)   
         elif md.lower() == "fgdc":
             fgdc2ogp.FGDC(ws,output, et)
         else:
             print "Unsupported metadata type entered. Currently supported values are FGDC or MGMG"
+        """
 
 if __name__ == "__main__":
     sys.exit(main())
