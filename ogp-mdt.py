@@ -31,10 +31,14 @@ def main():
         et = 5000    
 
     if os.path.exists(output) == False:
-        os.mkdir(output)
- 
+        try:
+            os.mkdir(output)
+        except OSError:
+            print "There's a problem with the output path: %s. Are you sure you entered it correctly?" % (output)
+
     if os.path.exists(ws) == False:
-        print "Workspace does not seem to exist. Are you sure you entered it correctly?"
+        print "Workspace %s does not seem to exist. Are you sure you entered it correctly?" % (ws)
+
     elif os.path.exists(ws) == True:
 
         if md.lower() == "mgmg":
