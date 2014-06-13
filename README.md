@@ -2,7 +2,7 @@
 A simple Python (2.6+) script for creating OpenGeoPortal ingestible metadata from data with existing FGDC metadata, Minnesota Geospatial Metadata Guidelines (MGMG). or ArcGIS's proprietary metadata format
 
 <h3>Usage</h3>
-`ogp-mdt.py [-h] [workspace] [output_path] [metadata_standard] {--et}`
+`ogp-mdt.py [-h] [workspace] [output_path] [metadata_standard] {--et}`  
 `-h` - Display usage information
 `workspace` - The filesystem location of the data to be converted (currently assumes a completely flat organization of the data). Can be relative (eg. ./datasets/metadata) or absolute (eg. /home/user/workspace/datasets/metadata) path
 `output_path` - The filesystem location where you would like the output written into. If it doesn't exists, it will be created
