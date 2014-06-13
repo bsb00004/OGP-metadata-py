@@ -8,7 +8,7 @@ import glob
 import json
 from logger import Logger
 from keyword_parse import keywordParse
-from datatype_parse import dataTypeParseFGDC
+from datatype_parse import dataTypeParse
 try:
     from lxml import etree as et
 except ImportError:
@@ -16,9 +16,9 @@ except ImportError:
         print "Python lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported"
         from xml.etree import ElementTree as et
     except ImportError:
-        print "No xml lib found. Please install lxml lib to continue"
+        print "No xml lib found. Please install lxml lib to continue. Try 'pip install lxml' or see http://lxml.de/installation.html for more information"
 
-def FGDC(workspace, error_tolerance): 
+def FGDC(workspace, output_path, error_tolerance):
     """
     Set workspace (where datasets to be processed are located) below
     """
@@ -70,7 +70,7 @@ def FGDC(workspace, error_tolerance):
         FGDCtree = et.ElementTree()
         root = FGDCtree.parse(i)
              
-        DATATYPE = dataTypeParseFGDC(root)
+        DATATYPE = dataTypeParse(root,"FGDC")
         DATATYPESORT = DATATYPE
 
         #create string representation of FGDC md to be appended at end of OGP md

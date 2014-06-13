@@ -1,13 +1,16 @@
-def keywordParse(FGDCtree,KW_TYPE):
+def keywordParse(elementTree,KW_TYPE):
+    """
+
+    :param elementTree: Element tree passed in
+    :param KW_TYPE: "themekey or placekey"
+    :return:
+    """
     try:
-        kw = list(FGDCtree.iter(KW_TYPE))
-        kw_text = []
-        if len(kw_text) > 1:
-            keywords = ', '
-            print 'keywords are : ', keywords.join(kw_text).rstrip(", ")
-            return keywords.join(kw_text).rstrip(", ")
-        if len(kw_text) == 1:
-            return kw_text[0]
+        kw = list(elementTree.iter(KW_TYPE))
+
+        if len(kw) > 0:
+            kw_str = [i.text for i in kw][0]
+            return kw_str
         else:
             return 'None'
     except AttributeError as e:

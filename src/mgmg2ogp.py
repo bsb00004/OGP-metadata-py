@@ -9,7 +9,7 @@ import json
 import random
 from logger import Logger
 from keyword_parse import keywordParse
-from datatype_parse import dataTypeParseMGMG
+from datatype_parse import dataTypeParse
 import ast
 
 try:
@@ -105,7 +105,7 @@ def MGMG(workspace,output_path,error_tolerance):
         #     print 'Workspace name error: ',e
         #     error_counter += 1
 
-        DATATYPE = dataTypeParseMGMG(root)
+        DATATYPE = dataTypeParse(root,"MGMG")
         if DATATYPE == "Undefined":
             error_counter += 1
         DATATYPESORT = DATATYPE
