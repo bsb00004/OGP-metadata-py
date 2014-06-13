@@ -10,7 +10,9 @@ def main():
     parser.add_argument("workspace",help="indicate the path where the metadata to be converted is contained")
     parser.add_argument("output_path",help="indicate the path where the output should be sent")
     parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC or MGMG", choices=['MGMG','FGDC'])
-    parser.add_argument("--et", type=int,help="acceptable level of error which decides for any given XML file whether it will be included in the final output folder, or the error folder. Default value of 5000. Lower value means less tolerance (0 means any missing or incorrect OGP field will cause the file to be moved to error folder)")
+    parser.add_argument("--et", type=int,help="acceptable level of error which decides for any given XML file whether it will be included in the final output folder," +
+                                              " or the error folder. Default value of 5000. Lower value means less tolerance (0 means any missing or incorrect OGP field" +
+                                              " will cause the file to be moved to error folder)")
     args = parser.parse_args()
    
     ws = args.workspace
