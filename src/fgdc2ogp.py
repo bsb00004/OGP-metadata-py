@@ -1,7 +1,6 @@
 from time import clock
 from datetime import datetime
 import os, math, sys
-import pytz
 import urllib
 import StringIO
 import glob
@@ -49,13 +48,6 @@ def FGDC(workspace, output_path, error_tolerance):
           'OriginatorSort', 'ThemeKeywords', 'PlaceKeywords', 'Abstract', 'MaxY',
           'MinY', 'MinX', 'MaxX', 'ContentDate']
   
-    #Set UTC timezone for ContentDate field
- 
-    utc = pytz.utc
-
-
-
-
     #start the clock! obviously not at all necessary 
       
     start = clock()

@@ -1,9 +1,5 @@
 from time import clock
-from datetime import datetime
 import os, math, sys
-import pytz
-import urllib
-import StringIO
 import glob
 import json
 import random
@@ -12,14 +8,6 @@ from keyword_parse import keywordParse
 from datatype_parse import dataTypeParse
 import ast
 
-try:
-    from lxml import etree as et
-except ImportError:
-    try:
-        print "Python lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported"
-        from xml.etree import ElementTree as et
-    except ImportError:
-        print "No xml lib found. Please install lxml lib to continue"
 
 
 class OgpXML(object):
@@ -35,6 +23,108 @@ class OgpXML(object):
     def x(self):
         del self._x
 
+
+class MetadataDocument(object):
+    """
+    Base class for metadata documents. This is where OGP fields that are handled the same
+    across standards are implemented.
+    """
+
+    def __init__(self,root,file_name):
+        self.root = root
+        self.file_name = file_name
+
+        # create a dictionary containing the OGP field names as keys, mapping
+        # the corresponding class method (or hardcoded string) as value
+        self.field_handlers = {
+
+            # hardcoded values first
+            'Access': "Public",
+            'Availability': "Online",
+            'Institution': "Minnesota",
+            'CollectionId': "initial collection",
+
+            # the rest are associated with a method
+            'DataType': self.data_type,
+            'ThemeKeywords': self.theme_keywords,
+            'ThemeKeywordsSort': self.theme_keywords,
+            'PlaceKeywords': self.place_keywords,
+            'PlaceKeywordsSort': self.place_keywords,
+            'Publisher': self.publisher,
+            'LayerId': self.layer_id,
+            'Location': self.location,
+            'Name': self.name,
+            'LayerDisplayName': self.layer_display_name,
+            'ContentDate': self.content_date,
+            'Abstract': self.abstract,
+            'MinX': self.min_x,
+            'MaxX': self.max_x,
+            'MinY': self.min_y,
+            'MaxY': self.max_y,
+            'CenterX': self.center_x,
+            'CenterY': self.center_y,
+            'Area': self.area,
+            'HalfWidth': self.half_width,
+            'HalfHeight': self.half_height,
+            'WorkspaceName': self.workspace_name
+        }
+
+    # field methods 
+    def _file_name_sans_extension(self):
+        file_name = os.path.basename(self.file_name)
+        file_name = file_name[0:file_name.rfind('.')]
+        return file_name
+
+    def layer_id(self, doc):
+        return self._file_name_sans_extension()
+
+    def name(self):
+        return self._file_name_sans_extension()
+
+    def data_type(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def theme_keywords(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def place_keywords(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def publisher(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def layer_display_name(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def location(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def content_date(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def abstract(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def parseXMLs(self):
+
+        for i in self.files:
+            print i
+            tree = et.ElementTree()
+            root = tree.parse(i)
+            currentDoc = self.ogpXML()
+            currentDoc.layerId = self.setLayerId(doc)
+            currentDoc.Name = self.setName(doc)
+            currentDoc.DataType = self.setDataType(doc)
+
+
 class ArcGISDocument(MetadataDocument):
     """
     Inherits from MetadataDocument
@@ -43,47 +133,6 @@ class ArcGISDocument(MetadataDocument):
         import arcpy
         MetadataDocument.__init__(self,root,file_name)
 
-class MGMGDocument(FGDCDocument):
-    """
-    Inherits from FGDCDocument
-    """
-    def __init__(self,root,file_name):
-        FGDCDocument.__init__(self,root,file_name)
-
-    def location(self):
-        #TODO refactor this mess
-        pass
-        """
-        try:
-            if df_lyrs.has_key(LAYERID):
-                dictCurrentLayer = ast.literal_eval(df_lyrs[LAYERID])
-                ARCGISREST = dictCurrentLayer["ArcGISRest"]
-                NAME = dictCurrentLayer["layerId"]
-                #print 'Found',LAYERID,' so removing it from df_lyrs'
-                df_lyrs.pop(LAYERID)
-
-                if root.find("idinfo/citation/citeinfo/onlink") is not None:
-                    DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
-                    LOCATION = json.dumps({
-                        #It is tricky to add layerId here since we might complicate the location field to contain json-in-json.
-                        #Currently, we neglect layerId but use layerName, which is LAYERID, a.k.a NAME field in OGP metadata format to access layer.
-                        'ArcGISRest': ARCGISREST + "/export",
-                        'download': DOWNLOAD_URL,
-                    })
-                else:
-                    LOCATION = json.dumps({
-                        'ArcGISRest': ARCGISREST,
-                    })
-            else:
-                if root.find("idinfo/citation/citeinfo/onlink") is not None:
-                    DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
-                    LOCATION = json.dumps({
-                        'download': DOWNLOAD_URL
-                    })
-        except AttributeError as e:
-            print 'LOCATION error: ', e
-            error_counter += 1
-        """
 
 class FGDCDocument(MetadataDocument):
     """
@@ -102,6 +151,9 @@ class FGDCDocument(MetadataDocument):
 
     def abstract(self):
         return self.root.findtext("idinfo/descript/abstract","UNKNOWN")
+
+    def originator(self):
+        return self.root.findtext("idinfo/citation/citeinfo/origin","UNKNOWN")
 
     def theme_keywords(self):
         try:
@@ -162,6 +214,48 @@ class FGDCDocument(MetadataDocument):
             print "No content date found! setting to UNKNOWN for now"
             return "UNKNOWN"
 
+
+class MGMGDocument(FGDCDocument):
+    """
+    Inherits from FGDCDocument
+    """
+    def __init__(self,root,file_name):
+        FGDCDocument.__init__(self,root,file_name)
+
+    def location(self):
+        #TODO refactor this mess
+        pass
+        """
+        try:
+            if df_lyrs.has_key(LAYERID):
+                dictCurrentLayer = ast.literal_eval(df_lyrs[LAYERID])
+                ARCGISREST = dictCurrentLayer["ArcGISRest"]
+                NAME = dictCurrentLayer["layerId"]
+                #print 'Found',LAYERID,' so removing it from df_lyrs'
+                df_lyrs.pop(LAYERID)
+
+                if root.find("idinfo/citation/citeinfo/onlink") is not None:
+                    DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
+                    LOCATION = json.dumps({
+                        #It is tricky to add layerId here since we might complicate the location field to contain json-in-json.
+                        #Currently, we neglect layerId but use layerName, which is LAYERID, a.k.a NAME field in OGP metadata format to access layer.
+                        'ArcGISRest': ARCGISREST + "/export",
+                        'download': DOWNLOAD_URL,
+                    })
+                else:
+                    LOCATION = json.dumps({
+                        'ArcGISRest': ARCGISREST,
+                    })
+            else:
+                if root.find("idinfo/citation/citeinfo/onlink") is not None:
+                    DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
+                    LOCATION = json.dumps({
+                        'download': DOWNLOAD_URL
+                    })
+        except AttributeError as e:
+            print 'LOCATION error: ', e
+            error_counter += 1
+        """
 
 #TODO make this actually work
 #adapted from https://github.com/gravesm/marcingest/blob/master/marcingest/field_handlers.py
@@ -299,101 +393,6 @@ class MARCXMLDocument(MetadataDocument):
             keywords.add(keyword.text.rstrip(":;,. "))
         return list(keywords)
 
-class MetadataDocument(object):
-    """
-    Base class for metadata documents. This is where OGP fields that are handled the same
-    across standards are implemented.
-    """
-
-    def __init__(self,root,file_name):
-        self.root = root
-        self.file_name = file_name
-        self.field_handlers = {
-            'DataType': self.data_type,
-            'ThemeKeywords': self.theme_keywords,
-            'ThemeKeywordsSort': self.theme_keywords,
-            'PlaceKeywords': self.place_keywords,
-            'PlaceKeywordsSort': self.place_keywords,
-            'Publisher': self.publisher,
-            'LayerId': self.layer_id,
-            'Location': self.location,
-            'Name': self.name,
-            'LayerDisplayName': self.layer_display_name,
-            'ContentDate': self.content_date,
-            'Abstract': self.abstract,
-            'MinX': self.min_x,
-            'MaxX': self.max_x,
-            'MinY': self.min_y,
-            'MaxY': self.max_y,
-            'CenterX': self.center_x,
-            'CenterY': self.center_y,
-            'Area': self.area,
-            'HalfWidth': self.half_width,
-            'HalfHeight': self.half_height,
-            'Access': "Public",
-            'Availability': "Online",
-            'Institution': "Minnesota",
-            'WorkspaceName': self.workspace_name,
-            'CollectionId': "initial collection"
-        }
-
-
-
-    # field handlers
-
-    def layer_id(self, doc):
-        file_name = os.path.basename(self.file_name)
-        file_name = file_name[0:file_name.rfind('.')]
-        return file_name
-
-    def name(self):
-        file_name = os.path.basename(self.file_name)
-        file_name = file_name[0:file_name.rfind('.')]
-        return file_name
-
-    def data_type(self):
-        # see standard specific sub-class implementation
-        pass
-
-    def theme_keywords(self):
-        # see standard specific sub-class implementation
-        pass
-
-    def place_keywords(self):
-        # see standard specific sub-class implementation
-        pass
-
-    def publisher(self):
-        # see standard specific sub-class implementation
-        pass
-
-    def layer_display_name(self):
-        # see standard specific sub-class implementation
-        pass
-
-    def location(self):
-        # see standard specific sub-class implementation
-        pass
-
-    def content_date(self):
-        # see standard specific sub-class implementation
-        pass
-
-    def abstract(self):
-        # see standard specific sub-class implementation
-        pass
-
-    def parseXMLs(self):
-
-        for i in self.files:
-            print i
-            tree = et.ElementTree()
-            root = tree.parse(i)
-            currentDoc = self.ogpXML()
-            currentDoc.layerId = self.setLayerId(doc)
-            currentDoc.Name = self.setName(doc)
-            currentDoc.DataType = self.setDataType(doc)
-
 
 def MGMG(workspace, output_path, error_tolerance):
     """
@@ -430,10 +429,6 @@ def MGMG(workspace, output_path, error_tolerance):
               'LayerDisplayNameSort', 'Publisher', 'PublisherSort', 'Originator',
               'OriginatorSort', 'ThemeKeywords', 'PlaceKeywords', 'Abstract', 'MaxY',
               'MinY', 'MinX', 'MaxX', 'ContentDate', 'Location', 'WorkspaceName']
-
-    #Set UTC timezone for ContentDate field
-
-    utc = pytz.utc
 
     #List of layers and their respective URLs from Datafinder.org
 

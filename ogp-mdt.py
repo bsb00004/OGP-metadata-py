@@ -2,8 +2,19 @@
 import sys
 import argparse
 import os, os.path
-import glob
-from src import mgmg2ogp,fgdc2ogp,logger
+import fnmatch 
+from datetime import datetime
+#from src import mgmg2ogp,fgdc2ogp,logger
+from src import mgmg2ogp,logger
+
+try:
+    from lxml import etree 
+except ImportError:
+    try:
+        print "Python lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported"
+        from xml.etree import ElementTree as etree
+    except ImportError:
+        print "No xml lib found. Please install lxml lib to continue"
 
 def main():
 
@@ -41,25 +52,32 @@ def main():
         print "Workspace %s does not seem to exist. Are you sure you entered it correctly?" % (ws)
 
     elif os.path.exists(ws) == True:
-        files = glob.glob(os.path.join(self.ws,'*[!aux].xml'))
 
+        # assemble list of files to be processed
+        files = []
+        for root, dirnames, filenames in os.walk(ws):
+            for filename in fnmatch.filter(filenames, '*[!aux].xml'):
+                files.append(os.path.join(root, filename))
+        
+        # initialize logger
         d = datetime.today()
         log_name = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
-        sys.stdout = logger.Logger(self.output_path, log_name)
+        sys.stdout = logger.Logger(output, log_name)
 
-        for i in files:
-            tree = et.ElementTree()
-            root = tree.parse(i)
+        # for each file, parse it into an ElementTree, then  instantiate the appropraite metadata standard class
+        for filename in files:
+
+            tree = etree.ElementTree()
+            root = tree.parse(filename)
 
             if md.lower() == "mgmg":
-                doc = mgmg2ogp.MGMGDocument(root)
+                doc = mgmg2ogp.MGMGDocument(root,filename)
 
             elif md.lower() == "fgdc":
-                doc = mgmg2ogp.FGDCDocument(root)
+                doc = mgmg2ogp.FGDCDocument(root,filename)
 
             elif md.lower() == "arcgis":
-                doc = mgmg2ogp.ArcGISDocument(root)
-
+                doc = mgmg2ogp.ArcGISDocument(root,filename)
 
         """
         if md.lower() == "mgmg":

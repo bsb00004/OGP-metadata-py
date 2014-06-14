@@ -4,7 +4,7 @@ A simple Python (2.6+) script for creating OpenGeoPortal ingestible metadata fro
 ### Usage
 `ogp-mdt.py [-h] [workspace] [output_path] [metadata_standard] {--et}`  
 `-h` - Display usage information  
-`workspace` - The filesystem location of the data to be converted (currently assumes a completely flat organization of the data). Can be relative (eg. ./datasets/metadata) or absolute (eg. /home/user/workspace/datasets/metadata) path  
+`workspace` - The base filesystem location of the data to be converted. By default, will recurse through all subfolders. Can be relative (eg. ./datasets/metadata) or absolute (eg. /home/user/workspace/datasets/metadata) path  
 `output_path` - The filesystem location where you would like the output written into. If it doesn't exists, it will be created  
 `metadata_standard` - Either `FGDC` or `MGMG` (`ARCGIS` option in the works)   
 `--et` - OPTIONAL - Error tolerance. Default value of 5000 (!), where 0 means any omitted or invalid OGP field will result in the file being relegated to the error folder and 10 means up to ten problem fields are tolerated (not a great idea, but depending on the state of your data, could be necessary, hence the default of 5000!). 
