@@ -214,6 +214,36 @@ class FGDCDocument(MetadataDocument):
             print "No content date found! setting to UNKNOWN for now"
             return "UNKNOWN"
 
+    def _parse_coord(self,coord):
+        try:
+            coord = float(coord)
+            return coord
+        except (ValueError,TypeError):
+            return "ERR_" + coord
+
+    def min_x(self):
+        coord = root.findtext("idinfo/spdom/bounding/westbc","UNKNOWN")
+        if coord is not "UNKNOWN":
+            return self._parse_coord(coord)
+        return coord
+
+    def min_y(self):
+        coord = root.findtext("idinfo/spdom/bounding/southbc","UNKNOWN")
+        if coord is not "UNKNOWN":
+            return self._parse_coord(coord)
+        return coord
+
+    def max_x(self):
+        coord = root.findtext("idinfo/spdom/bounding/eastbc","UNKNOWN")
+        if coord is not "UNKNOWN":
+            return self._parse_coord(coord)
+        return coord
+
+    def max_y(self):
+        coord = root.findtext("idinfo/spdom/bounding/northbc","UNKNOWN")
+        if coord is not "UNKNOWN":
+            return self._parse_coord(coord)
+        return coord
 
 class MGMGDocument(FGDCDocument):
     """

@@ -79,14 +79,5 @@ def main():
             elif md.lower() == "arcgis":
                 doc = mgmg2ogp.ArcGISDocument(root,filename)
 
-        """
-        if md.lower() == "mgmg":
-            mgmg2ogp.MGMG(ws,output, et)   
-        elif md.lower() == "fgdc":
-            fgdc2ogp.FGDC(ws,output, et)
-        else:
-            print "Unsupported metadata type entered. Currently supported values are FGDC or MGMG"
-        """
-
 if __name__ == "__main__":
     sys.exit(main())
