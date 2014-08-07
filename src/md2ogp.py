@@ -215,7 +215,7 @@ class FGDCDocument(MetadataDocument):
                 dateText = root.find("idinfo/timeperd/timeinfo/rngdates/begdate").text
                 return self._parse_content_date(dateText)
             else:
-                return "UNKOWN"
+                return "UNKNOWN"
 
         except (AttributeError,TypeError):
             print "No content date found! setting to UNKNOWN for now"
