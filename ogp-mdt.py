@@ -4,8 +4,7 @@ import argparse
 import os, os.path
 import fnmatch 
 from datetime import datetime
-#from src import mgmg2ogp,fgdc2ogp,logger
-from src import mgmg2ogp,logger
+from src import md2ogp,logger
 
 METADATA_OPTIONS = ['mgmg','fgdc','arcgis']
 
@@ -26,9 +25,6 @@ def main():
     parser.add_argument("workspace",help="indicate the path where the metadata to be converted is contained")
     parser.add_argument("output_path",help="indicate the path where the output should be sent")
     parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC or MGMG")
-    parser.add_argument("--et", type=int,help="acceptable level of error which decides for any given XML file whether it will be included in the final output folder," +
-                                              " or the error folder. Default value of 5000. Lower value means less tolerance (0 means any missing or incorrect OGP field" +
-                                              " will cause the file to be moved to error folder)")
     args = parser.parse_args()
   
     # set workspace, check if it's an absolute or relative path and make changes as needed 
@@ -45,12 +41,6 @@ def main():
     if md not in METADATA_OPTIONS:
         sys.exit('Invalid metadata standard. Supported options are "' + '", "'.join(METADATA_OPTIONS) + '". Please try again.')
     
-
-    et = args.et
-
-    if et == None:
-        et = 5000    
-
     if os.path.exists(output) == False:
         try:
             os.mkdir(output)
@@ -85,13 +75,13 @@ def main():
             root = tree.parse(filename)
 
             if md == "mgmg":
-                doc = mgmg2ogp.MGMGDocument(root,filename)
+                doc = md2ogp.MGMGDocument(root,filename)
 
             elif md == "fgdc":
-                doc = mgmg2ogp.FGDCDocument(root,filename)
+                doc = md2ogp.FGDCDocument(root,filename)
 
             elif md == "arcgis":
-                doc = mgmg2ogp.ArcGISDocument(root,filename)
+                doc = md2ogp.ArcGISDocument(root,filename)
 
             else:
                 sys.exit('Invalid metadata standard. Supported options are')
@@ -109,6 +99,6 @@ def main():
                     error_counter += 1
             print 'Writing: ' + os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
             OGPtree.write(os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml"), pretty_print=True)
-
+            
 if __name__ == "__main__":
     sys.exit(main())
