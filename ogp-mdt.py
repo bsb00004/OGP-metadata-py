@@ -97,8 +97,13 @@ def main():
                 except KeyError as e:
                     print "Nonexistant key: ", field
                     error_counter += 1
-            print 'Writing: ' + os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
-            OGPtree.write(os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml"), pretty_print=True)
             
+            print 'Writing: ' + os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
+            
+            if XML_LIB == "lxml":
+                OGPtree.write(os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml"), pretty_print=True)
+            else:
+                OGPtree.write(os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml"))
+                
 if __name__ == "__main__":
     sys.exit(main())
