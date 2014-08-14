@@ -76,7 +76,7 @@ def main():
         log_name = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
         sys.stdout = logger.Logger(output, log_name)
 
-        # for each file, parse it into an ElementTree, then instantiate the appropraite metadata standard class
+        # for each file, parse it into an ElementTree, then instantiate the appropriate metadata standard class
         for filename in files:
 
             OGPtree = etree.ElementTree()
@@ -95,9 +95,6 @@ def main():
 
             elif md == "arcgis":
                 doc = md2ogp.ArcGISDocument(root,filename)
-
-            else:
-                sys.exit('Invalid metadata standard. Supported options are')
 
             for field in doc.field_handlers:
                 try:
