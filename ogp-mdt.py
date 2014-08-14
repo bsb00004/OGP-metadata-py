@@ -34,6 +34,7 @@ def main():
                           mgs_record,
                           "final_XMLs")
         output = os.path.join(ws,"OGP")
+        md = "fgdc"
 
 
     else:
@@ -48,7 +49,7 @@ def main():
         if not os.path.isabs(output):
             output = os.path.abspath(os.path.relpath(output,os.getcwd()))
 
-    md = args.metadata_type.lower()
+        md = args.metadata_type.lower()
 
     if md not in METADATA_OPTIONS:
         sys.exit('Invalid metadata standard. Supported options are "' + '", "'.join(METADATA_OPTIONS) + '". Please try again.')
