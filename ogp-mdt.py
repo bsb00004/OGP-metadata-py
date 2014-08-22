@@ -93,6 +93,8 @@ def main():
             tree = etree.ElementTree()
             root = tree.parse(filename)
 
+            fullText = etree.tostring(root)
+             
             if md == "mgmg":
                 doc = md2ogp.MGMGDocument(root,filename)
 
@@ -114,6 +116,9 @@ def main():
                     print "Nonexistant key: ", field
                     error_counter += 1
             
+            fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
+            fullTextElement.text = fullText
+
             print 'Writing: ' + os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
             
             if XML_LIB == "lxml":
