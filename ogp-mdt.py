@@ -19,6 +19,9 @@ except ImportError:
     except ImportError:
         print "No xml lib found. Please install lxml lib to continue"
 
+def processSingleFile():
+    pass
+
 def main():
 
     parser = argparse.ArgumentParser()
@@ -38,6 +41,9 @@ def main():
 
 
     else:
+
+        if (args.workspace is None) or (args.output_path is None) or (args.metadata_type is None):
+            sys.exit('Missing arguments. Be sure to have a workspace path, output path, and metadata standard entered.')
 
         # set workspace, check if it's an absolute or relative path and make changes as needed
         ws = args.workspace
