@@ -4,7 +4,7 @@ import argparse
 import os, os.path
 import fnmatch 
 from datetime import datetime
-from src import md2ogp,logger
+from src import md2ogp
 
 METADATA_OPTIONS = ['mgmg','fgdc','arcgis']
 
@@ -26,11 +26,14 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-m","--mgs", action="store_true", help="shortcut for MGS project")
+
+    #TODO remove nargs from each of the following after MGS project complete
     parser.add_argument("workspace", nargs='?', help="indicate the path where the metadata to be converted is contained")
     parser.add_argument("output_path", nargs='?', help="indicate the path where the output should be sent")
     parser.add_argument("metadata_type", nargs='?', help="Metadata standard used for input XMLs. Acceptable values are FGDC or MGMG")
     args = parser.parse_args()
 
+    # temporary MGS project shortcut... to be removed when done
     if args.mgs:
         mgs_record = raw_input("Please enter record number: ")
         ws = os.path.join("D:\drive\Map Library Projects\MGS\Records",
@@ -42,6 +45,7 @@ def main():
 
     else:
 
+        # TODO remove when MGS project complete
         if (args.workspace is None) or (args.output_path is None) or (args.metadata_type is None):
             sys.exit('Missing arguments. Be sure to have a workspace path, output path, and metadata standard entered.')
 
@@ -77,11 +81,6 @@ def main():
             for filename in fnmatch.filter(filenames, '*[!aux].xml'):
                 files.append(os.path.join(root, filename))
                  
-        # initialize logger
-        d = datetime.today()
-        log_name = "OGP_MD_LOG_" + d.strftime("%y%m%d%M%S") + ".txt"
-        sys.stdout = logger.Logger(output, log_name)
-
         # for each file, parse it into an ElementTree, then instantiate the appropriate metadata standard class
         for filename in files:
 
@@ -114,7 +113,6 @@ def main():
 
                 except KeyError as e:
                     print "Nonexistant key: ", field
-                    error_counter += 1
             
             fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
             fullTextElement.text = fullText
