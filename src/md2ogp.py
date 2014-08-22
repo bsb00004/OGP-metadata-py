@@ -116,6 +116,7 @@ class FGDCDocument(MetadataDocument):
 
     def layer_display_name(self):
         disp_name = self.root.findtext("idinfo/citation/citeinfo/title","UNKNOWN")
+        disp_name = disp_name + " (" + self.name() + ")"
         return disp_name
 
     def abstract(self):
