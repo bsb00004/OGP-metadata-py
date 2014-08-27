@@ -1,11 +1,4 @@
-from time import clock
-import os, math, sys
-import glob
-import json
-import random
-from logger import Logger
-import ast
-import pdb
+import os, os.path
 from datetime import datetime
 
 class MetadataDocument(object):
@@ -99,7 +92,6 @@ class ArcGISDocument(MetadataDocument):
     Unimplemented. Inherits from MetadataDocument
     """
     def __init__(self,root,filename):
-        import arcpy
         super(ArcGISDocument,self).__init__(root,filename)
 
 
@@ -214,6 +206,9 @@ class FGDCDocument(MetadataDocument):
                 return self._parse_content_date(dateText)
             elif root.find("idinfo/timeperd/timeinfo/rngdates/begdate") is not None:
                 dateText = root.find("idinfo/timeperd/timeinfo/rngdates/begdate").text
+                return self._parse_content_date(dateText)
+            elif root.find("idinfo/citation/citeinfo/pubdate") is not None:
+                dateText = root.find("idinfo/citation/citeinfo/pubdate").text
                 return self._parse_content_date(dateText)
             else:
                 return "UNKNOWN"
