@@ -123,19 +123,22 @@ class FGDCDocument(MetadataDocument):
         root = self.root
         try:
             if root.find("*//geoform") is not None:
-                if root.findtext("*//geoform").lower() == "scanned paper map":
+                geoform = root.findtext("*//geoform").lower()
+                if ("scanned" in geoform or 
+                    "paper" in geoform or 
+                    "scanned paper map" in geoform):
                     return "Paper Map"
             if root.find("*//direct") is not None:
                 direct = root.findtext("*//direct").lower()
-                if direct == "raster":
+                if "raster" in direct:
                     return "Raster"
                 elif (
-                    direct == "g-polygon" or 
-                    direct == "polygon" or 
-                    direct == "chain"
+                    "g-polygon" in direct or 
+                    "polygon" in direct or 
+                    "chain" in direct
                     ):
                     return "Polygon"
-                elif (direct == "point"):
+                elif ("point" in direct):
                     return "Point"
             if root.find("*//sdtstype") is not None:
                 sdtstype = root.findtext("*//sdtstype").lower()
@@ -143,11 +146,11 @@ class FGDCDocument(MetadataDocument):
                     "point" in sdtstype
                     ):
                     return "Point"
-                elif sdtstype == "string":
+                elif "string" in sdtstype:
                     return "Line"
-                elif (sdtstype == "g-polygon" or
-                      sdtstype == "polygon" or
-                      sdtstype == "chain"):
+                elif ("g-polygon" in sdtstype or
+                      "polygon" in sdtstype or
+                      "chain" in sdtstype):
                     return "Polygon"
 
         except AttributeError as e:
