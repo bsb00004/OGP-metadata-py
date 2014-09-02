@@ -1,5 +1,7 @@
 import os, os.path
 from datetime import datetime
+from lxml import etree
+import pdb
 
 class MetadataDocument(object):
     """
@@ -263,6 +265,11 @@ class FGDCDocument(MetadataDocument):
         except ValueError:
             return "UNKNOWN"
 
+    def location(self):
+        loc = self.root.findtext("idinfo/citation/citeinfo/onlink","UNKNOWN")
+        return loc
+
+
 class MGMGDocument(FGDCDocument):
     """
     Inherits from FGDCDocument
@@ -343,117 +350,131 @@ class MGMGDocument(FGDCDocument):
 #adapted from https://github.com/gravesm/marcingest/blob/master/marcingest/field_handlers.py
 class MARCXMLDocument(MetadataDocument):
     def __init__(self,root,file_name):
-        super(MARCXMLDocument,self).__init__()
+        from itertools import ifilter
+        import re
+        super(MARCXMLDocument,self).__init__(root,file_name)
+        MARC = "http://www.loc.gov/MARC21/slim"
+        MARCNS = "{{{0}}}".format(MARC)
+        NSMAP = {
+            "marc": MARC,
+        }
 
-    def datatype(record):
-        xpath = XPATHS['876_k']
+        _XPATHS = {
+            "001"  : "/collection/record/controlfield[@tag='001']",
+            "008"  : "/collection/record/controlfield[@tag='008']/text()",
+            "034_d": "/collection/record/datafield[@tag='034']/subfield[@code='d']/text()",
+            "034_e": "/collection/record/datafield[@tag='034']/subfield[@code='e']/text()",
+            "034_f": "/collection/record/datafield[@tag='034']/subfield[@code='f']/text()",
+            "034_g": "/collection/record/datafield[@tag='034']/subfield[@code='g']/text()",
+            "245"  : "/collection/record/datafield[@tag='245']/subfield[@code='a']/text()",
+            "260_b": "/collection/record/datafield[@tag='260']/subfield[@code='b']",
+            "500_a": "/collection/record/datafield[@tag='500']/subfield[@code='a']/text()",
+            "650_a": "/collection/record/datafield[@tag='650']/subfield[@code='a']",
+            "650_z": "/collection/record/datafield[@tag='650']/subfield[@code='z']",
+            "876_k": "/collection/record/datafield[@tag='876']/subfield[@code='k']",
+        }
+
+        self.XPATHS = dict((k, etree.XPath(v)) for k,v in _XPATHS.items())    
+        self._COORD_REGEX = re.compile("^([NSEW+-])?(\d{3}(\.\d*)?)(\d{2}(\.\d*)?)?(\d{2}(\.\d*)?)?",
+                          re.IGNORECASE)
+
+    def datatype(self):
+        xpath = self.XPATHS['876_k']
         mapping = {
             "MAP": "Paper Map",
             "CDROM": "CD-ROM",
             "DVDROM": "DVD-ROM",
         }
-        for datatype in xpath(record):
+        for datatype in xpath(self.root):
             if datatype.text in ("MAP", "CDROM", "DVDROM"):
                 return mapping[datatype.text]
         return "Unknown"
 
-    def theme_keywords(record):
-        return _keywords(record, XPATHS['650_a'])
+    def theme_keywords(self):
+        return " ".join(self._keywords(self.XPATHS['650_a']))
 
-    def theme_keywords_concat(record):
-        return " ".join(theme_keywords(record))
+    def place_keywords(self):
+        return " ".join(self._keywords(self.XPATHS['650_z']))
 
-    def place_keywords(record):
-        return _keywords(record, XPATHS['650_z'])
-
-    def place_keywords_concat(record):
-        return " ".join(place_keywords(record))
-
-    def publisher(record):
-        xpath = XPATHS['260_b']
-        publisher = xpath(record)
+    def publisher(self):
+        xpath = self.XPATHS['260_b']
+        publisher = xpath(self.root)
         if publisher:
             return publisher[0].text.rstrip(",")
 
-    def layer_id(record):
-        xpath = XPATHS['001']
-        return "MIT.{0}".format(xpath(record)[0].text)
+    def name(self):
+        xpath = self.XPATHS['001']
+        return xpath(self.root)[0].text
 
-    def location(record):
-        xpath = XPATHS['001']
-        return '{{"libRecord": "http://library.mit.edu/item/{0}"}}'.format(xpath(record)[0].text)
+    def layer_display_name(self):
+        xpath = self.XPATHS['245']
+        return " ".join(xpath(self.root))
 
-    def name(record):
-        xpath = XPATHS['001']
-        return xpath(record)[0].text
+    def content_date(self):
+        xpath = self.XPATHS['008']
 
-    def layer_display_name(record):
-        xpath = XPATHS['245']
-        return " ".join(xpath(record))
+        date = xpath(self.root)[0][7:11]
 
-    def content_date(record):
-        xpath = XPATHS['008']
-        date = xpath(record)[0].text[7:11]
         try:
-            date = int(date)
-            return datetime.date(date, 1, 1)
+            date= datetime(int(date), 1, 1)
+            return date.isoformat() + "Z"
         except ValueError:
             pass
 
-    def abstract(record):
-        xpath = XPATHS['500_a']
-        return " ".join(xpath(record))
+    def abstract(self):
+        xpath = self.XPATHS['500_a']
+        return " ".join(xpath(self.root))
 
-    def min_x(record):
-        xpath = XPATHS['034_d']
-        coord = xpath(record)
+    def min_x(self):
+        xpath = self.XPATHS['034_d']
+        coord = xpath(self.root)
         if coord:
-            return _convert_coord(coord[0])
+            return unicode(self._convert_coord(coord[0]))
 
-    def min_y(record):
-        xpath = XPATHS['034_g']
-        coord = xpath(record)
+    def min_y(self):
+        xpath = self.XPATHS['034_g']
+        coord = xpath(self.root)
         if coord:
-            return _convert_coord(coord[0])
+            return unicode(self._convert_coord(coord[0]))
 
-    def max_x(record):
-        xpath = XPATHS['034_e']
-        coord = xpath(record)
+    def max_x(self):
+        xpath = self.XPATHS['034_e']
+        coord = xpath(self.root)
         if coord:
-            return _convert_coord(coord[0])
+            return unicode(self._convert_coord(coord[0]))
 
-    def max_y(record):
-        xpath = XPATHS['034_f']
-        coord = xpath(record)
+    def max_y(self):
+        xpath = self.XPATHS['034_f']
+        coord = xpath(self.root)
         if coord:
-            return _convert_coord(coord[0])
+            return unicode(self._convert_coord(coord[0]))
 
-    def center_x(record):
-        west = min_x(record)
-        east = max_x(record)
+    def center_x(self):
+        west = float(self.min_x())
+        east = float(self.max_x())
         if west is not None and east is not None:
-            return west + abs(east - west) / 2
+            return unicode(west + abs(east - west) / 2)
 
-    def center_y(record):
-        south = min_y(record)
-        north = max_y(record)
+    def center_y(self):
+        south = float(self.min_y())
+        north = float(self.max_y())
         if south is not None and north is not None:
-            return south + abs(north - south) / 2
+            return unicode(south + abs(north - south) / 2)
 
-    def half_height(record):
-        north = max_y(record)
-        south = min_y(record)
+    def half_height(self):
+        north = float(self.max_y())
+        south = float(self.min_y())
         if north is not None and south is not None:
-            return abs(north - south) / 2
+            return unicode(abs(north - south) / 2)
 
-    def half_width(record):
-        east = max_x(record)
-        west = min_x(record)
+    def half_width(self):
+        east = float(self.max_x())
+        west = float(self.min_x())
         if east is not None and west is not None:
-            return abs(east - west) / 2
+            return unicode(abs(east - west) / 2)
 
-    def _convert_coord(coordinate):
-        parts = _COORD_REGEX.search(coordinate)
+    def _convert_coord(self,coordinate):
+        parts = self._COORD_REGEX.search(coordinate)
         if parts is None:
             return
         decimal = float(parts.group(2)) + float(parts.group(4) or 0) / 60 + float(parts.group(6) or 0) / 3600
@@ -461,9 +482,9 @@ class MARCXMLDocument(MetadataDocument):
             decimal = -decimal
         return decimal
 
-    def _keywords(record, xpath):
+    def _keywords(self, xpath):
         keywords = set()
-        for keyword in xpath(record):
+        for keyword in xpath(self.root):
             keywords.add(keyword.text.rstrip(":;,. "))
         return list(keywords)
 

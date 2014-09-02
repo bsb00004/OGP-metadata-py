@@ -5,7 +5,7 @@ import os, os.path
 import fnmatch
 from src import md2ogp
 
-METADATA_OPTIONS = ['mgmg','fgdc','arcgis']
+METADATA_OPTIONS = ['mgmg','fgdc','arcgis','marc']
 
 try:
     from lxml import etree
@@ -29,7 +29,7 @@ def main():
     #TODO remove nargs from each of the following after MGS project complete
     parser.add_argument("workspace", nargs='?', help="indicate the path where the metadata to be converted is contained")
     parser.add_argument("output_path", nargs='?', help="indicate the path where the output should be sent")
-    parser.add_argument("metadata_type", nargs='?', help="Metadata standard used for input XMLs. Acceptable values are FGDC or MGMG")
+    parser.add_argument("metadata_type", nargs='?', help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, or MARC")
     parser.add_argument("suffix", nargs='?', help="suffix to be appended to the end of each XML file name. Useful if you're expecting duplicate names. Defaults to 'OGP'")
 
     args = parser.parse_args()
@@ -68,7 +68,7 @@ def main():
         md = args.metadata_type.lower()
 
     if md not in METADATA_OPTIONS:
-        sys.exit('Invalid metadata standard. Supported options are "' + '", "'.join(METADATA_OPTIONS) + '". Please try again.')
+        sys.exit('Invalid metadata standard. Supported options are %s. Please try again.' % ( " ,".join(METADATA_OPTIONS)))
     
     if os.path.exists(output) == False:
         try:
@@ -84,7 +84,7 @@ def main():
         # assemble list of files to be processed
         files = []
         for root, dirnames, filenames in os.walk(ws):
-            for filename in fnmatch.filter(filenames, '*[!aux][!_OGP].xml'):
+            for filename in fnmatch.filter(filenames, '*[!aux][!_OGP][!template].xml'):
                 files.append(os.path.join(root, filename))
                  
         # for each file, parse it into an ElementTree, then instantiate the appropriate metadata standard class
@@ -112,6 +112,9 @@ def main():
             elif md == "arcgis":
                 doc = md2ogp.ArcGISDocument(root,filename)
 
+            elif md == "marc":
+                doc = md2ogp.MARCXMLDocument(root,filename)
+
             for field in doc.field_handlers:
                 try:
                     fieldEle = etree.SubElement(docElement, "field", name=field)
@@ -125,7 +128,6 @@ def main():
             
             fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
             fullTextElement.text = fullText
-
 
             print 'Writing: ' + os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_" + suffix + ".xml")
             
