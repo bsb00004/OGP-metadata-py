@@ -17,7 +17,7 @@ A simple Python (2.6+) script for creating OpenGeoPortal ingestible metadata fro
 `metadata_standard` - Either `FGDC`, `MGMG`, or `MARC` (`ARCGIS` option in the works)   
 
 
-`suffix` - 
+`suffix` - suffix to be appended to the end of each XML file name. Useful if you're expecting duplicate names. Defaults to 'OGP'   
 
 ### Notes
 If you want your output XML files to be pretty printed you'll need the [lxml](http://lxml.de/) module installed. See [this] (http://lxml.de/installation.html) page for installation directions. Otherwise the etree module will be used and you'll end up with a seemingly shapeless blob of XML output.
