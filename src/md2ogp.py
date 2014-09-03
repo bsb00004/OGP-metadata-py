@@ -186,21 +186,26 @@ class FGDCDocument(MetadataDocument):
             return "UNKNOWN"
 
     def _parse_content_date(self,dateText):
-        if len(dateText) == 4:
-            #if it's just 4 digits, lets assume it's the year and convert it to integer
-            year = int(dateText)
 
-            #we'll just use Jan 1 as the default for year only entries
-            date = datetime(year,1,1)
+        try:
+            if len(dateText) == 4:
+                #if it's just 4 digits, lets assume it's the year and convert it to integer
+                year = int(dateText)
 
-            #now format it ISO style
-            return date.isoformat() + "Z"
-        elif len(dateText) == 8:
-            year = int(dateText[0:4])
-            month = int(dateText[4:6])
-            day = int(dateText[6:])
-            date = datetime(year,month,day)
-            return date.isoformat() + "Z"
+                #we'll just use Jan 1 as the default for year only entries
+                date = datetime(year,1,1)
+
+                #now format it ISO style
+                return date.isoformat() + "Z"
+            elif len(dateText) == 8:
+                year = int(dateText[0:4])
+                month = int(dateText[4:6])
+                day = int(dateText[6:])
+                date = datetime(year,month,day)
+                return date.isoformat() + "Z"
+
+        except ValueError as e:
+            return "UNKNOWN"
 
     def content_date(self):
         root = self.root
@@ -216,11 +221,11 @@ class FGDCDocument(MetadataDocument):
                 dateText = root.find("idinfo/citation/citeinfo/pubdate").text
                 return self._parse_content_date(dateText)
             else:
-                return "UNKNOWN"
+                return "1919-08-01T00:00:00Z"
 
         except (AttributeError,TypeError):
-            print "No content date found! setting to UNKNOWN for now"
-            return "UNKNOWN"
+            print "No content date found! setting to 1919-08-01T00:00:00Z for now"
+            return "1919-08-01T00:00:00Z"
 
     def _parse_coord(self,coord):
         try:
@@ -255,13 +260,19 @@ class FGDCDocument(MetadataDocument):
 
     def center_x(self):
         try:
-            return str(float(self.min_x())+(float(self.max_x())-float(self.min_x())))
+            min_x = float(self.min_x())
+            max_x = float(self.max_x())
+            center_x = min_x + (abs(max_x-min_x)/2)
+            return unicode(center_x)
         except ValueError:
             return "UNKNOWN"
 
     def center_y(self):
         try:
-            return str(float(self.min_y())+(float(self.max_y())-float(self.min_y())))
+            min_y = float(self.min_y())
+            max_y = float(self.max_y())
+            center_x = min_y + (abs(max_y-min_y)/2)
+            return unicode(center_x)
         except ValueError:
             return "UNKNOWN"
 
@@ -346,8 +357,6 @@ class MGMGDocument(FGDCDocument):
             error_counter += 1
         """
 
-#TODO make this actually work
-#adapted from https://github.com/gravesm/marcingest/blob/master/marcingest/field_handlers.py
 class MARCXMLDocument(MetadataDocument):
     def __init__(self,root,file_name):
         from itertools import ifilter

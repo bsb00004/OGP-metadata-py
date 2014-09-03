@@ -24,13 +24,10 @@ def processSingleFile():
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m","--mgs", action="store_true", help="shortcut for MGS project")
-
-    #TODO remove nargs from each of the following after MGS project complete
-    parser.add_argument("workspace", nargs='?', help="indicate the path where the metadata to be converted is contained")
-    parser.add_argument("output_path", nargs='?', help="indicate the path where the output should be sent")
-    parser.add_argument("metadata_type", nargs='?', help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, or MARC")
-    parser.add_argument("suffix", nargs='?', help="suffix to be appended to the end of each XML file name. Useful if you're expecting duplicate names. Defaults to 'OGP'")
+    parser.add_argument("workspace",help="indicate the path where the metadata to be converted is contained")
+    parser.add_argument("output_path",help="indicate the path where the output should be sent")
+    parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, or MARC")
+    parser.add_argument("suffix",help="suffix to be appended to the end of each XML file name. Useful if you're expecting duplicate names. Defaults to 'OGP'")
 
     args = parser.parse_args()
 
@@ -39,33 +36,17 @@ def main():
     else:
         suffix = "OGP"
 
-    # temporary MGS project shortcut... to be removed when done
-    if args.mgs:
-        mgs_record = raw_input("Please enter record number: ")
-        ws = os.path.join("D:\drive\Map Library Projects\MGS\Records",
-                          mgs_record,
-                          "final_XMLs")
-        output = os.path.join(ws,"OGP")
-        md = "fgdc"
+    # set workspace, check if it's an absolute or relative path and make changes as needed
+    ws = args.workspace
+    if not os.path.isabs(ws):
+        ws = os.path.abspath(os.path.relpath(ws,os.getcwd()))
 
+    # same for output path
+    output = args.output_path
+    if not os.path.isabs(output):
+        output = os.path.abspath(os.path.relpath(output,os.getcwd()))
 
-    else:
-
-        # TODO remove when MGS project complete
-        if (args.workspace is None) or (args.output_path is None) or (args.metadata_type is None):
-            sys.exit('Missing arguments. Be sure to have a workspace path, output path, and metadata standard entered.')
-
-        # set workspace, check if it's an absolute or relative path and make changes as needed
-        ws = args.workspace
-        if not os.path.isabs(ws):
-            ws = os.path.abspath(os.path.relpath(ws,os.getcwd()))
-
-        # same for output path
-        output = args.output_path
-        if not os.path.isabs(output):
-            output = os.path.abspath(os.path.relpath(output,os.getcwd()))
-
-        md = args.metadata_type.lower()
+    md = args.metadata_type.lower()
 
     if md not in METADATA_OPTIONS:
         sys.exit('Invalid metadata standard. Supported options are %s. Please try again.' % ( " ,".join(METADATA_OPTIONS)))
@@ -84,9 +65,10 @@ def main():
         # assemble list of files to be processed
         files = []
         for root, dirnames, filenames in os.walk(ws):
-            for filename in fnmatch.filter(filenames, '*[!aux][!_OGP][!template].xml'):
+        
+            for filename in fnmatch.filter(filenames, '*[!aux][!_OGP][!template]*.xml'):
                 files.append(os.path.join(root, filename))
-                 
+        
         # for each file, parse it into an ElementTree, then instantiate the appropriate metadata standard class
         for filename in files:
 
