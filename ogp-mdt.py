@@ -27,14 +27,12 @@ def main():
     parser.add_argument("workspace",help="indicate the path where the metadata to be converted is contained")
     parser.add_argument("output_path",help="indicate the path where the output should be sent")
     parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, or MARC")
-    parser.add_argument("suffix",help="suffix to be appended to the end of each XML file name. Useful if you're expecting duplicate names. Defaults to 'OGP'")
+    parser.add_argument("suffix",nargs="?",default='OGP',help="suffix to be appended to the end of each XML file name. Useful if you're expecting duplicate names. Defaults to 'OGP'")
 
     args = parser.parse_args()
 
-    if args.suffix:
-        suffix = args.suffix
-    else:
-        suffix = "OGP"
+
+    suffix = args.suffix    
 
     # set workspace, check if it's an absolute or relative path and make changes as needed
     ws = args.workspace

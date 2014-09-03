@@ -18,30 +18,34 @@ class MetadataDocument(object):
         self.field_handlers = {
 
             # hardcoded values first
-            'Access': "Public",
-            'Availability': "Online",
-            'Institution': "Minnesota",
-            'CollectionId': "initial collection",
+            "Access": "Public",
+            "Availability": "Online",
+            "Institution": "Minnesota",
+            "InstitutionSort": "Minnesota",
+            "CollectionId": "initial collection",
 
             # the rest are associated with a method
-            'DataType': self.data_type,
-            'ThemeKeywords': self.theme_keywords,
-            'ThemeKeywordsSort': self.theme_keywords,
-            'PlaceKeywords': self.place_keywords,
-            'PlaceKeywordsSort': self.place_keywords,
-            'Publisher': self.publisher,
-            'LayerId': self.layer_id,
-            'Location': self.location,
-            'Name': self.name,
-            'LayerDisplayName': self.layer_display_name,
-            'ContentDate': self.content_date,
-            'Abstract': self.abstract,
-            'MinX': self.min_x,
-            'MaxX': self.max_x,
-            'MinY': self.min_y,
-            'MaxY': self.max_y,
-            'CenterX': self.center_x,
-            'CenterY': self.center_y
+            "DataType": self.data_type,
+            "DataTypeSort": self.data_type,
+            "ThemeKeywords": self.theme_keywords,
+            "PlaceKeywords": self.place_keywords,
+            "Publisher": self.publisher,
+            "PublisherSort": self.publisher,
+            "Originator": self.originator,
+            "OriginatorSort": self.originator,
+            "LayerId": self.layer_id,
+            "Location": self.location,
+            "Name": self.name,
+            "LayerDisplayName": self.layer_display_name,
+            "LayerDisplayNameSort": self.layer_display_name,
+            "ContentDate": self.content_date,
+            "Abstract": self.abstract,
+            "MinX": self.min_x,
+            "MaxX": self.max_x,
+            "MinY": self.min_y,
+            "MaxY": self.max_y,
+            "CenterX": self.center_x,
+            "CenterY": self.center_y
         }
 
     # field methods 
@@ -278,8 +282,11 @@ class FGDCDocument(MetadataDocument):
 
     def location(self):
         loc = self.root.findtext("idinfo/citation/citeinfo/onlink","UNKNOWN")
-        return loc
 
+        if loc != "UNKNOWN":
+            return '{\"download\": \"%s\"}' % (loc)
+        else:
+            return "UNKNOWN"
 
 class MGMGDocument(FGDCDocument):
     """
@@ -322,10 +329,11 @@ class MGMGDocument(FGDCDocument):
             print "Can't determine data type, setting to Undefined for now"
             return "Undefined"
 
+    """
     def location(self):
         #TODO refactor this mess
         pass
-        """
+        
         try:
             if df_lyrs.has_key(LAYERID):
                 dictCurrentLayer = ast.literal_eval(df_lyrs[LAYERID])
@@ -355,7 +363,7 @@ class MGMGDocument(FGDCDocument):
         except AttributeError as e:
             print 'LOCATION error: ', e
             error_counter += 1
-        """
+    """
 
 class MARCXMLDocument(MetadataDocument):
     def __init__(self,root,file_name):
