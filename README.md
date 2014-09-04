@@ -18,7 +18,7 @@ A simple Python (2.6+) script for creating OpenGeoPortal ingestible metadata fro
 
 
 ### Notes
-If you want your output XML files to be pretty printed you'll need the [lxml](http://lxml.de/) module installed. See [this] (http://lxml.de/installation.html) page for installation directions. Otherwise the etree module will be used and you'll end up with a seemingly shapeless blob of XML output. If you're looking to incorporate the conversion into a different script, see the processFile and processListofFiles functions in the md2ogp file. You can use these within a script of your own, so long as you include md2ogp in your Python path.
+If you want your output XML files to be pretty printed you'll need the [lxml](http://lxml.de/) module installed. See [this] (http://lxml.de/installation.html) page for installation directions. Otherwise the etree module will be used and you'll end up with a seemingly shapeless blob of XML output. If you're looking to incorporate the conversion into a different script, see the [processFile](https://github.com/krdyke/OGP-metadata-py/blob/master/src/md2ogp.py#L24) and [processListofFiles](https://github.com/krdyke/OGP-metadata-py/blob/master/src/md2ogp.py#L12) functions in the md2ogp file. You can use these within a script of your own, so long as you include md2ogp in your Python path.
 
 =======
 
