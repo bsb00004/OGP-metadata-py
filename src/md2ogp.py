@@ -22,17 +22,23 @@ class MetadataDocument(object):
             "Availability": "Online",
             "Institution": "Minnesota",
             "InstitutionSort": "Minnesota",
-            "CollectionId": "initial collection",
+            "CollectionId": "initial collection", 
+
+            # plug in a few fixed vals for MGS
+            #"Publisher": self.publisher,
+            "Publisher": "Minnesota Geological Survey",
+            #"PublisherSort": self.publisher,
+            "PublisherSort": "Minnesota Geological Survey",
+            #"Originator": self.originator,
+            "Originator": "Minnesota Geological Survey",
+            #"OriginatorSort": self.originator,
+            "OriginatorSort": "Minnesota Geological Survey",
 
             # the rest are associated with a method
             "DataType": self.data_type,
             "DataTypeSort": self.data_type,
             "ThemeKeywords": self.theme_keywords,
             "PlaceKeywords": self.place_keywords,
-            "Publisher": self.publisher,
-            "PublisherSort": self.publisher,
-            "Originator": self.originator,
-            "OriginatorSort": self.originator,
             "LayerId": self.layer_id,
             "Location": self.location,
             "Name": self.name,
