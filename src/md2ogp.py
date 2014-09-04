@@ -1,7 +1,85 @@
 import os, os.path
 from datetime import datetime
-from lxml import etree
-import pdb
+try:
+    from lxml import etree
+except ImportError:
+    try:
+        print "\nPython lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported.\n"
+        from xml.etree import ElementTree as etree
+    except ImportError:
+        print "No xml lib found. Please install lxml lib to continue"
+
+def processListofFiles(listoffiles,output,md):
+    if type(listoffiles) == list:
+
+        if os.path.exists(output) == False:
+            try:
+                os.mkdir(output)
+            except OSError:
+                print "There's a problem with the output path: %s. Are you sure you entered it correctly?" % (output)
+
+        for f in listoffiles:
+            processFile(f,output,md)
+
+def processFile(filename,output,md):
+    
+    md = md.lower()
+
+    # build empty etree to house output doc
+    OGPtree = etree.ElementTree()
+    OGProot = etree.Element("add", allowDups="false")
+    docElement = etree.SubElement(OGProot, "doc")
+    OGPtree._setroot(OGProot)
+    
+    # parse the current XML into an etree
+    tree = etree.ElementTree()
+    root = tree.parse(filename)
+
+    # grab the full text of the current XML for later use
+    fullText = etree.tostring(root)
+     
+    if md == "mgmg":
+        doc = MGMGDocument(root,filename)
+
+    elif md == "fgdc":
+        doc = FGDCDocument(root,filename)
+
+    elif md == "arcgis":
+        doc = ArcGISDocument(root,filename)
+
+    elif md == "marc":
+        doc = MARCXMLDocument(root,filename)
+
+    for field in doc.field_handlers:
+        try:
+            fieldEle = etree.SubElement(docElement, "field", name=field)
+            if hasattr(doc.field_handlers[field], '__call__'):
+                fieldEle.text = doc.field_handlers[field].__call__()
+            else:
+                fieldEle.text = doc.field_handlers[field]
+
+        except KeyError as e:
+            print "Nonexistant key: ", field
+    
+    fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
+    fullTextElement.text = fullText
+
+    resultName =  os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
+    
+    #check for duplicate names (since w're looking across records with similar dataset content)
+    # and add an _ to the end to avoid overwriting
+    if os.path.exists(resultName):
+        resultName = os.path.splitext(resultName)[0] + "_" + os.path.splitext(resultName)[1]
+
+    print 'Writing: ' + resultName
+    
+    if "lxml" in etree.__name__:
+        OGPtree.write(resultName, pretty_print=True)
+    else:
+        OGPtree.write(resultName)
+        
+
+
 
 class MetadataDocument(object):
     """

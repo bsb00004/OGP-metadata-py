@@ -7,32 +7,14 @@ from src import md2ogp
 
 METADATA_OPTIONS = ['mgmg','fgdc','arcgis','marc']
 
-try:
-    from lxml import etree
-    XML_LIB = "lxml" 
-except ImportError:
-    try:
-        print "\nPython lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported.\n"
-        from xml.etree import ElementTree as etree
-        XML_LIB = "etree" 
-    except ImportError:
-        print "No xml lib found. Please install lxml lib to continue"
-
-def processSingleFile():
-    pass
-
 def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("workspace",help="indicate the path where the metadata to be converted is contained")
     parser.add_argument("output_path",help="indicate the path where the output should be sent")
     parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, or MARC")
-    parser.add_argument("suffix",nargs="?",default='OGP',help="suffix to be appended to the end of each XML file name. Useful if you're expecting duplicate names. Defaults to 'OGP'")
-
+    
     args = parser.parse_args()
-
-
-    suffix = args.suffix    
 
     # set workspace, check if it's an absolute or relative path and make changes as needed
     ws = args.workspace
@@ -67,54 +49,8 @@ def main():
             for filename in fnmatch.filter(filenames, '*[!aux][!_OGP][!template]*.xml'):
                 files.append(os.path.join(root, filename))
         
-        # for each file, parse it into an ElementTree, then instantiate the appropriate metadata standard class
-        for filename in files:
+        md2ogp.processListofFiles(files,output,md)
 
-            # build empty etree to house output doc
-            OGPtree = etree.ElementTree()
-            OGProot = etree.Element("add", allowDups="false")
-            docElement = etree.SubElement(OGProot, "doc")
-            OGPtree._setroot(OGProot)
             
-            # parse the current XML into an etree
-            tree = etree.ElementTree()
-            root = tree.parse(filename)
-
-            # grab the full text of the current XML for later use
-            fullText = etree.tostring(root)
-             
-            if md == "mgmg":
-                doc = md2ogp.MGMGDocument(root,filename)
-
-            elif md == "fgdc":
-                doc = md2ogp.FGDCDocument(root,filename)
-
-            elif md == "arcgis":
-                doc = md2ogp.ArcGISDocument(root,filename)
-
-            elif md == "marc":
-                doc = md2ogp.MARCXMLDocument(root,filename)
-
-            for field in doc.field_handlers:
-                try:
-                    fieldEle = etree.SubElement(docElement, "field", name=field)
-                    if hasattr(doc.field_handlers[field], '__call__'):
-                        fieldEle.text = doc.field_handlers[field].__call__()
-                    else:
-                        fieldEle.text = doc.field_handlers[field]
-
-                except KeyError as e:
-                    print "Nonexistant key: ", field
-            
-            fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
-            fullTextElement.text = fullText
-
-            print 'Writing: ' + os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_" + suffix + ".xml")
-            
-            if XML_LIB == "lxml":
-                OGPtree.write(os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_" + suffix + ".xml"), pretty_print=True)
-            else:
-                OGPtree.write(os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_" + suffix + ".xml"))
-                
 if __name__ == "__main__":
     sys.exit(main())
