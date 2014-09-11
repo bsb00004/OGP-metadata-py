@@ -1,5 +1,8 @@
 import os, os.path
+import time
 from datetime import datetime
+from logger import Logger
+
 try:
     from lxml import etree
 except ImportError:
@@ -9,76 +12,101 @@ except ImportError:
     except ImportError:
         print "No xml lib found. Please install lxml lib to continue"
 
-def processListofFiles(listoffiles,output,md):
-    if type(listoffiles) == list:
 
-        if os.path.exists(output) == False:
-            try:
-                os.mkdir(output)
-            except OSError:
-                print "There's a problem with the output path: %s. Are you sure you entered it correctly?" % (output)
+class baseOGP(object):
+    def __init__(self, output_path, md):
+        self.output_path = output_path
+        self.log = self.createLog()
+        self.md = md.lower()
 
-        for f in listoffiles:
-            processFile(f,output,md)
+    def createLog(self):
+        return Logger(self.output_path)
 
-def processFile(filename,output,md):
-    
-    md = md.lower()
+    def processListofFiles(self, listoffiles):
 
-    # build empty etree to house output doc
-    OGPtree = etree.ElementTree()
-    OGProot = etree.Element("add", allowDups="false")
-    docElement = etree.SubElement(OGProot, "doc")
-    OGPtree._setroot(OGProot)
-    
-    # parse the current XML into an etree
-    tree = etree.ElementTree()
-    root = tree.parse(filename)
+        if type(listoffiles) == list:
 
-    # grab the full text of the current XML for later use
-    fullText = etree.tostring(root)
-     
-    if md == "mgmg":
-        doc = MGMGDocument(root,filename)
+            if not os.path.exists(self.output_path):
+                try:
+                    os.mkdir(self.output_path)
+                except OSError:
+                    print "There's a problem with the output path: %s. Are you sure you entered it correctly?" % (
+                        output)
 
-    elif md == "fgdc":
-        doc = FGDCDocument(root,filename)
+            for f in listoffiles:
+                self.processFile(f)
 
-    elif md == "arcgis":
-        doc = ArcGISDocument(root,filename)
+            # when done, close the log file
+            self.log.close()
 
-    elif md == "marc":
-        doc = MARCXMLDocument(root,filename)
+    def processFile(self, filename):
 
-    for field in doc.field_handlers:
-        try:
-            fieldEle = etree.SubElement(docElement, "field", name=field)
-            if hasattr(doc.field_handlers[field], '__call__'):
-                fieldEle.text = doc.field_handlers[field].__call__()
+        # build empty etree to house output doc
+        OGPtree = etree.ElementTree()
+        OGProot = etree.Element("add", allowDups="false")
+        docElement = etree.SubElement(OGProot, "doc")
+        OGPtree._setroot(OGProot)
+
+        # parse the current XML into an etree
+        tree = etree.ElementTree()
+        root = tree.parse(filename)
+
+        # grab the full text of the current XML for later use
+        fullText = etree.tostring(root)
+
+        doc = False
+
+        if self.md == "mgmg":
+            doc = MGMGDocument(root, filename, self.log)
+
+        elif self.md == "fgdc":
+            doc = FGDCDocument(root, filename, self.log)
+
+        elif self.md == "arcgis":
+            doc = ArcGISDocument(root, filename, self.log)
+
+        elif self.md == "marc":
+            doc = MARCXMLDocument(root, filename, self.log)
+
+        elif self.md == "guess":
+            if root.find("metainfo/metstdn") is not None:
+                if "Minnesota" in root.find("metainfo/metstdn").text:
+                    doc = MGMGDocument(root, filename, self.log)
+                elif "FGDC" in root.find("metainfo/metstdn").text:
+                    doc = FGDCDocument(root, filename, self.log)
+            elif root.find("collection/record") is not None:
+                doc = MARCXMLDocument(root, filename, self.log)
             else:
-                fieldEle.text = doc.field_handlers[field]
+                self.log.write(filename, 'metadata standard undecipherable')
 
-        except KeyError as e:
-            print "Nonexistant key: ", field
-    
-    fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
-    fullTextElement.text = fullText
+        if doc:
+            for field in doc.field_handlers:
+                try:
+                    fieldEle = etree.SubElement(docElement, "field", name=field)
+                    if hasattr(doc.field_handlers[field], '__call__'):
+                        fieldEle.text = doc.field_handlers[field].__call__()
+                    else:
+                        fieldEle.text = doc.field_handlers[field]
 
-    resultName =  os.path.join(output, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
-    
-    #check for duplicate names (since w're looking across records with similar dataset content)
-    # and add an _ to the end to avoid overwriting
-    if os.path.exists(resultName):
-        resultName = os.path.splitext(resultName)[0] + "_" + os.path.splitext(resultName)[1]
+                except KeyError as e:
+                    print "Nonexistant key: ", field
 
-    print 'Writing: ' + resultName
-    
-    if "lxml" in etree.__name__:
-        OGPtree.write(resultName, pretty_print=True)
-    else:
-        OGPtree.write(resultName)
-        
+            fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
+            fullTextElement.text = fullText
 
+            resultName = os.path.join(self.output_path, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
+
+            # check for duplicate names (since w're looking across records with similar dataset content)
+            # and add an _ to the end to avoid overwriting
+            if os.path.exists(resultName):
+                resultName = os.path.splitext(resultName)[0] + "_" + os.path.splitext(resultName)[1]
+
+            print 'Writing: ' + resultName
+
+            if "lxml" in etree.__name__:
+                OGPtree.write(resultName, pretty_print=True)
+            else:
+                OGPtree.write(resultName)
 
 
 class MetadataDocument(object):
@@ -87,7 +115,8 @@ class MetadataDocument(object):
     across standards are implemented.
     """
 
-    def __init__(self,root,file_name):
+    def __init__(self, root, file_name, log):
+        self.log = log
         self.root = root
         self.file_name = file_name
 
@@ -100,21 +129,21 @@ class MetadataDocument(object):
             "Availability": "Online",
             "Institution": "Minnesota",
             "InstitutionSort": "Minnesota",
-            "CollectionId": "initial collection", 
+            "CollectionId": "initial collection",
 
             # plug in a few fixed vals for MGS
-            #"Publisher": self.publisher,
-            "Publisher": "Minnesota Geological Survey",
-            #"PublisherSort": self.publisher,
-            "PublisherSort": "Minnesota Geological Survey",
-            #"Originator": self.originator,
-            "Originator": "Minnesota Geological Survey",
-            #"OriginatorSort": self.originator,
-            "OriginatorSort": "Minnesota Geological Survey",
+            "Publisher": self.publisher,
+            #"Publisher": "Minnesota Geological Survey",
+            "PublisherSort": self.publisher,
+            #"PublisherSort": "Minnesota Geological Survey",
+            "Originator": self.originator,
+            #"Originator": "Minnesota Geological Survey",
+            "OriginatorSort": self.originator,
+            #"OriginatorSort": "Minnesota Geological Survey",
 
             # the rest are associated with a method
             "DataType": self.data_type,
-            "DataTypeSort": self.data_type,
+            #"DataTypeSort": self.data_type,
             "ThemeKeywords": self.theme_keywords,
             "PlaceKeywords": self.place_keywords,
             "LayerId": self.layer_id,
@@ -139,7 +168,7 @@ class MetadataDocument(object):
         return file_name
 
     def layer_id(self):
-        return self._file_name_sans_extension()
+        return self._file_name_sans_extension() + str(time.time()).replace('.', '')
 
     def name(self):
         return self._file_name_sans_extension()
@@ -160,6 +189,10 @@ class MetadataDocument(object):
         # see standard specific sub-class implementation
         pass
 
+    def originator(self):
+        # see standard specific sub-class implementation
+        pass
+
     def layer_display_name(self):
         # see standard specific sub-class implementation
         pass
@@ -176,37 +209,63 @@ class MetadataDocument(object):
         # see standard specific sub-class implementation
         pass
 
+    def min_x(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def min_y(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def max_x(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def max_y(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def center_x(self):
+        # see standard specific sub-class implementation
+        pass
+
+    def center_y(self):
+        # see standard specific sub-class implementation
+        pass
+
 
 class ArcGISDocument(MetadataDocument):
     """
     Unimplemented. Inherits from MetadataDocument
     """
-    def __init__(self,root,filename):
-        super(ArcGISDocument,self).__init__(root,filename)
+
+    def __init__(self, root, filename, log):
+        super(ArcGISDocument, self).__init__(root, filename, log)
 
 
 class FGDCDocument(MetadataDocument):
     """
     inherits from MetadataDocument
     """
-    def __init__(self,root,filename):
-        super(FGDCDocument,self).__init__(root,filename)
+
+    def __init__(self, root, filename, log):
+        super(FGDCDocument, self).__init__(root, filename, log)
 
     def publisher(self):
-        publisher = self.root.findtext("idinfo/citation/citeinfo/pubinfo/publish","UNKNOWN")
+        publisher = self.root.findtext("idinfo/citation/citeinfo/pubinfo/publish", "UNKNOWN")
         return publisher
 
     def layer_display_name(self):
-        disp_name = self.root.findtext("idinfo/citation/citeinfo/title","UNKNOWN")
+        disp_name = self.root.findtext("idinfo/citation/citeinfo/title", "UNKNOWN")
         disp_name = disp_name + " (" + self.name() + ")"
         return disp_name
 
     def abstract(self):
-        abstract = self.root.findtext("idinfo/descript/abstract","UNKNOWN")
+        abstract = self.root.findtext("idinfo/descript/abstract", "UNKNOWN")
         return abstract
 
     def originator(self):
-        originator = self.root.findtext("idinfo/citation/citeinfo/origin","UNKNOWN")
+        originator = self.root.findtext("idinfo/citation/citeinfo/origin", "UNKNOWN")
         return originator
 
     def data_type(self):
@@ -214,37 +273,41 @@ class FGDCDocument(MetadataDocument):
         try:
             if root.find("*//geoform") is not None:
                 geoform = root.findtext("*//geoform").lower()
-                if ("scanned" in geoform or 
-                    "paper" in geoform or 
-                    "scanned paper map" in geoform):
+                if ("scanned" in geoform or
+                    "paper" in geoform or
+                    "scanned paper map" in geoform
+                ):
                     return "Paper Map"
+
             if root.find("*//direct") is not None:
                 direct = root.findtext("*//direct").lower()
                 if "raster" in direct:
                     return "Raster"
                 elif (
-                    "g-polygon" in direct or 
-                    "polygon" in direct or 
+                    "g-polygon" in direct or
+                    "polygon" in direct or
                     "chain" in direct
-                    ):
+                ):
                     return "Polygon"
-                elif ("point" in direct):
+                elif "point" in direct:
                     return "Point"
+
             if root.find("*//sdtstype") is not None:
                 sdtstype = root.findtext("*//sdtstype").lower()
                 if ("composite" in sdtstype or
                     "point" in sdtstype
-                    ):
+                ):
                     return "Point"
                 elif "string" in sdtstype:
                     return "Line"
                 elif ("g-polygon" in sdtstype or
                       "polygon" in sdtstype or
-                      "chain" in sdtstype):
+                      "chain" in sdtstype
+                ):
                     return "Polygon"
 
         except AttributeError as e:
-            print "Can't determine data type, setting to Undefined for now"
+            self.log.write(self.file_name, 'can\'t find data type')
             return "Undefined"
 
     def theme_keywords(self):
@@ -257,7 +320,7 @@ class FGDCDocument(MetadataDocument):
             else:
                 return 'None'
         except AttributeError as e:
-            print "can't find keywords. Setting to UNKNOWN for now"
+            self.log.write(self.file_name, 'can\'t find keywords')
             return "UNKNOWN"
 
     def place_keywords(self):
@@ -271,25 +334,26 @@ class FGDCDocument(MetadataDocument):
                 return 'None'
         except AttributeError as e:
             print "can't find keywords. Setting to UNKNOWN for now"
+            self.log.write(self.file_name, 'can\'t find keywords')
             return "UNKNOWN"
 
-    def _parse_content_date(self,dateText):
+    def _parse_content_date(self, date_text):
 
         try:
-            if len(dateText) == 4:
-                #if it's just 4 digits, lets assume it's the year and convert it to integer
-                year = int(dateText)
+            if len(date_text) == 4:
+                # if it's just 4 digits, lets assume it's the year and convert it to integer
+                year = int(date_text)
 
-                #we'll just use Jan 1 as the default for year only entries
-                date = datetime(year,1,1)
+                # we'll just use Jan 1 as the default for year only entries
+                date = datetime(year, 1, 1)
 
                 #now format it ISO style
                 return date.isoformat() + "Z"
-            elif len(dateText) == 8:
-                year = int(dateText[0:4])
-                month = int(dateText[4:6])
-                day = int(dateText[6:])
-                date = datetime(year,month,day)
+            elif len(date_text) == 8:
+                year = int(date_text[0:4])
+                month = int(date_text[4:6])
+                day = int(date_text[6:])
+                date = datetime(year, month, day)
                 return date.isoformat() + "Z"
 
         except ValueError as e:
@@ -298,86 +362,138 @@ class FGDCDocument(MetadataDocument):
     def content_date(self):
         root = self.root
         try:
-
             if root.find("idinfo/timeperd/timeinfo/sngdate/caldate") is not None:
-                dateText = root.find("idinfo/timeperd/timeinfo/sngdate/caldate").text
-                return self._parse_content_date(dateText)
+                date_text = root.find("idinfo/timeperd/timeinfo/sngdate/caldate").text
+                return self._parse_content_date(date_text)
             elif root.find("idinfo/timeperd/timeinfo/rngdates/begdate") is not None:
-                dateText = root.find("idinfo/timeperd/timeinfo/rngdates/begdate").text
-                return self._parse_content_date(dateText)
+                date_text = root.find("idinfo/timeperd/timeinfo/rngdates/begdate").text
+                return self._parse_content_date(date_text)
             elif root.find("idinfo/citation/citeinfo/pubdate") is not None:
-                dateText = root.find("idinfo/citation/citeinfo/pubdate").text
-                return self._parse_content_date(dateText)
+                date_text = root.find("idinfo/citation/citeinfo/pubdate").text
+                return self._parse_content_date(date_text)
             else:
+                self.log.write(self.file_name, 'can\'t find date')
                 return "1919-08-01T00:00:00Z"
 
-        except (AttributeError,TypeError):
+        except (AttributeError, TypeError):
             print "No content date found! setting to 1919-08-01T00:00:00Z for now"
+            self.log.write(self.file_name, 'can\'t find date')
             return "1919-08-01T00:00:00Z"
 
-    def _parse_coord(self,coord):
+    def _parse_coord(self, coord):
         try:
             coord = float(coord)
             return unicode(coord)
-        except (ValueError,TypeError):
-            return "ERR_" + coord
+        except (ValueError, TypeError):
+            self.log.write(self.file_name, 'coordinate issues')
+            return "0"
 
     def min_x(self):
-        coord = self.root.findtext("idinfo/spdom/bounding/westbc","UNKNOWN")
+        coord = self.root.findtext("idinfo/spdom/bounding/westbc", "UNKNOWN")
         if coord is not "UNKNOWN":
             return self._parse_coord(coord)
-        return coord
+        self.log.write(self.file_name, 'coordinate issues')
+        return "0"
 
     def min_y(self):
-        coord = self.root.findtext("idinfo/spdom/bounding/southbc","UNKNOWN")
+        coord = self.root.findtext("idinfo/spdom/bounding/southbc", "UNKNOWN")
         if coord is not "UNKNOWN":
             return self._parse_coord(coord)
-        return coord
+        self.log.write(self.file_name, 'coordinate issues')
+        return "0"
 
     def max_x(self):
-        coord = self.root.findtext("idinfo/spdom/bounding/eastbc","UNKNOWN")
+        coord = self.root.findtext("idinfo/spdom/bounding/eastbc", "UNKNOWN")
         if coord is not "UNKNOWN":
             return self._parse_coord(coord)
-        return coord
+        self.log.write(self.file_name, 'coordinate issues')
+        return "0"
 
     def max_y(self):
-        coord = self.root.findtext("idinfo/spdom/bounding/northbc","UNKNOWN")
+        coord = self.root.findtext("idinfo/spdom/bounding/northbc", "UNKNOWN")
         if coord is not "UNKNOWN":
             return self._parse_coord(coord)
-        return coord
+        self.log.write(self.file_name, 'coordinate issues')
+        return "0"
 
     def center_x(self):
         try:
             min_x = float(self.min_x())
             max_x = float(self.max_x())
-            center_x = min_x + (abs(max_x-min_x)/2)
+            center_x = min_x + (abs(max_x - min_x) / 2)
             return unicode(center_x)
         except ValueError:
-            return "UNKNOWN"
+            self.log.write(self.file_name, 'coordinate issues')
+            return "0"
 
     def center_y(self):
         try:
             min_y = float(self.min_y())
             max_y = float(self.max_y())
-            center_x = min_y + (abs(max_y-min_y)/2)
+            center_x = min_y + (abs(max_y - min_y) / 2)
             return unicode(center_x)
         except ValueError:
-            return "UNKNOWN"
+            self.log.write(self.file_name, 'coordinate issues')
+            return "0"
 
     def location(self):
-        loc = self.root.findtext("idinfo/citation/citeinfo/onlink","UNKNOWN")
+        loc = self.root.findtext("idinfo/citation/citeinfo/onlink", "UNKNOWN")
 
         if loc != "UNKNOWN":
             return '{\"download\": \"%s\"}' % (loc)
         else:
+            self.log.write(self.file_name, 'can\'t find onlink, or else it\'s goofy somehow')
             return "UNKNOWN"
+
 
 class MGMGDocument(FGDCDocument):
     """
     Inherits from FGDCDocument
     """
-    def __init__(self,root,filename):
-        super(MGMGDocument,self).__init__(root,filename)
+
+    def __init__(self, root, filename, log):
+        super(MGMGDocument, self).__init__(root, filename, log)
+
+    def _data_type_fgdc_fallback(self):
+
+        root = self.root
+
+        #try FGDC style parsing for data type
+        if root.find("*//geoform") is not None:
+            geoform = root.findtext("*//geoform").lower()
+
+            if ("scanned" in geoform or
+                "paper" in geoform or
+                "scanned paper map" in geoform
+            ):
+                return "Paper Map"
+
+            if root.find("*//direct") is not None:
+                direct = root.findtext("*//direct").lower()
+                if "raster" in direct:
+                    return "Raster"
+                elif (
+                    "g-polygon" in direct or
+                    "polygon" in direct or
+                    "chain" in direct
+                ):
+                    return "Polygon"
+                elif "point" in direct:
+                    return "Point"
+
+            if root.find("*//sdtstype") is not None:
+                sdtstype = root.findtext("*//sdtstype").lower()
+                if ("composite" in sdtstype or
+                    "point" in sdtstype
+                ):
+                    return "Point"
+                elif "string" in sdtstype:
+                    return "Line"
+                elif ("g-polygon" in sdtstype or
+                      "polygon" in sdtstype or
+                      "chain" in sdtstype
+                ):
+                    return "Polygon"
 
     def data_type(self):
         root = self.root
@@ -386,31 +502,47 @@ class MGMGDocument(FGDCDocument):
                 return "Raster"
             if root.findtext("*//direct").lower() == "point":
                 return "Point"
-            elif root.findtext("*//direct").lower() =="vector":
-                mgmg3obj = root.findtext("*//mgmg3obj").lower()
-                if (
-                    "area" in mgmg3obj or 
-                    "polygon" in mgmg3obj or 
-                    "region" in mgmg3obj or 
-                    "TIN" in mgmg3obj
-                    ):
-                    return "Polygon"
+            elif root.findtext("*//direct").lower() == "vector":
+                mgmg3obj = root.find("*//mgmg3obj")
 
-                elif ("line" in mgmg3obj or
-                    "network" in mgmg3obj or
-                    "route-section" in mgmg3obj or
-                    "arc" in mgmg3obj
+                if mgmg3obj is not None:
+
+                    mgmg3obj = mgmg3obj.text.lower()
+                    if (
+                        "area" in mgmg3obj or
+                        "polygon" in mgmg3obj or
+                        "region" in mgmg3obj or
+                        "TIN" in mgmg3obj
                     ):
-                    return "Line"
-                elif (
-                    "node" in mgmg3obj or 
-                    "point" in mgmg3obj or 
-                    "label" in mgmg3obj
+                        return "Polygon"
+
+                    elif (
+                        "line" in mgmg3obj or
+                        "network" in mgmg3obj or
+                        "route-section" in mgmg3obj or
+                        "arc" in mgmg3obj
                     ):
-                    return "Point"
+                        return "Line"
+                    elif (
+                        "node" in mgmg3obj or
+                        "point" in mgmg3obj or
+                        "label" in mgmg3obj
+                    ):
+                        return "Point"
+
+                else:
+                    print 'trying fallback!\n'
+                    return self._data_type_fgdc_fallback()
+
+            else:
+                print 'trying fallback!\n'
+                return self._data_type_fgdc_fallback()
+
+
 
         except AttributeError as e:
             print "Can't determine data type, setting to Undefined for now"
+            self.log.write(self.file_name, 'data type issues')
             return "Undefined"
 
     """
@@ -449,11 +581,13 @@ class MGMGDocument(FGDCDocument):
             error_counter += 1
     """
 
+
 class MARCXMLDocument(MetadataDocument):
-    def __init__(self,root,file_name):
+    def __init__(self, root, file_name, log):
         from itertools import ifilter
         import re
-        super(MARCXMLDocument,self).__init__(root,file_name)
+
+        super(MARCXMLDocument, self).__init__(root, file_name, log)
         MARC = "http://www.loc.gov/MARC21/slim"
         MARCNS = "{{{0}}}".format(MARC)
         NSMAP = {
@@ -461,13 +595,13 @@ class MARCXMLDocument(MetadataDocument):
         }
 
         _XPATHS = {
-            "001"  : "/collection/record/controlfield[@tag='001']",
-            "008"  : "/collection/record/controlfield[@tag='008']/text()",
+            "001": "/collection/record/controlfield[@tag='001']",
+            "008": "/collection/record/controlfield[@tag='008']/text()",
             "034_d": "/collection/record/datafield[@tag='034']/subfield[@code='d']/text()",
             "034_e": "/collection/record/datafield[@tag='034']/subfield[@code='e']/text()",
             "034_f": "/collection/record/datafield[@tag='034']/subfield[@code='f']/text()",
             "034_g": "/collection/record/datafield[@tag='034']/subfield[@code='g']/text()",
-            "245"  : "/collection/record/datafield[@tag='245']/subfield[@code='a']/text()",
+            "245": "/collection/record/datafield[@tag='245']/subfield[@code='a']/text()",
             "260_b": "/collection/record/datafield[@tag='260']/subfield[@code='b']",
             "500_a": "/collection/record/datafield[@tag='500']/subfield[@code='a']/text()",
             "650_a": "/collection/record/datafield[@tag='650']/subfield[@code='a']",
@@ -475,9 +609,9 @@ class MARCXMLDocument(MetadataDocument):
             "876_k": "/collection/record/datafield[@tag='876']/subfield[@code='k']",
         }
 
-        self.XPATHS = dict((k, etree.XPath(v)) for k,v in _XPATHS.items())    
+        self.XPATHS = dict((k, etree.XPath(v)) for k, v in _XPATHS.items())
         self._COORD_REGEX = re.compile("^([NSEW+-])?(\d{3}(\.\d*)?)(\d{2}(\.\d*)?)?(\d{2}(\.\d*)?)?",
-                          re.IGNORECASE)
+                                       re.IGNORECASE)
 
     def datatype(self):
         xpath = self.XPATHS['876_k']
@@ -517,7 +651,7 @@ class MARCXMLDocument(MetadataDocument):
         date = xpath(self.root)[0][7:11]
 
         try:
-            date= datetime(int(date), 1, 1)
+            date = datetime(int(date), 1, 1)
             return date.isoformat() + "Z"
         except ValueError:
             pass
@@ -574,7 +708,7 @@ class MARCXMLDocument(MetadataDocument):
         if east is not None and west is not None:
             return unicode(abs(east - west) / 2)
 
-    def _convert_coord(self,coordinate):
+    def _convert_coord(self, coordinate):
         parts = self._COORD_REGEX.search(coordinate)
         if parts is None:
             return

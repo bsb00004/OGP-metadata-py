@@ -5,19 +5,19 @@ import os, os.path
 import fnmatch
 from src import md2ogp
 
-METADATA_OPTIONS = ['mgmg','fgdc','arcgis','marc']
+METADATA_OPTIONS = ['mgmg','fgdc','arcgis','marc','guess']
 
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("workspace",help="indicate the path where the metadata to be converted is contained")
+    parser.add_argument("input_path",help="indicate the path where the metadata to be converted is contained")
     parser.add_argument("output_path",help="indicate the path where the output should be sent")
-    parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, or MARC")
+    parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, MARC, or GUESS (which takes a guess)")
     
     args = parser.parse_args()
 
-    # set workspace, check if it's an absolute or relative path and make changes as needed
-    ws = args.workspace
+    # set input_path, check if it's an absolute or relative path and make changes as needed
+    ws = args.input_path
     if not os.path.isabs(ws):
         ws = os.path.abspath(os.path.relpath(ws,os.getcwd()))
 
@@ -30,7 +30,7 @@ def main():
 
     if md not in METADATA_OPTIONS:
         sys.exit('Invalid metadata standard. Supported options are %s. Please try again.' % ( " ,".join(METADATA_OPTIONS)))
-    
+
     if os.path.exists(output) == False:
         try:
             os.mkdir(output)
@@ -42,14 +42,18 @@ def main():
 
     elif os.path.exists(ws) == True:
 
+        # instantiate base class to take in output path and metadata option
+        ogp = md2ogp.baseOGP(output,md)
+
         # assemble list of files to be processed
         files = []
         for root, dirnames, filenames in os.walk(ws):
-        
+
+            #filters out certain XML file names
             for filename in fnmatch.filter(filenames, '*[!aux][!_OGP][!template]*.xml'):
                 files.append(os.path.join(root, filename))
-        
-        md2ogp.processListofFiles(files,output,md)
+
+        ogp.processListofFiles(files)
 
             
 if __name__ == "__main__":
