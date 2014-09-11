@@ -454,47 +454,6 @@ class MGMGDocument(FGDCDocument):
     def __init__(self, root, filename, log):
         super(MGMGDocument, self).__init__(root, filename, log)
 
-    def _data_type_fgdc_fallback(self):
-
-        root = self.root
-
-        #try FGDC style parsing for data type
-        if root.find("*//geoform") is not None:
-            geoform = root.findtext("*//geoform").lower()
-
-            if ("scanned" in geoform or
-                "paper" in geoform or
-                "scanned paper map" in geoform
-            ):
-                return "Paper Map"
-
-            if root.find("*//direct") is not None:
-                direct = root.findtext("*//direct").lower()
-                if "raster" in direct:
-                    return "Raster"
-                elif (
-                    "g-polygon" in direct or
-                    "polygon" in direct or
-                    "chain" in direct
-                ):
-                    return "Polygon"
-                elif "point" in direct:
-                    return "Point"
-
-            if root.find("*//sdtstype") is not None:
-                sdtstype = root.findtext("*//sdtstype").lower()
-                if ("composite" in sdtstype or
-                    "point" in sdtstype
-                ):
-                    return "Point"
-                elif "string" in sdtstype:
-                    return "Line"
-                elif ("g-polygon" in sdtstype or
-                      "polygon" in sdtstype or
-                      "chain" in sdtstype
-                ):
-                    return "Polygon"
-
     def data_type(self):
         root = self.root
         try:
@@ -530,15 +489,9 @@ class MGMGDocument(FGDCDocument):
                     ):
                         return "Point"
 
-                else:
-                    print 'trying fallback!\n'
-                    return self._data_type_fgdc_fallback()
-
             else:
-                print 'trying fallback!\n'
-                return self._data_type_fgdc_fallback()
-
-
+                self.log.write(self.file_name, 'data type issues')
+                return "Undefined"
 
         except AttributeError as e:
             print "Can't determine data type, setting to Undefined for now"
@@ -582,6 +535,7 @@ class MGMGDocument(FGDCDocument):
     """
 
 
+# from https://github.com/gravesm/marcingest
 class MARCXMLDocument(MetadataDocument):
     def __init__(self, root, file_name, log):
         from itertools import ifilter
