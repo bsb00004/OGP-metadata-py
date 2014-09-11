@@ -20,7 +20,7 @@ A simple Python (2.6+) script for creating OpenGeoPortal ingestible metadata fro
 ### Notes
 
 - If you want your output XML files to be pretty printed you'll need the [lxml](http://lxml.de/) module installed. See [this] (http://lxml.de/installation.html) page for installation directions. Otherwise the etree module will be used and you'll end up with a seemingly shapeless blob of XML output.
-- Note line 52 in ogp-mdt.py, which filters out certain names for input files. You may want to change/remove those [!...] options to just take in all XMLs in your input path.
+
 - A log file is produced in the output_path. Its name will look like `__ogp-mdt-log-<some numbers>.csv`. It has three columns, the first being the path to the input file. The second field is the name of the inputted XML file, and the third field is the issue discovered with the field.
 
 =======
