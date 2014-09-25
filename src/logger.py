@@ -1,18 +1,21 @@
 """
 create simple logger class to output results both to text file and display
 """
-import os.path,csv,time
+import os.path
+import csv
+import time
+
 
 class Logger(object):
-    def __init__(self,OUTPUT_LOCATION):
-        self.filename = '__ogp-mdt-log-' + str(time.time()).replace('.','') + '.csv'
-        self.csvfile = open(os.path.join(OUTPUT_LOCATION, self.filename), mode='a')
+
+    def __init__(self, output_location):
+        self.filename = '__ogp-mdt-log-' + str(time.time()).replace('.', '') + '.csv'
+        self.csvfile = open(os.path.join(output_location, self.filename), mode='a')
         self.log = csv.writer(self.csvfile)
 
-    def write(self, filename,message):
+    def write(self, filename, message):
         s = os.path.split(filename)
-        self.log.writerow([s[0],s[1],message])
+        self.log.writerow([s[0], s[1], message])
 
     def close(self):
         self.csvfile.close()
-
