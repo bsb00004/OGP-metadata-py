@@ -11,8 +11,10 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("input_path",help="indicate the path where the metadata to be converted is contained")
-    parser.add_argument("output_path",help="indicate the path where the output should be sent")
+    parser.add_argument("output_path",help="indicate the path where the output should be sent, or 'same' if you want to output to the same path as the input")
     parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, MARC, or GUESS (which takes a guess)")
+    parser.add_argument("-i","--indirect",action="store_true",help="If the links in the metadata do not directly return a binary file (e.g. a zip archive), set this option")
+    parser.add_argument("-l","--log_only",action="store_true",help="If you just want the log written (i.e. no output XMLs). Useful for metadata cleanup.")
     
     args = parser.parse_args()
 
@@ -21,10 +23,14 @@ def main():
     if not os.path.isabs(ws):
         ws = os.path.abspath(os.path.relpath(ws,os.getcwd()))
 
-    # same for output path
     output = args.output_path
-    if not os.path.isabs(output):
+
+
+    if output.lower() != "same" and not os.path.isabs(output):
         output = os.path.abspath(os.path.relpath(output,os.getcwd()))
+    elif output.lower() == "same":
+        output = ws
+
 
     md = args.metadata_type.lower()
 
@@ -45,12 +51,18 @@ def main():
         # instantiate base class to take in output path and metadata option
         ogp = md2ogp.baseOGP(output,md)
 
+        if args.indirect:
+            ogp.setIndirectLinks()
+
+        if args.log_only:
+            ogp.loggingOnly()
+
         # assemble list of files to be processed
         files = []
         for root, dirnames, filenames in os.walk(ws):
 
             #filters out certain XML file names
-            for filename in fnmatch.filter(filenames, '*[!aux][!_OGP][!template]*.xml'):
+            for filename in fnmatch.filter(filenames, '*[!_OGP][!template][!Conflict]*.xml'):
                 files.append(os.path.join(root, filename))
 
         ogp.processListofFiles(files)

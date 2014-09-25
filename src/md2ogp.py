@@ -2,6 +2,9 @@ import os, os.path
 import time
 from datetime import datetime
 from logger import Logger
+import json
+from datafinder_test import getAGSdetails
+import pdb
 
 try:
     from lxml import etree
@@ -12,12 +15,21 @@ except ImportError:
     except ImportError:
         print "No xml lib found. Please install lxml lib to continue"
 
+#df = getAGSdetails()
 
 class baseOGP(object):
     def __init__(self, output_path, md):
         self.output_path = output_path
         self.log = self.createLog()
         self.md = md.lower()
+        self.indirect_links = False
+        self.logging_only = False
+
+    def setIndirectLinks(self):
+        self.indirect_links = True
+
+    def loggingOnly(self):
+        self.logging_only = True
 
     def createLog(self):
         return Logger(self.output_path)
@@ -41,6 +53,8 @@ class baseOGP(object):
 
     def processFile(self, filename):
 
+        print 'Starting file:', filename
+
         # build empty etree to house output doc
         OGPtree = etree.ElementTree()
         OGProot = etree.Element("add", allowDups="false")
@@ -57,25 +71,25 @@ class baseOGP(object):
         doc = False
 
         if self.md == "mgmg":
-            doc = MGMGDocument(root, filename, self.log)
+            doc = MGMGDocument(root, filename, self.log, self.indirect_links)
 
         elif self.md == "fgdc":
-            doc = FGDCDocument(root, filename, self.log)
+            doc = FGDCDocument(root, filename, self.log, self.indirect_links)
 
         elif self.md == "arcgis":
-            doc = ArcGISDocument(root, filename, self.log)
+            doc = ArcGISDocument(root, filename, self.log, self.indirect_links)
 
         elif self.md == "marc":
-            doc = MARCXMLDocument(root, filename, self.log)
+            doc = MARCXMLDocument(root, filename, self.log, self.indirect_links)
 
         elif self.md == "guess":
             if root.find("metainfo/metstdn") is not None:
                 if "Minnesota" in root.find("metainfo/metstdn").text:
-                    doc = MGMGDocument(root, filename, self.log)
+                    doc = MGMGDocument(root, filename, self.log, self.indirect_links)
                 elif "FGDC" in root.find("metainfo/metstdn").text:
-                    doc = FGDCDocument(root, filename, self.log)
+                    doc = FGDCDocument(root, filename, self.log, self.indirect_links)
             elif root.find("collection/record") is not None:
-                doc = MARCXMLDocument(root, filename, self.log)
+                doc = MARCXMLDocument(root, filename, self.log, self.indirect_links)
             else:
                 self.log.write(filename, 'metadata standard undecipherable')
 
@@ -94,19 +108,21 @@ class baseOGP(object):
             fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
             fullTextElement.text = fullText
 
-            resultName = os.path.join(self.output_path, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
+            if not self.logging_only:
 
-            # check for duplicate names (since w're looking across records with similar dataset content)
-            # and add an _ to the end to avoid overwriting
-            if os.path.exists(resultName):
-                resultName = os.path.splitext(resultName)[0] + "_" + os.path.splitext(resultName)[1]
+                resultName = os.path.join(self.output_path, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
 
-            print 'Writing: ' + resultName
+                # check for duplicate names (since w're looking across records with similar dataset content)
+                # and add an _ to the end to avoid overwriting
+                if os.path.exists(resultName):
+                    resultName = os.path.splitext(resultName)[0] + "_" + os.path.splitext(resultName)[1]
 
-            if "lxml" in etree.__name__:
-                OGPtree.write(resultName, pretty_print=True)
-            else:
-                OGPtree.write(resultName)
+                print 'Writing: ' + resultName
+
+                if "lxml" in etree.__name__:
+                    OGPtree.write(resultName, pretty_print=True)
+                else:
+                    OGPtree.write(resultName)
 
 
 class MetadataDocument(object):
@@ -115,10 +131,12 @@ class MetadataDocument(object):
     across standards are implemented.
     """
 
-    def __init__(self, root, file_name, log):
+    def __init__(self, root, file_name, log, indirect_links):
         self.log = log
         self.root = root
         self.file_name = file_name
+        self.indirect_links = indirect_links
+        #self.datafinder_layers = df
 
         # create a dictionary containing the OGP field names as keys, mapping
         # the corresponding class method (or hardcoded string) as value
@@ -131,19 +149,12 @@ class MetadataDocument(object):
             "InstitutionSort": "Minnesota",
             "CollectionId": "initial collection",
 
-            # plug in a few fixed vals for MGS
-            "Publisher": self.publisher,
-            #"Publisher": "Minnesota Geological Survey",
-            "PublisherSort": self.publisher,
-            #"PublisherSort": "Minnesota Geological Survey",
-            "Originator": self.originator,
-            #"Originator": "Minnesota Geological Survey",
-            "OriginatorSort": self.originator,
-            #"OriginatorSort": "Minnesota Geological Survey",
-
             # the rest are associated with a method
+            "Publisher": self.publisher,
+            "PublisherSort": self.publisher,
+            "Originator": self.originator,
+            "OriginatorSort": self.originator,
             "DataType": self.data_type,
-            #"DataTypeSort": self.data_type,
             "ThemeKeywords": self.theme_keywords,
             "PlaceKeywords": self.place_keywords,
             "LayerId": self.layer_id,
@@ -234,13 +245,22 @@ class MetadataDocument(object):
         pass
 
 
+class ISODocument(MetadataDocument):
+    """
+    Unimplemented. Inherits from MetadataDocument
+    """
+
+    def __init__(self, root, filename, log, indirect_links):
+        super(ISODocument, self).__init__(root, filename, log, indirect_links)
+        
+
 class ArcGISDocument(MetadataDocument):
     """
     Unimplemented. Inherits from MetadataDocument
     """
 
-    def __init__(self, root, filename, log):
-        super(ArcGISDocument, self).__init__(root, filename, log)
+    def __init__(self, root, filename, log, indirect_links):
+        super(ArcGISDocument, self).__init__(root, filename, log, indirect_links)
 
 
 class FGDCDocument(MetadataDocument):
@@ -248,8 +268,8 @@ class FGDCDocument(MetadataDocument):
     inherits from MetadataDocument
     """
 
-    def __init__(self, root, filename, log):
-        super(FGDCDocument, self).__init__(root, filename, log)
+    def __init__(self, root, filename, log, indirect_links):
+        super(FGDCDocument, self).__init__(root, filename, log, indirect_links)
 
     def publisher(self):
         publisher = self.root.findtext("idinfo/citation/citeinfo/pubinfo/publish", "UNKNOWN")
@@ -257,8 +277,8 @@ class FGDCDocument(MetadataDocument):
 
     def layer_display_name(self):
         disp_name = self.root.findtext("idinfo/citation/citeinfo/title", "UNKNOWN")
-        disp_name = disp_name + " (" + self.name() + ")"
-        return disp_name
+        #disp_name = disp_name + " (" + self.name() + ")"
+        return disp_name.title()
 
     def abstract(self):
         abstract = self.root.findtext("idinfo/descript/abstract", "UNKNOWN")
@@ -338,44 +358,58 @@ class FGDCDocument(MetadataDocument):
             return "UNKNOWN"
 
     def _parse_content_date(self, date_text):
-
         try:
-            if len(date_text) == 4:
-                # if it's just 4 digits, lets assume it's the year and convert it to integer
-                year = int(date_text)
+            if self._try_parse_int(date_text) is not None:
+                if len(date_text) == 4:
+                    year = int(date_text)
 
-                # we'll just use Jan 1 as the default for year only entries
-                date = datetime(year, 1, 1)
+                    # we'll just use Jan 1 as the default for year only entries
+                    date = datetime(year, 1, 1)
 
-                #now format it ISO style
-                return date.isoformat() + "Z"
-            elif len(date_text) == 8:
-                year = int(date_text[0:4])
-                month = int(date_text[4:6])
-                day = int(date_text[6:])
-                date = datetime(year, month, day)
-                return date.isoformat() + "Z"
-
+                    #now format it ISO style
+                    return date.isoformat() + "Z"
+                elif len(date_text) == 8:
+                    year = int(date_text[0:4])
+                    month = int(date_text[4:6])
+                    day = int(date_text[6:])
+                    date = datetime(year, month, day)
+                    return date.isoformat() + "Z"
+            else:
+                self.log.write(self.file_name, 'can\'t parse date with text: "' + date_text + '"')
         except ValueError as e:
             return "UNKNOWN"
+
+    def _try_parse_int(self, s, base=10, val=None):
+        try:
+            return int(s, base)
+        except ValueError:
+            return val
 
     def content_date(self):
         root = self.root
         try:
             if root.find("idinfo/timeperd/timeinfo/sngdate/caldate") is not None:
                 date_text = root.find("idinfo/timeperd/timeinfo/sngdate/caldate").text
-                return self._parse_content_date(date_text)
+                #return self._parse_content_date(date_text)
             elif root.find("idinfo/timeperd/timeinfo/rngdates/begdate") is not None:
                 date_text = root.find("idinfo/timeperd/timeinfo/rngdates/begdate").text
-                return self._parse_content_date(date_text)
+                #print date_text
+                #return self._parse_content_date(date_text)
             elif root.find("idinfo/citation/citeinfo/pubdate") is not None:
                 date_text = root.find("idinfo/citation/citeinfo/pubdate").text
+                #print date_text
+                #return self._parse_content_date(date_text)
+            else:
+                date_text = False
+
+            if date_text:
                 return self._parse_content_date(date_text)
             else:
                 self.log.write(self.file_name, 'can\'t find date')
                 return "1919-08-01T00:00:00Z"
 
-        except (AttributeError, TypeError):
+        except (AttributeError, TypeError) as e:
+            print e
             print "No content date found! setting to 1919-08-01T00:00:00Z for now"
             self.log.write(self.file_name, 'can\'t find date')
             return "1919-08-01T00:00:00Z"
@@ -385,35 +419,35 @@ class FGDCDocument(MetadataDocument):
             coord = float(coord)
             return unicode(coord)
         except (ValueError, TypeError):
-            self.log.write(self.file_name, 'coordinate issues')
+            self.log.write(self.file_name, 'can\'t parse coordinate: "' + coord + '"')
             return "0"
 
     def min_x(self):
         coord = self.root.findtext("idinfo/spdom/bounding/westbc", "UNKNOWN")
         if coord is not "UNKNOWN":
             return self._parse_coord(coord)
-        self.log.write(self.file_name, 'coordinate issues')
+        self.log.write(self.file_name, 'min_x issues')
         return "0"
 
     def min_y(self):
         coord = self.root.findtext("idinfo/spdom/bounding/southbc", "UNKNOWN")
         if coord is not "UNKNOWN":
             return self._parse_coord(coord)
-        self.log.write(self.file_name, 'coordinate issues')
+        self.log.write(self.file_name, 'min_y issues')
         return "0"
 
     def max_x(self):
         coord = self.root.findtext("idinfo/spdom/bounding/eastbc", "UNKNOWN")
         if coord is not "UNKNOWN":
             return self._parse_coord(coord)
-        self.log.write(self.file_name, 'coordinate issues')
+        self.log.write(self.file_name, 'max_x issues')
         return "0"
 
     def max_y(self):
         coord = self.root.findtext("idinfo/spdom/bounding/northbc", "UNKNOWN")
         if coord is not "UNKNOWN":
             return self._parse_coord(coord)
-        self.log.write(self.file_name, 'coordinate issues')
+        self.log.write(self.file_name, 'max_y issues')
         return "0"
 
     def center_x(self):
@@ -423,7 +457,7 @@ class FGDCDocument(MetadataDocument):
             center_x = min_x + (abs(max_x - min_x) / 2)
             return unicode(center_x)
         except ValueError:
-            self.log.write(self.file_name, 'coordinate issues')
+            self.log.write(self.file_name, 'center_x issues')
             return "0"
 
     def center_y(self):
@@ -433,16 +467,19 @@ class FGDCDocument(MetadataDocument):
             center_x = min_y + (abs(max_y - min_y) / 2)
             return unicode(center_x)
         except ValueError:
-            self.log.write(self.file_name, 'coordinate issues')
+            self.log.write(self.file_name, 'center_y issues')
             return "0"
 
     def location(self):
         loc = self.root.findtext("idinfo/citation/citeinfo/onlink", "UNKNOWN")
 
         if loc != "UNKNOWN":
-            return '{\"download\": \"%s\"}' % (loc)
+            locDict = {}
+            locDict['download'] = loc
+            locDict['indirectLink'] = self.indirect_links
+            return json.dumps(locDict)
         else:
-            self.log.write(self.file_name, 'can\'t find onlink, or else it\'s goofy somehow')
+            self.log.write(self.file_name, 'can\'t find onlink.')
             return "UNKNOWN"
 
 
@@ -451,8 +488,8 @@ class MGMGDocument(FGDCDocument):
     Inherits from FGDCDocument
     """
 
-    def __init__(self, root, filename, log):
-        super(MGMGDocument, self).__init__(root, filename, log)
+    def __init__(self, root, filename, log, indirect_links):
+        super(MGMGDocument, self).__init__(root, filename, log, indirect_links)
 
     def data_type(self):
         root = self.root
@@ -498,50 +535,40 @@ class MGMGDocument(FGDCDocument):
             self.log.write(self.file_name, 'data type issues')
             return "Undefined"
 
-    """
+
     def location(self):
-        #TODO refactor this mess
-        pass
-        
-        try:
-            if df_lyrs.has_key(LAYERID):
-                dictCurrentLayer = ast.literal_eval(df_lyrs[LAYERID])
-                ARCGISREST = dictCurrentLayer["ArcGISRest"]
-                NAME = dictCurrentLayer["layerId"]
-                #print 'Found',LAYERID,' so removing it from df_lyrs'
-                df_lyrs.pop(LAYERID)
+        loc = self.root.findtext("idinfo/citation/citeinfo/onlink", "UNKNOWN")
 
-                if root.find("idinfo/citation/citeinfo/onlink") is not None:
-                    DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
-                    LOCATION = json.dumps({
-                        #It is tricky to add layerId here since we might complicate the location field to contain json-in-json.
-                        #Currently, we neglect layerId but use layerName, which is LAYERID, a.k.a NAME field in OGP metadata format to access layer.
-                        'ArcGISRest': ARCGISREST + "/export",
-                        'download': DOWNLOAD_URL,
-                    })
-                else:
-                    LOCATION = json.dumps({
-                        'ArcGISRest': ARCGISREST,
-                    })
-            else:
-                if root.find("idinfo/citation/citeinfo/onlink") is not None:
-                    DOWNLOAD_URL = root.find("idinfo/citation/citeinfo/onlink").text
-                    LOCATION = json.dumps({
-                        'download': DOWNLOAD_URL
-                    })
-        except AttributeError as e:
-            print 'LOCATION error: ', e
-            error_counter += 1
-    """
+        if loc != "UNKNOWN":
+            locDict = {}
+            locDict['download'] = loc
 
+            #datafinder.org specific stuff
+            try:
+                if self.datafinder_layers.has_key(os.path.split(self.file_name)[1]):
+                    f = self.datafinder_layers[os.path.split(self.file_name)[1]]
+                    locDict['ArcGISRest'] = f['ArcGISRest']
+                    locDict['layerId'] = f['layerId']
+            except:
+                pass
+
+            #end datafinder specific
+
+
+            locDict['indirectLink'] = self.indirect_links
+            
+            return json.dumps(locDict)
+        else:
+            self.log.write(self.file_name, 'can\'t find onlink, or else it\'s goofy somehow')
+            return "UNKNOWN"
 
 # from https://github.com/gravesm/marcingest
 class MARCXMLDocument(MetadataDocument):
-    def __init__(self, root, file_name, log):
+    def __init__(self, root, file_name, log, indirect_links):
         from itertools import ifilter
         import re
 
-        super(MARCXMLDocument, self).__init__(root, file_name, log)
+        super(MARCXMLDocument, self).__init__(root, file_name, log, indirect_links)
         MARC = "http://www.loc.gov/MARC21/slim"
         MARCNS = "{{{0}}}".format(MARC)
         NSMAP = {
