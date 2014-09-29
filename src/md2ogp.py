@@ -271,6 +271,15 @@ class FGDCDocument(MetadataDocument):
     def __init__(self, root, filename, log, indirect_links):
         super(FGDCDocument, self).__init__(root, filename, log, indirect_links)
 
+    def layer_id(self):
+        root = self.root
+        if (root.find("idinfo/citation/citeinfo/title") is not None and 
+            root.find("idinfo/citation/citeinfo/title").attrib.has_key('catid')):
+            return root.find("idinfo/citation/citeinfo/title").attrib['catid']
+        else:
+            return self._file_name_sans_extension() + str(time.time()).replace('.', '')
+
+
     def publisher(self):
         publisher = self.root.findtext("idinfo/citation/citeinfo/pubinfo/publish", "UNKNOWN")
         return publisher
@@ -545,8 +554,8 @@ class MGMGDocument(FGDCDocument):
 
             #datafinder.org specific stuff
             try:
-                if self.datafinder_layers.has_key(os.path.split(self.file_name)[1]):
-                    f = self.datafinder_layers[os.path.split(self.file_name)[1]]
+                if df.has_key(os.path.split(self.file_name)[1]):
+                    f = df[os.path.split(self.file_name)[1]]
                     locDict['ArcGISRest'] = f['ArcGISRest']
                     locDict['layerId'] = f['layerId']
             except:
