@@ -26,11 +26,23 @@ except ImportError:
 
 class baseOGP(object):
     def __init__(self, output_path, md):
-        self.output_path = output_path
+
+        self.output_path = output_path.rstrip('/')
         self.log = self.createLog()
         self.md = md.lower()
         self.indirect_links = False
         self.logging_only = False
+        self.zip = self.initZip()
+
+    def initZip(self):
+        d = datetime.now()
+        ds = d.strftime('%m%d%Y_%H%M')
+        zipFileName = os.path.join(self.output_path,self.output_path.split(os.path.sep)[-1] + "_" ds + "_OGP.zip")
+        return zipfile.ZipFile(zipFileName, 'a', mode)
+
+    def addToZip(self,f):
+        fileNameForZip = f.split(os.path.sep)[-1]
+        self.zip.write(f, arcname=fileNameForZip)
 
     def setIndirectLinks(self):
         self.indirect_links = True
@@ -55,8 +67,9 @@ class baseOGP(object):
             for f in listoffiles:
                 self.processFile(f)
 
-            # when done, close the log file
+            # when done, close the log file and zip
             self.log.close()
+            self.zip.close()
 
     def processFile(self, filename):
 
@@ -131,12 +144,8 @@ class baseOGP(object):
                 else:
                     OGPtree.write(resultName)
 
-                # add to zipfile
-                zipFileName = os.path.join(self.output_path,os.path.split(self.output_path)[1] + '_OGP.zip')
-                zip= zipfile.ZipFile(zipFileName, 'a', mode)
-                fileNameForZip = os.path.splitext(os.path.split(filename)[1])[0] + '.xml'
-                zip.write(os.path.join(self.output_path, fileNameForZip), arcname=fileNameForZip)
-                zip.close()
+                self.addToZip(resultName)
+                
 
 
 class MetadataDocument(object):
