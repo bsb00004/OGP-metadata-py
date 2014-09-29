@@ -5,6 +5,13 @@ from logger import Logger
 import json
 from datafinder_test import getAGSdetails
 import pdb
+import zipfile
+
+try:
+    import zlib
+    mode= zipfile.ZIP_DEFLATED
+except:
+    mode= zipfile.ZIP_STORED
 
 try:
     from lxml import etree
@@ -123,6 +130,13 @@ class baseOGP(object):
                     OGPtree.write(resultName, pretty_print=True)
                 else:
                     OGPtree.write(resultName)
+
+                # add to zipfile
+                zipFileName = os.path.join(self.output_path,os.path.split(self.output_path)[1] + '_OGP.zip')
+                zip= zipfile.ZipFile(zipFileName, 'a', mode)
+                fileNameForZip = os.path.splitext(os.path.split(filename)[1])[0] + '.xml'
+                zip.write(os.path.join(self.output_path, fileNameForZip), arcname=fileNameForZip)
+                zip.close()
 
 
 class MetadataDocument(object):
