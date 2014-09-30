@@ -37,7 +37,7 @@ class baseOGP(object):
     def initZip(self):
         d = datetime.now()
         ds = d.strftime('%m%d%Y_%H%M')
-        zipFileName = os.path.join(self.output_path,self.output_path.split(os.path.sep)[-1] + "_" ds + "_OGP.zip")
+        zipFileName = os.path.join(self.output_path,self.output_path.split(os.path.sep)[-1] + "_" + ds + "_OGP.zip")
         return zipfile.ZipFile(zipFileName, 'a', mode)
 
     def addToZip(self,f):

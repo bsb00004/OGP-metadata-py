@@ -1,0 +1,151 @@
+<add allowDups="false">
+  <doc>
+    <field name="LayerDisplayName">Fire Hydrants, Fire Hydrants Collected Upon Installation, Published In 2010, 1:600 (1In=50Ft) Scale, Columbia County Board Of Commissioners.</field>
+    <field name="CenterY">33.566489435</field>
+    <field name="Access">Public</field>
+    <field name="Location">{"download": "http://gis.columbiacountyga.gov", "indirectLink": false}</field>
+    <field name="ContentDate">2010-01-01T00:00:00Z</field>
+    <field name="Originator">Columbia County Board of Commissioners</field>
+    <field name="MaxX">-82.02960205</field>
+    <field name="MaxY">33.70078659</field>
+    <field name="LayerDisplayNameSort">Fire Hydrants, Fire Hydrants Collected Upon Installation, Published In 2010, 1:600 (1In=50Ft) Scale, Columbia County Board Of Commissioners.</field>
+    <field name="Institution">Minnesota</field>
+    <field name="Publisher">Columbia County Board of Commissioners</field>
+    <field name="Name">0</field>
+    <field name="CollectionId">initial collection</field>
+    <field name="MinX">-82.24473903</field>
+    <field name="MinY">33.43219228</field>
+    <field name="CenterX">-82.13717054</field>
+    <field name="LayerId">n39c884b0139a0cc8ad0n7ffe</field>
+    <field name="PlaceKeywords">Georgia</field>
+    <field name="OriginatorSort">Columbia County Board of Commissioners</field>
+    <field name="DataType"/>
+    <field name="InstitutionSort">Minnesota</field>
+    <field name="Abstract">This Fire Hydrants dataset, published at 1:600 (1in=50ft) scale, was produced all or in part from Field Survey/GPS information as of 2010. It is described as 'Fire Hydrants collected upon installation'. Data by this publisher are often provided  in State Plane coordinate system; in a Transverse Mercator projection; The extent of these data is generally Columbia County, GA,Grovetown, GA,Harlem, GA. This starter metadata was auto-generated through the Ramona GIS Inventory System (www.gisinventory.net) and does not represent all information about this data set.</field>
+    <field name="PublisherSort">Columbia County Board of Commissioners</field>
+    <field name="ThemeKeywords">utilitiesCommunication</field>
+    <field name="Availability">Online</field>
+    <field name="FgdcText">&lt;metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fgdc="http://www.opengis.net/cat/csw/csdgm" xmlns:csw="http://www.opengis.net/cat/csw" xsi:noNamespaceSchemaLocation="http://www.opengis.net/cat/csw"&gt;
+                    &lt;idinfo&gt;
+                        &lt;citation&gt;
+                            &lt;citeinfo&gt;
+                                &lt;origin&gt;Columbia County Board of Commissioners&lt;/origin&gt;
+                                &lt;pubdate&gt;2010&lt;/pubdate&gt;
+                                &lt;title catid="n39c884b0139a0cc8ad0n7ffe"&gt;Fire Hydrants, Fire Hydrants collected upon installation, Published in 2010, 1:600 (1in=50ft) scale, Columbia County Board of Commissioners.&lt;/title&gt;
+                                &lt;geoform&gt;Map&lt;/geoform&gt;
+                                &lt;pubinfo&gt;
+                                    &lt;pubplace&gt;Evans, GA&lt;/pubplace&gt;
+                                    &lt;publish&gt;Columbia County Board of Commissioners&lt;/publish&gt;
+                                &lt;/pubinfo&gt;
+                                &lt;othercit&gt;gis-inventory-metadata-5119-16097.xml&lt;/othercit&gt;
+                                &lt;onlink&gt;http://gis.columbiacountyga.gov&lt;/onlink&gt;
+                                &lt;onlink&gt;http://www.columbiacountyga.gov&lt;/onlink&gt;
+                            &lt;/citeinfo&gt;
+                        &lt;/citation&gt;
+                        &lt;descript&gt;
+                            &lt;abstract&gt;This Fire Hydrants dataset, published at 1:600 (1in=50ft) scale, was produced all or in part from Field Survey/GPS information as of 2010. It is described as 'Fire Hydrants collected upon installation'. Data by this publisher are often provided  in State Plane coordinate system; in a Transverse Mercator projection; The extent of these data is generally Columbia County, GA,Grovetown, GA,Harlem, GA. This starter metadata was auto-generated through the Ramona GIS Inventory System (www.gisinventory.net) and does not represent all information about this data set.&lt;/abstract&gt;
+                            &lt;purpose&gt;This is an inventory-level metadata record documented through the GIS Inventory system.  Please refer to the data set contact or publisher for original intent and appropriate use information.&lt;/purpose&gt;
+                        &lt;/descript&gt;
+                        &lt;timeperd&gt;
+                            &lt;timeinfo&gt;
+                                &lt;sngdate&gt;
+                                    &lt;caldate&gt;20100101&lt;/caldate&gt;
+                                &lt;/sngdate&gt;
+                            &lt;/timeinfo&gt;
+                            &lt;current&gt;Publication Date&lt;/current&gt;
+                        &lt;/timeperd&gt;
+                        &lt;status&gt;
+                            &lt;progress&gt;Complete&lt;/progress&gt;
+                            &lt;update&gt;Continually&lt;/update&gt;
+                        &lt;/status&gt;
+                        &lt;spdom&gt;
+                            &lt;bounding&gt;
+                                &lt;westbc&gt;-82.24473903&lt;/westbc&gt;
+                                &lt;eastbc&gt;-82.02960205&lt;/eastbc&gt;
+                                &lt;northbc&gt;33.70078659&lt;/northbc&gt;
+                                &lt;southbc&gt;33.43219228&lt;/southbc&gt;
+                            &lt;/bounding&gt;
+                        &lt;/spdom&gt;
+                        &lt;keywords&gt;
+                            &lt;theme&gt;
+                                &lt;themekt&gt;Ramona GIS Inventory&lt;/themekt&gt;
+                                &lt;themekey&gt;utilitiesCommunication&lt;/themekey&gt;
+                            &lt;/theme&gt;
+                            &lt;place&gt;
+                                &lt;placekt&gt;None&lt;/placekt&gt;
+                                &lt;placekey&gt;Georgia&lt;/placekey&gt;
+                                &lt;placekey&gt;Columbia County&lt;/placekey&gt;
+                                &lt;placekey&gt;Grovetown&lt;/placekey&gt;
+                                &lt;placekey&gt;Harlem&lt;/placekey&gt;
+                            &lt;/place&gt;
+                            &lt;temporal&gt;
+                                &lt;tempkt&gt;None&lt;/tempkt&gt;
+                                &lt;tempkey&gt;2010&lt;/tempkey&gt;
+                            &lt;/temporal&gt;
+                        &lt;/keywords&gt;
+                        &lt;accconst&gt;Please refer to the data publisher for restrictions on access to this data set.&lt;/accconst&gt;
+                        &lt;useconst&gt;Use constraints may exist to ensure the protection of privacy or intellectual property, and any special restrictions or limitations on using the data set.  Please refer to the publisher for more information.&lt;/useconst&gt;
+                        &lt;ptcontac&gt;
+                            &lt;cntinfo&gt;
+                                &lt;cntorgp&gt;
+                                    &lt;cntorg&gt;Columbia County Board of Commissioners&lt;/cntorg&gt;
+                                    &lt;cntper&gt;Mary Howard&lt;/cntper&gt;
+                                &lt;/cntorgp&gt;
+                                &lt;cntpos&gt;Director/Coordinator&lt;/cntpos&gt;
+                                &lt;cntaddr&gt;
+                                    &lt;addrtype&gt;mailing and physical address&lt;/addrtype&gt;
+                                    &lt;address&gt;630 Ronald Reagan Dr&lt;/address&gt;
+                                    &lt;city&gt;Evans&lt;/city&gt;
+                                    &lt;state&gt;GA&lt;/state&gt;
+                                    &lt;postal&gt;30809&lt;/postal&gt;
+                                &lt;/cntaddr&gt;
+                                &lt;cntvoice&gt;706-868-3421&lt;/cntvoice&gt;
+                            &lt;/cntinfo&gt;
+                        &lt;/ptcontac&gt;
+                    &lt;/idinfo&gt;
+                    &lt;distinfo&gt;
+                        &lt;resdesc&gt;Offline Data&lt;/resdesc&gt;
+                        &lt;distrib&gt;
+                            &lt;cntinfo&gt;
+                                &lt;cntorgp&gt;
+                                    &lt;cntorg&gt;Columbia County Board of Commissioners&lt;/cntorg&gt;
+                                    &lt;cntper&gt;Mary Howard&lt;/cntper&gt;
+                                &lt;/cntorgp&gt;
+                                &lt;cntaddr&gt;
+                                    &lt;addrtype&gt;mailing and physical address&lt;/addrtype&gt;
+                                    &lt;address&gt;630 Ronald Reagan Dr&lt;/address&gt;
+                                    &lt;city&gt;Evans&lt;/city&gt;
+                                    &lt;state&gt;GA&lt;/state&gt;
+                                    &lt;postal&gt;30809&lt;/postal&gt;
+                                &lt;/cntaddr&gt;
+                                &lt;cntvoice&gt;706-868-3421&lt;/cntvoice&gt;
+                            &lt;/cntinfo&gt;
+                        &lt;/distrib&gt;
+                        &lt;distliab&gt;Although these data have been processed successfully on a computer system by the data steward, no warranty either expressed or implied is made regarding the utility of the data on any system, nor shall this notice generated by the GIS Inventory System or the act of distribution constitute any such warranty. The data steward may have additional liability information associated with delivery or distribution of this product.&lt;/distliab&gt;
+                    &lt;/distinfo&gt;
+                    &lt;metainfo&gt;
+                        &lt;metd&gt;20120907&lt;/metd&gt;
+                        &lt;metrd&gt;20120907&lt;/metrd&gt;
+                        &lt;metc&gt;
+                            &lt;cntinfo&gt;
+                                &lt;cntorgp&gt;
+                                    &lt;cntorg&gt;Ramona GIS Inventory&lt;/cntorg&gt;
+                                &lt;/cntorgp&gt;
+                                &lt;cntemail&gt;contact@gisinventory.net&lt;/cntemail&gt;
+                                &lt;cntaddr&gt;
+                                    &lt;addrtype&gt;mailing and physical address&lt;/addrtype&gt;
+                                    &lt;address&gt;630 Ronald Reagan Dr&lt;/address&gt;
+                                    &lt;city&gt;Evans&lt;/city&gt;
+                                    &lt;state&gt;GA&lt;/state&gt;
+                                    &lt;postal&gt;30809&lt;/postal&gt;
+                                &lt;/cntaddr&gt;
+                                &lt;cntvoice&gt;706-868-3421&lt;/cntvoice&gt;
+                            &lt;/cntinfo&gt;
+                        &lt;/metc&gt;
+                        &lt;metstdn&gt;FGDC Content Standards for Digital Geospatial Metadata&lt;/metstdn&gt;
+                        &lt;metstdv&gt;FGDC-STD-001-1998&lt;/metstdv&gt;
+                        &lt;metuc&gt;This is an incomplete metadata record developed from survey-based information in the GIS Inventory. This record does not include important data quality, attributes and other helpful information. Where more complete metadata is not available from the publisher or linked from the Other Citation section, these metadata can be imported into various metadata/GIS software or text editing packages for use and completion. The National States Geographic Information Council strongly supports the full FGDC Content Standard for Digital Geospatial Metadata standard and encourages GIS Inventory users to maintain fully compliant metadata. (http://www.fgdc.gov/metadata).&lt;/metuc&gt;
+                    &lt;/metainfo&gt;
+                &lt;/metadata&gt;</field>
+  </doc>
+</add>
