@@ -58,13 +58,13 @@ def main():
             ogp.loggingOnly()
 
         # assemble list of files to be processed
-        files = []
         for root, dirnames, filenames in os.walk(ws):
 
             #filters out certain XML file names
-            for filename in fnmatch.filter(filenames, '*[!_OGP][!template][!Conflict]*.xml'):
+            for filename in fnmatch.filter(filenames, '*.xml'):
                 files.append(os.path.join(root, filename))
 
+        print 'There are %s files to be processed.' % (len(files))
         ogp.processListofFiles(files)
 
             
