@@ -24,6 +24,8 @@ A simple Python (2.6+) commandline tool for creating Open GeoPortal ingestible m
 
 `-l` - Log only output. This option if present will suppress the writing of the output XML files, but will process them and create the log just the same. This can be useful when "debugging" inputted metadata.
 
+`-z` - zip file only output. By default the script will create the XMLs as well as a zip archive containing all of the XMLs. If you just want the zip file outputted use this flag.
+
 -------
 
 ### Examples
