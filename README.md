@@ -4,7 +4,7 @@ A simple Python (2.6+) commandline tool for creating Open GeoPortal ingestible m
 -----------
 
 ### Usage
-    ogp-mdt.py [-h] input_path output_path metadata_standard [-i] [-l]
+    ogp-mdt.py [-h] input_path output_path metadata_standard [-i] [-l] [-z]
 
 
 `-h` - Display usage information  
