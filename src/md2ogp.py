@@ -5,6 +5,13 @@ from logger import Logger
 import json
 from datafinder_test import getAGSdetails
 import pdb
+import zipfile
+
+try:
+    import zlib
+    mode= zipfile.ZIP_DEFLATED
+except:
+    mode= zipfile.ZIP_STORED
 
 try:
     from lxml import etree
@@ -15,18 +22,36 @@ except ImportError:
     except ImportError:
         print "No xml lib found. Please install lxml lib to continue"
 
-#df = getAGSdetails()
+df = getAGSdetails()
 
 class baseOGP(object):
     def __init__(self, output_path, md):
-        self.output_path = output_path
+
+        self.output_path = output_path.rstrip('/')
         self.log = self.createLog()
         self.md = md.lower()
         self.indirect_links = False
         self.logging_only = False
+        self.zip_only = False
+        self.zip = self.initZip()
+
+    def initZip(self):
+        d = datetime.now()
+        ds = d.strftime('%m%d%Y_%H%M')
+        zipFileName = os.path.join(self.output_path,self.output_path.split(os.path.sep)[-1] + "_" + ds + "_OGP.zip")
+        return zipfile.ZipFile(zipFileName, 'a', mode)
+
+    def addToZip(self,f):
+        fileNameForZip = f.split(os.path.sep)[-1]
+        self.zip.write(f, arcname=fileNameForZip)
+        if self.zip_only:
+            os.remove(f)
 
     def setIndirectLinks(self):
         self.indirect_links = True
+
+    def setZipOnly(self):
+        self.zip_only = True
 
     def loggingOnly(self):
         self.logging_only = True
@@ -48,8 +73,9 @@ class baseOGP(object):
             for f in listoffiles:
                 self.processFile(f)
 
-            # when done, close the log file
+            # when done, close the log file and zip
             self.log.close()
+            self.zip.close()
 
     def processFile(self, filename):
 
@@ -124,6 +150,8 @@ class baseOGP(object):
                 else:
                     OGPtree.write(resultName)
 
+                self.addToZip(resultName) 
+
 
 class MetadataDocument(object):
     """
@@ -148,6 +176,9 @@ class MetadataDocument(object):
             "Institution": "Minnesota",
             "InstitutionSort": "Minnesota",
             "CollectionId": "initial collection",
+            "WorkspaceName": "",
+
+
 
             # the rest are associated with a method
             "Publisher": self.publisher,
@@ -545,8 +576,8 @@ class MGMGDocument(FGDCDocument):
 
             #datafinder.org specific stuff
             try:
-                if self.datafinder_layers.has_key(os.path.split(self.file_name)[1]):
-                    f = self.datafinder_layers[os.path.split(self.file_name)[1]]
+                if df.has_key(os.path.split(self.file_name)[1]):
+                    f = df[os.path.split(self.file_name)[1]]
                     locDict['ArcGISRest'] = f['ArcGISRest']
                     locDict['layerId'] = f['layerId']
             except:

@@ -15,6 +15,7 @@ def main():
     parser.add_argument("metadata_type",help="Metadata standard used for input XMLs. Acceptable values are FGDC, MGMG, MARC, or GUESS (which takes a guess)")
     parser.add_argument("-i","--indirect",action="store_true",help="If the links in the metadata do not directly return a binary file (e.g. a zip archive), set this option")
     parser.add_argument("-l","--log_only",action="store_true",help="If you just want the log written (i.e. no output XMLs). Useful for metadata cleanup.")
+    parser.add_argument("-z","--zip_only", action="store_true", help="Only output a zip file with the metadata files in it")
     
     args = parser.parse_args()
 
@@ -57,6 +58,11 @@ def main():
         if args.log_only:
             ogp.loggingOnly()
 
+        if args.zip_only:
+            ogp.setZipOnly()
+
+        files = []
+        
         # assemble list of files to be processed
         for root, dirnames, filenames in os.walk(ws):
 
