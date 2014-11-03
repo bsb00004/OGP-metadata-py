@@ -22,7 +22,7 @@ except ImportError:
     except ImportError:
         print "No xml lib found. Please install lxml lib to continue"
 
-#df = getAGSdetails()
+df = getAGSdetails()
 
 class baseOGP(object):
     def __init__(self, output_path, md):
@@ -32,6 +32,7 @@ class baseOGP(object):
         self.md = md.lower()
         self.indirect_links = False
         self.logging_only = False
+        self.zip_only = False
         self.zip = self.initZip()
 
     def initZip(self):
@@ -43,9 +44,14 @@ class baseOGP(object):
     def addToZip(self,f):
         fileNameForZip = f.split(os.path.sep)[-1]
         self.zip.write(f, arcname=fileNameForZip)
+        if self.zip_only:
+            os.remove(f)
 
     def setIndirectLinks(self):
         self.indirect_links = True
+
+    def setZipOnly(self):
+        self.zip_only = True
 
     def loggingOnly(self):
         self.logging_only = True
@@ -144,8 +150,7 @@ class baseOGP(object):
                 else:
                     OGPtree.write(resultName)
 
-                self.addToZip(resultName)
-                
+                self.addToZip(resultName) 
 
 
 class MetadataDocument(object):
@@ -171,6 +176,9 @@ class MetadataDocument(object):
             "Institution": "Minnesota",
             "InstitutionSort": "Minnesota",
             "CollectionId": "initial collection",
+            "WorkspaceName": "",
+
+
 
             # the rest are associated with a method
             "Publisher": self.publisher,
@@ -568,8 +576,8 @@ class MGMGDocument(FGDCDocument):
 
             #datafinder.org specific stuff
             try:
-                if self.datafinder_layers.has_key(os.path.split(self.file_name)[1]):
-                    f = self.datafinder_layers[os.path.split(self.file_name)[1]]
+                if df.has_key(os.path.split(self.file_name)[1]):
+                    f = df[os.path.split(self.file_name)[1]]
                     locDict['ArcGISRest'] = f['ArcGISRest']
                     locDict['layerId'] = f['layerId']
             except:
