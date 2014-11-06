@@ -16,6 +16,7 @@ def main():
     parser.add_argument("-i","--indirect",action="store_true",help="If the links in the metadata do not directly return a binary file (e.g. a zip archive), set this option")
     parser.add_argument("-l","--log_only",action="store_true",help="If you just want the log written (i.e. no output XMLs). Useful for metadata cleanup.")
     parser.add_argument("-z","--zip_only", action="store_true", help="Only output a zip file with the metadata files in it")
+    parser.add_argument("-o","--overrides", help="provide JSON file of fields to override and the values to use instead")
     
     args = parser.parse_args()
 
@@ -60,6 +61,9 @@ def main():
 
         if args.zip_only:
             ogp.setZipOnly()
+
+        if args.overrides:
+            ogp.setOverrides(args.overrides)
 
         files = []
         
