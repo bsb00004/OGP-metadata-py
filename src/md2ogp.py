@@ -34,7 +34,15 @@ class baseOGP(object):
         self.logging_only = False
         self.zip_only = False
         self.zip = self.initZip()
+        self.overrides = {}
 
+    def setOverrides(self,f):
+
+        if not os.path.isfile(f):
+            sys.exit("Override file does not seem to exist")
+
+        self.overrides = json.load(open(f))
+        
     def initZip(self):
         d = datetime.now()
         ds = d.strftime('%m%d%Y_%H%M')
@@ -123,7 +131,10 @@ class baseOGP(object):
             for field in doc.field_handlers:
                 try:
                     fieldEle = etree.SubElement(docElement, "field", name=field)
-                    if hasattr(doc.field_handlers[field], '__call__'):
+
+                    if self.overrides.has_key(field):
+                        fieldEle.text = self.overrides[field]
+                    elif hasattr(doc.field_handlers[field], '__call__'):
                         fieldEle.text = doc.field_handlers[field].__call__()
                     else:
                         fieldEle.text = doc.field_handlers[field]
