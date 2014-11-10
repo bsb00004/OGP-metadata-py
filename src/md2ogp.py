@@ -32,8 +32,8 @@ class baseOGP(object):
         self.md = md.lower()
         self.indirect_links = False
         self.logging_only = False
-        self.zip_only = False
-        self.zip = self.initZip()
+        self.zip= False
+        self.zip_file = self.initZip()
         self.overrides = {}
 
     def setOverrides(self,f):
@@ -44,10 +44,15 @@ class baseOGP(object):
         self.overrides = json.load(open(f))
         
     def initZip(self):
-        d = datetime.now()
-        ds = d.strftime('%m%d%Y_%H%M')
-        zipFileName = os.path.join(self.output_path,self.output_path.split(os.path.sep)[-1] + "_" + ds + "_OGP.zip")
-        return zipfile.ZipFile(zipFileName, 'a', mode)
+
+        if self.zip:
+            d = datetime.now()
+            ds = d.strftime('%m%d%Y_%H%M')
+            zipFileName = os.path.join(self.output_path,self.output_path.split(os.path.sep)[-1] + "_" + ds + "_OGP.zip")
+            return zipfile.ZipFile(zipFileName, 'a', mode)
+
+        else:
+            return None
 
     def addToZip(self,f):
         fileNameForZip = f.split(os.path.sep)[-1]
@@ -58,8 +63,8 @@ class baseOGP(object):
     def setIndirectLinks(self):
         self.indirect_links = True
 
-    def setZipOnly(self):
-        self.zip_only = True
+    def setZip(self):
+        self.zip = True
 
     def loggingOnly(self):
         self.logging_only = True
@@ -83,7 +88,9 @@ class baseOGP(object):
 
             # when done, close the log file and zip
             self.log.close()
-            self.zip.close()
+
+            if self.zip:
+                self.zip.close()
 
     def processFile(self, filename):
 
@@ -156,12 +163,14 @@ class baseOGP(object):
 
                 print 'Writing: ' + resultName
 
-                if "lxml" in etree.__name__:
+                if self.zip:
+                    self.addToZip(resultName)
+                elif "lxml" in etree.__name__:
                     OGPtree.write(resultName, pretty_print=True)
                 else:
                     OGPtree.write(resultName)
 
-                self.addToZip(resultName) 
+                
 
 
 class MetadataDocument(object):
@@ -517,8 +526,12 @@ class FGDCDocument(MetadataDocument):
 
         if loc != "UNKNOWN":
             locDict = {}
-            locDict['download'] = loc
-            locDict['indirectLink'] = self.indirect_links
+
+            if self.indirect_links:
+                locDict['externalLink'] = loc
+                locDict['externalDownload'] = loc
+            else:
+                ocDict['download'] = loc
             return json.dumps(locDict)
         else:
             self.log.write(self.file_name, 'can\'t find onlink.')
