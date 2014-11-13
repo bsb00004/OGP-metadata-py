@@ -55,8 +55,6 @@ def main():
         # instantiate base class to take in output path and metadata option
         ogp = md2ogp.baseOGP(output,md)
 
-        pdb.set_trace()
-        
         if args.indirect:
             ogp.setIndirectLinks()
 
