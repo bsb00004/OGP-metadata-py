@@ -22,7 +22,7 @@ except ImportError:
     except ImportError:
         print "No xml lib found. Please install lxml lib to continue"
 
-df = getAGSdetails()
+#df = getAGSdetails()
 
 class baseOGP(object):
     def __init__(self, output_path, md):
@@ -33,7 +33,6 @@ class baseOGP(object):
         self.indirect_links = False
         self.logging_only = False
         self.zip= False
-        self.zip_file = self.initZip()
         self.overrides = {}
 
     def setOverrides(self,f):
@@ -48,23 +47,24 @@ class baseOGP(object):
         if self.zip:
             d = datetime.now()
             ds = d.strftime('%m%d%Y_%H%M')
-            zipFileName = os.path.join(self.output_path,self.output_path.split(os.path.sep)[-1] + "_" + ds + "_OGP.zip")
-            return zipfile.ZipFile(zipFileName, 'a', mode)
+            zip_file_name = os.path.join(self.output_path,
+                self.output_path.split(os.path.sep)[-1] + "_" + ds + "_OGP.zip")
+            return zipfile.ZipFile(zip_file_name, 'a', mode)
 
         else:
             return None
 
-    def addToZip(self,f):
-        fileNameForZip = f.split(os.path.sep)[-1]
-        self.zip.write(f, arcname=fileNameForZip)
-        if self.zip_only:
-            os.remove(f)
+    def addToZip(self,tree,name):
+        self.zip_file.writestr(
+            os.path.split(name)[1]+"_OGP.xml", etree.tostring(tree)
+            )
 
     def setIndirectLinks(self):
         self.indirect_links = True
 
     def setZip(self):
         self.zip = True
+        self.zip_file = self.initZip()
 
     def loggingOnly(self):
         self.logging_only = True
@@ -90,7 +90,7 @@ class baseOGP(object):
             self.log.close()
 
             if self.zip:
-                self.zip.close()
+                self.zip_file.close()
 
     def processFile(self, filename):
 
@@ -164,7 +164,7 @@ class baseOGP(object):
                 print 'Writing: ' + resultName
 
                 if self.zip:
-                    self.addToZip(resultName)
+                    self.addToZip(OGPtree,filename)
                 elif "lxml" in etree.__name__:
                     OGPtree.write(resultName, pretty_print=True)
                 else:
@@ -259,6 +259,15 @@ class MetadataDocument(object):
         # see standard specific sub-class implementation
         pass
 
+    def _location_check_indirect(self,d,loc):
+
+        if self.indirect_links:
+            d['externalLink'] = loc
+            d['externalDownload'] = loc
+        else:
+            d['download'] = loc
+        return d
+
     def location(self):
         # see standard specific sub-class implementation
         pass
@@ -325,6 +334,16 @@ class FGDCDocument(MetadataDocument):
     def publisher(self):
         publisher = self.root.findtext("idinfo/citation/citeinfo/pubinfo/publish", "UNKNOWN")
         return publisher
+
+    def layer_id(self):
+        layer_id = self.root.find("idinfo/citation/citeinfo/title").get("catid")
+        
+        if layer_id is not None:
+            return layer_id
+        else:
+            self.log.write(self.file_name, 'No catid found in title')
+            return "UNKNOWN"
+
 
     def layer_display_name(self):
         disp_name = self.root.findtext("idinfo/citation/citeinfo/title", "UNKNOWN")
@@ -521,17 +540,16 @@ class FGDCDocument(MetadataDocument):
             self.log.write(self.file_name, 'center_y issues')
             return "0"
 
+
+
     def location(self):
         loc = self.root.findtext("idinfo/citation/citeinfo/onlink", "UNKNOWN")
 
         if loc != "UNKNOWN":
             locDict = {}
 
-            if self.indirect_links:
-                locDict['externalLink'] = loc
-                locDict['externalDownload'] = loc
-            else:
-                ocDict['download'] = loc
+            locDict = self._location_check_indirect(locDict, loc)
+
             return json.dumps(locDict)
         else:
             self.log.write(self.file_name, 'can\'t find onlink.')
@@ -596,23 +614,20 @@ class MGMGDocument(FGDCDocument):
 
         if loc != "UNKNOWN":
             locDict = {}
-            locDict['download'] = loc
 
             #datafinder.org specific stuff
-            try:
-                if df.has_key(os.path.split(self.file_name)[1]):
-                    f = df[os.path.split(self.file_name)[1]]
-                    locDict['ArcGISRest'] = f['ArcGISRest']
-                    locDict['layerId'] = f['layerId']
-            except:
-                pass
+            # try:
+            #     if df.has_key(os.path.split(self.file_name)[1]):
+            #         f = df[os.path.split(self.file_name)[1]]
+            #         locDict['ArcGISRest'] = f['ArcGISRest']
+            #         locDict['layerId'] = f['layerId']
+            # except:
+            #     pass
 
             #end datafinder specific
 
+            locDict = self._location_check_indirect(locDict, loc)
 
-            locDict['indirectLink'] = self.indirect_links
-            
-            return json.dumps(locDict)
         else:
             self.log.write(self.file_name, 'can\'t find onlink, or else it\'s goofy somehow')
             return "UNKNOWN"

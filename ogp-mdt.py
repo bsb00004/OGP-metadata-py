@@ -3,6 +3,7 @@ import sys
 import argparse
 import os, os.path
 import fnmatch
+import pdb
 from src import md2ogp
 
 METADATA_OPTIONS = ['mgmg','fgdc','arcgis','marc','guess']
@@ -53,6 +54,8 @@ def main():
         # instantiate base class to take in output path and metadata option
         ogp = md2ogp.baseOGP(output,md)
 
+        pdb.set_trace()
+        
         if args.indirect:
             ogp.setIndirectLinks()
 
