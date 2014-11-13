@@ -17,7 +17,8 @@ def main():
     parser.add_argument("-l","--log_only",action="store_true",help="If you just want the log written (i.e. no output XMLs). Useful for metadata cleanup.")
     parser.add_argument("-z","--zip", action="store_true", help="Output a zip file with the metadata files in it")
     parser.add_argument("-o","--overrides", help="provide JSON file of fields to override and the values to use instead")
-    
+    parser.add_argument("-s","--to_solr", action="store_true", help="if selected, will push straight to Solr")
+
     args = parser.parse_args()
 
     # set input_path, check if it's an absolute or relative path and make changes as needed
@@ -75,7 +76,13 @@ def main():
                 files.append(os.path.join(root, filename))
 
         print 'There are %s files to be processed.' % (len(files))
-        ogp.processListofFiles(files)
+
+        if args.to_solr:
+            ogp.set_solr()
+            ogp.process_for_solr(files)
+        
+        else:
+            ogp.processListofFiles(files)
 
             
 if __name__ == "__main__":

@@ -3,9 +3,10 @@ import time
 from datetime import datetime
 from logger import Logger
 import json
-from datafinder_test import getAGSdetails
 import pdb
 import zipfile
+import ogp2solr
+
 
 try:
     import zlib
@@ -22,7 +23,6 @@ except ImportError:
     except ImportError:
         print "No xml lib found. Please install lxml lib to continue"
 
-df = getAGSdetails()
 
 class baseOGP(object):
     def __init__(self, output_path, md):
@@ -33,8 +33,10 @@ class baseOGP(object):
         self.indirect_links = False
         self.logging_only = False
         self.zip= False
+        self.to_solr = False
         self.zip_file = self.initZip()
         self.overrides = {}
+
 
     def setOverrides(self,f):
 
@@ -72,25 +74,34 @@ class baseOGP(object):
     def createLog(self):
         return Logger(self.output_path)
 
+    def process_for_solr(self,listoffiles):
+        trees = []
+        for f in listoffiles:
+            trees.append(self.processFile(f))
+        self.solr.add_to_solr_bulk(trees)
+        
+    def set_solr(self):
+        self.to_solr = True
+        self.solr = ogp2solr.SolrOGP()
+        
+
     def processListofFiles(self, listoffiles):
 
-        if type(listoffiles) == list:
+        if not os.path.exists(self.output_path):
+            try:
+                os.mkdir(self.output_path)
+            except OSError:
+                print "There's a problem with the output path: %s. Are you sure you entered it correctly?" % (
+                    output)
 
-            if not os.path.exists(self.output_path):
-                try:
-                    os.mkdir(self.output_path)
-                except OSError:
-                    print "There's a problem with the output path: %s. Are you sure you entered it correctly?" % (
-                        output)
+        for f in listoffiles:
+            self.processFile(f)
 
-            for f in listoffiles:
-                self.processFile(f)
+        # when done, close the log file and zip
+        self.log.close()
 
-            # when done, close the log file and zip
-            self.log.close()
-
-            if self.zip:
-                self.zip.close()
+        if self.zip:
+            self.zip.close()
 
     def processFile(self, filename):
 
@@ -165,6 +176,8 @@ class baseOGP(object):
 
                 if self.zip:
                     self.addToZip(resultName)
+                elif self.to_solr:
+                    return OGPtree
                 elif "lxml" in etree.__name__:
                     OGPtree.write(resultName, pretty_print=True)
                 else:
@@ -531,7 +544,7 @@ class FGDCDocument(MetadataDocument):
                 locDict['externalLink'] = loc
                 locDict['externalDownload'] = loc
             else:
-                ocDict['download'] = loc
+                locDict['download'] = loc
             return json.dumps(locDict)
         else:
             self.log.write(self.file_name, 'can\'t find onlink.')
