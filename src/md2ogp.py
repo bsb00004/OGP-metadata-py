@@ -6,7 +6,7 @@ import json
 import pdb
 import zipfile
 import ogp2solr
-
+#from datafinder_test import getAGSdetails
 
 try:
     import zlib
@@ -174,15 +174,16 @@ class baseOGP(object):
                 if os.path.exists(resultName):
                     resultName = os.path.splitext(resultName)[0] + "_" + os.path.splitext(resultName)[1]
 
-                print 'Writing: ' + resultName
-
                 if self.zip:
+                    print 'Writing: ' + resultName
                     self.addToZip(OGPtree,filename)
                 elif self.to_solr:
                     return OGPtree
                 elif "lxml" in etree.__name__:
+                    print 'Writing: ' + resultName
                     OGPtree.write(resultName, pretty_print=True)
                 else:
+                    print 'Writing: ' + resultName
                     OGPtree.write(resultName)
 
                 
@@ -277,7 +278,7 @@ class MetadataDocument(object):
     def _location_check_indirect(self,d,loc):
 
         if self.indirect_links:
-            d['externalLink'] = loc
+            #d['externalLink'] = loc
             d['externalDownload'] = loc
         else:
             d['download'] = loc
@@ -629,17 +630,18 @@ class MGMGDocument(FGDCDocument):
             locDict = {}
 
             #datafinder.org specific stuff
-            # try:
-            #     if df.has_key(os.path.split(self.file_name)[1]):
-            #         f = df[os.path.split(self.file_name)[1]]
-            #         locDict['ArcGISRest'] = f['ArcGISRest']
-            #         locDict['layerId'] = f['layerId']
-            # except:
-            #     pass
+            try:
+                if df.has_key(os.path.split(self.file_name)[1]):
+                    f = df[os.path.split(self.file_name)[1]]
+                    locDict['ArcGISRest'] = f['ArcGISRest']
+                    locDict['layerId'] = f['layerId']
+            except KeyError:
+                pass
 
             #end datafinder specific
 
             locDict = self._location_check_indirect(locDict, loc)
+            return json.dumps(locDict)
 
         else:
             self.log.write(self.file_name, 'can\'t find onlink, or else it\'s goofy somehow')

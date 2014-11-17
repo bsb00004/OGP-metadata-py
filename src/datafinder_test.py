@@ -22,20 +22,21 @@ def getAGSdetails():
             y = urllib.urlopen(layers_url)
             w = json.loads(y.read())
 
-            for item in w["layers"]:
+            if w.has_key("layers"):
+                for item in w["layers"]:
 
-                currentLayerInfo = {}
-                currentLayerInfo["layerId"] = unicode(item["id"])
-                currentLayerInfo["ArcGISRest"] = unicode(service_url)
+                    currentLayerInfo = {}
+                    currentLayerInfo["layerId"] = unicode(item["id"])
+                    currentLayerInfo["ArcGISRest"] = unicode(service_url)
 
-                # description contains a link to the metadata html file, which
-                # makes it waaay easier to get this shit working!
-                if item["description"]:
-                    description_link = BeautifulSoup(item["description"])
-                    desc_link = description_link.find('a')
-                    desc_link = desc_link.attrs['href']
-                    desc_link = desc_link[desc_link.rfind('/') + 1: desc_link.rfind('.')] + '.xml'
-                    ldict[desc_link]= currentLayerInfo
+                    # description contains a link to the metadata html file, which
+                    # makes it waaay easier to get this shit working!
+                    if item["description"]:
+                        description_link = BeautifulSoup(item["description"])
+                        desc_link = description_link.find('a')
+                        desc_link = desc_link.attrs['href']
+                        desc_link = desc_link[desc_link.rfind('/') + 1: desc_link.rfind('.')] + '.xml'
+                        ldict[desc_link]= currentLayerInfo
 
         except ValueError:
             print service["name"]," is all messed up"

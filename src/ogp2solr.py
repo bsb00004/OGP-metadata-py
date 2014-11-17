@@ -1,4 +1,4 @@
-import pysolr
+from lib import pysolr
 import pdb
 
 class SolrOGP(object):
@@ -37,6 +37,7 @@ class SolrOGP(object):
 		Adds a bunch of records. Accepts a list of ElementTrees as argument
 		"""
 		list_of_dicts = self.list_of_trees_to_dicts(list_of_trees)
+        print "Adding/updating %s documents in Solr index" % (len(list_of_dicts))
 		self.solr.add(list_of_dicts)
 
 	def _build_delete_query(self,list_of_layer_ids):
@@ -82,5 +83,6 @@ class SolrOGP(object):
 		for f in fields:
 			d[f.attrib['name']] = f.text
 
+		d['WorkspaceName'] = '""'
 		return d
 
