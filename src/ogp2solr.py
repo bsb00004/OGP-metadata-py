@@ -1,5 +1,4 @@
 from lib import pysolr
-import pdb
 
 class SolrOGP(object):
 
@@ -10,7 +9,7 @@ class SolrOGP(object):
             url = "http://ec2-54-87-229-228.compute-1.amazonaws.com:8080/solr/collection1/"
 
         self.solr_url = url
-        self._connect_to_solr()
+        self.solr = self._connect_to_solr()
 
     def escape_query(self,raw_query):
         """
@@ -24,6 +23,9 @@ class SolrOGP(object):
         """
         q = self.escape_query(query)
         return self.solr.search(q)
+
+    def add_dict_to_solr(self,record_dict):
+        self.solr.add([record_dict])
 
     def add_to_solr(self,tree):
         """
@@ -59,7 +61,7 @@ class SolrOGP(object):
         Connects to Solr using the url provided when object was instantiated
         """
 
-        self.solr = pysolr.Solr(self.solr_url)
+        return pysolr.Solr(self.solr_url)
 
     def list_of_trees_to_dicts(self,trees):
         list_of_dicts = []
@@ -83,6 +85,6 @@ class SolrOGP(object):
         for f in fields:
             d[f.attrib['name']] = f.text
 
-        d['WorkspaceName'] = '""'
+        d['WorkspaceName'] = 'edu.umn'
         return d
 
