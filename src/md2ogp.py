@@ -1,18 +1,19 @@
-import os, os.path
+import os
+import os.path
 import time
 from datetime import datetime
-from logger import Logger
 import json
-import pdb
 import zipfile
+from logger import Logger
 import ogp2solr
+
 #from datafinder_test import getAGSdetails
 
 try:
     import zlib
-    mode= zipfile.ZIP_DEFLATED
+    mode = zipfile.ZIP_DEFLATED
 except:
-    mode= zipfile.ZIP_STORED
+    mode = zipfile.ZIP_STORED
 
 try:
     from lxml import etree
@@ -133,6 +134,12 @@ class baseOGP(object):
         elif self.md == "arcgis":
             doc = ArcGISDocument(root, filename, self.log, self.indirect_links)
 
+        elif self.md == "iso":
+            doc = ISODocument(root, filename, self.log, self.indirect_links)
+
+        elif self.md == "eod":
+            doc = EsriOpenDataISODocument(root, filename, self.log, self.indirect_links)
+
         elif self.md == "marc":
             doc = MARCXMLDocument(root, filename, self.log, self.indirect_links)
 
@@ -144,6 +151,8 @@ class baseOGP(object):
                     doc = FGDCDocument(root, filename, self.log, self.indirect_links)
             elif root.find("collection/record") is not None:
                 doc = MARCXMLDocument(root, filename, self.log, self.indirect_links)
+            elif root.getroot().tag == "MD_Metadata":
+                doc = ISODocument(root, filename, self.log, self.indirect_links)
             else:
                 self.log.write(filename, 'metadata standard undecipherable')
 
@@ -320,15 +329,177 @@ class MetadataDocument(object):
         # see standard specific sub-class implementation
         pass
 
-
 class ISODocument(MetadataDocument):
-    """
-    Unimplemented. Inherits from MetadataDocument
-    """
-
     def __init__(self, root, filename, log, indirect_links):
         super(ISODocument, self).__init__(root, filename, log, indirect_links)
-        
+
+        self.NSMAP = {
+           "srv":"http://www.isotc211.org/2005/srv",
+           "gco":"http://www.isotc211.org/2005/gco",
+           "xlink":"http://www.w3.org/1999/xlink",
+           "gts":"http://www.isotc211.org/2005/gts",
+           "xsi":"http://www.w3.org/2001/XMLSchema-instance",
+           "gml":"http://www.opengis.net/gml",
+           "gmd":"http://www.isotc211.org/2005/gmd"
+        }
+
+class EsriOpenDataISODocument(ISODocument):
+    """
+    Handle a particular instance of ISO document created by another script that parses
+    Esri Open Data sites' data.json files
+    """
+    def __init__(self, root, filename, log, indirect_links):
+        super(EsriOpenDataISODocument, self).__init__(root, filename, log, indirect_links)
+
+
+        self.PATHS = {
+            "title"    : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString",
+            "pubdate"  : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:editionDate/gco:Date",
+            "onlink"   : "gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:linkage/gmd:URL",
+            "origin"   : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString",
+            "publish"  : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString",
+            "westbc"   : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude/gco:Decimal",
+            "eastbc"   : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal",
+            "northbc"  : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal",
+            "southbc"  : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal",
+            "themekey" : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode[@codeListValue='theme']",
+            "placekey" : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode[@codeListValue='place']",
+            "abstract" : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract/gco:CharacterString",
+            "accconst" : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints/gco:CharacterString",
+            "useconst" : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_Constraints/gmd:useLimitation/gco:CharacterString",
+            "formname" : "gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name/gco:CharacterString",
+            "id"       : "gmd:fileIdentifier/gco:CharacterString",
+            "distribution_links" : "gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString",
+            "vector_datatype" : "gmd:spatialRepresentationInfo/gmd:MD_VectorSpatialRepresentation/gmd:geometricObjects/gmd:MD_GeometricObjects/gmd:geometricObjectType/gmd:MD_GeometricObjectTypeCode",
+            "spatialrep": "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode"
+        }
+
+    def data_type(self):
+
+        #TODO check for vector/raster first using spatialrep
+
+        spatial_rep_code = self.root.find(self.PATHS["spatialrep"], self.NSMAP).get("codeListValue")
+
+        if spatial_rep_code == "vector":
+
+            code = self.root.find(self.PATHS["vector_datatype"], self.NSMAP).get("codeListValue")
+            if code == "point":
+                return "Point"
+            elif code == "curve":
+                return "Line"
+            elif code == "surface":
+                return "Polygon"
+
+        elif spatial_rep_code == "grid":
+            return "Raster"
+
+    def layer_id(self):
+        return self.root.find(self.PATHS["id"], self.NSMAP).text
+
+    def theme_keywords(self):
+        keywords =  self.root.find(self.PATHS["themekey"], self.NSMAP).getparent().getparent().findall("gmd:keyword", self.NSMAP)
+        keywords_string = [k.find("gco:CharacterString", self.NSMAP).text for k in keywords]
+        return ", ".join(keywords_string)
+
+    def place_keywords(self):
+        keywords =  self.root.find(self.PATHS["placekey"], self.NSMAP).getparent().getparent().findall("gmd:keyword", self.NSMAP)
+        keywords_string = [k.find("gco:CharacterString", self.NSMAP).text for k in keywords]
+        return ", ".join(keywords_string)
+
+    def publisher(self):
+        return self.root.findtext(self.PATHS["publish"], "UNKNOWN", self.NSMAP)
+
+
+    def originator(self):
+        return self.root.findtext(self.PATHS["origin"], "UNKNOWN", self.NSMAP)
+
+    def layer_display_name(self):
+        return self.root.findtext(self.PATHS["title"], "UNKNOWN", self.NSMAP)
+
+    def _location_check_indirect(self,d,loc):
+
+        if self.indirect_links:
+            #d['externalLink'] = loc
+            d['externalDownload'] = loc
+        else:
+            d['download'] = loc
+        return d
+
+    def _location_get_protocols(self):
+        """
+        returns a dict of protocols (keys) and matching URLs (values)
+        """
+
+        link_protocols = self.root.findall(self.PATHS["distribution_links"], self.NSMAP)
+        d = {}
+
+        for protocol in link_protocols:
+            d[protocol.text] = protocol.getparent().getparent().findtext("gmd:linkage/gmd:URL", "UNKNOWN", self.NSMAP)
+
+        return d
+
+    def _location_build(self, protocols):
+        """
+        creates an OGP specific dict from a dict of protocol/urls
+        """
+        loc = {}
+
+        # protocols identified in Cat-Interop table
+        # see https://github.com/OSGeo/Cat-Interop/blob/master/LinkPropertyLookupTable.csv
+        for p in protocols:
+            url = protocols[p]
+
+            if url != "":
+                if p == "ESRI:ArcGIS":
+
+                    # can't handle feature services at the moment
+                    if url.find("FeatureServer") is -1:
+                        loc["ArcGISRest"] = url[:url.rfind("/")]
+                        loc["layerId"] = url[url.rfind("/") + 1:]
+
+
+                elif p == "download":
+                    loc["download"] = url
+
+                # indicates an indirect link (for example link to a UDC record)
+                elif p == "order":
+                    loc["externalDownload"] = url
+
+        return loc
+
+    def location(self):
+        protocols = self._location_get_protocols()
+        loc = self._location_build(protocols)
+        return json.dumps(loc)
+
+    def content_date(self):
+        return self.root.findtext(self.PATHS["pubdate"], "1919-08-01T00:00:00Z", self.NSMAP)
+
+    def abstract(self):
+        return self.root.findtext(self.PATHS["abstract"],"UNKNOWN", self.NSMAP)
+
+    def min_x(self):
+        return self.root.findtext(self.PATHS["westbc"], "UNKNOWN", self.NSMAP)
+
+    def min_y(self):
+        return self.root.findtext(self.PATHS["southbc"], "UNKNOWN", self.NSMAP)
+
+    def max_x(self):
+
+        return self.root.findtext(self.PATHS["eastbc"], "UNKNOWN", self.NSMAP)
+
+    def max_y(self):
+        return self.root.findtext(self.PATHS["northbc"], "UNKNOWN", self.NSMAP)
+
+    def center_x(self):
+
+        spread = (float(self.max_x()) - float(self.min_x())) / 2
+        return unicode(float(self.max_x()) - spread)
+
+    def center_y(self):
+        spread = (float(self.max_y()) - float(self.min_y())) / 2
+        return unicode(float(self.max_y()) - spread)
+
 
 class ArcGISDocument(MetadataDocument):
     """
@@ -476,15 +647,10 @@ class FGDCDocument(MetadataDocument):
         try:
             if root.find("idinfo/timeperd/timeinfo/sngdate/caldate") is not None:
                 date_text = root.find("idinfo/timeperd/timeinfo/sngdate/caldate").text
-                #return self._parse_content_date(date_text)
             elif root.find("idinfo/timeperd/timeinfo/rngdates/begdate") is not None:
                 date_text = root.find("idinfo/timeperd/timeinfo/rngdates/begdate").text
-                #print date_text
-                #return self._parse_content_date(date_text)
             elif root.find("idinfo/citation/citeinfo/pubdate") is not None:
                 date_text = root.find("idinfo/citation/citeinfo/pubdate").text
-                #print date_text
-                #return self._parse_content_date(date_text)
             else:
                 date_text = False
 
@@ -629,6 +795,7 @@ class MGMGDocument(FGDCDocument):
         if loc != "UNKNOWN":
             locDict = {}
 
+            """
             #datafinder.org specific stuff
             try:
                 if df.has_key(os.path.split(self.file_name)[1]):
@@ -637,6 +804,7 @@ class MGMGDocument(FGDCDocument):
                     locDict['layerId'] = f['layerId']
             except KeyError:
                 pass
+            """
 
             #end datafinder specific
 
@@ -650,7 +818,6 @@ class MGMGDocument(FGDCDocument):
 # from https://github.com/gravesm/marcingest
 class MARCXMLDocument(MetadataDocument):
     def __init__(self, root, file_name, log, indirect_links):
-        from itertools import ifilter
         import re
 
         super(MARCXMLDocument, self).__init__(root, file_name, log, indirect_links)

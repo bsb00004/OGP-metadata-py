@@ -6,7 +6,7 @@ class SolrOGP(object):
 
         # defaults to UMN OGP
         if url is None:
-            url = "http://ec2-54-87-229-228.compute-1.amazonaws.com:8080/solr/collection1/"
+            url = "http://54.235.211.28:8080/solr/collection1/"
 
         self.solr_url = url
         self.solr = self._connect_to_solr()
@@ -21,7 +21,7 @@ class SolrOGP(object):
         """
         Query the connected Solr index
         """
-        q = self.escape_query(query)
+        q = self.escape_query(query)      
         return self.solr.search(q)
 
     def add_dict_to_solr(self,record_dict):
@@ -46,7 +46,13 @@ class SolrOGP(object):
         return "LayerId:(" + " ".join(list_of_layer_ids) + ")"
 
     def delete_query(self,query):
-        self.solr.delete(q=self.escape_query(query))
+        s = self.solr.search(self.escape_query(query), **{"rows":"0"})
+        
+        are_you_sure = raw_input("Are you sure you want to delete {num_recs} records from Solr? Y/N: ".format(num_recs=s.hits))
+        if are_you_sure.lower() == "y":
+            self.solr.delete(q=self.escape_query(query))
+        else:
+            print "Abandon ship!"
 
     def delete_from_solr(self,list_of_layer_ids):
         """
