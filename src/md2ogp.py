@@ -6,25 +6,141 @@ import json
 import zipfile
 from logger import Logger
 import ogp2solr
+import dateutil.parser
+import sys
 
 #from datafinder_test import getAGSdetails
+import urllib2
+import re
 
 try:
     import zlib
     mode = zipfile.ZIP_DEFLATED
-except:
+except ImportError:
     mode = zipfile.ZIP_STORED
 
 try:
     from lxml import etree
 except ImportError:
     try:
-        print "\nPython lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported.\n"
+        print("\nPython lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported.\n")
         from xml.etree import ElementTree as etree
     except ImportError:
-        print "No xml lib found. Please install lxml lib to continue"
+        print("No xml lib found. Please install lxml lib to continue")
 
 #df = getAGSdetails()
+
+def parse_data_type_FGDC(root):
+    try:
+        if root.find("*//geoform") is not None:
+            geoform = root.findtext("*//geoform").lower()
+            if ("scanned" in geoform or
+                "paper" in geoform or
+                "scanned paper map" in geoform
+            ):
+                return "Paper Map"
+
+        if root.find("*//direct") is not None:
+            direct = root.findtext("*//direct").lower()
+            if "raster" in direct:
+                return "Raster"
+            elif (
+                "g-polygon" in direct or
+                "polygon" in direct or
+                "chain" in direct
+            ):
+                return "Polygon"
+            elif "point" in direct:
+                return "Point"
+
+        if root.find("*//sdtstype") is not None:
+            sdtstype = root.findtext("*//sdtstype").lower()
+            if ("composite" in sdtstype or
+                "point" in sdtstype
+            ):
+                return "Point"
+            elif "string" in sdtstype:
+                return "Line"
+            elif ("g-polygon" in sdtstype or
+                  "polygon" in sdtstype or
+                  "chain" in sdtstype
+            ):
+                return "Polygon"
+
+    except AttributeError as e:
+        return "Undefined"
+
+def parse_data_type_MGMG(root):
+    try:
+        if root.findtext("*//direct").lower() == "raster":
+            return "Raster"
+        if root.findtext("*//direct").lower() == "point":
+            return "Point"
+        elif root.findtext("*//direct").lower() == "vector":
+            mgmg3obj = root.find("*//mgmg3obj")
+
+            if mgmg3obj is not None:
+
+                mgmg3obj = mgmg3obj.text.lower()
+                if (
+                    "area" in mgmg3obj or
+                    "polygon" in mgmg3obj or
+                    "region" in mgmg3obj or
+                    "TIN" in mgmg3obj
+                ):
+                    return "Polygon"
+
+                elif (
+                    "line" in mgmg3obj or
+                    "network" in mgmg3obj or
+                    "route-section" in mgmg3obj or
+                    "arc" in mgmg3obj
+                ):
+                    return "Line"
+                elif (
+                    "node" in mgmg3obj or
+                    "point" in mgmg3obj or
+                    "label" in mgmg3obj
+                ):
+                    return "Point"
+
+        else:
+            return "Undefined"
+
+    except AttributeError as e:
+        print("Can't determine data type, setting to Undefined for now")
+
+        return "Undefined"
+
+
+def _build_base_ogp_tree():
+    # build empty etree to house output doc
+    ogp_root = etree.Element("add", allowDups="false")
+    return ogp_root
+
+
+def _process_field_handlers(doc):
+    root_element = _build_base_ogp_tree()
+    doc_element = etree.SubElement(root_element, "doc")
+    for field in doc.field_handlers:
+        try:
+            field_ele = etree.SubElement(doc_element, "field", name=field)
+
+            if hasattr(doc.field_handlers[field], '__call__'):
+                field_ele.text = doc.field_handlers[field].__call__()
+            else:
+
+                field_ele.text = doc.field_handlers[field]
+
+        except (KeyError, ValueError) as e:
+            print("Nonexistent key: ", field)
+            print(e)
+    return root_element
+
+
+def write_ogp_tree(doc):
+    return _process_field_handlers(doc)
+
 
 class baseOGP(object):
     def __init__(self, output_path, md):
@@ -46,7 +162,7 @@ class baseOGP(object):
             sys.exit("Override file does not seem to exist")
 
         self.overrides = json.load(open(f))
-        
+
     def initZip(self):
 
         if self.zip:
@@ -82,11 +198,11 @@ class baseOGP(object):
         for f in listoffiles:
             trees.append(self.processFile(f))
         self.solr.add_to_solr_bulk(trees)
-        
+
     def set_solr(self):
         self.to_solr = True
         self.solr = ogp2solr.SolrOGP()
-        
+
 
     def processListofFiles(self, listoffiles):
 
@@ -94,8 +210,8 @@ class baseOGP(object):
             try:
                 os.mkdir(self.output_path)
             except OSError:
-                print "There's a problem with the output path: %s. Are you sure you entered it correctly?" % (
-                    output)
+                print("There's a problem with the output path: {path}. Are you sure you entered it correctly?".format(path=self.output_path))
+
 
         for f in listoffiles:
             self.processFile(f)
@@ -106,15 +222,12 @@ class baseOGP(object):
         if self.zip:
             self.zip_file.close()
 
+
+
+
     def processFile(self, filename):
 
-        print 'Starting file:', filename
-
-        # build empty etree to house output doc
-        OGPtree = etree.ElementTree()
-        OGProot = etree.Element("add", allowDups="false")
-        docElement = etree.SubElement(OGProot, "doc")
-        OGPtree._setroot(OGProot)
+        print('Starting file:', filename)
 
         # parse the current XML into an etree
         tree = etree.ElementTree()
@@ -157,9 +270,12 @@ class baseOGP(object):
                 self.log.write(filename, 'metadata standard undecipherable')
 
         if doc:
+            root_element = _build_base_ogp_tree()
+            doc_element = etree.SubElement(root_element, "doc")
+
             for field in doc.field_handlers:
                 try:
-                    fieldEle = etree.SubElement(docElement, "field", name=field)
+                    fieldEle = etree.SubElement(doc_element, "field", name=field)
 
                     if self.overrides.has_key(field):
                         fieldEle.text = self.overrides[field]
@@ -169,13 +285,14 @@ class baseOGP(object):
                         fieldEle.text = doc.field_handlers[field]
 
                 except KeyError as e:
-                    print "Nonexistant key: ", field
+                    print("Nonexistant key: ", field)
 
-            fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
+            fullTextElement = etree.SubElement(doc_element, "field", name="FgdcText")
             fullTextElement.text = fullText
 
             if not self.logging_only:
 
+                new_tree = etree.ElementTree(root_element)
                 resultName = os.path.join(self.output_path, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
 
                 # check for duplicate names (since w're looking across records with similar dataset content)
@@ -184,18 +301,18 @@ class baseOGP(object):
                     resultName = os.path.splitext(resultName)[0] + "_" + os.path.splitext(resultName)[1]
 
                 if self.zip:
-                    print 'Writing: ' + resultName
-                    self.addToZip(OGPtree,filename)
+                    print('Writing: ' + resultName)
+                    self.addToZip(new_tree,filename)
                 elif self.to_solr:
-                    return OGPtree
+                    return new_tree
                 elif "lxml" in etree.__name__:
-                    print 'Writing: ' + resultName
-                    OGPtree.write(resultName, pretty_print=True)
+                    print('Writing: ' + resultName)
+                    new_tree.write(resultName, pretty_print=True)
                 else:
-                    print 'Writing: ' + resultName
-                    OGPtree.write(resultName)
+                    print('Writing: ' + resultName)
+                    new_tree.write(resultName)
 
-                
+
 
 
 class MetadataDocument(object):
@@ -328,6 +445,143 @@ class MetadataDocument(object):
     def center_y(self):
         # see standard specific sub-class implementation
         pass
+
+class GDRSDocument(MetadataDocument):
+    def __init__(self, root, filename, log, indirect_links):
+        super(GDRSDocument, self).__init__(root, filename, log, indirect_links)
+        self.id = filename
+        self.field_handlers["Access"] = "Public"
+        self.field_handlers["FgdcText"] = self.fgdc_text
+        self.field_handlers["Publisher"] = "Minnesota Geospatial Commons"
+        self._fulltext = None
+
+    def layer_id(self):
+        return self.id
+
+    def name(self):
+        return self.root["dsBaseName"]
+
+    def _check_metadata_standard(self,root):
+        if root.find("metainfo/metstdn") is not None:
+            if "Minnesota" in root.find("metainfo/metstdn").text:
+                return "mgmg"
+            elif "FGDC" in root.find("metainfo/metstdn").text:
+                return "fgdc"
+        else:
+            print("whaaaaa?")
+
+    def data_type(self):
+        root = etree.XML(self.fgdc_text())
+        metadata_standard = self._check_metadata_standard(root)
+        if metadata_standard == "mgmg":
+            return parse_data_type_MGMG(root)
+        elif metadata_standard == "fgdc":
+            return parse_data_type_FGDC(root)
+
+    def theme_keywords(self):
+        return '"' + '", "'.join(self.root["topicCategories"]) + '"'
+
+    def place_keywords(self):
+
+        #TODO replace supplied keywords with Linked Data equivs from id.loc.gov or geonames.org
+        return '"' + '", "'.join(self.root["dsPlaceKeywords"]) + '"'
+
+    def originator(self):
+        return self.root["dsOriginator"]
+
+
+    def layer_display_name(self):
+        return self.root["dsName"]
+
+    def location(self):
+        loc = {}
+        resources = self.root["dsDataResources"]
+        for i in resources:
+            type = resources[i]["drType"]
+            if type == "shp":
+                loc["download"] = resources[i]["drURL"]
+            elif type == "ags_mapserver":
+                loc["ArcGISRest"] = resources[i]["drAccess"][0]["accessURL"]
+        return json.dumps(loc)
+
+
+    def content_date(self):
+        try:
+            dt = dateutil.parser.parse(self.root["dsPeriodOfContent"])
+        except (ValueError, AttributeError):
+            dt = datetime(1234,5,6,0,0)
+        return dt.isoformat() + "Z"
+
+    def abstract(self):
+        return self.root["dsAbstract"]
+
+    def access(self):
+        return self.root["dsAccessConst"]
+
+    def _getXML(self):
+        try:
+            metadata_url = self.root["dsMetadataUrl"].rstrip("html") + "xml"
+            metadata_filename = self.root["dsBaseName"] + ".xml"
+            metadata_fullpath = os.path.join("gdrs", metadata_filename)
+            if os.path.exists(metadata_fullpath):
+                f = open(metadata_fullpath, "r")
+                text = etree.tostring(etree.XML(f.read()))
+                f.close()
+            else:
+                xml = etree.XML(urllib2.urlopen(metadata_url).read())
+                text = etree.tostring(xml)
+                f = open(metadata_fullpath, "w")
+                f.write(text.replace("\xef\xbb\xbf", ""))
+                f.close()
+            self._fulltext = text
+            return self._fulltext
+        except AttributeError as e:
+            #print("No Metadata url for", self.root["dsName"])
+            return "<error>Not found</error>"
+
+
+    def fgdc_text(self):
+        if self._fulltext is not None:
+            return self._fulltext
+        else:
+            return self._getXML()
+
+    def min_x(self):
+        if self.root["bndCoordWest"]:
+            return self.root["bndCoordWest"]
+        else:
+            return "-97.5"
+
+    def min_y(self):
+        if self.root["bndCoordSouth"]:
+            return self.root["bndCoordSouth"]
+        else:
+            return "43"
+
+    def max_x(self):
+        if self.root["bndCoordEast"]:
+            return self.root["bndCoordEast"]
+        else:
+            return "-89"
+
+    def max_y(self):
+        if self.root["bndCoordNorth"]:
+            return self.root["bndCoordNorth"]
+        else:
+            return "49.5"
+
+    def center_x(self):
+        east = float(self.max_x())
+        west = float(self.min_x())
+        middle = west + (abs(east - west)/2)
+        return unicode(middle)
+
+    def center_y(self):
+        north = float(self.max_y())
+        south = float(self.min_y())
+        middle = south + (abs(north - south)/2)
+        return unicode(middle)
+
 
 class ISODocument(MetadataDocument):
     def __init__(self, root, filename, log, indirect_links):
@@ -493,11 +747,11 @@ class EsriOpenDataISODocument(ISODocument):
 
     def center_x(self):
 
-        spread = (float(self.max_x()) - float(self.min_x())) / 2
+        spread = abs(float(self.max_x()) - float(self.min_x())) / 2
         return unicode(float(self.max_x()) - spread)
 
     def center_y(self):
-        spread = (float(self.max_y()) - float(self.min_y())) / 2
+        spread = abs(float(self.max_y()) - float(self.min_y())) / 2
         return unicode(float(self.max_y()) - spread)
 
 
@@ -524,7 +778,7 @@ class FGDCDocument(MetadataDocument):
 
     def layer_id(self):
         layer_id = self.root.find("idinfo/citation/citeinfo/title").get("catid")
-        
+
         if layer_id is not None:
             return layer_id
         else:
@@ -610,7 +864,7 @@ class FGDCDocument(MetadataDocument):
             else:
                 return 'None'
         except AttributeError as e:
-            print "can't find keywords. Setting to UNKNOWN for now"
+            print("can't find keywords. Setting to UNKNOWN for now")
             self.log.write(self.file_name, 'can\'t find keywords')
             return "UNKNOWN"
 
@@ -661,8 +915,8 @@ class FGDCDocument(MetadataDocument):
                 return "1919-08-01T00:00:00Z"
 
         except (AttributeError, TypeError) as e:
-            print e
-            print "No content date found! setting to 1919-08-01T00:00:00Z for now"
+            print(e)
+            print("No content date found! setting to 1919-08-01T00:00:00Z for now")
             self.log.write(self.file_name, 'can\'t find date')
             return "1919-08-01T00:00:00Z"
 
@@ -721,7 +975,6 @@ class FGDCDocument(MetadataDocument):
         except ValueError:
             self.log.write(self.file_name, 'center_y issues')
             return "0"
-
 
 
     def location(self):
@@ -784,7 +1037,7 @@ class MGMGDocument(FGDCDocument):
                 return "Undefined"
 
         except AttributeError as e:
-            print "Can't determine data type, setting to Undefined for now"
+            print("Can't determine data type, setting to Undefined for now")
             self.log.write(self.file_name, 'data type issues')
             return "Undefined"
 
