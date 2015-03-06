@@ -3,16 +3,13 @@ import os.path
 import time
 from datetime import datetime
 import json
-import zipfile
 from logger import Logger
 import ogp2solr
 import dateutil.parser
 import sys
-
-#from datafinder_test import getAGSdetails
 import urllib2
 import re
-
+import zipfile
 try:
     import zlib
     mode = zipfile.ZIP_DEFLATED
@@ -23,7 +20,7 @@ try:
     from lxml import etree
 except ImportError:
     try:
-        print("\nPython lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported.\n")
+        print("\n\nPython lib lxml not found. Using xml.etree instead. Note that pretty printing with xml.etree is not supported.\n\n")
         from xml.etree import ElementTree as etree
     except ImportError:
         print("No xml lib found. Please install lxml lib to continue")
@@ -326,7 +323,17 @@ class MetadataDocument(object):
         self.root = root
         self.file_name = file_name
         self.indirect_links = indirect_links
-        #self.datafinder_layers = df
+
+        """
+        For docs without a specified bounding box, will use the below,
+        by default set to state of MN
+        """
+        self.DEFAULT_BBOX = {
+            "min_x": "-97.5",
+            "max_x": "-89",
+            "min_y": "43",
+            "max_y": "49.5"
+        }
 
         # create a dictionary containing the OGP field names as keys, mapping
         # the corresponding class method (or hardcoded string) as value
@@ -404,7 +411,6 @@ class MetadataDocument(object):
     def _location_check_indirect(self,d,loc):
 
         if self.indirect_links:
-            #d['externalLink'] = loc
             d['externalDownload'] = loc
         else:
             d['download'] = loc
@@ -461,22 +467,23 @@ class GDRSDocument(MetadataDocument):
     def name(self):
         return self.root["dsBaseName"]
 
-    def _check_metadata_standard(self,root):
-        if root.find("metainfo/metstdn") is not None:
-            if "Minnesota" in root.find("metainfo/metstdn").text:
+    def _check_metadata_standard(self,tree):
+        root_tag = tree.getroot().tag
+        if root_tag == "metadata":
+            if "Minnesota" in tree.find("metainfo/metstdn").text:
                 return "mgmg"
-            elif "FGDC" in root.find("metainfo/metstdn").text:
+            elif "FGDC" in tree.find("metainfo/metstdn").text:
                 return "fgdc"
-        else:
-            print("whaaaaa?")
+        elif root_tag.find("MD_Metadata") != -1 or root_tag.find("MI_Metadata") != -1:
+            return "iso"
 
     def data_type(self):
-        root = etree.XML(self.fgdc_text())
-        metadata_standard = self._check_metadata_standard(root)
+        tree = etree.ElementTree(etree.XML(self.fgdc_text()))
+        metadata_standard = self._check_metadata_standard(tree)
         if metadata_standard == "mgmg":
-            return parse_data_type_MGMG(root)
+            return parse_data_type_MGMG(tree)
         elif metadata_standard == "fgdc":
-            return parse_data_type_FGDC(root)
+            return parse_data_type_FGDC(tree)
 
     def theme_keywords(self):
         return '"' + '", "'.join(self.root["topicCategories"]) + '"'
@@ -522,7 +529,11 @@ class GDRSDocument(MetadataDocument):
         try:
             metadata_url = self.root["dsMetadataUrl"].rstrip("html") + "xml"
             metadata_filename = self.root["dsBaseName"] + ".xml"
-            metadata_fullpath = os.path.join("gdrs", metadata_filename)
+
+
+            metadata_fullpath = os.path.join("gdrs_tmp/", metadata_filename)
+
+
             if os.path.exists(metadata_fullpath):
                 f = open(metadata_fullpath, "r")
                 text = etree.tostring(etree.XML(f.read()))
@@ -550,25 +561,25 @@ class GDRSDocument(MetadataDocument):
         if self.root["bndCoordWest"]:
             return self.root["bndCoordWest"]
         else:
-            return "-97.5"
+            return self.DEFAULT_BBOX["min_x"]
 
     def min_y(self):
         if self.root["bndCoordSouth"]:
             return self.root["bndCoordSouth"]
         else:
-            return "43"
+            return self.DEFAULT_BBOX["min_y"]
 
     def max_x(self):
         if self.root["bndCoordEast"]:
             return self.root["bndCoordEast"]
         else:
-            return "-89"
+            return self.DEFAULT_BBOX["max_x"]
 
     def max_y(self):
         if self.root["bndCoordNorth"]:
             return self.root["bndCoordNorth"]
         else:
-            return "49.5"
+            return self.DEFAULT_BBOX["max_y"]
 
     def center_x(self):
         east = float(self.max_x())
@@ -641,7 +652,7 @@ class EsriOpenDataISODocument(ISODocument):
                 return "Point"
             elif code == "curve":
                 return "Line"
-            elif code == "surface":
+            elif code == "surface" or code == "complex":
                 return "Polygon"
 
         elif spatial_rep_code == "grid":
@@ -673,7 +684,6 @@ class EsriOpenDataISODocument(ISODocument):
     def _location_check_indirect(self,d,loc):
 
         if self.indirect_links:
-            #d['externalLink'] = loc
             d['externalDownload'] = loc
         else:
             d['download'] = loc
