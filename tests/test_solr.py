@@ -1,5 +1,5 @@
 import sys
-sys.path.append("../src")
+sys.path.append("src")
 import ogp2solr
 from lxml import etree
 
@@ -8,7 +8,7 @@ s = ogp2solr.SolrOGP()
 print "ok!!\n"
 
 print "testing parse XML into etree"
-tree = etree.parse("sample_output/0_OGP.xml")
+tree = etree.parse("tests/sample_output/0_OGP.xml")
 print "ok!!\n"
 
 print "test adding to Solr"
