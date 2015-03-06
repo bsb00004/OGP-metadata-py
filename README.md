@@ -69,7 +69,9 @@ Get the usage information.
 
 ### Running "tests"
 
-    ./tests/run_tests.sh
+Not really tests in any strict sense, but at least a way to check that the different standards (and solr connecting) are working
+
+    ./run_tests.sh
 
 
 
