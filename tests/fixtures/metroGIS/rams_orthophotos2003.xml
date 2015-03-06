@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+	<idinfo><citation><citeinfo><title>Ramsey County Orthophotography 2003</title><origin>Ramsey County</origin><pubinfo><publish>Ramsey County Surveyor's Office</publish></pubinfo><pubdate>20051010</pubdate><onlink></onlink></citeinfo></citation><descript><abstract>Horizons, Inc obtained color photography covering Ramsey County on April 8, 2003.  Horizons, Inc used LIDAR DEM provided by Waggoner Inc. to create digital ortho images.  Horizons, Inc also collected planimetric features using a combination of analytical and soft-copy technology.</abstract><purpose>The purpose of this project was to provide Ramsey County with Color digital ortho images, and topological correct planimetric features in Arc/INFO Format.</purpose><supplinf>Horizons Incorporated acquired aerial photography utilizing a gyro
+stabilized wide-angle aerial camera equipped with forward motion compensation
+(HZ11, ZEISS RMK TOP15, SN: 144123, CFL:152.772).  The project was flown at an
+altitude of 5000 feet above</supplinf></descript><timeperd><timeinfo><sngdate><caldate>20030408</caldate></sngdate></timeinfo><current>Ground Condition</current></timeperd><status><progress>Complete</progress><update>scheduled to update every 3 years</update></status><spdom><bounding><westbc>-93.234052</westbc><eastbc>-92.981601</eastbc><northbc>45.125198</northbc><southbc>44.877762</southbc></bounding></spdom><keywords><place><placekey>Ramsey County, Minnesota</placekey></place><theme><themekey>Aerial Photography</themekey><themekt>None</themekt></theme></keywords><accconst>This data set is available to everyone.  Fees and policy are published in the Ramsey County Fee Schedule.  Charges are variable and are subject to change.  See the Ramsey County Fee Schedule for specific information on fees and policy.</accconst><useconst>COPYRIGHT NOTICE
+The data is Copyright © by the County of Ramsey. All rights reserved.  Except as expressly provided herein, no part of this data may be copied, reproduced, sold, transferred, or transmitted in any form, or by any means, whether graphic, electronic, or mechanical, including photocopying, recording, or by an information storage or retrieval system, without express prior written permission of the County of Ramsey.</useconst><ptcontac><cntinfo><cntperp><cntper>Curt Peterson</cntper><cntorg>Ramsey County Surveyor's Office</cntorg></cntperp><cntpos>GIS Supervisor</cntpos><cntaddr><address>1425 Paul Kirkwold Drive</address><city>Arden Hills</city><state>MN</state><postal>55112-3933</postal></cntaddr><cntvoice>651.266.7172</cntvoice><cntfax>651.266.7180</cntfax><cntemail>curtis.peterson@co.ramsey.mn.us</cntemail></cntinfo></ptcontac><browse><browsen>None available</browsen><browsed></browsed></browse><crossref><citeinfo><title>Graphic:
+Contours (2' contour lines)  
+Annotation (parcel, road and water map text)
+Info  (landties, cartographic elements)		
+StrCenterlines  (road centerlines)
+Point (land ownership points)
+Line (land division outlines)
+ParComp (land division areas)
+Parcel (land ownership regions)
+PLS (Public Land Survey)
+
+Data Sets:	
+COREDB.DBF  (CORE PARCEL ATTRIBUTE DATABASE)  
+EPARDES.DBF (ACS PARCEL DESCRIPTION DB)
+ECURTAX.DBF (ACS CURRENT TAX DB)
+ENAMADD.DBF (ACS NAME AND ADDRESS DB)
+ENAMADDO.DBF (ACS NAME AND ADDRESS OTHER DB)
+EVALUES.DBF (ACS TAX VALUES DB)
+EDELTAX.DBF (ACS DELINQUENT TAX DB)
+ESPASMT.DBF (ACS SPECIAL ASSESSMENTS DB)
+ETRDETL.DBF (ACS TRANSACTION DETAIL DB)
+APT.DBF (ASSESSOR'S APARTMENT DESCRIPTION DB)
+COMMAREA.DBF (ASSESSOR'S COMMERCIAL AREA DESCRIPTION DB)
+COMMDATA.DBF (ASSESSOR'S COMMERCIAL BUILDING DESCRIPTION DB)
+DWELLDATA.DBF (ASSESSOR'S RESIDENTIAL DWELLING DESCRIPTION DB)
+LANDDATA.DBF (ASSESSOR'S LAND DESCRIPTION DB)
+PARCELDA.DBF (ASSESSOR'S PARCEL DESCRIPTION DB)
+PERMIT.DBF (PERMIT DB)
+SALES.DBF   (SALES DATABASE)</title></citeinfo></crossref><native>Microsoft Windows 2000 Version 5.0 (Build 2195) Service Pack 4; ESRI ArcCatalog 9.1.0.722</native></idinfo><dataqual><attracc><attraccr>None</attraccr></attracc><logic>None</logic><complete>None</complete><posacc><horizpa><horizpar>Analytical Aerial Triangulation Summary Date: 05-30-03.  This data
+meets or exceeds the National Map Accuracy Standard (NMAS) - 1/30 of 1 inch at
+map scale.</horizpar></horizpa><vertacc><vertaccr>Not Applicable as it pertains to a two-dimensional Raster image.</vertaccr></vertacc></posacc><lineage><procstep><procdesc>Scanner: Intergraph PhotoScan TD Photo Digitizing System.
+Scanner Geometric Calibration:
+Standard Deviation (sigma) = 1.6710356970
+Root Mean Square X = 1.9970393211
+Root Mean Square Y = 0.9624905604
+Scanner setting:
+Transmissivity: 0.0151 0.6610
+Film Density: 1.8210 0.1778
+Gamma: 1.75
+Quality Control Procedures:
+Film was kept in airtight containers prior to scanning.  Both the base
+and emulsion sides of the film were cleaned using a tacky roller system prior to
+scanning. Color adjustment was achieved by visually matching the tone, contrast,
+and brightness to the original film. Each scanned image was checked
+computationally for missing data.
+Quality Control Procedures for orthophoto production:
+After individual orthophotos were mosaiced into a regional database,
+the resulting orthophoto composite was visually inspected for tone balance and
+image distortion.  In areas of image distortion, more suitable orthophoto
+imagery was inserted, when possible.  The final orthophotos were visually
+inspected for accuracy and consistency.</procdesc></procstep><srcinfo><srcscale>2400</srcscale></srcinfo></lineage></dataqual><spdoinfo><indspref></indspref><direct>Raster</direct><mgmg3obj></mgmg3obj><mgmg3til></mgmg3til></spdoinfo><spref><horizsys><geograph><latres></latres><longres></longres></geograph><planar><gridsys><gridsysn>County Coordinates</gridsysn><utm><utmzone></utmzone></utm><spcs><spcszone></spcszone></spcs><mgmg4coz>43</mgmg4coz><mgmg4adj></mgmg4adj></gridsys><mapproj><mapprojn></mapprojn><mgmg4par></mgmg4par><otherprj></otherprj></mapproj><planci><plandu>Feet</plandu><coordrep><absres>0.500000</absres><ordres>0.500000</ordres></coordrep></planci></planar><geodetic><ellips>GRS80</ellips><horizdn>NAD83</horizdn></geodetic></horizsys></spref><eainfo><overview><eaover>ZEISS RMK TOP 15 Calibrated focal length: 152.773 mm.
+Orthophoto Pixel Size = 0.5?</eaover><eadetcit>None</eadetcit></overview></eainfo><distinfo><distrib><cntinfo><cntperp><cntper>David Wilford</cntper><cntorg>Ramsey County Surveyor's Office</cntorg></cntperp><cntpos>GIS Technician</cntpos><cntaddr><address>1425 Paul Kirkwold Drive</address><city>Arden Hills</city><state>MN</state><postal>55112-3933</postal></cntaddr><cntvoice>651.266.7175</cntvoice><cntfax>651.266.7180</cntfax><cntemail>david.wilford@co.ramsey.mn.us</cntemail></cntinfo></distrib><resdesc>Ramsey County Surveyor's Office Orthophotos</resdesc><distliab>DISCLAIMER
+EXCEPT AS EXPRESSLY STATED HEREIN, THIS DATA IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. LICENSEE BEARS ANY AND ALL RISK RELATING TO QUALITY AND PERFORMANCE OF THIS DATA.
+
+Limit on Liability
+This data is not a legally recorded map or survey and is not intended to be used as one. This data is a compilation of records and information from various state, county, and city offices, and other sources, and should be used for reference only.
+
+In no event will the County of Ramsey be liable for direct, indirect, special, incidental, or consequential damages arising out of the use of, or inability to use, the data, even if advised of the possibility of such damages.  Specifically, the County of Ramsey is not responsible for any costs including, but not limited to, those incurred as a result of lost profits or revenue, loss of use of data, the costs of recovering such programs or data, the cost of any substitute programs or data, claims by third parties, or for other similar costs. 
+
+The sole liability of the County of Ramsey and the licensee's exclusive remedy for any substantial defect which impairs the licensee's use of the data for purposes stated herein shall be the right to terminate this license and refund any fee paid.</distliab><stdorder><digform><digtinfo><formname></formname><formvern></formvern><transize></transize></digtinfo></digform><ordering>Contact Distributer</ordering></stdorder></distinfo><metainfo><metd>20051010</metd><metc><cntinfo><cntperp><cntper>Chris Ulrich</cntper><cntorg>Ramsey County Surveyor's Office</cntorg></cntperp><cntpos>GIS Technician</cntpos><cntaddr><address>1425 Paul Kirkwold Drive</address><city>Arden Hills</city><state>MN</state><postal>55112-3933</postal></cntaddr><cntvoice>651.266.7176</cntvoice><cntfax>651.266.7180</cntfax><cntemail>Christina.Ulrich@co.ramsey.mn.us</cntemail></cntinfo></metc><metstdn>Minnesota Geographic Metadata Guidelines</metstdn><metstdv>1.2</metstdv><metextns><onlink>http://www.gis.state.mn.us/stds/metadata.htm</onlink></metextns></metainfo><Esri><ModDate>20080213</ModDate><ModTime>15061500</ModTime></Esri><mdDateSt Sync="TRUE">20080213</mdDateSt></metadata>
