@@ -1,0 +1,4 @@
+lxml==3.3.5
+requests==2.5.3
+pysolr==3.2.0
+python-dateutil==2.4.0
