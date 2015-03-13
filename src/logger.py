@@ -8,7 +8,7 @@ import time
 
 class Logger(object):
 
-    def __init__(self, output_location):
+    def __init__(self, output_location="/var/www/ogp-md/tmp/logs"):
         self.filename = '__ogp-mdt-log-' + str(time.time()).replace('.', '') + '.csv'
         self.csvfile = open(os.path.join(output_location, self.filename), mode='a')
         self.log = csv.writer(self.csvfile)

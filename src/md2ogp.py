@@ -25,8 +25,55 @@ except ImportError:
 
 #df = getAGSdetails()
 
+def getOgpTree(tree):
+    """
+    Takes an FGDC ElementTree as argument.
+    Returns an OGP ElementTree.
+    """
+
+    # build empty etree to house output doc
+    OGPtree = etree.ElementTree()
+    OGProot = etree.Element("add", allowDups="false")
+    docElement = etree.SubElement(OGProot, "doc")
+    OGPtree._setroot(OGProot)
+
+    root = tree
+
+    log = Logger()
+
+    # grab the full text of the current XML for later use
+    fullText = etree.tostring(root)
+
+    if root.find("metainfo/metstdn") is not None:
+        if "Minnesota" in root.find("metainfo/metstdn").text:
+            doc = MGMGDocument(root, "MGMGtest", log, False)
+        elif "FGDC" in root.find("metainfo/metstdn").text:
+            doc = FGDCDocument(root, "FGDCtest", log, False)
+    elif root.find("collection/record") is not None:
+        doc = MARCXMLDocument(root, "MARCtest", log, False)
+
+
+    for field in doc.field_handlers:
+        try:
+            fieldEle = etree.SubElement(docElement, "field", name=field)
+
+            if hasattr(doc.field_handlers[field], '__call__'):
+                fieldEle.text = doc.field_handlers[field].__call__()
+            else:
+                fieldEle.text = doc.field_handlers[field]
+
+        except KeyError as e:
+            print "Nonexistant key: ", field
+
+    fullTextElement = etree.SubElement(docElement, "field", name="FgdcText")
+    fullTextElement.text = fullText
+
+    return OGPtree
+
+
+
 class baseOGP(object):
-    def __init__(self, output_path, md):
+    def __init__(self, output_path=None, md="fgdc"):
 
         self.output_path = output_path.rstrip('/')
         self.log = self.createLog()
@@ -107,6 +154,7 @@ class baseOGP(object):
 
     def processFile(self, filename):
 
+        
         print 'Starting file:', filename
 
         # build empty etree to house output doc
@@ -630,6 +678,7 @@ class MGMGDocument(FGDCDocument):
             locDict = {}
 
             #datafinder.org specific stuff
+            """
             try:
                 if df.has_key(os.path.split(self.file_name)[1]):
                     f = df[os.path.split(self.file_name)[1]]
@@ -637,6 +686,7 @@ class MGMGDocument(FGDCDocument):
                     locDict['layerId'] = f['layerId']
             except KeyError:
                 pass
+            """
 
             #end datafinder specific
 

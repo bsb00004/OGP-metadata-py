@@ -2,7 +2,7 @@ from lib import pysolr
 
 class SolrOGP(object):
 
-    def __init__(self, url="http://ec2-54-87-229-228.compute-1.amazonaws.com:8080/solr/collection1/"):
+    def __init__(self, url="http://54.235.211.28:8080/solr/collection1/"):
 
         # defaults to UMN OGP
         self.solr_url = url
@@ -22,7 +22,7 @@ class SolrOGP(object):
         return self.solr.search(q, **kwargs)
 
     def add_dict_to_solr(self,record_dict):
-        self.solr.add([record_dict])
+        return self.solr.add([record_dict])
 
     def add_to_solr(self, tree):
         """
@@ -30,6 +30,9 @@ class SolrOGP(object):
         """
         d = self.tree_to_dict(tree)
         self.solr.add([d])
+
+    def update_field(self,record_dict, field, update_type="set"):
+        return self.solr.add([record_dict], fieldUpdates={field:update_type})
 
     def add_to_solr_bulk(self, list_of_trees):
         """
