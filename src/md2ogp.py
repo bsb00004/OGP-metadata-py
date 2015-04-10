@@ -531,7 +531,7 @@ class GDRSDocument(MetadataDocument):
             metadata_filename = self.root["dsBaseName"] + ".xml"
 
 
-            metadata_fullpath = os.path.join("gdrs_tmp/", metadata_filename)
+            metadata_fullpath = os.path.join("../mn-geospatial-commons/", metadata_filename)
 
 
             if os.path.exists(metadata_fullpath):
