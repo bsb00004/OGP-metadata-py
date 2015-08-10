@@ -1,4 +1,6 @@
 #!/usr/bin/env python 
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import sys
 import argparse
 import os, os.path
@@ -74,7 +76,7 @@ def main():
 
             #filters out certain XML file names
             for filename in fnmatch.filter(filenames, '*.xml'):
-                files.append(os.path.join(root, filename))
+                files.append(unicode(os.path.join(root, filename), "utf-8"))
 
         print 'There are %s files to be processed.' % (len(files))
 

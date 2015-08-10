@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from lib import pysolr
 
 class SolrOGP(object):
@@ -35,7 +37,9 @@ class SolrOGP(object):
         Adds a bunch of records. Accepts a list of ElementTrees as argument
         """
         list_of_dicts = self.list_of_trees_to_dicts(list_of_trees)
+       
         print "Adding/updating %s documents in Solr index" % (len(list_of_trees))   
+
         self.solr.add(list_of_dicts)
 
     def _build_delete_query(self, list_of_layer_ids):

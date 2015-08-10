@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import os
 import os.path
 import time
@@ -73,7 +75,7 @@ def parse_data_type_MGMG(root):
             return "Raster"
         if root.findtext("*//direct").lower() == "point":
             return "Point"
-        elif root.findtext("*//direct").lower() == "vector":
+        if root.findtext("*//direct").lower() == "vector":
             mgmg3obj = root.find("*//mgmg3obj")
 
             if mgmg3obj is not None:
@@ -100,6 +102,20 @@ def parse_data_type_MGMG(root):
                     "label" in mgmg3obj
                 ):
                     return "Point"
+
+        if root.find("*//sdtstype") is not None:
+            sdtstype = root.findtext("*//sdtstype").lower()
+            if ("composite" in sdtstype or
+                "point" in sdtstype
+            ):
+                return "Point"
+            elif "string" in sdtstype:
+                return "Line"
+            elif ("g-polygon" in sdtstype or
+                  "polygon" in sdtstype or
+                  "chain" in sdtstype
+            ):
+                return "Polygon"
 
         else:
             return "Undefined"
@@ -151,6 +167,7 @@ class baseOGP(object):
         self.to_solr = False
         self.zip_file = self.initZip()
         self.overrides = {}
+        self.parser = etree.XMLParser(encoding="utf-8")
 
 
     def setOverrides(self,f):
@@ -228,7 +245,8 @@ class baseOGP(object):
 
         # parse the current XML into an etree
         tree = etree.ElementTree()
-        root = tree.parse(filename)
+        
+        root = tree.parse(filename, self.parser)
 
         # grab the full text of the current XML for later use
         fullText = etree.tostring(root)
@@ -254,6 +272,7 @@ class baseOGP(object):
             doc = MARCXMLDocument(root, filename, self.log, self.indirect_links)
 
         elif self.md == "guess":
+
             if root.find("metainfo/metstdn") is not None:
                 if "Minnesota" in root.find("metainfo/metstdn").text:
                     doc = MGMGDocument(root, filename, self.log, self.indirect_links)
@@ -261,7 +280,7 @@ class baseOGP(object):
                     doc = FGDCDocument(root, filename, self.log, self.indirect_links)
             elif root.find("collection/record") is not None:
                 doc = MARCXMLDocument(root, filename, self.log, self.indirect_links)
-            elif root.getroot().tag == "MD_Metadata":
+            elif "_Metadata" in root.tag:
                 doc = ISODocument(root, filename, self.log, self.indirect_links)
             else:
                 self.log.write(filename, 'metadata standard undecipherable')
@@ -372,10 +391,10 @@ class MetadataDocument(object):
             "CenterY": self.center_y
         }
 
-    # field methods 
+    # field methods
     def _file_name_sans_extension(self):
         file_name = os.path.basename(self.file_name)
-        file_name = file_name[0:file_name.rfind('.')]
+        file_name = "".join(file_name.split(".")[:-1])
         return file_name
 
     def layer_id(self):
@@ -633,7 +652,7 @@ class EsriOpenDataISODocument(ISODocument):
             "accconst" : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints/gco:CharacterString",
             "useconst" : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_Constraints/gmd:useLimitation/gco:CharacterString",
             "formname" : "gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name/gco:CharacterString",
-            "id"       : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/gmd:MD_Identifier/gmd:code",
+            "id"       : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier/gmd:MD_Identifier/gmd:code/gco:CharacterString",
             "distribution_links" : "gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString",
             "vector_datatype" : "gmd:spatialRepresentationInfo/gmd:MD_VectorSpatialRepresentation/gmd:geometricObjects/gmd:MD_GeometricObjects/gmd:geometricObjectType/gmd:MD_GeometricObjectTypeCode",
             "spatialrep": "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode"
@@ -659,17 +678,23 @@ class EsriOpenDataISODocument(ISODocument):
             return "Raster"
 
     def layer_id(self):
+        print self.root.find(self.PATHS["id"], self.NSMAP).text
         return self.root.find(self.PATHS["id"], self.NSMAP).text
 
     def theme_keywords(self):
         keywords =  self.root.find(self.PATHS["themekey"], self.NSMAP).getparent().getparent().findall("gmd:keyword", self.NSMAP)
         keywords_string = [k.find("gco:CharacterString", self.NSMAP).text for k in keywords]
-        return ", ".join(keywords_string)
+        if keywords_string[0]:
+            return ", ".join(keywords_string)
+        return ""
+
 
     def place_keywords(self):
         keywords =  self.root.find(self.PATHS["placekey"], self.NSMAP).getparent().getparent().findall("gmd:keyword", self.NSMAP)
         keywords_string = [k.find("gco:CharacterString", self.NSMAP).text for k in keywords]
-        return ", ".join(keywords_string)
+        if keywords_string[0]:
+            return ", ".join(keywords_string)
+        return ""
 
     def publisher(self):
         return self.root.findtext(self.PATHS["publish"], "UNKNOWN", self.NSMAP)
@@ -720,6 +745,9 @@ class EsriOpenDataISODocument(ISODocument):
                     if url.find("FeatureServer") is -1:
                         loc["ArcGISRest"] = url[:url.rfind("/")]
                         loc["layerId"] = url[url.rfind("/") + 1:]
+                    else:
+                        loc["esrifeatureservice"] = url + "/"
+                    #loc["layerId"] = url[url.rfind("/") + 1:]
 
 
                 elif p == "download":
@@ -792,8 +820,8 @@ class FGDCDocument(MetadataDocument):
         if layer_id is not None:
             return layer_id
         else:
-            self.log.write(self.file_name, 'No catid found in title')
-            return "UNKNOWN"
+            self.log.write(self.file_name, 'No catid found in title, using file name for now')
+            return self.file_name.split(os.path.sep)[-1].replace(".xml","")
 
 
     def layer_display_name(self):
@@ -1014,7 +1042,7 @@ class MGMGDocument(FGDCDocument):
                 return "Raster"
             if root.findtext("*//direct").lower() == "point":
                 return "Point"
-            elif root.findtext("*//direct").lower() == "vector":
+            if root.findtext("*//direct").lower() == "vector":
                 mgmg3obj = root.find("*//mgmg3obj")
 
                 if mgmg3obj is not None:
@@ -1041,6 +1069,22 @@ class MGMGDocument(FGDCDocument):
                         "label" in mgmg3obj
                     ):
                         return "Point"
+
+            if root.find("*//sdtstype") is not None:
+                sdtstype = root.findtext("*//sdtstype").lower()
+
+                if sdtstype:
+                    if ("composite" in sdtstype or
+                        "point" in sdtstype
+                    ):
+                        return "Point"
+                    elif "string" in sdtstype:
+                        return "Line"
+                    elif ("g-polygon" in sdtstype or
+                          "polygon" in sdtstype or
+                          "chain" in sdtstype
+                    ):
+                        return "Polygon"
 
             else:
                 self.log.write(self.file_name, 'data type issues')
@@ -1218,4 +1262,3 @@ class MARCXMLDocument(MetadataDocument):
         for keyword in xpath(self.root):
             keywords.add(keyword.text.rstrip(":;,. "))
         return list(keywords)
-
