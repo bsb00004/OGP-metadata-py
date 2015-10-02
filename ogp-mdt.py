@@ -43,16 +43,16 @@ def main():
     if md not in METADATA_OPTIONS:
         sys.exit('Invalid metadata standard. Supported options are %s. Please try again.' % ( " ,".join(METADATA_OPTIONS)))
 
-    if os.path.exists(output) == False:
+    if not os.path.exists(output):
         try:
             os.mkdir(output)
         except OSError:
             print "There's a problem with the output path: %s. Are you sure you entered it correctly?" % (output)
 
-    if os.path.exists(ws) == False:
+    if not os.path.exists(ws):
         print "Workspace %s does not seem to exist. Are you sure you entered it correctly?" % (ws)
 
-    elif os.path.exists(ws) == True:
+    elif os.path.exists(ws):
 
         # instantiate base class to take in output path and metadata option
         ogp = md2ogp.baseOGP(output,md)
