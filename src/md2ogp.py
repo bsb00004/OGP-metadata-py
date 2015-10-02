@@ -698,8 +698,8 @@ class EsriOpenDataISODocument(ISODocument):
             return "Raster"
 
     def layer_id(self):
-        print self.root.find(self.PATHS["id"], self.NSMAP).text
-        return self.root.find(self.PATHS["id"], self.NSMAP).text
+        print self.root.find(self.PATHS["id"], self.NSMAP).text.split("/")[-1]
+        return self.root.find(self.PATHS["id"], self.NSMAP).text.split("/")[-1]
 
     def theme_keywords(self):
         keywords =  self.root.find(self.PATHS["themekey"], self.NSMAP).getparent().getparent().findall("gmd:keyword", self.NSMAP)
@@ -847,7 +847,7 @@ class FGDCDocument(MetadataDocument):
     def layer_display_name(self):
         disp_name = self.root.findtext("idinfo/citation/citeinfo/title", "UNKNOWN")
         #disp_name = disp_name + " (" + self.name() + ")"
-        return disp_name.title()
+        return disp_name.replace("_"," ").title()
 
     def abstract(self):
         abstract = self.root.findtext("idinfo/descript/abstract", "UNKNOWN")
