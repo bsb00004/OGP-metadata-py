@@ -1049,7 +1049,7 @@ class GDRSDocument(MGMGDocument):
         }
 
     def layer_id(self):
-        return self.id
+        return self._get_resource_name()
 
     def _get_layer_file(self):
         path_to_lyr = os.path.join(os.path.split(filename)[:-1], "*.lyr")
