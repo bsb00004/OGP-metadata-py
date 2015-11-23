@@ -13,6 +13,8 @@ import urllib2
 import re
 import codecs
 import zipfile
+import pdb
+import glob
 try:
     import zlib
     mode = zipfile.ZIP_DEFLATED
@@ -28,7 +30,6 @@ except ImportError:
     except ImportError:
         print("No xml lib found. Please install lxml lib to continue")
 
-#df = getAGSdetails()
 
 def parse_data_type_FGDC(root):
     try:
@@ -69,6 +70,7 @@ def parse_data_type_FGDC(root):
 
     except AttributeError as e:
         return "Undefined"
+
 
 def parse_data_type_MGMG(root):
     try:
@@ -160,25 +162,25 @@ class baseOGP(object):
     def __init__(self, output_path, md):
 
         self.output_path = output_path.rstrip('/')
-        self.log = self.createLog()
+        self.log = self.create_log()
         self.md = md.lower()
         self.indirect_links = False
         self.logging_only = False
         self.zip= False
         self.to_solr = False
-        self.zip_file = self.initZip()
+        self.zip_file = self.init_zip()
         self.overrides = {}
         self.parser = etree.XMLParser(encoding="utf-8")
 
 
-    def setOverrides(self,f):
+    def set_overrides(self,f):
 
         if not os.path.isfile(f):
             sys.exit("Override file does not seem to exist")
 
         self.overrides = json.load(open(f))
 
-    def initZip(self):
+    def init_zip(self):
 
         if self.zip:
             d = datetime.now()
@@ -190,36 +192,36 @@ class baseOGP(object):
         else:
             return None
 
-    def addToZip(self,tree,name):
+    def add_to_zip(self,tree,name):
         self.zip_file.writestr(
             os.path.split(name)[1]+"_OGP.xml", etree.tostring(tree)
             )
 
-    def setIndirectLinks(self):
+    def set_indirect_links(self):
         self.indirect_links = True
 
-    def setZip(self):
+    def set_zip(self):
         self.zip = True
         self.zip_file = self.initZip()
 
-    def loggingOnly(self):
+    def logging_only(self):
         self.logging_only = True
 
-    def createLog(self):
+    def create_log(self):
         return Logger(self.output_path)
 
     def process_for_solr(self,listoffiles):
         trees = []
         for f in listoffiles:
-            trees.append(self.processFile(f))
+            trees.append(self.process_file(f))
         self.solr.add_to_solr_bulk(trees)
 
-    def set_solr(self):
+    def set_solr(self, url="http://54.235.211.28:8080/solr/collection1/"):
         self.to_solr = True
-        self.solr = ogp2solr.SolrOGP()
+        self.solr = ogp2solr.SolrOGP(url)
 
 
-    def processListofFiles(self, listoffiles):
+    def process_list_of_files(self, listoffiles):
 
         if not os.path.exists(self.output_path):
             try:
@@ -229,7 +231,7 @@ class baseOGP(object):
 
 
         for f in listoffiles:
-            self.processFile(f)
+            self.process_file(f)
 
         # when done, close the log file and zip
         self.log.close()
@@ -254,7 +256,7 @@ class baseOGP(object):
         write_file.close()
 
 
-    def processFile(self, filename):
+    def process_file(self, filename):
 
         print('Starting file:', filename)
 
@@ -293,6 +295,9 @@ class baseOGP(object):
 
         elif self.md == "marc":
             doc = MARCXMLDocument(root, filename, self.log, self.indirect_links)
+
+        elif self.md == "gdrs":
+            doc = GDRSDocument(root, filename, self.log, self.indirect_links)
 
         elif self.md == "guess":
 
@@ -341,7 +346,7 @@ class baseOGP(object):
 
                 if self.zip:
                     print('Writing: ' + resultName)
-                    self.addToZip(new_tree,filename)
+                    self.add_to_zip(new_tree,filename)
                 elif self.to_solr:
                     return new_tree
                 elif "lxml" in etree.__name__:
@@ -493,145 +498,6 @@ class MetadataDocument(object):
         # see standard specific sub-class implementation
         pass
 
-class GDRSDocument(MetadataDocument):
-    def __init__(self, root, filename, log, indirect_links):
-        super(GDRSDocument, self).__init__(root, filename, log, indirect_links)
-        self.id = filename
-        self.field_handlers["Access"] = "Public"
-        self.field_handlers["FgdcText"] = self.fgdc_text
-        self.field_handlers["Publisher"] = "Minnesota Geospatial Commons"
-        self._fulltext = None
-
-    def layer_id(self):
-        return self.id
-
-    def name(self):
-        return self.root["dsBaseName"]
-
-    def _check_metadata_standard(self,tree):
-        root_tag = tree.getroot().tag
-        if root_tag == "metadata":
-            if "Minnesota" in tree.find("metainfo/metstdn").text:
-                return "mgmg"
-            elif "FGDC" in tree.find("metainfo/metstdn").text:
-                return "fgdc"
-        elif root_tag.find("MD_Metadata") != -1 or root_tag.find("MI_Metadata") != -1:
-            return "iso"
-
-    def data_type(self):
-        tree = etree.ElementTree(etree.XML(self.fgdc_text()))
-        metadata_standard = self._check_metadata_standard(tree)
-        if metadata_standard == "mgmg":
-            return parse_data_type_MGMG(tree)
-        elif metadata_standard == "fgdc":
-            return parse_data_type_FGDC(tree)
-
-    def theme_keywords(self):
-        return '"' + '", "'.join(self.root["topicCategories"]) + '"'
-
-    def place_keywords(self):
-
-        #TODO replace supplied keywords with Linked Data equivs from id.loc.gov or geonames.org
-        return '"' + '", "'.join(self.root["dsPlaceKeywords"]) + '"'
-
-    def originator(self):
-        return self.root["dsOriginator"]
-
-
-    def layer_display_name(self):
-        return self.root["dsName"]
-
-    def location(self):
-        loc = {}
-        resources = self.root["dsDataResources"]
-        for i in resources:
-            type = resources[i]["drType"]
-            if type == "shp":
-                loc["download"] = resources[i]["drURL"]
-            elif type == "ags_mapserver":
-                loc["ArcGISRest"] = resources[i]["drAccess"][0]["accessURL"]
-        return json.dumps(loc)
-
-
-    def content_date(self):
-        try:
-            dt = dateutil.parser.parse(self.root["dsPeriodOfContent"])
-        except (ValueError, AttributeError):
-            dt = datetime(1234,5,6,0,0)
-        return dt.isoformat() + "Z"
-
-    def abstract(self):
-        return self.root["dsAbstract"]
-
-    def access(self):
-        return self.root["dsAccessConst"]
-
-    def _getXML(self):
-        try:
-            metadata_url = self.root["dsMetadataUrl"].rstrip("html") + "xml"
-            metadata_filename = self.root["dsBaseName"] + ".xml"
-            metadata_fullpath = os.path.join("../mn-geospatial-commons/", metadata_filename)
-
-            if os.path.exists(metadata_fullpath):
-                f = open(metadata_fullpath, "r")
-                text = etree.tostring(etree.XML(f.read()))
-                f.close()
-            else:
-                xml = etree.XML(urllib2.urlopen(metadata_url).read())
-                text = etree.tostring(xml)
-                f = open(metadata_fullpath, "w")
-                f.write(text.replace("\xef\xbb\xbf", ""))
-                f.close()
-            self._fulltext = text
-            return self._fulltext
-
-        except AttributeError as e:
-            #print("No Metadata url for", self.root["dsName"])
-            return "<error>Not found</error>"
-
-
-    def fgdc_text(self):
-        if self._fulltext is not None:
-            return self._fulltext
-        else:
-            return self._getXML()
-
-    def min_x(self):
-        if self.root["bndCoordWest"]:
-            return self.root["bndCoordWest"]
-        else:
-            return self.DEFAULT_BBOX["min_x"]
-
-    def min_y(self):
-        if self.root["bndCoordSouth"]:
-            return self.root["bndCoordSouth"]
-        else:
-            return self.DEFAULT_BBOX["min_y"]
-
-    def max_x(self):
-        if self.root["bndCoordEast"]:
-            return self.root["bndCoordEast"]
-        else:
-            return self.DEFAULT_BBOX["max_x"]
-
-    def max_y(self):
-        if self.root["bndCoordNorth"]:
-            return self.root["bndCoordNorth"]
-        else:
-            return self.DEFAULT_BBOX["max_y"]
-
-    def center_x(self):
-        east = float(self.max_x())
-        west = float(self.min_x())
-        middle = west + (abs(east - west)/2)
-        return unicode(middle)
-
-    def center_y(self):
-        north = float(self.max_y())
-        south = float(self.min_y())
-        middle = south + (abs(north - south)/2)
-        return unicode(middle)
-
 
 class ISODocument(MetadataDocument):
     def __init__(self, root, filename, log, indirect_links):
@@ -658,7 +524,7 @@ class EsriOpenDataISODocument(ISODocument):
 
         self.PATHS = {
             "title"              : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString",
-            "pubdate"            : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:editionDate/gco:Date",
+            "pubdate"            : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:DateTime",
             "onlink"             : "gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:linkage/gmd:URL",
             "origin"             : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString",
             "publish"            : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString",
@@ -666,7 +532,7 @@ class EsriOpenDataISODocument(ISODocument):
             "eastbc"             : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal",
             "northbc"            : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal",
             "southbc"            : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal",
-            "themekey"           : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode[@codeListValue='theme']",
+            "themekey"           : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory/gmd:MD_TopicCategoryCode",
             "placekey"           : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode[@codeListValue='place']",
             "abstract"           : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract/gco:CharacterString",
             "accconst"           : "gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints/gco:CharacterString",
@@ -702,11 +568,16 @@ class EsriOpenDataISODocument(ISODocument):
         return self.root.find(self.PATHS["id"], self.NSMAP).text.split("/")[-1]
 
     def theme_keywords(self):
-        keywords =  self.root.find(self.PATHS["themekey"], self.NSMAP).getparent().getparent().findall("gmd:keyword", self.NSMAP)
-        keywords_string = [k.find("gco:CharacterString", self.NSMAP).text for k in keywords]
-        if keywords_string[0]:
-            return ", ".join(keywords_string)
-        return ""
+        keywords =  self.root.findall(self.PATHS["themekey"], self.NSMAP)
+        keywords_list = [k.text for k in keywords]
+
+        if not keywords_list:
+            return ""
+        elif len(keywords_list) == 1:
+            return keywords_list[0]
+        elif len(keywords_list) > 1:
+            print keywords_list
+            return ", ".join(keywords_list)
 
 
     def place_keywords(self):
@@ -1141,6 +1012,152 @@ class MGMGDocument(FGDCDocument):
         else:
             self.log.write(self.file_name, 'can\'t find onlink, or else it\'s goofy somehow')
             return "UNKNOWN"
+
+
+class GDRSDocument(MGMGDocument):
+    def __init__(self, root, filename, log, indirect_links):
+        super(GDRSDocument, self).__init__(root, filename, log, indirect_links)
+        self.id = filename
+        self._gdrs_root_url = "ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/"
+        self.field_handlers["Access"] = "Public"
+        self.field_handlers["FgdcText"] = self.fgdc_text
+        self.field_handlers["Publisher"] = "Minnesota Geospatial Commons"
+        self._fulltext = None
+        self._data_resource_paths = {
+            "sub_resources" : "dataSubResources/dataSubResource",
+            "topic_categories":"topicCategories/topicCategory"
+        }
+
+        #taken from https://gisdata.mn.gov/content/?q=publisher_codes
+        self._gdrs_publisher_codes = {
+            "us_mn_co_carver":"Carver County"
+            "us_mn_co_dakota":"Dakota County"
+            "us_mn_co_lake":"Lake County"
+            "us_mn_state_metrogis":"Metro GIS"
+            "us_mn_state_metc":"Metropolitan Council"
+            "us_mn_state_bwsr":"Minnesota Board of Water and Soil Resources (BWSR)"
+            "us_mn_state_mda":"Minnesota Department of Agriculture"
+            "us_mn_state_mde":"Minnesota Department of Education"
+            "us_mn_state_health":"Minnesota Department of Health"
+            "us_mn_state_dnr":"Minnesota Department of Natural Resources"
+            "us_mn_state_mdor":"Minnesota Department of Revenue"
+            "us_mn_state_dot":"Minnesota Department of Transportation"
+            "edu_umn_mngs":"Minnesota Geological Survey"
+            "us_mn_state_mngeo":"Minnesota Geospatial Information Office"
+            "us_mn_state_pca":"Minnesota Pollution Control Agency"
+            "edu_umn":"University of Minnesota, Twin Cities"
+        }
+
+    def layer_id(self):
+        return self.id
+
+    def _get_layer_file(self):
+        path_to_lyr = os.path.join(os.path.split(filename)[:-1], "*.lyr")
+        lyr_list = glob.glob(path_to_lyr)
+        if len(lyr_list) > 0:
+            lyr_file = lyr_list[0]
+            return lyr_file
+        return None
+
+    def _get_subresources(self):
+        return self._data_resource_tree.findall(self._data_resource_paths["sub_resources"])
+
+    def _get_subresource_type(self, sub_resource):
+        return sub_resource.findtext("subResourceType", None)
+
+    def _build_download_url(self):
+        name = self._get_resource_basename()
+        pub = self._get_resource_publisher_id()
+        return self._gdrs_root_url + pub + "/" + name + "/"
+
+    def _get_resource_basename(self):
+        return self._data_resource_tree.findtext("baseName", None)
+
+    def _get_resource_publisher_id(self):
+        return self._data_resource_tree.findtext("publisherID", None)
+
+    def _get_resource_name(self):
+        name = self._get_resource_basename()
+        pub = self._get_resource_publisher_id()
+        if name and pub:
+            return pub + "_" + name
+        return None
+
+    def _get_resource_xml(self):
+        path_to_data_resource_xml = os.path.join(os.path.split(filename)[:-1], "dataResource.xml")
+        if os.path.exists(path_to_data_resource_xml):
+            self._data_resource_tree = etree.parse(path_to_data_resource_xml)
+
+    def _get_topic_categories(self):
+        tc = self._data_resource_tree.findall(self._data_resource_paths["topic_categories"])
+        if len(tc) > 1:
+            return '"' + ", ".join([i.text for i in tc]) + '"'
+        else:
+            return tc[0].text
+
+    def name(self):
+        return self._get_resource_name()
+
+    def _check_metadata_standard(self,tree):
+        root_tag = tree.getroot().tag
+        if root_tag == "metadata":
+            if "Minnesota" in tree.find("metainfo/metstdn").text:
+                return "mgmg"
+            elif "FGDC" in tree.find("metainfo/metstdn").text:
+                return "fgdc"
+        elif root_tag.find("MD_Metadata") != -1 or root_tag.find("MI_Metadata") != -1:
+            return "iso"
+
+    def data_type(self):
+        tree = etree.ElementTree(etree.XML(self.fgdc_text()))
+        metadata_standard = self._check_metadata_standard(tree)
+        if metadata_standard == "mgmg":
+            return parse_data_type_MGMG(tree)
+        elif metadata_standard == "fgdc":
+            return parse_data_type_FGDC(tree)
+
+    def theme_keywords(self):
+        return self._get_topic_categories()
+
+    def _get_publisher_name(publisher_id):
+        return self._gdrs_publisher_codes[publisher_id]
+
+    def publisher(self):
+        pub_id = self._get_resource_publisher_id()
+        pub = self._get_publisher_name(pub_id)
+        return pub
+
+    def layer_display_name(self):
+        return self.root["dsName"]
+
+    def _get_subresource_url(self, resource):
+        return resource.findtext("subResourceAccess/subResourceURL", None)
+
+    def location(self):
+        loc = {}
+        resources = self._get_subresources()
+        for resource in resources:
+            resource_type = self._get_subresource_type(resource)
+            if resource_type:
+                if resource_type == "shp":
+                    url = self._build_download_url() + "shp_" + self._get_resource_name + ".zip"
+                    loc["download"] = url
+                elif type == "ags_mapserver":
+                    url = self._get_subresource_url(resource)
+                    lyr_file = self._get_layer_file()
+                    if lyr_file:
+                        import arcpy
+                        lyr = arcpy.mapping.Layer(lyr_file)
+                        if lyr.isGroupLayer:
+                            for index, ly in enumerate(arcpy.mapping.ListLayers(lyr)):
+                                if ly.visible:
+                                    lyr_number = str(index - 1)
+                                    url = url + lyr_number
+                                    url = url.replace("//","/")
+                    loc["ArcGISRest"] = url
+
+        return json.dumps(loc)
+
 
 # from https://github.com/gravesm/marcingest
 class MARCXMLDocument(MetadataDocument):

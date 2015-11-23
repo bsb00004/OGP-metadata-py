@@ -1,4 +1,4 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import sys
@@ -56,24 +56,29 @@ def main():
         ogp = md2ogp.baseOGP(output,md)
 
         if args.indirect:
-            ogp.setIndirectLinks()
+            ogp.set_indirect_links()
 
         if args.log_only:
-            ogp.loggingOnly()
+            ogp.logging_only()
 
         if args.zip:
-            ogp.setZip()
+            ogp.set_zip()
 
         if args.overrides:
-            ogp.setOverrides(args.overrides)
+            ogp.set_overrides(args.overrides)
 
         files = []
-        
+
+        if md == "gdrs":
+            filter_phrase == "metadata.xml"
+        else:
+            filter_phrase == "*.xml"
+
         # assemble list of files to be processed
         for root, dirnames, filenames in os.walk(ws):
 
             #filters out certain XML file names
-            for filename in fnmatch.filter(filenames, '*.xml'):
+            for filename in fnmatch.filter(filenames, filter_phrase):
                 files.append(unicode(os.path.join(root, filename), "utf-8"))
 
         print 'There are %s files to be processed.' % (len(files))
@@ -81,10 +86,10 @@ def main():
         if args.to_solr:
             ogp.set_solr()
             ogp.process_for_solr(files)
-        
-        else:
-            ogp.processListofFiles(files)
 
-            
+        else:
+            ogp.process_list_of_files(files)
+
+
 if __name__ == "__main__":
     sys.exit(main())
