@@ -170,7 +170,8 @@ class baseOGP(object):
         self.to_solr = False
         self.zip_file = self.init_zip()
         self.overrides = {}
-        self.parser = etree.XMLParser(encoding="utf-8")
+        
+     
 
 
     def set_overrides(self,f):
@@ -204,7 +205,7 @@ class baseOGP(object):
         self.zip = True
         self.zip_file = self.initZip()
 
-    def logging_only(self):
+    def set_logging_only(self):
         self.logging_only = True
 
     def create_log(self):
@@ -264,12 +265,13 @@ class baseOGP(object):
         tree = etree.ElementTree()
 
         try:
-            root = tree.parse(filename, self.parser)
-        except etree.XMLSyntaxError as e:
+            root = tree.parse(filename, etree.XMLParser(encoding="utf-8"))
+        except Exception as e:
+            pdb.set_trace()
             bom_contents = self.check_for_BOM(filename)
             if bom_contents:
                 self.remove_BOM(filename, bom_contents)
-                root = tree.parse(filename, self.parser)
+                root = tree.parse(filename, etree.XMLParser(encoding="utf-8"))
             else:
                 raise e
 
@@ -337,7 +339,12 @@ class baseOGP(object):
             if not self.logging_only:
 
                 new_tree = etree.ElementTree(root_element)
-                resultName = os.path.join(self.output_path, os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
+
+                if self.md == "gdrs":
+                    resultName = os.path.join(self.output_path, filename.split(os.path.sep)[-2] +".xml")
+                else:
+                    resultName = os.path.join(self.output_path, 
+                        os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
 
                 # check for duplicate names (since w're looking across records with similar dataset content)
                 # and add an _ to the end to avoid overwriting
@@ -632,7 +639,6 @@ class EsriOpenDataISODocument(ISODocument):
             if url != "":
                 if p == "ESRI:ArcGIS":
 
-                    # can't handle feature services at the moment
                     if url.find("FeatureServer") is -1:
                         loc["ArcGISRest"] = url[:url.rfind("/")]
                         loc["layerId"] = url[url.rfind("/") + 1:]
@@ -1017,12 +1023,12 @@ class MGMGDocument(FGDCDocument):
 class GDRSDocument(MGMGDocument):
     def __init__(self, root, filename, log, indirect_links):
         super(GDRSDocument, self).__init__(root, filename, log, indirect_links)
-        self.id = filename
+        self.filename = filename
+        self.root = root
+        self._geospatial_commons_root_url = "https://gisdata.mn.gov/dataset/"
         self._gdrs_root_url = "ftp://ftp.gisdata.mn.gov/pub/gdrs/data/pub/"
         self.field_handlers["Access"] = "Public"
-        self.field_handlers["FgdcText"] = self.fgdc_text
-        self.field_handlers["Publisher"] = "Minnesota Geospatial Commons"
-        self._fulltext = None
+        self._get_resource_xml()
         self._data_resource_paths = {
             "sub_resources" : "dataSubResources/dataSubResource",
             "topic_categories":"topicCategories/topicCategory"
@@ -1030,21 +1036,21 @@ class GDRSDocument(MGMGDocument):
 
         #taken from https://gisdata.mn.gov/content/?q=publisher_codes
         self._gdrs_publisher_codes = {
-            "us_mn_co_carver":"Carver County"
-            "us_mn_co_dakota":"Dakota County"
-            "us_mn_co_lake":"Lake County"
-            "us_mn_state_metrogis":"Metro GIS"
-            "us_mn_state_metc":"Metropolitan Council"
-            "us_mn_state_bwsr":"Minnesota Board of Water and Soil Resources (BWSR)"
-            "us_mn_state_mda":"Minnesota Department of Agriculture"
-            "us_mn_state_mde":"Minnesota Department of Education"
-            "us_mn_state_health":"Minnesota Department of Health"
-            "us_mn_state_dnr":"Minnesota Department of Natural Resources"
-            "us_mn_state_mdor":"Minnesota Department of Revenue"
-            "us_mn_state_dot":"Minnesota Department of Transportation"
-            "edu_umn_mngs":"Minnesota Geological Survey"
-            "us_mn_state_mngeo":"Minnesota Geospatial Information Office"
-            "us_mn_state_pca":"Minnesota Pollution Control Agency"
+            "us_mn_co_dakota":"Dakota County",
+            "us_mn_co_carver":"Carver County",
+            "us_mn_co_lake":"Lake County",
+            "us_mn_state_metrogis":"Metro GIS",
+            "us_mn_state_metc":"Metropolitan Council",
+            "us_mn_state_bwsr":"Minnesota Board of Water and Soil Resources (BWSR)",
+            "us_mn_state_mda":"Minnesota Department of Agriculture",
+            "us_mn_state_mde":"Minnesota Department of Education",
+            "us_mn_state_health":"Minnesota Department of Health",
+            "us_mn_state_dnr":"Minnesota Department of Natural Resources",
+            "us_mn_state_mdor":"Minnesota Department of Revenue",
+            "us_mn_state_dot":"Minnesota Department of Transportation",
+            "edu_umn_mngs":"Minnesota Geological Survey",
+            "us_mn_state_mngeo":"Minnesota Geospatial Information Office",
+            "us_mn_state_pca":"Minnesota Pollution Control Agency",
             "edu_umn":"University of Minnesota, Twin Cities"
         }
 
@@ -1052,7 +1058,8 @@ class GDRSDocument(MGMGDocument):
         return self._get_resource_name()
 
     def _get_layer_file(self):
-        path_to_lyr = os.path.join(os.path.split(filename)[:-1], "*.lyr")
+        path_to_lyr = os.path.join(os.path.split(self.filename)[0], "*.lyr")
+        #pdb.set_trace()
         lyr_list = glob.glob(path_to_lyr)
         if len(lyr_list) > 0:
             lyr_file = lyr_list[0]
@@ -1084,7 +1091,7 @@ class GDRSDocument(MGMGDocument):
         return None
 
     def _get_resource_xml(self):
-        path_to_data_resource_xml = os.path.join(os.path.split(filename)[:-1], "dataResource.xml")
+        path_to_data_resource_xml = os.path.join(os.path.split(self.filename)[0], "dataResource.xml")
         if os.path.exists(path_to_data_resource_xml):
             self._data_resource_tree = etree.parse(path_to_data_resource_xml)
 
@@ -1098,28 +1105,27 @@ class GDRSDocument(MGMGDocument):
     def name(self):
         return self._get_resource_name()
 
-    def _check_metadata_standard(self,tree):
-        root_tag = tree.getroot().tag
+    def _check_metadata_standard(self):
+        root_tag = self.root.tag
         if root_tag == "metadata":
-            if "Minnesota" in tree.find("metainfo/metstdn").text:
+            if "Minnesota" in self.root.find("metainfo/metstdn").text:
                 return "mgmg"
-            elif "FGDC" in tree.find("metainfo/metstdn").text:
+            elif "FGDC" in self.root.find("metainfo/metstdn").text:
                 return "fgdc"
         elif root_tag.find("MD_Metadata") != -1 or root_tag.find("MI_Metadata") != -1:
             return "iso"
 
     def data_type(self):
-        tree = etree.ElementTree(etree.XML(self.fgdc_text()))
-        metadata_standard = self._check_metadata_standard(tree)
+        metadata_standard = self._check_metadata_standard()
         if metadata_standard == "mgmg":
-            return parse_data_type_MGMG(tree)
+            return parse_data_type_MGMG(self.root)
         elif metadata_standard == "fgdc":
-            return parse_data_type_FGDC(tree)
+            return parse_data_type_FGDC(self.root)
 
     def theme_keywords(self):
         return self._get_topic_categories()
 
-    def _get_publisher_name(publisher_id):
+    def _get_publisher_name(self, publisher_id):
         return self._gdrs_publisher_codes[publisher_id]
 
     def publisher(self):
@@ -1127,35 +1133,79 @@ class GDRSDocument(MGMGDocument):
         pub = self._get_publisher_name(pub_id)
         return pub
 
-    def layer_display_name(self):
-        return self.root["dsName"]
-
     def _get_subresource_url(self, resource):
         return resource.findtext("subResourceAccess/subResourceURL", None)
+
+    def _build_download_url(self):
+        name = self._get_resource_basename()
+        pub = self._get_resource_publisher_id()
+        return self._gdrs_root_url + pub + "/" + name + "/"
 
     def location(self):
         loc = {}
         resources = self._get_subresources()
         for resource in resources:
+            external_count = 0
             resource_type = self._get_subresource_type(resource)
+            #pdb.set_trace()
             if resource_type:
-                if resource_type == "shp":
-                    url = self._build_download_url() + "shp_" + self._get_resource_name + ".zip"
+                if resource_type == "shp" or resource_type == "fgdb":
+                    url = self._build_download_url() + "shp_" + self._get_resource_basename() + ".zip"
                     loc["download"] = url
-                elif type == "ags_mapserver":
+                elif resource_type == "external":
+                    external_count = external_count + 1
                     url = self._get_subresource_url(resource)
+                    desc = resource.findtext("subResourceName", None)
+                    if desc:
+                        if "download" in desc.lower():
+                            loc["externalDownload"] = url
+
+                elif resource_type == "ags_mapserver":
+                    url = self._get_subresource_url(resource)
+                    self.log.write(self.file_name, url)
                     lyr_file = self._get_layer_file()
+
                     if lyr_file:
+                        self.log.write(self.file_name, "I have a layer file!")
                         import arcpy
                         lyr = arcpy.mapping.Layer(lyr_file)
-                        if lyr.isGroupLayer:
-                            for index, ly in enumerate(arcpy.mapping.ListLayers(lyr)):
-                                if ly.visible:
-                                    lyr_number = str(index - 1)
-                                    url = url + lyr_number
-                                    url = url.replace("//","/")
-                    loc["ArcGISRest"] = url
 
+                        if lyr.isGroupLayer:
+                            some_visible = False
+
+                            for index, ly in enumerate(arcpy.mapping.ListLayers(lyr)):
+
+                                if ly.visible:
+                                    some_visible = True
+                                    ind = index -1
+
+                                    if ind >= 0:
+                                        lyr_number = str(ind)
+
+                                        #make sure it's not a feature service
+                                        if url.find("FeatureServer") is -1:
+                                            loc["ArcGISRest"] = url
+                                            loc["layerId"] = lyr_number
+                                        else:
+
+                                            if url.endswith("/"):
+                                                url = url + lyr_number
+                                            else:
+                                                url = url + "/" + lyr_number
+
+                                            loc["esrifeatureservice"] = url + "/"
+
+                            if not some_visible:
+                                loc["externalDownload"] = self._geospatial_commons_root_url + self._get_resource_name()
+
+                        elif lyr.isServiceLayer:
+                            loc["ArcGISRest"] = lyr.serviceProperties["URL"]
+
+                    else:
+                        #if there's no layer file, we'll just use the url and hope for the best
+                        loc["ArcGISRest"] = url
+                                        
+        self.log.write(self.file_name, json.dumps(loc))
         return json.dumps(loc)
 
 

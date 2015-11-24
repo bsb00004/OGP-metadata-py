@@ -45,13 +45,18 @@ class SolrOGP(object):
     def _build_delete_query(self, list_of_layer_ids):
         return "LayerId:(" + " ".join(list_of_layer_ids) + ")"
 
-    def delete_query(self,query):
-        s = self.solr.search(self.escape_query(query), **{"rows":"0"})
-        are_you_sure = raw_input("Are you sure you want to delete {num_recs} records from Solr? Y/N: ".format(num_recs=s.hits))
-        if are_you_sure.lower() == "y":
-            self.solr.delete(q=self.escape_query(query))
+    def delete_query(self,query, no_confirm=False):
+        if not no_confirm:
+            s = self.solr.search(self.escape_query(query), **{"rows":"0"})
+            are_you_sure = raw_input("Are you sure you want to delete {num_recs} records from Solr? Y/N: ".format(num_recs=s.hits))
+            if are_you_sure.lower() == "y":
+                self.solr.delete(q=self.escape_query(query))
+            else:
+                print "Abandon ship!"
         else:
-            print "Abandon ship!"
+            self.solr.delete(q=self.escape_query(query))
+
+
 
     def delete_from_solr(self, list_of_layer_ids):
         """

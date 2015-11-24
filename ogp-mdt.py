@@ -59,7 +59,7 @@ def main():
             ogp.set_indirect_links()
 
         if args.log_only:
-            ogp.logging_only()
+            ogp.set_logging_only()
 
         if args.zip:
             ogp.set_zip()
@@ -70,9 +70,9 @@ def main():
         files = []
 
         if md == "gdrs":
-            filter_phrase == "metadata.xml"
+            filter_phrase = "metadata.xml"
         else:
-            filter_phrase == "*.xml"
+            filter_phrase = "*.xml"
 
         # assemble list of files to be processed
         for root, dirnames, filenames in os.walk(ws):
