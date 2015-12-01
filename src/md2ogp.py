@@ -170,8 +170,8 @@ class baseOGP(object):
         self.to_solr = False
         self.zip_file = self.init_zip()
         self.overrides = {}
-        
-     
+
+
 
 
     def set_overrides(self,f):
@@ -343,7 +343,7 @@ class baseOGP(object):
                 if self.md == "gdrs":
                     resultName = os.path.join(self.output_path, filename.split(os.path.sep)[-2] +".xml")
                 else:
-                    resultName = os.path.join(self.output_path, 
+                    resultName = os.path.join(self.output_path,
                         os.path.splitext(os.path.split(filename)[1])[0] + "_OGP.xml")
 
                 # check for duplicate names (since w're looking across records with similar dataset content)
@@ -1072,6 +1072,9 @@ class GDRSDocument(MGMGDocument):
     def _get_subresource_type(self, sub_resource):
         return sub_resource.findtext("subResourceType", None)
 
+    def _build_geocommons_url(self):
+        return self._geospatial_commons_root_url + "/" + self._get_resource_name().replace("_","-")
+
     def _build_download_url(self):
         name = self._get_resource_basename()
         pub = self._get_resource_publisher_id()
@@ -1149,9 +1152,11 @@ class GDRSDocument(MGMGDocument):
             resource_type = self._get_subresource_type(resource)
             #pdb.set_trace()
             if resource_type:
+
                 if resource_type == "shp" or resource_type == "fgdb":
-                    url = self._build_download_url() + "shp_" + self._get_resource_basename() + ".zip"
-                    loc["download"] = url
+                    #url = self._build_download_url() #+ "shp_" + self._get_resource_name + ".zip"
+                    #loc["download"] = url
+                    loc["externalDownload"] = self._build_geocommons_url()
                 elif resource_type == "external":
                     external_count = external_count + 1
                     url = self._get_subresource_url(resource)
@@ -1204,7 +1209,7 @@ class GDRSDocument(MGMGDocument):
                     else:
                         #if there's no layer file, we'll just use the url and hope for the best
                         loc["ArcGISRest"] = url
-                                        
+
         self.log.write(self.file_name, json.dumps(loc))
         return json.dumps(loc)
 
