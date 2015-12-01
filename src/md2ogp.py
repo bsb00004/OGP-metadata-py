@@ -1072,8 +1072,14 @@ class GDRSDocument(MGMGDocument):
     def _get_subresource_type(self, sub_resource):
         return sub_resource.findtext("subResourceType", None)
 
+    def _get_dataset_url_for_publisher(self):
+        if self._get_resource_publisher_id() in ["us_mn_co_dakota", "us_mn_state_metc", "us_mn_state_metrogis"]:
+            return self._get_resource_name()
+        else:
+            return self._get_resource_basename()
+
     def _build_geocommons_url(self):
-        return self._geospatial_commons_root_url + "/" + self._get_resource_name().replace("_","-")
+        return self._geospatial_commons_root_url + "/" + self._get_dataset_url_for_publisher().replace("_","-")
 
     def _build_download_url(self):
         name = self._get_resource_basename()
