@@ -1110,7 +1110,7 @@ class GDRSDocument(MGMGDocument):
             return self._get_resource_basename()
 
     def _build_geocommons_url(self):
-        return self._geospatial_commons_root_url + "/" + self._get_dataset_url_for_publisher().replace("_","-")
+        return self._geospatial_commons_root_url + self._get_dataset_url_for_publisher().replace("_","-")
 
     def _build_download_url(self):
         name = self._get_resource_basename()
@@ -1191,7 +1191,7 @@ class GDRSDocument(MGMGDocument):
             if resource_type:
 
                 if resource_type == "shp" or resource_type == "fgdb":
-                    url = self._build_download_url() + "shp_" + self._get_resource_name + ".zip"
+                    url = self._build_download_url() + "shp_" + self._get_resource_basename() + ".zip"
                     loc["download"] = url
                     #loc["externalDownload"] = self._build_geocommons_url()
                 elif resource_type == "external":
@@ -1237,7 +1237,7 @@ class GDRSDocument(MGMGDocument):
                                             loc["esrifeatureservice"] = url + "/"
 
                             if not some_visible:
-                                loc["externalDownload"] = self._geospatial_commons_root_url + self._get_resource_name()
+                                loc["externalDownload"] = self._build_geocommons_url()
 
                         elif lyr.isServiceLayer:
                             if lyr.serviceProperties["URL"].find("MapServer") is not -1:
