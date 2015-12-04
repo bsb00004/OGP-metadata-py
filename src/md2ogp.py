@@ -520,6 +520,16 @@ class ISODocument(MetadataDocument):
            "gmd":"http://www.isotc211.org/2005/gmd"
         }
 
+
+
+
+# _______         _______..  ______         __
+# |   ____|       /       |  |   _  \       |  |
+# |  |__         |   (----`  |  |_)  |      |  |
+# |   __|         \   \      |      /       |  |
+# |  |____    .----)   |     |  |\  \----.  |  |
+# |_______|   |_______/      | _| `._____|  |__|
+
 class EsriOpenDataISODocument(ISODocument):
     """
     Handle a particular instance of ISO document created by another script that parses
@@ -576,7 +586,7 @@ class EsriOpenDataISODocument(ISODocument):
 
     def theme_keywords(self):
         keywords =  self.root.findall(self.PATHS["themekey"], self.NSMAP)
-        keywords_list = [k.text for k in keywords]
+        keywords_list = [k.text for k in keywords if k is not None]
 
         if not keywords_list:
             return ""
@@ -650,8 +660,8 @@ class EsriOpenDataISODocument(ISODocument):
                 elif p == "download":
                     loc["download"] = url
 
-                # indicates an indirect link (for example link to a UDC record)
-                elif p == "order":
+                # indicates an indirect link
+                elif p == "WWW:LINK":
                     loc["externalDownload"] = url
 
         return loc
@@ -698,6 +708,14 @@ class ArcGISDocument(MetadataDocument):
     def __init__(self, root, filename, log, indirect_links):
         super(ArcGISDocument, self).__init__(root, filename, log, indirect_links)
 
+
+
+#  _______     _______    _______      ______
+# |   ____|   /  _____|  |       \    /      |
+# |  |__     |  |  __    |  .--.  |  |  ,----'
+# |   __|    |  | |_ |   |  |  |  |  |  |
+# |  |       |  |__| |   |  '--'  |  |  `----.
+# |__|        \______|   |_______/    \______|
 
 class FGDCDocument(MetadataDocument):
     """
@@ -924,6 +942,13 @@ class FGDCDocument(MetadataDocument):
             return "UNKNOWN"
 
 
+# .___  ___.     _______    .___  ___.     _______
+# |   \/   |    /  _____|   |   \/   |    /  _____|
+# |  \  /  |   |  |  __     |  \  /  |   |  |  __
+# |  |\/|  |   |  | |_ |    |  |\/|  |   |  | |_ |
+# |  |  |  |   |  |__| |    |  |  |  |   |  |__| |
+# |__|  |__|    \______|    |__|  |__|    \______|
+
 class MGMGDocument(FGDCDocument):
     """
     Inherits from FGDCDocument
@@ -1019,7 +1044,13 @@ class MGMGDocument(FGDCDocument):
             self.log.write(self.file_name, 'can\'t find onlink, or else it\'s goofy somehow')
             return "UNKNOWN"
 
-
+#  _______    _______  .  ______             _______.
+#  /  _____|  |       \   |   _  \           /       |
+# |  |  __    |  .--.  |  |  |_)  |         |   (----`
+# |  | |_ |   |  |  |  |  |      /           \   \
+# |  |__| |   |  '--'  |  |  |\  \----.  .----)   |
+#  \______|   |_______/   | _| `._____|  |_______/
+#
 class GDRSDocument(MGMGDocument):
     def __init__(self, root, filename, log, indirect_links):
         super(GDRSDocument, self).__init__(root, filename, log, indirect_links)
@@ -1160,9 +1191,9 @@ class GDRSDocument(MGMGDocument):
             if resource_type:
 
                 if resource_type == "shp" or resource_type == "fgdb":
-                    #url = self._build_download_url() #+ "shp_" + self._get_resource_name + ".zip"
-                    #loc["download"] = url
-                    loc["externalDownload"] = self._build_geocommons_url()
+                    url = self._build_download_url() + "shp_" + self._get_resource_name + ".zip"
+                    loc["download"] = url
+                    #loc["externalDownload"] = self._build_geocommons_url()
                 elif resource_type == "external":
                     external_count = external_count + 1
                     url = self._get_subresource_url(resource)
@@ -1193,32 +1224,39 @@ class GDRSDocument(MGMGDocument):
                                     if ind >= 0:
                                         lyr_number = str(ind)
 
-                                        #make sure it's not a feature service
-                                        if url.find("FeatureServer") is -1:
+                                        #map service
+                                        if url.find("MapServer") is not -1:
                                             loc["ArcGISRest"] = url
                                             loc["layerId"] = lyr_number
-                                        else:
-
+                                        #feature service
+                                        elif url.find("FeatureServer") is not -1:
                                             if url.endswith("/"):
                                                 url = url + lyr_number
                                             else:
                                                 url = url + "/" + lyr_number
-
                                             loc["esrifeatureservice"] = url + "/"
 
                             if not some_visible:
                                 loc["externalDownload"] = self._geospatial_commons_root_url + self._get_resource_name()
 
                         elif lyr.isServiceLayer:
-                            loc["ArcGISRest"] = lyr.serviceProperties["URL"]
+                            if lyr.serviceProperties["URL"].find("MapServer") is not -1:
+                                loc["ArcGISRest"] = lyr.serviceProperties["URL"]
 
                     else:
-                        #if there's no layer file, we'll just use the url and hope for the best
-                        loc["ArcGISRest"] = url
+                        #if there's no layer file, we'll just check if it's a MapServer
+                        if url.find("MapServer") is not -1:
+                            loc["ArcGISRest"] = url
 
         self.log.write(self.file_name, json.dumps(loc))
         return json.dumps(loc)
 
+# .___  ___.      ___      .______        ______
+# |   \/   |     /   \     |   _  \      /      |
+# |  \  /  |    /  ^  \    |  |_)  |    |  ,----'
+# |  |\/|  |   /  /_\  \   |      /     |  |
+# |  |  |  |  /  _____  \  |  |\  \----.|  `----.
+# |__|  |__| /__/     \__\ | _| `._____| \______|
 
 # from https://github.com/gravesm/marcingest
 class MARCXMLDocument(MetadataDocument):
