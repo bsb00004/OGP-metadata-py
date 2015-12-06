@@ -1186,11 +1186,13 @@ class GDRSDocument(MGMGDocument):
         for resource in resources:
             external_count = 0
             resource_type = self._get_subresource_type(resource)
+
             if resource_type:
+
                 if resource_type == "shp" or resource_type == "fgdb":
                     url = self._build_download_url() + "shp_" + self._get_resource_basename() + ".zip"
                     loc["download"] = url
-                    #loc["externalDownload"] = self._build_geocommons_url()
+
                 elif resource_type == "external":
                     url_elements = self._get_subresource_urls(resource)
                     desc = resource.findtext("subResourceName", None)
@@ -1198,7 +1200,7 @@ class GDRSDocument(MGMGDocument):
                         loc["externalDownload"] = url_elements[0].text
 
                 elif resource_type == "ags_mapserver":
-                    url = self._get_subresource_url(resource)
+                    url = self._get_subresource_urls(resource)[0].text
                     self.log.write(self.file_name, url)
                     lyr_file = self._get_layer_file()
 
