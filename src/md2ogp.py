@@ -1044,12 +1044,12 @@ class MGMGDocument(FGDCDocument):
             self.log.write(self.file_name, 'can\'t find onlink, or else it\'s goofy somehow')
             return "UNKNOWN"
 
-#  _______    _______  .  ______             _______.
-#  /  _____|  |       \   |   _  \           /       |
-# |  |  __    |  .--.  |  |  |_)  |         |   (----`
-# |  | |_ |   |  |  |  |  |      /           \   \
-# |  |__| |   |  '--'  |  |  |\  \----.  .----)   |
-#  \______|   |_______/   | _| `._____|  |_______/
+#   ______    _______     ______           _____.
+#  /  _____|  |       \   |   _  \        /      |
+# |  |  __    |  .--.  |  |  |_)  |      |   (---`
+# |  | |_ |   |  |  |  |  |      /        \   \
+# |  |__| |   |  '--'  |  |  |\  \--.  .--)   |
+#  \______|   |_______/   | _| `.___|  |_____/
 #
 class GDRSDocument(MGMGDocument):
     def __init__(self, root, filename, log, indirect_links):
@@ -1090,7 +1090,6 @@ class GDRSDocument(MGMGDocument):
 
     def _get_layer_file(self):
         path_to_lyr = os.path.join(os.path.split(self.filename)[0], "*.lyr")
-        #pdb.set_trace()
         lyr_list = glob.glob(path_to_lyr)
         if len(lyr_list) > 0:
             lyr_file = lyr_list[0]
@@ -1173,8 +1172,8 @@ class GDRSDocument(MGMGDocument):
         pub = self._get_publisher_name(pub_id)
         return pub
 
-    def _get_subresource_url(self, resource):
-        return resource.findtext("subResourceAccess/subResourceURL", None)
+    def _get_subresource_urls(self, resource):
+        return resource.findall("subResourceAccess/subResourceURL")
 
     def _build_download_url(self):
         name = self._get_resource_basename()
@@ -1187,20 +1186,16 @@ class GDRSDocument(MGMGDocument):
         for resource in resources:
             external_count = 0
             resource_type = self._get_subresource_type(resource)
-            #pdb.set_trace()
             if resource_type:
-
                 if resource_type == "shp" or resource_type == "fgdb":
                     url = self._build_download_url() + "shp_" + self._get_resource_basename() + ".zip"
                     loc["download"] = url
                     #loc["externalDownload"] = self._build_geocommons_url()
                 elif resource_type == "external":
-                    external_count = external_count + 1
-                    url = self._get_subresource_url(resource)
+                    url_elements = self._get_subresource_urls(resource)
                     desc = resource.findtext("subResourceName", None)
-                    if desc:
-                        if "download" in desc.lower():
-                            loc["externalDownload"] = url
+                    if desc and "download" in desc.lower():
+                        loc["externalDownload"] = url_elements[0].text
 
                 elif resource_type == "ags_mapserver":
                     url = self._get_subresource_url(resource)
@@ -1247,6 +1242,10 @@ class GDRSDocument(MGMGDocument):
                         #if there's no layer file, we'll just check if it's a MapServer
                         if url.find("MapServer") is not -1:
                             loc["ArcGISRest"] = url
+
+        if len(loc.items()) == 0:
+            #if all else fails, default to pointing to the geospatial commons address
+            loc["externalDownload"] = self._build_geocommons_url()
 
         self.log.write(self.file_name, json.dumps(loc))
         return json.dumps(loc)
