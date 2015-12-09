@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from lib import pysolr
+import json
 
 class SolrOGP(object):
 
@@ -22,6 +23,14 @@ class SolrOGP(object):
         q = self.escape_query(query)
         return self.solr.search(q, **kwargs)
 
+    def json_to_dict(self, json_doc):
+        j = json.load(open(json_doc, "r"))
+        return j
+
+    def add_json_to_solr(self,json_doc):
+        record_dict = self.json_to_dict(json_doc)
+        self.add_dict_to_solr(record_dict)
+
     def add_dict_to_solr(self,record_dict):
         self.solr.add([record_dict])
 
@@ -37,8 +46,8 @@ class SolrOGP(object):
         Adds a bunch of records. Accepts a list of ElementTrees as argument
         """
         list_of_dicts = self.list_of_trees_to_dicts(list_of_trees)
-       
-        print "Adding/updating %s documents in Solr index" % (len(list_of_trees))   
+
+        print "Adding/updating %s documents in Solr index" % (len(list_of_trees))
 
         self.solr.add(list_of_dicts)
 
@@ -97,4 +106,3 @@ class SolrOGP(object):
 
         d['WorkspaceName'] = 'edu.umn'
         return d
-
