@@ -267,7 +267,7 @@ class baseOGP(object):
         try:
             root = tree.parse(filename, etree.XMLParser(encoding="utf-8"))
         except Exception as e:
-            pdb.set_trace()
+            #pdb.set_trace()
             bom_contents = self.check_for_BOM(filename)
             if bom_contents:
                 self.remove_BOM(filename, bom_contents)
