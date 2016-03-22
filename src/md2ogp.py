@@ -267,7 +267,6 @@ class baseOGP(object):
         try:
             root = tree.parse(filename, etree.XMLParser(encoding="utf-8"))
         except Exception as e:
-            pdb.set_trace()
             bom_contents = self.check_for_BOM(filename)
             if bom_contents:
                 self.remove_BOM(filename, bom_contents)
@@ -656,7 +655,6 @@ class EsriOpenDataISODocument(ISODocument):
                         loc["esrifeatureservice"] = url + "/"
                     #loc["layerId"] = url[url.rfind("/") + 1:]
 
-                #TODO uncomment when we can handle 202s from EOD appropriately
                 elif p == "download":
                     loc["download"] = url
 
