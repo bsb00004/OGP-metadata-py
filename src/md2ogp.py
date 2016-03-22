@@ -657,12 +657,12 @@ class EsriOpenDataISODocument(ISODocument):
                     #loc["layerId"] = url[url.rfind("/") + 1:]
 
                 #TODO uncomment when we can handle 202s from EOD appropriately
-                #elif p == "download":
-                #    loc["download"] = url
+                elif p == "download":
+                    loc["download"] = url
 
                 # indicates an indirect link
-                elif p == "WWW:LINK":
-                    loc["externalDownload"] = url
+                #elif p == "WWW:LINK":
+                #    loc["externalDownload"] = url
 
         return loc
 
