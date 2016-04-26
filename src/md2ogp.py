@@ -1065,11 +1065,12 @@ class GDRSDocument(MGMGDocument):
 
         #taken from https://gisdata.mn.gov/content/?q=publisher_codes
         self._gdrs_publisher_codes = {
-            "us_mn_co_dakota":"Dakota County",
-            "us_mn_co_carver":"Carver County",
-            "us_mn_co_lake":"Lake County",
-            "us_mn_state_metrogis":"Metro GIS",
-            "us_mn_state_metc":"Metropolitan Council",
+            "us_mn_co_carver":"Carver County, Minnesota",
+            "us_mn_co_dakota":"Dakota County, Minnesota",
+            "us_mn_co_itasca":"Itasca County, Minnesota",
+            "us_mn_co_lake":"Lake County, Minnesota",
+            "us_mn_state_metrogis":"Metro GIS, Minnesota",
+            "us_mn_state_metc":"Metropolitan Council, Minnesota",
             "us_mn_state_bwsr":"Minnesota Board of Water and Soil Resources (BWSR)",
             "us_mn_state_mda":"Minnesota Department of Agriculture",
             "us_mn_state_mde":"Minnesota Department of Education",
@@ -1080,6 +1081,8 @@ class GDRSDocument(MGMGDocument):
             "edu_umn_mngs":"Minnesota Geological Survey",
             "us_mn_state_mngeo":"Minnesota Geospatial Information Office",
             "us_mn_state_pca":"Minnesota Pollution Control Agency",
+            "com_mvta": "Minnesota Valley Transit Authority (MVTA)",
+            "us_mn_co_ramsey": "Ramsey County, Minnesota",
             "edu_umn":"University of Minnesota, Twin Cities"
         }
 
@@ -1201,12 +1204,13 @@ class GDRSDocument(MGMGDocument):
                     url = self._get_subresource_urls(resource)[0].text
                     self.log.write(self.file_name, url)
                     lyr_file = self._get_layer_file()
+                    lyr_text = open(os.path.join(os.path.split(self.filename)[0],"lyr_text.txt"),"wb")
 
                     if lyr_file:
                         self.log.write(self.file_name, "I have a layer file!")
                         import arcpy
                         lyr = arcpy.mapping.Layer(lyr_file)
-
+                        
                         if lyr.isGroupLayer:
                             some_visible = False
 
@@ -1218,11 +1222,15 @@ class GDRSDocument(MGMGDocument):
 
                                     if ind >= 0:
                                         lyr_number = str(ind)
-
+                                        
+                                        
+                                        
                                         #map service
                                         if url.find("MapServer") is not -1:
                                             loc["ArcGISRest"] = url
                                             loc["layerId"] = lyr_number
+                                            lyr_text.write("MapService|||" + url.rstrip("/") + "/" + lyr_number + "\n")
+                                            
                                         #feature service
                                         elif url.find("FeatureServer") is not -1:
                                             if url.endswith("/"):
@@ -1230,18 +1238,34 @@ class GDRSDocument(MGMGDocument):
                                             else:
                                                 url = url + "/" + lyr_number
                                             loc["esrifeatureservice"] = url + "/"
+                                            lyr_text.write("FeatureService|||" + url.rstrip("/") + "/" + lyr_number + "\n")
+                                        
+                                        elif url.find("ImageServer") is not -1:
+                                            lyr_text.write("ImageService|||" + url.rstrip("/") + "/" + lyr_number + "\n")
+                                        else:
+                                            lyr_text.write("MysteryService|||" + url.rstrip("/") + "/" + lyr_number + "\n")
+
+                                    elif ind == -1:
+                                        lyr_text.write("RootService|||" + url.rstrip("/") + "\n")
 
                             if not some_visible:
+                                lyr_text.write("MapService|||" + url.rstrip("/") + "\n")
                                 loc["externalDownload"] = self._build_geocommons_url()
 
                         elif lyr.isServiceLayer:
                             if lyr.serviceProperties["URL"].find("MapServer") is not -1:
+                                lyr_text.write("MapService|||" + url.rstrip("/") + "\n")
                                 loc["ArcGISRest"] = lyr.serviceProperties["URL"]
+
+                        
 
                     else:
                         #if there's no layer file, we'll just check if it's a MapServer
                         if url.find("MapServer") is not -1:
+                            lyr_text.write("MapService|||" + url.rstrip("/") + "\n")
                             loc["ArcGISRest"] = url
+
+                    lyr_text.close()
 
         if len(loc.items()) == 0:
             #if all else fails, default to pointing to the geospatial commons address
